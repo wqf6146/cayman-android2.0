@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/view_head" />
+
+
+    <LinearLayout
+        android:id="@+id/rela_frd"
+        android:orientation="vertical"
+        android:background="@mipmap/show_back"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_weight="4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical"
+            android:layout_weight="6.1"
+            android:background="@mipmap/show_dian_back"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <ImageView
+                android:src="@mipmap/show_get"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/iamge_shang"
+                    android:layout_gravity="center"
+                    android:layout_width="250dp"
+                    android:layout_height="130dp" />
+
+            </LinearLayout>
+            <ImageView
+                android:layout_marginBottom="10dp"
+                android:src="@mipmap/show_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/image_frd"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_marginLeft="35dp"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:textColor="#4538be"
+                            android:text="长按识别，开始挖宝"
+                            android:layout_marginTop="8dp"
+                            android:textSize="18dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:textColor="#4538be"
+                            android:layout_marginTop="5dp"
+                            android:textSize="14dp"
+                            android:text="赶紧一起来挖宝吧，下一个挖宝达人就是你哦！"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginBottom="5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <ImageView
+                        android:id="@+id/wx_frd"
+                        android:src="@mipmap/wx_frd"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:id="@+id/wx_cal"
+                        android:layout_marginLeft="3dp"
+                        android:src="@mipmap/wx_cal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:id="@+id/tvSave"
+                        android:layout_marginLeft="3dp"
+                        android:layout_weight="1"
+                        android:src="@mipmap/wx_btn_back"
+                        android:layout_width="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <TextView
+                    android:visibility="gone"
+                    android:layout_marginBottom="5dp"
+                    android:layout_alignParentBottom="true"
+                    android:text="生成专属海报"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:paddingBottom="3dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@mipmap/show_btn_back"
+                    android:layout_height="40dp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        </LinearLayout>
+
+
+
+</LinearLayout>

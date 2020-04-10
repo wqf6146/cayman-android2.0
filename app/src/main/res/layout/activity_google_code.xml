@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_head" />
+
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:visibility="gone"
+        android:padding="10dp"
+        android:text="@string/google_code"
+        android:textColor="@color/sec_font_black"
+        android:textSize="@dimen/font_lager" />
+
+    <TextView
+        android:layout_marginTop="25dp"
+        android:layout_width="match_parent"
+        android:lineSpacingExtra="10dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/google_code_apply"
+        android:textColor="@color/sec_font_black"
+        android:textSize="@dimen/font_small" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/etOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint=""
+            android:inputType="numberDecimal"
+            android:text=""
+            android:textColor="@color/sec_font_black"
+            android:textSize="@dimen/font_normal" />
+
+        <EditText
+            android:id="@+id/etTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint=""
+            android:inputType="numberDecimal"
+            android:text=""
+            android:textColor="@color/sec_font_black"
+            android:textSize="@dimen/font_normal" />
+
+        <EditText
+            android:id="@+id/etThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint=""
+            android:inputType="numberDecimal"
+            android:text=""
+            android:textColor="@color/sec_font_black"
+            android:textSize="@dimen/font_normal" />
+
+        <EditText
+            android:id="@+id/etFour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint=""
+            android:inputType="numberDecimal"
+            android:text=""
+            android:textColor="@color/sec_font_black"
+            android:textSize="@dimen/font_normal" />
+
+        <EditText
+            android:id="@+id/etFive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint=""
+            android:inputType="numberDecimal"
+            android:text=""
+            android:textColor="@color/sec_font_black"
+            android:textSize="@dimen/font_normal" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint=""
+            android:inputType="numberDecimal"
+            android:text=""
+            android:textColor="@color/sec_font_black"
+            android:textSize="@dimen/font_normal" />
+    </LinearLayout>
+
+    <com.jkb.vcedittext.VerificationCodeEditText
+        android:id="@+id/etCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:inputType="number"
+        android:text=""
+        android:textColor="@color/sec_font_black"
+        android:textSize="40sp"
+        app:bottomLineHeight="2dp"
+        app:bottomLineNormalColor="@color/color_font_kline"
+        app:bottomLineSelectedColor="@color/colorAccent"
+        app:figures="6"
+        app:selectedBackgroundColor="@color/transparent"
+        app:verCodeMargin="10dp" />
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:gravity="bottom"
+        android:id="@+id/line_google"
+        android:layout_marginBottom="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/google_phone"
+            android:textColor="#42546a"
+            android:textSize="@dimen/font_normal"
+            android:layout_marginLeft="20dp"
+            android:text="18136235445"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/google_code"
+                style="@style/edittext_normal"
+                android:hint="@string/phone_code"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/bg_market_editext"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="40dp" />
+
+            <TextView
+                android:id="@+id/google_send"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_small"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="#4663ae"
+                android:text="@string/send_chat"
+                android:layout_width="80dp"
+                android:layout_height="40dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tvGccConfirm"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_lager"
+        android:gravity="center"
+        android:background="#4663ae"
+        android:text="@string/dialog_sure"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+
+</LinearLayout>

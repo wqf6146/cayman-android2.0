@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--标题-->
+    <include layout="@layout/view_head" />
+
+    <!--上部TAB栏-->
+<!--    <android.support.design.widget.TabLayout-->
+<!--        android:id="@+id/tab"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="55dp"-->
+<!--        android:background="@color/white"-->
+<!--        app:tabIndicatorColor="@color/main_font_color"-->
+<!--        app:tabSelectedTextColor="@color/main_font_color"-->
+<!--        app:tabTextAppearance="@style/MyTabLayoutTextAppearance"-->
+<!--        -->
+<!--        app:tabTextColor="@color/sec_font_grey" />-->
+
+    <View style="@style/line_bg_grey" />
+
+    <com.spark.szhb_master.ui.intercept.MyInterceptViewPager
+        android:id="@+id/vpPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

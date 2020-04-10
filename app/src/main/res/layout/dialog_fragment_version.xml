@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlContent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/update_shape_back"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="@mipmap/update_img"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.4"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/version_tital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                android:text="@string/find_new"
+                android:textColor="@color/chart_white"
+                android:textSize="@dimen/font_lager" />
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:textSize="@dimen/font_small"
+                android:textColor="@color/chart_white"
+                android:id="@+id/version_tx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="V1.0.1" />
+
+            <TextView
+                android:textSize="@dimen/font_small"
+                android:textColor="@color/chart_white"
+                android:id="@+id/version_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="更新时间：2018-7-16" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@drawable/update_shape_back"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginLeft="25dp"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="8dp"
+                android:text="更新内容："
+                android:textColor="#17304d" />
+
+        <TextView
+            android:layout_marginLeft="28dp"
+            android:textSize="@dimen/font_normal"
+            android:id="@+id/version_remark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:lineSpacingExtra="8dp"
+            android:textColor="#5b646e" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/tvConfirm_version"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:textColor="#ffffff"
+            android:text="@string/update"
+            android:background="@drawable/update_shape"
+            android:textSize="20dp" />
+
+
+        <Button
+            android:id="@+id/tvCancle_version"
+            android:layout_weight="1"
+            android:text="@string/canclelater"
+            android:textSize="@dimen/font_normal"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:textColor="#9caabb"
+            android:layout_height="50dp" />
+
+    </LinearLayout>
+</LinearLayout>

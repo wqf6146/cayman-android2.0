@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/update_shape_back"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/img_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:src="@mipmap/close_img" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/name_title"
+        android:textColor="#42546a"
+        android:textSize="22dp"
+        android:layout_gravity="center"
+        android:text="@string/prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+    <TextView
+        android:id="@+id/cometwo"
+        android:textColor="#42546a"
+        android:textSize="14dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:lineSpacingExtra="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:text="@string/not_enough"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:id="@+id/lin_digg"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="51dp">
+
+        <View
+            style="@style/line_bg_grey">
+
+        </View>
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:id="@+id/cancle"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:text="@string/cancle"
+                android:textColor="#97a1ac"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp" />
+
+            <View
+                android:background="@color/line_bg_grey"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:id="@+id/go_up"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:text="@string/promotion"
+                android:textColor="#4f4ab5"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

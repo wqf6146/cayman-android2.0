@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\26.1.0\814258103cf26a15fcc26ecce35f5b7d24b73f8\support-annotations-26.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="0814258103cf26a15fcc26ecce35f5b7d24b73f8">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-26.1.0_8b973bb99f664607e3a0f6f9c9c166f38956ddbc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\libs\umeng_social_tool.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="87ef211d4ef0c257c7d040fbaa411832330eb9aa">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\2\umeng_social_tool_d86b7fbd3f9458f7980d6255fc38146a2838c2b4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.yanzhenjie\permission\1.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="c5449da8a5c7b278124189582837f1c55a0040f0">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.yanzhenjie-permission-1.1.0_e0e3310bf0a919b8c9136be0ad6bc74ba98cad13\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.justkiddingbaby\vercodeedittext\1.0.5\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a320413a3d1079669e3104315f84101adfc3306e">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.justkiddingbaby-vercodeedittext-1.0.5_49b7889f8399775378715a55dfbde37b451f454b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\26.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="40392f30a601db5675cdf18192aab013d6fee6ec">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-26.1.0_e5fc6dbd8aa5db0f35e35d741a1e56782cd21b95\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\26.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="6f4138a4e065826cb044d49faea4cfd7191773d1">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-26.1.0_1d89de5b8de762363823831af7c476f1f5d2224b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\26.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b4d6fbbb48b42dd03fd9c5a09b3b7a53266df6ed">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-26.1.0_d4db1b27795631819d4df0af461b1058d7208520\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.github.CymChad\BaseRecyclerViewAdapterHelper\2.9.34\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="c878da341d27b31f514303275284bbd3d4fd6ccb">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.github.CymChad-BaseRecyclerViewAdapterHelper-2.9.34_8a102f8ae85be9a4c56897c7eb8eb7f514e717d8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.android.support\design\26.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a37fc31c5ceeaa4532a37358add1b189d8db4af1">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-26.1.0_76683c5a2c36788add0b36ac680c04ef94b98d82\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\glide-3.7.0_1f3ddf859a86296da03fddcf50d19f29d652df81\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.umeng.sdk\analytics\7.5.3\cea548ef1a042889faa71bf95a604e6c24a61607\analytics-7.5.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="cea548ef1a042889faa71bf95a604e6c24a61607">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\analytics-7.5.3_4c3931229f23f6d19adad5c3ce70be5ea2d99bf7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\android.arch.core\common\1.0.0\a2d487452376193fc8c103dd2b9bd5f2b1b44563\common-1.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a2d487452376193fc8c103dd2b9bd5f2b1b44563">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\common-1.0.0_34ca24e8cff1f829d4bac2a8acae5d89393e0831\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.android.support\support-v4\26.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-26.1.0_7015f1de0c0a21f68462cce472d35d130f4a2684\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.android.support\multidex\1.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-multidex-1.0.1_96a5f649d9cad600a3b659ad15450019118eb597\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.tencent.mm.opensdk\wechat-sdk-android-with-mta\1.0.2\d52a3b82b9efa2b247d9496c5b5bbc8ca1f93eab\wechat-sdk-android-with-mta-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d52a3b82b9efa2b247d9496c5b5bbc8ca1f93eab">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\wechat-sdk-android-with-mta-1.0.2_142639a5c1893406edfd462360bf54fbffcc9802\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.yanzhenjie\loading\1.0.2\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="256089651e34273f719c1b4cd5683b9a309b5ba8">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.yanzhenjie-loading-1.0.2_341604edb0d4525118efb511b634c932dc9bb99d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\geetest_testbutton_android_v3.5.3\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="879cf8310d7ea1285fe2a19beac17aea5d766d4e">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\intermediates-exploded-aar-geetest_testbutton_android_v3.5.3_529468886c042e99893e294c9ea67a4a2cf1cf1a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.2\3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf\gson-2.8.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.8.2_6f92e0bc9cc6edb2f6dfe23a3b24d6c5a560f179\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.github.arcadefire\nice-spinner\1.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="2ced35d2f9db91b5f7f110e7ff15a13487a9b06f">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.github.arcadefire-nice-spinner-1.3.1_2ad142db6ea9ba5f9c5077ec95e30cc6ffafd74d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.jakewharton\butterknife\8.8.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="6a2bcb61342d09fe9acf55c9daf63961c8866cc0">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.jakewharton-butterknife-8.8.1_f3dbe187d613bbb3c33d720a2cc675e4e85addce\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.android.support.constraint\constraint-layout\1.0.2\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support.constraint-constraint-layout-1.0.2_33fbe3c10f38d8ab9d69e347b630ce8f6a82bc9d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="9a0a1679134729f4e9ed3074b647474d269cedcd">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_5237742fac66a3f7c1a57778b9d6c2da383a9e2e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.zxing\android-core\3.3.0\86ce6f89a1d7944bb9814a2ec5520dccd3ee3dce\android-core-3.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="86ce6f89a1d7944bb9814a2ec5520dccd3ee3dce">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\android-core-3.3.0_c3cc4b32a16143345a42d9f01a70cab4540e123d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife-annotations\8.8.1\bc373fb6bc7bca3035041b924f158fd2b946ee8d\butterknife-annotations-8.8.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="bc373fb6bc7bca3035041b924f158fd2b946ee8d">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\butterknife-annotations-8.8.1_effad51e1b924a983cf91438469a33332a23c034\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\android.arch.lifecycle\runtime\1.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b62fdc4cfef174c1e456014195c83fa7de7dc041">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\android.arch.lifecycle-runtime-1.0.0_bf9f9dba654e5ca516473b291039404bf36e31d8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.android.support\transition\26.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="58b12bdb21a84f22e0dc3b047aeceb0a546b1b44">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-26.1.0_dede8a0c299d1e0f415a17aa5c15f0cc0c7fd921\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.sunfusheng\marqueeview\1.3.3\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="40ea98c0feebe4a2626fddecfa6f791700d54800">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.sunfusheng-marqueeview-1.3.3_aacb0867dd82840d5f460e09eb6af111e24abdee\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\26.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b12cd9c87c3dfb012a911b6e38d2444ed0a65e1f">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-26.1.0_4d3d9d4bedfa7b5f1c4bfe288dd84ee1495b1e4c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.lcodecorex\tkrefreshlayout\1.0.7\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="1c32ab2e2421b179912b718196eee2277ba1c7c9">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.lcodecorex-tkrefreshlayout-1.0.7_ebeda98a8cd155d45f0443d490e26c0cdb1c0ee8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\26.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="f97cf85b0fe70d37a705111dafa6b1b418ea1650">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-26.1.0_51e82c4aa5e4c90dc73bb34064ed79ef8fb96d7c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.github.warkiz.widget\indicatorseekbar\1.1.2\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="7817b949e4e2f758c50589793355a1815a09e815">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.github.warkiz.widget-indicatorseekbar-1.1.2_10dd5f18f128d7c40360662fa09413e2fa9e652f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\org.xutils\xutils\3.5.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="c70d3d4cb2d0b16c435c716fa169cb506929269b">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\org.xutils-xutils-3.5.0_6b40401bf58e3e406b2b7e2738f3ccaece1163ef\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.android.support\support-compat\26.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="2442771a5590dd4eb4bce00c2e9dca9e22e4c963">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-26.1.0_1e7ab3a19e4fcb2914ab5dc03aad252dc84a9d9b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.13.0_f63c7ab08dbed3c34e0fe0b9b1a691240ffa1bb7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.youth.banner\banner\1.4.10\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a06299b94845356c731524654ba386d0877e6b53">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.youth.banner-banner-1.4.10_073ac9a234b83f53ef1ed1996acceeda02bab8bd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\26.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="f428e2fbc9ed0b297e3a3f420e51e6982f66822d">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-26.1.0_6a705fa2091eedaafb63dffc57bd75683971df14\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.9.0\1b6c10b5120995a7542c1a31b7828fb8593c8ba\okhttp-3.9.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="01b6c10b5120995a7542c1a31b7828fb8593c8ba">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.9.0_9387024e9c5a3a771f345e32e5e983855d2234cb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.flyco.dialog\FlycoDialog_Lib\1.2.6\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="107eb08aee25432548badb39cf670ae947a1018b">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.flyco.dialog-FlycoDialog_Lib-1.2.6_8d09e8d0d53999b05da7ac1caaf5723807038910\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\library-2.4.0_dd460f45d27a359687729c3c169358b1eda3100b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.gyf.barlibrary\barlibrary\2.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="33fc0ac682eb92f4471354044e31d64c6e94e890">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.gyf.barlibrary-barlibrary-2.3.0_a6ccc760b591677ba8e34aaa286e4a9e38889f05\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\26.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="508f50705b4fde51a16259f29c854201a3044516">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-26.1.0_3f83b0032d7ca5814c853af80c8d98e4868d7ac7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.2_46e37c71cff63c62d982cbdbe285d0b1694dfd7e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="91aac0f1f3929d602c0e760afc657977cb8aa461">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_44c6209c70c7b61a2fffd2c493d727c972115dea\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\pl.droidsonroids.gif\android-gif-drawable\1.2.6\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="3b86e72dbf272c69b3acd5e552066d9f521e9616">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\pl.droidsonroids.gif-android-gif-drawable-1.2.6_06626cc80f9715cf78d0394d5e3b9cd3518c4fe6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\libs\umeng_social_net.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="09a14799b9e09cb72bd2d0346f13dec601a71f6c">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\2\umeng_social_net_62c5505dd56fbdf1b297cecc57941fddf0b65697\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\libs\umeng_social_api.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="55a810a3647e7324408cb9ca3c64d7c7bfc8f138">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\2\umeng_social_api_b8dc3d5935d4e1d2ec61eb77a0c6b84c395cedc0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\org.litepal.android\core\1.6.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="5dff6a6412e4ec6af1fb9bb36bc9c5c340205c85">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\org.litepal.android-core-1.6.1_a03270f079200de7d63909044930a8859e6d843e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.kyleduo.switchbutton\library\2.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="543bc568f282a23d6d40fc98e5f648aaa4d372c5">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.kyleduo.switchbutton-library-2.0.0_7fb98ddd90ff40f4dcead42d9a981d9c61cb5643\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.umeng.sdk\common\1.5.3\4862353900994359ee2b2c2f9667413978cbb0cf\common-1.5.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="4862353900994359ee2b2c2f9667413978cbb0cf">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\common-1.5.3_7885aa0e4accbcc688fa3826bad4e57e3bd29578\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.greenrobot\eventbus\3.1.1\5cd91fd014f5b72292f959748c20a2cefefae77d\eventbus-3.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="5cd91fd014f5b72292f959748c20a2cefefae77d">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\eventbus-3.1.1_26069bbc26476bac87c28967951b8065e7a7c9f9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\android.arch.lifecycle\common\1.0.0\e414a4cb28434e25c4f6aa71426eb20cf4874ae9\common-1.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="e414a4cb28434e25c4f6aa71426eb20cf4874ae9">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\common-1.0.0_1c4bb69efeb70b6c658b4737f6f3514e68095c88\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.android.support\support-fragment\26.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="7efef32744ca4a436492d5cf28c08698cc2af256">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-26.1.0_6ea2ca484b0fa12920c692c5a822ceba2c5b688d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.xw.repo\bubbleseekbar\3.16\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="eb771c3a672edb942e803b56b508089c7424bee8">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.xw.repo-bubbleseekbar-3.16_b70e6a405ee3af2e65568957edb3851163f3adcf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.yanzhenjie.alertdialog\alertdialog\1.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="284e4a41a5b9f1b8c97b16b685af7b99724bca2d">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.yanzhenjie.alertdialog-alertdialog-1.0.1_315a2e40f1c5654215c425b49bdd4269310602d2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\libs\SocialSDK_WeChat_Simplify.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="08ae64e705bc856d5560e932d86684de5e9934aa">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\2\SocialSDK_WeChat_Simplify_d9298f6fb2d64898cbbb6e09411299c3f8fa56b9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.amulyakhare\com.amulyakhare.textdrawable\1.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d237556caead5b93d97e18a071059a2c0045978e">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.amulyakhare-com.amulyakhare.textdrawable-1.0.1_f8700be69d84ad47d7baffbd280de0259bbf8d7b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\libs\umeng_social_shareview.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="7302d576b34443698c6e1bd5301a146682198c16">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\2\umeng_social_shareview_990a9aae98a52d1bd33d0a01e6a25365ece17448\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\26.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="233f60a165ae622c8b36731502ebbda0f65e1930">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-26.1.0_036008248c882b2b0ae3bf64dfa936ee7cf3d0ec\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\demo\caymannew\caymannew\app\build\intermediates\exploded-aar\com.yanzhenjie\recyclerview-swipe\1.1.4\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="e9d87f53023122b88ffad6530615b3579606ab02">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.yanzhenjie-recyclerview-swipe-1.1.4_61771f4a6b585cf4e453a5b5e9ca3b1b428591f9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.zxing\core\3.3.0\73c49077166faa4c3c0059c5f583d1d7bd1475fe\core-3.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="73c49077166faa4c3c0059c5f583d1d7bd1475fe">
+        <dex dex="D:\demo\caymannew\caymannew\app\build\intermediates\transforms\dex\debug\folders\1000\10\core-3.3.0_e4230aaa92ad3b83a7280de82bf4c7ebfefd4ee6\classes.dex" />
+    </item>
+
+</items>

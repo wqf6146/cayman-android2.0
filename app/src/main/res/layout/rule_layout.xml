@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <!--标题-->
+    <include layout="@layout/view_head" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:visibility="gone"
+                style="@style/layout_my_info"
+                android:layout_marginLeft="0dp"
+                android:paddingLeft="0dp">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="20dp"
+                    android:background="@color/font_yellow" />
+
+                <TextView
+                    android:id="@+id/text_top"
+                    style="@style/textview_tag_top"
+                    android:layout_marginLeft="16dp"
+                    android:minWidth="80dp"
+                    android:text="挖宝规则说明"
+                    android:textColor="#17304d" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/layout_my_info"
+                android:layout_marginLeft="0dp"
+                android:paddingLeft="0dp">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="20dp"
+                    android:background="@color/font_yellow" />
+
+                <TextView
+                    android:id="@+id/text_title"
+                    style="@style/textview_tag_top"
+                    android:layout_marginLeft="16dp"
+                    android:minWidth="80dp"
+                    android:text=""
+                    android:textColor="@color/font_yellow" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_marginBottom="15dp"
+                    android:id="@+id/text_top_rule"
+                    android:lineSpacingExtra="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#737b84"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/text_one"
+                    android:lineSpacingExtra="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#737b84"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/text_two"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#737b84"
+                    android:textSize="12dp" />
+
+
+                <TextView
+                    android:id="@+id/text_three"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#737b84"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/text_four"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#737b84"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/text_five"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#737b84"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/text_six"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#737b84"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+            <!-- 打call-->
+            <LinearLayout
+                style="@style/layout_my_info"
+                android:layout_marginLeft="0dp"
+                android:paddingLeft="0dp">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="20dp"
+                    android:background="@color/font_yellow" />
+
+                <TextView
+                    android:id="@+id/text_title_call"
+                    style="@style/textview_tag_top"
+                    android:layout_marginLeft="16dp"
+                    android:minWidth="80dp"
+                    android:textColor="@color/font_yellow" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_marginBottom="15dp"
+                    android:id="@+id/text_top_rule_call"
+                    android:lineSpacingExtra="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#737b84"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/text_one_call"
+                    android:lineSpacingExtra="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#737b84"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/text_two_call"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#737b84"
+                    android:textSize="12dp" />
+
+
+                <TextView
+                    android:id="@+id/text_three_call"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#737b84"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/text_four_call"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#737b84"
+                    android:textSize="12dp" />
+
+            </LinearLayout>
+
+
+            <!-- 算力-->
+            <LinearLayout
+                style="@style/layout_my_info"
+                android:layout_marginLeft="0dp"
+                android:paddingLeft="0dp">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="20dp"
+                    android:background="@color/font_yellow" />
+
+                <TextView
+                    android:id="@+id/text_title_suan"
+                    style="@style/textview_tag_top"
+                    android:layout_marginLeft="16dp"
+                    android:minWidth="80dp"
+                    android:textColor="@color/font_yellow" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_marginBottom="15dp"
+                    android:id="@+id/text_top_rule_suan"
+                    android:lineSpacingExtra="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#737b84"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/text_one_suan"
+                    android:lineSpacingExtra="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#737b84"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/text_two_suan"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#737b84"
+                    android:textSize="12dp" />
+
+
+                <TextView
+                    android:id="@+id/text_three_suan"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#737b84"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/text_four_suan"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#737b84"
+                    android:textSize="12dp" />
+                <TextView
+                    android:id="@+id/text_five_suan"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#737b84"
+                    android:textSize="12dp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+
+</LinearLayout>

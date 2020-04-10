@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.justkiddingbaby:vercodeedittext:1.0.5@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c6239d5432b0b4dfaaf2fc441a798ca2/vercodeedittext-1.0.5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c6239d5432b0b4dfaaf2fc441a798ca2/vercodeedittext-1.0.5/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.justkiddingbaby/vercodeedittext/1.0.5/5e11b33cd470addbd11323afcaeda377f7a17bd6/vercodeedittext-1.0.5-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.justkiddingbaby/vercodeedittext/1.0.5/af9de35b17f3b936d7e358c0171252ba1773575a/vercodeedittext-1.0.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

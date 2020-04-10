@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ripple_white"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="8dp"
+            android:src="@mipmap/icon_default_header_grey"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/textview_tag"
+                    android:layout_width="80dp"
+                    android:layout_marginRight="5dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="Sukey" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_item_market_up_down"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="2dp"
+                    android:text="出售BTCC"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_mini" />
+            </LinearLayout>
+
+            <TextView
+
+                style="@style/textview_tag"
+                android:layout_gravity="left"
+                android:layout_marginTop="4dp"
+                android:text="40 BTC"
+                android:textColor="@color/main_font_grey"
+                android:textSize="@dimen/font_small" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="未付款"
+                android:layout_gravity="right"
+                android:textColor="@color/sec_font_grey"
+                android:textSize="@dimen/font_normal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="75000.00 CNY"
+                android:textColor="@color/btn_normal"
+                android:textSize="@dimen/font_normal" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:paddingTop="10dp"
+        android:background="@drawable/ripple_white"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="110dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+                <com.spark.szhb_master.ui.AvatarImageView
+                    android:id="@+id/ivHeader"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="8dp" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sukey"
+                    android:singleLine="true"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/tvType"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="出售BTCC"
+                android:textColor="#597ac3"
+                android:layout_marginRight="10dp"
+                android:textSize="@dimen/font_normal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_height="25dp">
+            <TextView
+                android:gravity="center_vertical"
+                android:text="@string/transactions_num"
+                android:textColor="#17304d"
+                android:textSize="@dimen/font_mini"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp" />
+            <TextView
+                android:id="@+id/tvCount"
+                android:gravity="center_vertical"
+                android:text="40 BTC"
+                android:textColor="#17304d"
+                android:textSize="@dimen/font_mini"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp" />
+        </LinearLayout>
+        <View style="@style/line_bg_grey" />
+
+        <LinearLayout
+            android:layout_marginLeft="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp">
+
+            <TextView
+                android:layout_marginTop="2dp"
+                android:gravity="center_vertical"
+                android:text="@string/transaction_amount"
+                android:textColor="#17304d"
+                android:textSize="@dimen/font_mini"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp" />
+            <TextView
+                android:layout_marginTop="2dp"
+                android:layout_weight="1"
+                android:id="@+id/tvTotal"
+                android:gravity="center_vertical"
+                android:text="75000 CNY"
+                android:textColor="#17304d"
+                android:textSize="@dimen/font_mini"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp" />
+
+            <TextView
+                android:id="@+id/order_time"
+                android:layout_marginTop="2dp"
+                android:gravity="center_vertical"
+                android:text="2018-8-30"
+                android:layout_marginRight="10dp"
+                android:textColor="#838f9d"
+                android:textSize="@dimen/font_mini"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <View style="@style/line_bg_fens" />
+</LinearLayout>

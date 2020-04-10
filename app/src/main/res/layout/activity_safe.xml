@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg"
+    android:orientation="vertical"
+    tools:context="com.spark.szhb_master.activity.safe.SafeActivity">
+
+    <!--标题-->
+    <include layout="@layout/view_head" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <LinearLayout
+        android:id="@+id/llGoogleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llSwitchLanguage"
+        style="@style/layout_my_info"
+        android:background="@drawable/ripple_white">
+
+        <TextView
+            style="@style/edittext_normal"
+            android:layout_weight="1"
+            android:text="@string/language" />
+
+        <ImageView style="@style/icon_more" />
+
+    </LinearLayout>
+    <View style="@style/line_bg_fens" />
+    <LinearLayout
+        android:id="@+id/llLockSet"
+        style="@style/layout_my_info">
+
+        <TextView
+            style="@style/textview_tag"
+            android:text="@string/gestures_pwd" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageView
+
+            android:id="@+id/button_img"
+            android:src="@mipmap/close_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.kyleduo.switchbutton.SwitchButton
+            android:visibility="gone"
+            android:id="@+id/switchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            app:kswAnimationDuration="300"
+            app:kswBackDrawable="@drawable/ios_back_drawable"
+            app:kswThumbDrawable="@drawable/switch_selector"
+            app:kswThumbHeight="16dp"
+            app:kswThumbMarginBottom="4dp"
+            app:kswThumbMarginLeft="6dp"
+            app:kswThumbMarginRight="6dp"
+            app:kswThumbMarginTop="4dp"
+            app:kswThumbRangeRatio="3"
+            app:kswThumbWidth="16dp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llGoogle"
+        style="@style/layout_my_info"
+        android:background="@drawable/ripple_white"
+        android:visibility="gone">
+
+        <TextView
+            style="@style/textview_tag"
+            android:text="谷歌验证器" />
+
+
+        <TextView
+            android:visibility="invisible"
+            android:id="@+id/tvGoogle"
+            style="@style/textview_state_my_info"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:gravity="right"
+            android:text="@string/unbound" />
+
+        <ImageView
+            android:id="@+id/google_img"
+            android:src="@mipmap/close_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    <View
+        style="@style/line_bg_grey"
+        android:visibility="gone" />
+
+    <LinearLayout
+        style="@style/layout_my_info"
+        android:background="@drawable/ripple_white"
+        android:visibility="gone">
+
+        <TextView
+            style="@style/textview_tag"
+            android:text="人脸识别" />
+
+
+        <TextView
+            style="@style/edittext_normal"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="@string/not_set" />
+
+        <ImageView style="@style/icon_more" />
+
+    </LinearLayout>
+
+    <View style="@style/line_bg_grey" />
+
+</LinearLayout>

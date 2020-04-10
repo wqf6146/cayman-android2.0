@@ -1,0 +1,882 @@
+<resources>
+    <string name="app_name">Cayman</string>
+    <string name="cancle">取消</string>
+    <string name="confirm">确定</string>
+    <string name="no_data">暂无数据</string>
+    <string name="login_invalid">登录失效，请重新登录！</string>
+    <string name="submit">提交</string>
+    <string name="exit_again">再按一次退出</string>
+    <string name="name">姓名</string>
+    <string name="new_pwd">新密码</string>
+    <string name="photograph">拍照</string>
+    <string name="album">相册</string>
+    <string name="success">成功</string>
+    <string name="savesuccess">保存成功</string>
+    <string name="download_tag">开始下载...请稍候</string>
+    <string name="more">更多</string>
+    <string name="index">指标</string>
+    <string name="hide">隐藏</string>
+    <string name="main">主图</string>
+    <string name="child">副图</string>
+    <string name="delete">删除</string>
+    <string name="users_login">用户登录</string>
+    <string name="save">保存</string>
+    <string name="setting">设置</string>
+    <string name="phone">400000000</string>
+    <string name="web">https://www.caymanex.pro</string>
+    <string name="str_payway_ali">支付宝</string>
+    <string name="str_payway_wechat">微信</string>
+    <string name="str_payway_union">银联</string>
+    <string name="edit_decimals_tag">您输入的小数已超过限定位数</string>
+    <string name="pub_ads_confirm">广告创建成功，需要手动上架，是否上架？</string>
+    <string name="pub_ads_up">广告创建成功，请点击上架完成发布</string>
+    <string name="no_input_emoji">不支持输入表情</string>
+    <string name="str_no_order">暂无订单&#8230;</string>
+    <string name="please_enter_the">请输入</string>
+    <string name="gains">涨幅</string>
+    <string name="quote_change">涨跌幅</string>
+    <string name="buy_coins">买币</string>
+    <string name="sell_coins">卖币</string>
+    <string name="bind_account">请先绑定收款账户</string>
+    <string name="str_try_refresh">点我刷新</string>
+    <string name="str_get_exchange_info">获取盘口数据</string>
+    <string name="egional_selection">地区选择</string>
+    <string name="message_details">消息详情</string>
+
+    <!--请求出错提示语-->
+    <string name="unknown_error">未知错误</string>
+    <string name="no_network">当前无网络</string>
+    <string name="parse_error">数据异常</string>
+
+    <!--权限-->
+    <string name="camera_permission">权限不可用，请开启相机权限</string>
+    <string name="storage_permission">权限不可用，请开启存储权限</string>
+    <string name="password_realname">请先设置资金密码和实名认证</string>
+    <string name="binding_phone_first">请先绑定手机号</string>
+    <string name="realname_first">请先实名认证</string>
+    <string name="realname">实名已认证</string>
+    <string name="phone_over">手机已认证</string>
+    <string name="email_over">邮箱已认证</string>
+
+    <string name="realname_no">实名未认证</string>
+    <string name="phone_over_no">手机未认证</string>
+    <string name="email_over_no">邮箱未认证</string>
+
+    <!--异常-->
+    <string name="library_file_exception">图库文件返回异常</string>
+    <string name="incomplete_information">填写信息不完整</string>
+    <string name="empty_address">数据有误，地址为空</string>
+    <string name="order_details_failed">订单详情获取失败,正在重新获取</string>
+    <string name="no_qrcode">未设置二维码地址</string>
+    <string name="no_ads">广告信息获取失败，正在重新获取！</string>
+    <string name="login_tag">登录出现异常，请重新登录</string>
+    <string name="socket_time">链接超时，请检查网络！</string>
+    <string name="request_error">请求出错！</string>
+
+    <!--绑定手机号-->
+    <string name="nationality">国籍</string>
+    <string name="china">中国</string>
+    <string name="start_bind">开始绑定</string>
+
+    <!--修改手机号-->
+    <string name="change_phone_num">修改手机号</string>
+    <string name="new_phone_num">新手机号码</string>
+    <string name="change_bind_phone_num">修改绑定手机号</string>
+    <string name="change_bind_phone">保存修改</string>
+    <string name="change_bind_phone_num_tag">您正在修改账户绑定的手机号，请进行身份认证</string>
+    <string name="receive_phone_code">原手机能接受验证码</string>
+    <string name="unreceive_phone_code">原手机不能接受验证码</string>
+    <string name="unreceive_phone_code_tag">提示：如您的原手机号无法接收验证码，请联系平台客服进行修改解决！</string>
+    <string name="zjmm_phone_code_tag">提示：您正在修改Cayman交易密码，为了您的资金安全，密码修改后24小时内不允许提币！</string>
+    <string name="modifm_name_tag">昵称只可以修改一次，保存后无法再次修改！昵称长度不可超过16位，不允许输入空格等特殊符号！</string>
+    <string name="handset_tail_number">手机尾号</string>
+    <string name="receive_message_code">接收到的短信验证码</string>
+
+    <!--修改登录密码-->
+    <string name="change_login_pwd">更改登录密码</string>
+    <string name="change_login_pwd_tag">您正在修改登录密码</string>
+    <string name="change_login_pwd_bind_phone_tag">您已经绑定手机号</string>
+    <string name="change_login_pwd_success_tag">修改成功请重新登录</string>
+    <string name="old_login_pwd">旧登录密码</string>
+    <string name="new_login_pwd">新登录密码</string>
+    <string name="confirm_pwd">确认密码</string>
+
+    <!--设置 修改资金密码-->
+    <string name="set_money_pwd">设置资金密码</string>
+    <string name="set_money_pwd_tag">您正在修改资金密码</string>
+    <string name="change_money_pwd">修改资金密码</string>
+    <string name="reset_money_pwd_tag">您正在重置资金密码</string>
+    <string name="old_money_pwd">旧资金密码</string>
+    <string name="new_money_pwd">新资金密码</string>
+    <!--<string name="new_money_pwd">请输入新的资金密码</string>-->
+    <string name="confirm_money_pwd">确认资金密码</string>
+
+    <!--身份认证-->
+    <string name="id_card_num">身份证号码</string>
+    <string name="str_image_face_id_card">身份证正面照</string>
+    <string name="str_image_back_id_card">身份证反面照</string>
+    <string name="str_image_hold_id_card">手持身份证\n正面照</string>
+    <string name="upload_success">上传成功</string>
+    <string name="idcard_diff">身份证号格式不正确</string>
+
+    <!--主页-->
+    <string name="home">首页</string>
+    <string name="market">行情</string>
+    <string name="heyue">合约</string>
+    <string name="exchange">交易</string>
+    <string name="account">我的</string>
+    <string name="treasure">挖宝</string>
+    <string name="performer_home">涨幅榜</string>
+
+    <string name="heyuedasai">合约大赛</string>
+    <string name="xinshouzhinan">新手指南</string>
+    <string name="xinrenlingjiang">新人领奖</string>
+    <string name="chongbi">充币</string>
+
+    <string name="wdcc">我的持仓</string>
+    <string name="yqhy">邀请好友</string>
+
+    <string name="ptfwrs">平台服务人数</string>
+
+    <!--我的-->
+    <string name="zjzh">资金账户</string>
+    <string name="hyqczh">合约全仓账户</string>
+    <string name="not_login">未登录</string>
+    <string name="welcome_to">欢迎来到Cayman</string>
+    <string name="my_zhuanr">转入</string>
+    <string name="my_zhuanc">转出</string>
+    <string name="my_huaz">资金划转</string>
+    <string name="my_ads">我的广告</string>
+    <string name="my_message">平台消息</string>
+    <string name="my_entrust">我的委托</string>
+    <string name="my_promotion">我的推广</string>
+    <string name="invite_friends">邀请好友</string>
+    <string name="invite_money">邀请返佣</string>
+    <string name="my_wdzj">我的赠金</string>
+    <string name="my_fxjl">分享奖励</string>
+    <string name="my_sfrz">身份认证</string>
+    <string name="my_aqzx">安全中心</string>
+    <string name="my_bzzx">帮助中心</string>
+    <string name="my_sz">设置</string>
+
+    <string name="my_credit">身份认证</string>
+    <string name="my_safe">安全中心</string>
+    <string name="my_version">版本更新</string>
+    <string name="my_setting">设置中心</string>
+
+    <string name="my_kefu">联系客服</string>
+    <string name="balance">总资产(USDT)</string>
+    <string name="mybalance">我的资产(USDT)</string>
+    <string name="confirm_logout">您确定要退出登录？</string>
+    <string name="logout_current_account">退出账号</string>
+    <string name="login_after">登录后可查看</string>
+
+    <!-- 我的推广-->
+    <string name="promote_friends">推广好友</string>
+    <string name="my_commission">我的佣金</string>
+    <string name="get_rebate">获得返佣：</string>
+    <string name="number_invitees">邀请人数</string>
+    <string name="people">人</string>
+    <string name="register_time">注册时间</string>
+    <string name="recommendation_level">推荐级别</string>
+    <string name="release_time">发放时间</string>
+    <string name="currency">币种</string>
+    <string name="remarks">备注</string>
+    <string name="invite">赶快邀请您的好友来赚钱吧！</string>
+    <string name="reward_invitation">Cayman 奖励邀请</string>
+    <string name="reward_invita">邀请您加入Cayman, 长按识别扫码下载app</string>
+    <string name="invite_tag">邀请好友，赚取佣金\n和朋友一起赚钱</string>
+    <string name="promotion_link">专属推广链接:</string>
+    <string name="level_one">一级</string>
+    <string name="level_two">二级</string>
+    <string name="level_three">三级</string>
+    <string name="level_four">四级</string>
+    <string name="rule_description">《规则说明》</string>
+
+    <!-- 订单申诉-->
+    <string name="order_appeal">订单申诉</string>
+    <string name="appeal_tag">我们会尽快处理你的申诉请求，请耐心等待</string>
+    <string name="appeal_type">申诉类型：</string>
+    <string name="appeal_description">申诉说明：</string>
+    <string name="appeal_image">申诉图片：</string>
+
+    <string name="appeal_reason">请简要描述您申诉的原因（300字以内）</string>
+    <string name="appeal_rea">请在这里提出您的意见和建议！</string>
+
+    <!-- 聊天-->
+    <string name="chat">正在聊天</string>
+    <string name="send_chat">发送</string>
+    <string name="recently">刚刚</string>
+    <string name="chat_list">聊天列表</string>
+    <string name="chat_tag">请输入发送内容</string>
+
+    <!-- 委托-->
+    <string name="latest_price">最新价：</string>
+    <string name="item_buy">买</string>
+    <string name="item_sell">卖</string>
+    <string name="history">历史</string>
+    <string name="current_trust">当前委托</string>
+    <string name="history_record">历史记录</string>
+    <string name="history_trust">历史委托</string>
+    <string name="now_trust">当前委托</string>
+    <string name="undone">已撤销</string>
+    <string name="deal">已成交</string>
+    <string name="trading">交易中</string>
+    <string name="trust_detail">交易明细</string>
+    <string name="item_time">时间</string>
+    <string name="item_cost">成交价</string>
+    <string name="item_number">委托量</string>
+    <string name="item_charge">手续费</string>
+    <string name="all">全部</string>
+    <string name="all_buy">全部买入</string>
+    <string name="all_sell">全部卖出</string>
+    <string name="text_buy_in">买入</string>
+    <string name="text_buy">购买</string>
+    <string name="text_sale_out">卖出</string>
+    <string name="text_price">价格</string>
+    <string name="text_number">数量</string>
+    <string name="text_entrust">委托额</string>
+    <string name="text_login_first">请先登录</string>
+    <string name="text_dish">盘口</string>
+    <string name="text_click_login">暂无登录,点击登录</string>
+    <string name="text_entity">暂无数据&#8230;</string>
+    <string name="order_entity">目前还没有委托订单哦</string>
+    <string name="text_enter_price">请输入价格</string>
+    <string name="text_best_price">以最优价格买入</string>
+    <string name="text_best_sale">以最优价格卖出</string>
+    <string name="text_best_prices">最优价格</string>
+    <string name="text_can_used">可用</string>
+    <string name="text_can_sell">可卖</string>
+    <string name="text_sell">出售</string>
+    <string name="text_volume">成交量</string>
+    <string name="text_average_price">成交均价</string>
+    <string name="text_entrust_num">委托量</string>
+    <string name="text_total_deal">成交总额</string>
+    <string name="text_total_entrust">委托总额</string>
+    <string name="text_turnover">交易额</string>
+    <string name="text_24_change">24h量</string>
+    <string name="text_actual_deal">已成交</string>
+    <string name="market_price">市价</string>
+
+    <string name="text_buy_my">我要购买</string>
+    <string name="text_sale_my">我要出售</string>
+
+    <string name="text_buy_myt">我要买入</string>
+    <string name="text_sale_myt">我要卖出</string>
+
+    <string name="my_match">快速配对</string>
+    <string name="match_his">历史配对</string>
+    <string name="match_time">配对时间</string>
+    <string name="match_num">配对数量</string>
+    <string name="match_remain">剩余配对权</string>
+    <string name="match_proportion">配对比例</string>
+    <string name="today_match_num">今日可配对数量</string>
+    <string name="match_stop_time">每天上午9点开始配对，数量有限，配完即止！</string>
+    <string name="match_stop">每天9点开始配对</string>
+    <string name="find_new">发现新版本！</string>
+
+        <string-array name="text_type">
+        <item>限价</item>
+        <item>市价</item>
+    </string-array>
+
+    <!-- 撤销-->
+    <string name="text_repeal">撤销</string>
+    <string name="text_entrust_price">委托价格</string>
+    <string name="text_dialog_entrust_cancel_confirm">委托撤单确认</string>
+    <string name="dialog_entrust_confirm">您是否确认撤单?</string>
+    <string name="dialog_entrust_cancel_order">撤单</string>
+    <string name="dialog_entrust_buy_after_withdrawal">撤单后买入</string>
+    <string name="dialog_one_cancel">取消</string>
+    <string name="dialog_entrust_price">委托价格：</string>
+    <string name="dialog_entrust_all_price">委托总额：</string>
+    <string name="dialog_entrust_count">委托量：</string>
+    <string name="dialog_entrust_category">类别：</string>
+    <string name="dialog_sure">确定</string>
+    <string name="dialog_two_title_buy">委托买入</string>
+    <string name="dialog_two_title_sell">委托卖出</string>
+    <string name="dialog_two_notice">您是否确认以上操作？</string>
+    <string name="dialog_three_title">下单确认</string>
+    <string name="dialog_three_one">购买价格</string>
+    <string name="dialog_three_two">购买数量</string>
+    <string name="dialog_three_three">购买总额</string>
+    <string name="dialog_three_ones">出售价格</string>
+    <string name="dialog_three_twos">出售数量</string>
+    <string name="dialog_three_threes">出售总额</string>
+    <string name="dialog_three_msg">提醒：请确认价格再下单，下单后此交易的资金将托管锁定，请放心购买。</string>
+    <string name="dialog_order_cancle">如果您已向卖家付款，请千万不要取消交易。</string>
+    <string name="dialog_order_cancle_two">取消规则：买方当日累计取消3笔交易，系统将自动冻结该账户。</string>
+    <string name="dialog_order_cancle_three">我确认还没有付款给对方</string>
+    <!--<string name="dialog_order_cancle_four">取消规则：</string>-->
+    <string name="dialog_order_cancle_c">确认取消</string>
+    <string name="dialog_order_cancle_w">我再想想</string>
+    <string name="dialog_order_finish">付款成功后，点击下方按钮通知商家放币，恶意点击会被冻结账户</string>
+    <string name="dialog_button_finish">已完成付款</string>
+    <string name="payway_peo">收款人</string>
+    <string name="payway_bank">开户银行</string>
+    <string name="payway_bank_t">开户支行</string>
+    <string name="payway_num">银行卡号</string>
+    <string name="payway_order">订单编号</string>
+
+    <string name="please">请在</string>
+    <string name="payway_time">内向以下付款方式完成支付</string>
+    <string name="payway_money">付款金额：</string>
+
+    <!--K线图 收藏 -->
+    <string name="text_add_favorite">添加自选</string>
+    <string name="text_add_success">添加成功</string>
+    <string name="text_collected">已收藏</string>
+    <string name="text_cancel_success">取消收藏成功</string>
+    <string name="text_it_gao">高</string>
+    <string name="text_it_di">低</string>
+
+    <!--我的订单-->
+    <string name="order_done">已完成</string>
+
+    <!--订单详情-->
+    <string name="orderdetail">订单详情</string>
+    <string name="contact_with_me">跟我联系</string>
+    <string name="order_status">订单状态</string>
+    <string name="payment_countdown">付款倒计时</string>
+    <string name="order_info">订单信息</string>
+    <string name="transaction_object">交易对象</string>
+    <string name="order_num">订单编号</string>
+    <string name="transaction_price">交易价格</string>
+    <string name="transactions_num">交易数量</string>
+    <string name="trading_time">交易时间</string>
+    <string name="transaction_amount">交易金额</string>
+    <string name="payment_info">支付信息</string>
+    <string name="not_add_ali_user_tag">用户暂未添加支付宝账户</string>
+    <string name="not_add_wechat_user_tag">用户暂未添加微信账户</string>
+    <string name="not_add_union_user_tag">用户暂未添加银行卡账户</string>
+    <string name="order_release">订单放行</string>
+    <string name="payment_done">付款完成</string>
+    <string name="payment">付款</string>
+    <string name="cancel_order">取消订单</string>
+    <string name="payment_doubt_tag">对此订单有疑问？</string>
+    <string name="click_appeal_tag">点我申诉</string>
+    <string name="download_failed">下载失败</string>
+    <string name="enter_money_pwd_tag">请输入交易密码</string>
+    <string name="warm_prompt">温馨提示</string>
+    <string name="confirm_go_on_canel_order_tag">您将要取消该订单，是否继续？</string>
+    <string name="confirm_pay_tag">是否确认已经付款？</string>
+    <string name="confirm_go_on_appeal_tag">您将要申诉该订单，是否继续？</string>
+    <string name="continue_tag">继续</string>
+    <string name="qr_code">二维码</string>
+    <string name="long_click_save_image_tag">温馨提示：长按图片2秒可直接保存二维码</string>
+
+    <!--C2c-->
+    <string name="text_deal">成交量</string>
+    <string name="text_much_buy">需要购买多少?</string>
+    <string name="confirm_time">该订单需要在15分钟内完成支付</string>
+    <string name="text_much_sale">需要出售多少?</string>
+    <string name="text_to_login">去登录</string>
+    <string name="text_deal_num">交易次数 </string>
+    <string name="text_deal_num_two">累计交易次数 </string>
+    <string name="text_surplus_num">剩余数量 </string>
+    <string name="text_quota">限额</string>
+    <string name="text_app_rate">好评率</string>
+    <string name="text_deal_his">历史成交</string>
+    <string name="text_warn">交易提醒</string>
+    <string name="text_prompt_one">1.交易前请详细了解卖家的交易信息。</string>
+    <string name="text_prompt_two">2.请通过平台进行沟通约定，并保存好相关聊天记录。</string>
+    <string name="text_prompt_three">3.如遇到交易纠纷，请前往我的页面联系客服帮助解决问题。</string>
+    <string name="text_prompt_four">4.请勿进行恶意交易，如未付款点击付款等，一经确认您的账号将被冻结。</string>
+    <string name="min_min">* 您输入的金额小于最小交易金额</string>
+    <string name="max_max">* 您输入的金额大于最大交易金额</string>
+
+
+
+
+    <string name="ali">支付宝</string>
+    <string name="weichat">微信</string>
+    <string name="unionpay">银行卡</string>
+
+    <!--发布购买广告-->
+    <string name="text_ad_change">修改广告</string>
+
+    <string name="base_info">基本信息</string>
+    <string name="price_info">价格信息</string>
+    <string name="message_info">留言信息</string>
+
+    <string name="text_change">修改</string>
+    <string name="text_title">发布购买广告</string>
+    <string name="text_titles">发布出售广告</string>
+    <string name="text_select">请选择</string>
+    <string name="text_coin_type">选择币种</string>
+    <string name="text_place">所在地</string>
+    <string name="text_currency_type">货币类型</string>
+    <string name="text_auto_select">根据国家自动选择</string>
+    <string name="text_price_type">价格类型</string>
+    <string name="text_price_fixed">固定价格</string>
+    <string name="text_price_market">实时价格</string>
+    <string name="text_price_overflow">溢价</string>
+    <string name="text_price_fixed_tag">固定价格下，无需输入溢价</string>
+    <string name="text_market_overflow_ratio">根据市场价的溢出比例</string>
+    <string name="text_enter_trade_price">请输入交易价格</string>
+    <string name="text_over_price">请输入溢价</string>
+    <string name="text_auto_calculate_price">根据市场价和溢价自动计算</string>
+    <string name="text_min">最小量</string>
+    <string name="text_min_msg">每一笔交易的最小限额</string>
+    <string name="text_max">最大量</string>
+    <string name="text_max_msg">每一笔交易的最大限额</string>
+    <string name="text_buy_num">买入数量</string>
+    <string name="text_sell_num">卖出数量</string>
+    <string name="text_trade_num">交易数量</string>
+    <string name="text_receive_methods">收款方式</string>
+    <string name="text_pay_time">付款期限</string>
+    <string name="text_select_pay_time">请选择付款期限</string>
+    <string name="text_minute">分钟</string>
+    <string name="text_money_pwd">资金密码</string>
+    <string name="text_money_new">新资金密码</string>
+    <string name="text_enter_money_pwd">请输入资金密码</string>
+    <string name="text_auto_reply">是否自动回复</string>
+    <string name="text_yes">是</string>
+    <string name="text_no">否</string>
+    <!--<string name="text_auto_reply_content">自动回复内容</string>-->
+    <string name="text_auto_reply_content">回复内容</string>
+    <string name="text_enter_auto_reply_content">请输入自动回复内容</string>
+    <!--<string name="text_ad_message">广告留言</string>-->
+    <string name="text_ad_message">留言内容</string>
+    <string name="text_enter_ad_message">请输入广告留言</string>
+    <string name="text_pub">发布</string>
+    <string name="create">创建</string>
+    <string name="text_pub_ads">发布广告</string>
+    <string name="text_ad_entity">广告信息填写不完整！</string>
+    <string name="min_limit_tag">最小量不得低于</string>
+    <string name="max_limit_tag">最大量不得高于</string>
+    <string name="min_max_tag">最小量不得高于最大量</string>
+    <string name="str_prompt_coin_kind">请选择币种</string>
+    <string name="str_prompt_country">请选择所在地</string>
+    <string name="str_prompt_trade_count">请输入交易数量</string>
+    <string name="str_prompt_min_count">请输入最小量</string>
+    <string name="str_prompt_max_count">请输入最大量</string>
+    <string name="str_prompt_recieve_kind">请选择收款方式</string>
+    <string name="str_prompt_pay_time">请输入付款期限</string>
+
+    <!--安全中心-->
+    <string name="gestures_pwd">手势密码</string>
+    <string name="gestures_error_tag">至少连接四个点，请重新输入</string>
+    <string name="gestures_pwd_confirm">请再次绘制手势密码</string>
+    <string name="set_up_success">设置成功</string>
+    <string name="cancel_success">取消成功</string>
+    <string name="pwd_error">密码错误</string>
+    <string name="google_authentication_tag">绑定谷歌认证器</string>
+    <string name="google_authentication_modify">修改谷歌认证器</string>
+
+    <string name="safety_verification">安全验证</string>
+
+    <string name="google_authentication_content">请妥善备份密钥以防遗失</string>
+    <string name="google_code">谷歌验证码</string>
+    <string name="google_close">是否关闭谷歌验证</string>
+
+    <string name="unbind">解绑谷歌验证器</string>
+    <string name="copy">复制</string>
+    <string name="google_bottom_tag">保存二维码到手机或复制密钥到剪贴板可能会有安全风险，请妥善保存</string>
+    <string name="google_code_tag">谷歌验证器</string>
+    <string name="next_step">下一步</string>
+    <string name="google_code_apply">如果您的谷歌验证器丢失\n请前往我的页面联系客服进行处理</string>
+
+    <!--设置-->
+    <string name="switch_account">切换账号</string>
+    <string name="language">语言设置</string>
+    <string name="feed_back">意见反馈</string>
+    <string name="website">官方网站</string>
+    <string name="about_us">关于我们</string>
+    <string name="simplified_chinese">简体中文</string>
+    <string name="japanese">日语</string>
+    <string name="webSite">网址</string>
+    <string name="service_tel">客服电话</string>
+    <string name="not_need_update_tag">暂无最新版本，无需更新</string>
+    <string name="confirm_update">是否开始更新</string>
+    <string name="update_address_error_tag">下载地址不存在!!</string>
+    <string name="downloading_tag">正在下载</string>
+    <string name="downloading_crazy_tag">玩命下载中...</string>
+    <string name="add_user">添加新账号登录</string>
+
+    <!--意见反馈-->
+    <string name="feed_message">您的意见对我们来说特别重要！</string>
+    <string name="feed_mes">感谢您对平台的理解与支持，我们将会第一时间解决您反馈的问题！</string>
+    <string name="feed_et_number_email">手机号/邮箱（非必填）</string>
+    <string name="feed_et_number">请预留手机或邮箱</string>
+
+    <!--钱包管理-->
+    <string name="wallet">钱包管理</string>
+    <string name="detail">明细</string>
+    <string name="search_assets">搜索资产</string>
+    <string name="hide_coin">隐藏为0的币种</string>
+    <string name="not_raise_money_tag">不可充币提币</string>
+    <string name="freeze_coin">冻结</string>
+    <string name="mention_money">提币</string>
+    <string name="charge_money">充币</string>
+    <string name="match_money">配对</string>
+    <string name="no_address_tag">暂无充币地址，请到平台添加</string>
+    <string name="no_extract_address_tag">暂无提币地址，请到平台添加</string>
+    <string name="type">类型</string>
+    <string name="amount">数量</string>
+    <string name="poundage">手续费</string>
+    <string name="no_history_record_tag">暂无交易历史记录</string>
+    <string name="match_amount">配对数量</string>
+    <string name="max_match_amount">最大配对数量：</string>
+    <string name="mention_money_address">提币地址</string>
+    <string name="top_up">充值</string>
+    <string name="withdrawal">提现</string>
+    <string name="transfer">转账</string>
+    <string name="coin_currency_trade">币币交易</string>
+    <string name="fiat_money_buy">法币买入</string>
+
+    <string name="fiat_money_sell">法币卖出</string>
+    <string name="activities_reward">活动奖励</string>
+    <string name="promotion_rewards">推广奖励</string>
+    <string name="share_out_bonus">分红</string>
+    <string name="vote">投票</string>
+    <string name="artificial_top_up">人工充值</string>
+
+    <string name="fiat_transaction">法币交易</string>
+    <string name="pay_way">多种支付方式</string>
+    <!--充币 提币-->
+    <string name="save_to_album">保存至相册</string>
+    <string name="save_code">保存二维码</string>
+    <string name="copy_address">复制地址</string>
+    <string name="risk_warning">风险提示：请勿向上述地址充值任何非</string>
+
+    <string name="currency_address">充币地址</string>
+    <string name="Remarks_address">备注或地址标签（请务必填写并仔细核对）</string>
+
+    <string name="assets">资产</string>
+    <string name="no_address">暂无充币地址</string>
+    <string name="enter_address_tag">请输入或选择地址</string>
+    <string name="mention_account">提币数量</string>
+    <string name="fee_limit_tag">手续费应该在</string>
+    <string name="min_coin_num_tag">最小提币数量</string>
+    <string name="select">选择</string>
+    <string name="str_address_prompt">无当前币种信息</string>
+
+    <!--我的广告-->
+    <string name="grounding">上架中</string>
+    <string name="shelved">已下架</string>
+    <string name="limit">限额</string>
+    <string name="trading_limit">交易限额</string>
+    <string name="total">总额</string>
+    <string name="up_shelves">上架</string>
+    <string name="shelves">下架</string>
+
+
+    <!--我的信息-->
+    <string name="account_settings">账号设置</string>
+    <string name="photo">个人头像</string>
+    <string name="nikename">用户名</string>
+    <string name="modifyname">修改用户名</string>
+    <string name="binding_phone">绑定手机号</string>
+    <string name="binding_email">绑定邮箱</string>
+    <string name="binding_account">收款账户</string>
+    <string name="login_password">登录密码</string>
+    <string name="id_credit">身份认证</string>
+    <string name="bound">已绑定</string>
+    <string name="unbound">未绑定</string>
+    <string name="had_set">已设置</string>
+    <string name="not_set">未设置</string>
+    <string name="to_edit">去修改</string>
+    <string name="verification">已认证</string>
+    <string name="unverified">未认证</string>
+    <string name="creditting">审核中</string>
+    <string name="creditfail">审核失败</string>
+    <string name="unverified_notice">后台将在1-3个工作日内审核完成，请耐心等待。。。</string>
+    <string name="creditfail_notice">身份认证失败，请重新提交！失败原因：</string>
+    <string name="certifySuccessful">恭喜你，审核通过！可以安心交易了</string>
+    <string name="ali_account">支付宝账号</string>
+    <string name="weichat_account">微信账号</string>
+    <string name="unionpay_account">银行卡号</string>
+    <string name="unionpay_accountTip">请输入银行卡号</string>
+    <string name="unionpay_accountTip2">请再次输入银行卡号</string>
+    <string name="qr_code_for_receivables">收款二维码</string>
+    <string name="alipay_binding">支付宝绑定</string>
+    <string name="bank_card_binding">银行卡绑定</string>
+    <string name="bank">开户银行</string>
+    <string name="account_opening_branch">开户支行</string>
+    <string name="account_opening_branchTip">请输入开户支行</string>
+    <string name="confirm_cardnumber">确认卡号</string>
+    <string name="diff_cardnumber">银行卡号不一致</string>
+    <string name="wechat_binding">微信绑定</string>
+    <string name="binding">绑定</string>
+    <!--登录-->
+    <string name="login">登录</string>
+    <string name="login_now">立即登录</string>
+    <string name="update">立即更新</string>
+    <string name="canclelater">暂不更新</string>
+    <string name="regist">注册</string>
+    <string name="regist_now">立即注册</string>
+    <string name="username">手机号/邮箱</string>
+    <string name="password">密码</string>
+    <string name="forgot_password">忘记密码？</string>
+
+    <!--注册-->
+    <string name="sign_up">注册</string>
+    <string name="email_sign_up">邮箱注册</string>
+    <string name="phone_sign_up">手机号注册</string>
+    <string name="phoneoremail">手机号码或者邮箱</string>
+    <string name="phone_number">手机号码</string>
+    <string name="send_code">获取验证码</string>
+    <string name="re_send">重新获取</string>
+    <string name="phone_code">短信验证码</string>
+    <string name="email_code">邮箱验证码</string>
+    <string name="repeat_password">确认密码</string>
+    <!--<string name="repeat_password">重复密码</string>-->
+    <string name="phone_not_correct">手机号码不正确</string>
+    <string name="email_not_correct">邮箱不正确</string>
+    <string name="pwd_diff">两次密码不一致！</string>
+    <string name="code">请输入短信验证码</string>
+    <string name="promotion_code">邀请码（选填）</string>
+
+    <string name="read_agree">我已阅读并同意 Cayman</string>
+    <string name="user_agree">《用户使用协议》</string>
+    <string name="existing_account">已有账号？</string>
+    <string name="goto_login">去登录</string>
+
+
+
+
+    <!--忘记密码-->
+    <string name="email">邮箱</string>
+    <string name="email_retrieve">邮箱验证</string>
+    <string name="user_name">用户名</string>
+    <string name="phone_retrieve">手机号验证</string>
+    <string name="email_diff">邮箱格式不正确</string>
+
+    <!--充币-->
+    <string name="copy_success">地址已复制到剪贴板!</string>
+    <string name="waiting_currency">等待放币</string>
+
+
+
+
+
+    <string-array name="home_two_top_tab">
+        <item>USDT</item>
+        <item>BTC</item>
+        <item>ETH</item>
+        <item>自选</item>
+    </string-array>
+
+
+    <string-array name="k_line_tab">
+        <item>分时</item>
+        <item>1分钟</item>
+        <item>5分钟</item>
+        <item>1小时</item>
+        <item>1天</item>
+        <item>30分钟</item>
+        <item>1周</item>
+        <item>1月</item>
+    </string-array>
+
+    <string-array name="order_status">
+        <item>未付款</item>
+        <item>已付款</item>
+        <item>已完成</item>
+        <item>已取消</item>
+        <item>申诉中</item>
+    </string-array>
+
+    <string-array name="appeal_status">
+        <item>已付款，未收到币</item>
+        <item>已付币，未收到款</item>
+        <item>未付款，未放币</item>
+    </string-array>
+
+    <string-array name="bank_name">
+        <item>中国工商银行</item>
+        <item>中国农业银行</item>
+        <item>中国建设银行</item>
+        <item>中国邮政储蓄银行</item>
+        <item>招商银行</item>
+        <item>中国银行</item>
+        <item>交通银行</item>
+        <item>中信银行</item>
+        <item>华夏银行</item>
+        <item>中国民生银行</item>
+        <item>广发银行</item>
+        <item>平安银行</item>
+        <item>兴业银行</item>
+        <item>上海浦东发展银行</item>
+        <item>浙商银行</item>
+        <item>渤海银行</item>
+        <item>恒丰银行</item>
+        <item>花旗银行</item>
+        <item>渣打银行</item>
+        <item>汇丰银行</item>
+        <item>中国光大银行</item>
+        <item>上海银行</item>
+        <item>江苏银行</item>
+        <item>重庆银行</item>
+        <item>天津银行</item>
+        <item>厦门银行</item>
+        <item>城市商业银行</item>
+        <item>农村商业银行</item>
+        <item>徽商银行</item>
+    </string-array>
+
+    <string-array name="timeLimit">
+        <item>15 分钟</item>
+        <item>30 分钟</item>
+        <item>45 分钟</item>
+        <item>60 分钟</item>
+    </string-array>
+
+    <string name="bid">买盘</string>
+    <string name="number">数量</string>
+    <string name="price">价格</string>
+    <string name="selling">卖盘</string>
+    <string name="time">时间</string>
+    <string name="direction">方向</string>
+
+    <string-array name="k_line_depth">
+        <item name="depth">深度</item>
+        <item name="font_kline_volume">成交</item>
+    </string-array>
+
+
+    <!--挖宝模块-->
+
+    <string-array name="home_five_top_tab">
+        <item>挖宝中</item>
+        <item>预热中</item>
+        <item>我的挖宝</item>
+    </string-array>
+    <string name="digging">挖宝中</string>
+    <string name="preheating">预热中</string>
+    <string name="my_digging">我的挖宝</string>
+
+    <!--首页-->
+    <string name="current_computing_power">当前算力</string>
+    <string name="computing_power">算力</string>
+    <string name="power">算力</string>
+    <string name="look_over">查看</string>
+    <string name="historical_activity">历史活动</string>
+    <string name="historical_treasure">历史挖宝</string>
+    <!--提升算力-->
+    <string name="increase_power">提升算力</string>
+    <string name="calculation_of_power">算力记录</string>
+    <string name="rembemer_get_power">每小时就会产生算力，点击算力球收取！</string>
+    <string name="power_reward">完成对应任务可获得算力值奖励</string>
+    <string name="call">打Call</string>
+    <string name="real_name">实名注册 +5算力/人</string>
+    <string name="coin_currency">进行币币交易可增加算力</string>
+    <string name="calling">为产品打Call可增加算力</string>
+    <string name="add_power">+5算力值</string>
+    <string name="growing_up">正在成长中</string>
+
+
+    <string name="recommend">推荐</string>
+    <string name="reward">奖励</string>
+    <string name="collect">收集</string>
+    <!--活动列表-->
+    <string name="completion">完成度</string>
+    <string name="number_participants">参与人次</string>
+    <string name="heat">热度</string>
+    <string name="start_digging">开始挖宝</string>
+    <string name="digging_treasure">正在挖宝</string>
+    <string name="over">已结束</string>
+    <string name="waiting_collection">等待领取</string>
+    <string name="waiting_results">等待结果</string>
+
+    <string name="waiting_announcement">等待公布</string>
+    <string name="treasure_end">挖宝结束</string>
+
+    <string name="sun_drying">晒单</string>
+    <string name="selected">已入选</string>
+    <string name="over_one">已结束</string>
+    <!--公告-->
+    <string name="all_announcements">全部公告</string>
+    <string name="date">日期</string>
+
+
+    <!--挖宝fragment-->
+
+    <string name="end_after">后结束</string>
+    <string name="after_starting">后开始</string>
+    <string name="no_digging">暂无挖宝活动哦，赶紧去为商品打Call吧！</string>
+    <string name="no_mydigging">当前没有正在进行中的挖宝哦！</string>
+    <string name="no_preheat">暂无预热商品哦，赶紧去挖宝吧！</string>
+    <string name="call_yet">您已经给该商品打Call了，赶紧邀请好友一起为您喜欢的商品打Call吧！</string>
+    <string name="receive_trea">恭喜，您有待领取的挖宝奖品，赶紧去我的挖宝看看吧。</string>
+    <string name="please_fill_out">请填写领取表单进行领取，如有疑问请联系客服！</string>
+    <string name="must_real">为了确保领奖人与中奖账户一致，请先进行实名认证后才能进行操作！</string>
+    <string name="before_real">请先完成实名认证再进行此操作！</string>
+    <string name="not_funding">您还未设置资金密码！</string>
+
+
+
+
+    <!--挖宝详情-->
+    <string name="details">详情</string>
+    <string name="participating">参与玩家</string>
+    <string name="congratulations">恭喜</string>
+    <string name="success_digging">挖宝成功</string>
+    <string name="completion_one">完成量</string>
+
+    <!--历史记录-->
+    <string name="call_historu">打Call记录</string>
+    <string name="invitation_code">邀请码</string>
+    <string name="invitation_cod">邀请码：</string>
+    <string name="share">分享</string>
+
+    <string name="call_successfully">打Call成功</string>
+    <string name="prompt">提示</string>
+    <string name="fill_form">填写表单</string>
+    <string name="dug_it">恭喜您，挖到了</string>
+
+    <string name="no_realname">您还没有实名</string>
+    <string name="set_least_one">请设置至少一种广告中支持的支付方式</string>
+
+    <string name="go_to_certification">去认证</string>
+    <string name="go_to_set">去设置</string>
+
+    <string name="entered_trea">该商品已经进入挖宝了,</string>
+    <string name="go_digtrea">赶紧去挖宝看看吧！</string>
+    <string name="got_it">知道了</string>
+    <string name="not_need">该商品无需打Call，</string>
+    <string name="directly_to">结束后直接进入挖宝！</string>
+    <string name="event_noyet">活动暂未开始，</string>
+
+    <string name="after_call">后开始打Call！</string>
+    <string name="start_trea">后开始挖宝！</string>
+    <string name="promotion">提升</string>
+    <string name="not_enough">您的账户算力不足，赶紧提升算力吧！</string>
+    <string name="gcx_notenough">您的账户GCX不足，请充值</string>
+    <string name="increase_pow">增加算力可提高挖宝几率哦！</string>
+    <string name="force_value">算力值</string>
+    <string name="call_for">为TA打Call</string>
+    <string name="trea_consumption">本次挖宝消耗</string>
+    <string name="call_return_gcx">喜欢该商品就为TA打Call吧，消耗的GCX在活动结束后返还账户！</string>
+
+    <!--修改用户名-->
+    <string name="not_editable">不可修改</string>
+    <string name="modification">确定修改</string>
+    <string name="only_once">用户名只能修改一次，确认将用户名修改成“</string>
+    <string name="only_once_wen">”吗？</string>
+    <string name="username_notsame">用户名不能相同</string>
+    <string name="username_notthree">用户名长度不能小于3位</string>
+    <string name="username_notlong">用户名长度不能大于16位</string>
+    <string name="username_notempty">用户名不能为空</string>
+    <string name="enter_usename">请输入用户名</string>
+    <string name="three_six">用户名只能修改一次，长度为3-16位</string>
+
+
+
+
+
+
+
+
+
+
+
+
+    <string name="string_origin_location" />
+    <string name="string_origin_direction" />
+    <string name="string_origin_spe" />
+
+
+
+</resources>

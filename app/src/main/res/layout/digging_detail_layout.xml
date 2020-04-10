@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <!--标题-->
+    <include layout="@layout/view_head" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.youth.banner.Banner
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:background="@color/main_head_bg"
+                app:delay_time="3000"
+                app:indicator_drawable_selected="@drawable/shape_bg_black_normal"
+                app:indicator_drawable_unselected="@drawable/shape_bg_white_normal"
+                app:indicator_height="2dp"
+                app:indicator_width="15dp"
+                app:is_auto_play="true"
+                app:scroll_time="800"
+                app:title_background="@color/transparent"
+                app:title_textcolor="@color/main_font_grey" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/comm_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/tvLimit"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:minHeight="24dp"
+                    android:padding="10dp"
+                    android:text="100元电话充值卡"
+                    android:textColor="#17304d"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvLimit"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/tvnums"
+                        android:layout_weight="1"
+                        android:paddingRight="10dp"
+                        android:text="参与人数：100"
+                        android:textColor="#444"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tvLimit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="30dp"
+                        android:layout_toRightOf="@+id/tvlint"
+                        android:paddingRight="10dp"
+                        android:text="难度值：80/100"
+                        android:textColor="#444"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <View style="@style/line_bg_fens"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/line_peo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:padding="10dp"
+                        android:src="@mipmap/receive_img" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/text_luck"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+                            android:text="恭喜YY88挖宝成功"
+                            android:textColor="#17304d"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="参与挖宝惊喜不断赶快加入吧"
+                            android:textColor="#838f9d"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <View style="@style/line_bg_fens"></View>
+
+                <LinearLayout
+                    style="@style/layout_my_info"
+                    android:layout_marginLeft="0dp"
+                    android:paddingLeft="0dp">
+
+                    <View
+                        android:layout_width="3dp"
+                        android:layout_height="20dp"
+                        android:background="#01b37d" />
+
+                    <TextView
+                        style="@style/textview_tag_top"
+                        android:layout_marginLeft="16dp"
+                        android:minWidth="80dp"
+                        android:text="@string/participating" />
+
+                </LinearLayout>
+
+                <android.support.v4.widget.SwipeRefreshLayout
+                    android:id="@+id/refreshLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/trea_detail_recy"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    </android.support.v7.widget.RecyclerView>
+
+                </android.support.v4.widget.SwipeRefreshLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@mipmap/yellow_noshape"
+        android:gravity="center"
+        android:text="@string/start_digging"
+        android:textColor="@color/white"
+        android:textSize="18dp" />
+
+</LinearLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/update_shape_back"
+    android:layout_width="200dp"
+    android:layout_height="200dp">
+
+    <ImageView
+        android:id="@+id/image_title"
+        android:layout_gravity="center"
+        android:background="@mipmap/empty_trea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/name_title"
+        android:textColor="#42546a"
+        android:textSize="22dp"
+        android:layout_gravity="center"
+        android:text="签到成功"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_suanli"
+        android:layout_marginTop="20dp"
+        android:textColor="#ff9800"
+        android:textSize="18dp"
+        android:layout_gravity="center"
+        android:text="算力+1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+</LinearLayout>

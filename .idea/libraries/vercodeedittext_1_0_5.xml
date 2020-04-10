@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="vercodeedittext-1.0.5">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.justkiddingbaby/vercodeedittext/1.0.5/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.justkiddingbaby/vercodeedittext/1.0.5/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.justkiddingbaby/vercodeedittext/1.0.5/af9de35b17f3b936d7e358c0171252ba1773575a/vercodeedittext-1.0.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

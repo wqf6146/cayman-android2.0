@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg"
+    android:orientation="vertical">
+
+    <!--标题-->
+    <include layout="@layout/view_head" />
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="16dp"
+        android:paddingTop="32dp">
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/ic_launcher" />
+
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/app_name"
+            android:textColor="@color/sec_font_black"
+            android:textSize="@dimen/font_lager" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="3dp"
+        android:minHeight="50dp"
+        android:paddingBottom="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="关于我们的一些描述。关于我们的一些描述关于我们的一些描述关于我们的一些描述关于我们的一些描述关于我们的一些描述关于我们的一些描述"
+        android:textColor="@color/colorPrimary"
+        android:visibility="gone" />
+    <LinearLayout
+        android:id="@+id/llFeed"
+        style="@style/layout_my_info"
+        android:background="@drawable/ripple_white">
+
+        <TextView
+            style="@style/edittext_normal"
+            android:layout_weight="1"
+            android:text="@string/feed_back" />
+
+        <ImageView style="@style/icon_more" />
+
+    </LinearLayout>
+    <View style="@style/line_bg_grey" />
+    <!--版本更新-->
+    <LinearLayout
+        android:id="@+id/llVersion"
+        style="@style/layout_my_info">
+
+        <TextView
+            android:layout_marginLeft="0dp"
+            style="@style/textview_my_item"
+            android:text="@string/my_version" />
+
+        <TextView
+            android:id="@+id/tvVersionNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:text="V1.0.1"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/font_small" />
+
+        <ImageView style="@style/icon_more" />
+    </LinearLayout>
+
+
+
+
+    <TextView
+        android:id="@+id/tvPhone"
+        style="@style/layout_my_info"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:text="客服电话: 400000000"
+        android:visibility="gone" />
+
+    <View style="@style/line_bg_grey" />
+
+
+    <LinearLayout
+        style="@style/layout_my_info"
+        android:background="@drawable/ripple_white">
+
+        <TextView
+            style="@style/edittext_normal"
+            android:layout_weight="1"
+            android:text="@string/website" />
+
+
+        <TextView
+            android:id="@+id/tvWeb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:text="https:www.caymanex.pro"
+            android:textIsSelectable="true"
+            android:textColor="#597ac3"
+            android:textSize="@dimen/font_small" />
+        <ImageView style="@style/icon_more" />
+
+    </LinearLayout>
+</LinearLayout>

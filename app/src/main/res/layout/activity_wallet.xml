@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.spark.szhb_master.activity.wallet.WalletActivity">
+
+    <!--标题-->
+    <include layout="@layout/view_head" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/llHead"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/ivBg"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:background="@mipmap/bg_wallet"
+                android:scaleType="fitXY" />
+
+            <LinearLayout
+                android:layout_marginBottom="20dp"
+                android:id="@+id/llAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="115dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="20dp"
+                android:background="@mipmap/wallet_img"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingTop="20dp"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_marginRight="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/balance"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_normal" />
+
+                    <ImageView
+                        android:id="@+id/ivSee"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@mipmap/icon_eye_open" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="4dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <TextView
+                        android:id="@+id/tvAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="6dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="0.000000"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_marginTop="7dp"
+                        android:id="@+id/tvCnyAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="≈0.00"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_lager" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="135dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@mipmap/bg_my_blue"
+                android:orientation="vertical"
+                android:padding="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/balance"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_normal" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@mipmap/icon_eye_open" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="0.000000"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_30"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="≈0.00"
+                    android:textColor="@color/tab_font"
+                    android:textSize="@dimen/font_xlager" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+        <View
+            style="@style/line_bg_fens"></View>
+
+
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/white"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/ivSearch"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:scaleType="center"
+                android:src="@mipmap/icon_search_grey" />
+
+            <EditText
+                android:layout_marginLeft="10dp"
+                android:drawableRight="@mipmap/new_search"
+                android:id="@+id/evSearch"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:background="@drawable/ffive_shape"
+                android:hint="@string/search_assets"
+                android:singleLine="true"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/sec_font_grey"
+                android:textColorHint="@color/third_font_grey"
+                android:textSize="@dimen/font_small" />
+
+            <CheckBox
+                android:id="@+id/cbHide"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="110dp"
+                android:checked="false" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="@string/hide_coin"
+                android:textColor="@color/third_font_grey"
+                android:textSize="@dimen/font_small" />
+
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvWallet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:overScrollMode="never" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/llHead"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+    </LinearLayout>
+
+</RelativeLayout>

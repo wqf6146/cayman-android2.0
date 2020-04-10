@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.spark.szhb_master.activity.bind_phone.BindPhoneActivity">
+
+    <!--标题-->
+    <include layout="@layout/view_head" />
+
+    <TextView
+        android:id="@+id/tvPhone"
+        style="@style/layout_my_info"
+        android:layout_height="50dp"
+        android:background="@color/main_bg"
+        android:textColor="@color/sec_font_grey"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/llbind"
+        style="@style/layout_my_item"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            style="@style/textview_tag"
+            android:minWidth="90dp"
+            android:text="@string/nationality" />
+
+        <TextView
+            android:id="@+id/tvCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:drawablePadding="6dp"
+            android:drawableRight="@mipmap/icon_drop"
+            android:gravity="center"
+            android:text="@string/china"
+            android:textColor="@color/sec_font_black"
+            android:textSize="@dimen/font_normal" />
+    </LinearLayout>
+    <View style="@style/line_bg_fens" />
+
+    <LinearLayout
+        android:id="@+id/llPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout style="@style/layout_my_info">
+
+            <TextView
+                android:id="@+id/tvAreaCode"
+                style="@style/textview_tag"
+                android:minWidth="90dp"
+                android:text="+86 >" />
+
+            <EditText
+                android:id="@+id/etPhone"
+                style="@style/edittext_normal"
+                android:hint="@string/phone_number"
+                android:inputType="phone" />
+
+        </LinearLayout>
+
+        <View style="@style/line_bg_fens" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llChgPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout style="@style/layout_my_info">
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tvChgAreaCode"
+                style="@style/textview_tag"
+                android:minWidth="90dp"
+                android:text="+86 >" />
+
+            <TextView
+                android:id="@+id/tvCountry_two"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:drawablePadding="6dp"
+                android:drawableRight="@mipmap/icon_drop"
+                android:gravity="center"
+                android:text="@string/china"
+                android:textColor="@color/sec_font_black"
+                android:textSize="@dimen/font_normal" />
+
+            <EditText
+                android:layout_marginLeft="10dp"
+                android:id="@+id/etChgPhone"
+                style="@style/edittext_normal"
+                android:hint="@string/new_phone_num"
+                android:inputType="phone" />
+
+        </LinearLayout>
+
+        <View style="@style/line_bg_fens" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/layout_my_info">
+
+        <TextView
+            style="@style/textview_tag"
+            android:minWidth="90dp"
+            android:text="@string/phone_code" />
+
+        <EditText
+            android:id="@+id/etCode"
+            style="@style/edittext_normal"
+            android:layout_weight="1"
+            android:hint="@string/code"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/tvGetCode"
+            style="@style/textveiw_msg_code"
+            android:text="@string/send_code" />
+    </LinearLayout>
+
+    <View style="@style/line_bg_fens" />
+
+
+
+    <LinearLayout style="@style/layout_my_info">
+
+        <TextView
+            style="@style/textview_tag"
+            android:minWidth="90dp"
+            android:text="@string/login_password" />
+
+        <EditText
+            android:id="@+id/etPwd"
+            style="@style/edittext_normal"
+            android:hint="@string/login_password"
+            android:inputType="textPassword" />
+    </LinearLayout>
+
+    <View style="@style/line_bg_grey" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tvBind"
+        style="@style/btn_option_normal"
+        android:layout_height="50dp"
+        android:text="@string/start_bind"
+        android:textColor="@color/white" />
+
+
+</LinearLayout>

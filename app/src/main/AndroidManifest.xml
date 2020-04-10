@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.spark.szhb_master">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+
+    <application
+        android:name="com.spark.szhb_master.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_cm_logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:roundIcon="@mipmap/ic_cm_logo"
+        android:theme="@style/AppTheme">
+        <!--android:roundIcon="@mipmap/icon_application_r"-->
+        <!--android:authorities="com.spark.szhb_master.fileprovider"-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.spark.szhb_master.fileprovidercay"
+            android:enabled="true"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!--activity-->
+        <activity
+            android:name="com.spark.szhb_master.activity.common.StartActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.spark.szhb_master.activity.kline.KlineActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.spark.szhb_master.activity.main.MainActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask" />
+        <activity android:name="com.spark.szhb_master.activity.login.LoginActivity" />
+        <activity android:name="com.spark.szhb_master.activity.signup.SignUpActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait">
+
+
+        </activity>
+        <activity android:name="com.spark.szhb_master.activity.LeadActivity" />
+        <activity android:name="com.spark.szhb_master.activity.forgot_pwd.ForgotPwdActivity" />
+        <activity android:name="com.spark.szhb_master.activity.myinfo.MyInfoActivity" />
+        <activity android:name="com.spark.szhb_master.activity.wallet.WalletActivity" />
+        <activity android:name="com.spark.szhb_master.activity.wallet.WalletDetailActivity" />
+        <activity android:name="com.spark.szhb_master.activity.order.MyOrderActivity" />
+        <activity android:name="com.spark.szhb_master.activity.ads.AdsActivity" />
+        <activity android:name="com.spark.szhb_master.activity.message.MessageActivity" />
+        <activity android:name="com.spark.szhb_master.activity.credit.CreditActivity" />
+        <activity android:name="com.spark.szhb_master.activity.safe.SafeActivity" />
+        <activity android:name="com.spark.szhb_master.activity.setting.SettingActivity" />
+        <activity android:name="com.spark.szhb_master.activity.switch_user.SwitchUserActivity" />
+        <activity android:name="com.spark.szhb_master.activity.feed.FeedbackActivity" />
+        <activity android:name="com.spark.szhb_master.activity.aboutus.AboutUsActivity" />
+        <activity android:name="com.spark.szhb_master.activity.language.LanguageActivity" />
+        <activity android:name="com.spark.szhb_master.activity.releaseAd.PubAdsActivity" />
+        <activity android:name="com.spark.szhb_master.activity.country.CountryActivity" />
+        <activity android:name="com.spark.szhb_master.activity.account_pwd.AccountPwdActivity" />
+        <activity android:name="com.spark.szhb_master.activity.account_pwd.ResetAccountPwdActivity" />
+        <activity android:name="com.spark.szhb_master.activity.buy_or_sell.C2CBuyOrSellActivity" />
+        <activity android:name="com.spark.szhb_master.activity.wallet_coin.RechargeActivity" />
+        <activity android:name="com.spark.szhb_master.activity.wallet_coin.ExtractActivity" />
+        <activity android:name="com.spark.szhb_master.activity.wallet_coin.AddressActivity" />
+        <activity android:name="com.spark.szhb_master.activity.bind_phone.BindPhoneActivity" />
+        <activity android:name="com.spark.szhb_master.activity.bind_email.BindEmailActivity" />
+        <activity android:name="com.spark.szhb_master.activity.bind_email.EmailActivity" />
+        <activity android:name="com.spark.szhb_master.activity.edit_login_pwd.EditLoginPwdActivity" />
+        <activity android:name="com.spark.szhb_master.activity.bind_phone.PhoneViewActivity" />
+        <activity android:name="com.spark.szhb_master.activity.bind_phone.ChangeLeadActivity" />
+        <activity android:name="com.spark.szhb_master.activity.message.WebViewActivity" />
+        <activity android:name="com.spark.szhb_master.activity.lock.LockActivity" />
+        <activity android:name="com.spark.szhb_master.activity.safe.SetLockActivity" />
+        <activity android:name="com.spark.szhb_master.activity.order.OrderDetailActivity" />
+        <activity android:name="com.spark.szhb_master.activity.order.OrderPayWayActivity" />
+        <activity android:name="com.spark.szhb_master.activity.appeal.AppealActivity" />
+        <activity android:name="com.spark.szhb_master.activity.chat.ChatListActivity" />
+        <activity android:name="com.spark.szhb_master.activity.chat.ChatActivity" />
+        <activity android:name="com.spark.szhb_master.activity.entrust.CurrentTrustActivity" />
+        <activity android:name="com.spark.szhb_master.activity.entrust.AllTrustActivity" />
+        <activity android:name="com.spark.szhb_master.activity.entrust.NowTrustActivity" />
+        <activity android:name="com.spark.szhb_master.activity.entrust.TrustDetailActivity" />
+        <activity android:name="com.spark.szhb_master.activity.bind_account.BindAccountActivity" />
+        <activity android:name="com.spark.szhb_master.activity.bind_account.BindAliActivity" />
+        <activity android:name="com.spark.szhb_master.activity.bind_account.BindBankActivity" />
+        <activity android:name="com.spark.szhb_master.activity.my_promotion.PromotionActivity" />
+        <activity android:name="com.spark.szhb_master.activity.safe.GoogleAuthorActivity" />
+        <activity android:name="com.spark.szhb_master.activity.safe.GoogleCodeActivity" />
+        <activity android:name="com.spark.szhb_master.activity.safe.GoogleUnbindActivity" />
+        <activity android:name="com.spark.szhb_master.activity.my_match.MatchActivity" />
+        <activity android:name="com.spark.szhb_master.activity.my_match.MatchHistory" />
+        <activity android:name="com.spark.szhb_master.activity.Treasure.PowerActivity" />
+        <activity android:name="com.spark.szhb_master.activity.Treasure.TreaDetialActivity" />
+        <activity android:name="com.spark.szhb_master.activity.Treasure.CallHistoryActivity" />
+        <activity android:name="com.spark.szhb_master.activity.Treasure.HistoryActivity" />
+        <activity android:name="com.spark.szhb_master.activity.Treasure.RuleAcitivity" />
+        <activity android:name="com.spark.szhb_master.activity.Treasure.DiggingDetialActivity" />
+        <activity android:name="com.spark.szhb_master.activity.Treasure.GetTreaActivity" />
+        <activity android:name="com.spark.szhb_master.activity.Treasure.PowerUpActivity" />
+        <activity android:name="com.spark.szhb_master.activity.Treasure.SuanActivity" />
+        <activity android:name="com.spark.szhb_master.activity.Trade.TradeActivity"
+            android:windowSoftInputMode="stateHidden|stateUnchanged"  />
+
+        <activity android:name="com.spark.szhb_master.activity.Treasure.PreheatFrdActivity" />
+        <activity android:name="com.spark.szhb_master.activity.Treasure.ShowTreaActivity" />
+        <activity android:name="com.spark.szhb_master.activity.myinfo.NickNameActivity" />
+        <activity android:name="com.spark.szhb_master.activity.my_promotion.PromSaveActivity" />
+
+
+        <activity android:name="com.spark.szhb_master.dialog.SpinnerActivity"
+            android:theme="@style/myDialog"/>
+        <activity android:name="com.spark.szhb_master.dialog.SpFrdActivity"
+            android:theme="@style/myDialog"/>
+
+        <!--service-->
+        <service android:name="com.spark.szhb_master.serivce.MyTextService" />
+        <service android:name="com.spark.szhb_master.serivce.GroupService" />
+
+        <receiver android:name="com.maiml.updatelibrary.receiver.InstallReceiver">
+            <intent-filter android:priority="20">
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+            </intent-filter>
+        </receiver>
+
+        <!--友盟统计配置Appkey与Channel-->
+        <!--value的值填写你在友盟后台申请的应用Appkey-->
+        <!--<meta-data android:value="5bce752fb465f5bac40001a5" android:name="UMENG_APPKEY"/>-->
+        <meta-data android:value="5bce74fcb465f557df000729" android:name="UMENG_APPKEY"/>
+
+        <receiver
+            android:name=".utils.AppRegister"
+            android:permission="com.tencent.mm.plugin.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP" />
+            </intent-filter>
+        </receiver>
+
+
+        <!--微信              android:name="com.spark.szhb_master.cayman.wxapi.WXEntryActivity"  -->
+        <activity
+            android:name="com.spark.szhb_master.cayman.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
+    </application>
+
+</manifest>

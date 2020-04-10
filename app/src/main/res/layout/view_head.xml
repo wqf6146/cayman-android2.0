@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llHead"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/llTitle"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/main_head_bg"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/liner_my"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <com.spark.szhb_master.ui.AvatarImageView
+                android:id="@+id/ivHeaderimg"
+                android:layout_width="33dp"
+                android:layout_height="33dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/icon_default_header_white"
+                />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:id="@+id/tvNickName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/not_login"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_normal" />
+
+            <TextView
+                android:id="@+id/tvUid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:textColor="#fff"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+
+        <ImageView
+            android:id="@+id/ivGoOrder"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/ripple_black"
+            android:scaleType="center"
+            android:src="@mipmap/icon_goorder"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/ripple_black"
+            android:scaleType="center"
+            android:src="@mipmap/icon_back"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/iv_ping"
+            android:layout_width="38dp"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/ivOpen"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/ripple_black"
+            android:scaleType="center"
+            android:src="@mipmap/icon_side_open"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/llBuyAndSell"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvBuy"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_c2c_tab_title_left_corner_selector"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:text="@string/text_buy_in"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_normal" />
+
+            <!--android:textColor="@color/tab_head_title_font_selector"-->
+            <TextView
+                android:id="@+id/tvSell"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_c2c_tab_title_selector"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:text="@string/text_sale_out"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_normal" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="BTC/USDT"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_lager"
+            android:visibility="visible" />
+
+        <ImageButton
+            android:id="@+id/ivSwitch"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/ripple_black"
+            android:src="@mipmap/icon_switch"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/ivCollect"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/icon_collect_normal"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/ivMarket"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/ripple_black"
+            android:src="@mipmap/icon_market"
+            android:scaleType="center"
+            android:visibility="gone" />
+        <!--android:src="@mipmap/icon_market"-->
+        <ImageView
+            android:id="@+id/ivReleseAd"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/ripple_black"
+            android:scaleType="center"
+            android:src="@mipmap/icon_relesead"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvGoto"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/ripple_black"
+            android:gravity="center"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="@string/home"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_normal"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/ivHelp"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/ripple_black"
+            android:gravity="center"
+            android:src="@mipmap/icon_help"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/ivShare"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:scaleType="centerInside"
+            android:src="@mipmap/icon_share"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_spinner"
+            android:visibility="gone"
+            android:overlapAnchor="false"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="center"
+            android:background="@mipmap/image_share"
+            android:layout_width="20dp"
+            android:layout_height="20dp"></ImageView>
+
+        <ImageView
+            android:id="@+id/ivBack_right"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/icon_more_white"
+            android:scaleType="center"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/rvMessageTag"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <ImageButton
+                android:id="@+id/ivMessage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/ripple_black"
+                android:src="@mipmap/icon_add" />
+
+            <ImageView
+                android:id="@+id/ivchatTip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-20dp"
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@id/ivMessage"
+                android:src="@mipmap/icon_dot"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

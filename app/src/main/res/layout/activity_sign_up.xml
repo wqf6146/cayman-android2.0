@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/main_head_bg">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="25dp">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/ripple_black"
+                android:scaleType="center"
+                android:src="@mipmap/icon_back" />
+
+            <TextView
+                android:id="@+id/text_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/sign_up"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/text_other"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:minWidth="48dp"
+                android:text="@string/email_sign_up"
+                android:textColor="#fff"
+                android:textSize="14sp"
+                android:visibility="invisible" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvTag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:padding="30dp"
+        android:text="@string/phone_sign_up"
+        android:textColor="@color/main_font_grey"
+        android:textSize="@dimen/sp_30"
+        android:visibility="gone" />
+
+    <EditText
+        android:visibility="gone"
+        android:id="@+id/etUsername"
+        style="@style/edittext_normal"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:hint="@string/user_name"
+        android:paddingBottom="12dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="12dp" />
+    <!--手机号码-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="12dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="12dp">
+
+        <TextView
+            android:id="@+id/tvCountry"
+            style="@style/textview_tag"
+            android:drawableRight="@mipmap/icon_drop"
+            android:drawablePadding="5dp"
+            android:text="@string/china"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/etPhone"
+            style="@style/edittext_normal"
+            android:hint="@string/phoneoremail"
+            android:inputType="phone"
+            android:visibility="visible" />
+
+        <EditText
+            android:id="@+id/etEmail"
+            style="@style/edittext_normal"
+            android:layout_marginLeft="10dp"
+            android:hint="@string/email"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <ImageView
+        style="@style/line_bg_grey"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+    <LinearLayout
+        android:id="@+id/llGetCode"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingTop="12dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="12dp"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/etCode"
+            style="@style/edittext_normal"
+            android:layout_weight="1"
+            android:hint="@string/phone_code"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/tvGetCode"
+            style="@style/textveiw_msg_code" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivGetCode"
+        style="@style/line_bg_grey"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+    <!--推广码-->
+
+    <EditText
+        android:id="@+id/etPromoCode"
+        style="@style/edittext_normal"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:hint="@string/promotion_code"
+        android:paddingBottom="12dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="12dp" />
+
+    <ImageView
+        style="@style/line_bg_grey"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        style="@style/edittext_normal"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:paddingBottom="12dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="12dp" />
+
+    <ImageView
+        style="@style/line_bg_grey"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+    <EditText
+        android:id="@+id/etRenewPassword"
+        style="@style/edittext_normal"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:hint="@string/repeat_password"
+        android:inputType="textPassword"
+        android:paddingBottom="12dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="12dp" />
+
+    <ImageView
+        style="@style/line_bg_grey"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/img_singup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/singup_false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/read_agree"
+            android:textColor="#17304d"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/text_xieyi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/user_agree"
+            android:textColor="#597ac3"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvSignUp"
+        style="@style/btn_option_normal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_bg_normal_corner_grey_enabled"
+        android:text="@string/regist" />
+
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="@string/existing_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/singup_login"
+            android:text="@string/goto_login"
+            android:textColor="#597ac3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

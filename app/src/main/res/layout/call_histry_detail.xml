@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="70dp">
+
+    <LinearLayout
+        android:padding="10dp"
+        android:minHeight="60dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvCommainname"
+            android:text="100元话费"
+            android:textSize="16dp"
+            android:textColor="#17304d"
+            android:lines="1"
+            android:ellipsize="end"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginTop="5dp"
+                android:id="@+id/tv_name"
+                android:layout_weight="1"
+                android:text="YY88"
+                android:textColor="#7e8193"
+                android:textSize="@dimen/font_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:drawablePadding="10dp"
+                android:id="@+id/tv_num"
+                android:layout_marginRight="10dp"
+                android:text="+10"
+                android:textColor="#ee6560"
+                android:textSize="@dimen/font_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <View
+        style="@style/line_bg_grey">
+
+    </View>
+</LinearLayout>

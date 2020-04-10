@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg"
+    android:orientation="vertical"
+    tools:context="com.spark.szhb_master.activity.wallet_coin.ExtractActivity">
+
+    <!--标题-->
+    <include layout="@layout/view_head" />
+
+    <LinearLayout style="@style/layout_my_info">
+
+        <TextView
+            style="@style/textview_tag"
+            android:minWidth="90dp"
+            android:text="@string/text_can_used"
+            android:textColor="@color/main_font_grey" />
+
+        <TextView
+            android:id="@+id/tvBuyCanUse"
+            style="@style/edittext_normal"
+            android:layout_weight="1"
+            android:textColorHint="@color/font_hint" />
+
+        <TextView
+            android:id="@+id/tvCanUseUnit"
+            style="@style/textview_tag"
+            android:text="USDT" />
+
+    </LinearLayout>
+
+    <View style="@style/line_bg_grey" />
+
+    <LinearLayout
+        style="@style/layout_my_info"
+        android:paddingRight="0dp">
+
+        <TextView
+            style="@style/textview_tag"
+            android:minWidth="90dp"
+            android:text="@string/mention_money_address"
+            android:textColor="@color/main_font_grey" />
+
+        <EditText
+            android:id="@+id/etAddress"
+            style="@style/edittext_normal"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:hint="@string/enter_address_tag"
+            android:maxLines="2"
+            android:textColorHint="@color/font_hint" />
+
+        <TextView
+            android:id="@+id/tvSelectAdress"
+            style="@style/textview_tag"
+            android:layout_height="match_parent"
+            android:background="@drawable/ripple_white"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:text="@string/select" />
+    </LinearLayout>
+
+    <View style="@style/line_bg_grey" />
+
+    <LinearLayout
+        style="@style/layout_my_info"
+        android:paddingRight="0dp">
+
+        <TextView
+            style="@style/textview_tag"
+            android:minWidth="90dp"
+            android:text="@string/amount"
+            android:textColor="@color/main_font_grey" />
+
+        <EditText
+            android:id="@+id/etCount"
+            style="@style/edittext_normal"
+            android:layout_weight="1"
+            android:hint="最小提币数量200"
+            android:inputType="numberDecimal"
+            android:textColorHint="@color/font_hint" />
+
+        <TextView
+            android:id="@+id/tvGetUnit"
+            style="@style/textview_tag"
+            android:layout_marginLeft="5dp"
+            android:text="USDT" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/third_font_grey" />
+
+        <TextView
+            android:id="@+id/tvAll"
+            style="@style/textview_tag"
+            android:layout_height="match_parent"
+            android:background="@drawable/ripple_white"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:text="@string/all"
+            android:textColor="@color/btn_normal" />
+    </LinearLayout>
+
+    <View style="@style/line_bg_grey" />
+
+    <LinearLayout style="@style/layout_my_info">
+
+        <TextView
+            style="@style/textview_tag"
+            android:minWidth="90dp"
+            android:text="@string/remarks"
+            android:textColor="@color/main_font_grey" />
+
+        <EditText
+            android:id="@+id/remarks"
+            style="@style/edittext_normal"
+            android:layout_weight="1"
+            android:hint="@string/remarks"
+            android:inputType="numberDecimal"
+            android:textColorHint="@color/font_hint" />
+
+    </LinearLayout>
+
+    <View style="@style/line_bg_grey" />
+
+    <LinearLayout style="@style/layout_my_info">
+
+        <TextView
+            style="@style/textview_tag"
+            android:minWidth="90dp"
+            android:text="@string/poundage"
+            android:textColor="@color/main_font_grey" />
+
+        <EditText
+            android:id="@+id/etServiceFee"
+            style="@style/edittext_normal"
+            android:layout_weight="1"
+            android:hint="@string/poundage"
+            android:inputType="numberDecimal"
+            android:textColorHint="@color/font_hint" />
+
+    </LinearLayout>
+
+    <View style="@style/line_bg_grey" />
+
+    <LinearLayout style="@style/layout_my_info">
+
+        <TextView
+            style="@style/textview_tag"
+            android:minWidth="90dp"
+            android:text="@string/mention_account"
+            android:textColor="@color/main_font_grey" />
+
+        <TextView
+            android:id="@+id/tvFinalCount"
+            style="@style/edittext_normal"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tvCollectUnit"
+            style="@style/textview_tag"
+            android:text="USDT" />
+    </LinearLayout>
+
+    <View style="@style/line_bg_grey" />
+
+    <LinearLayout style="@style/layout_my_info">
+
+        <TextView
+            style="@style/textview_tag"
+            android:minWidth="90dp"
+            android:text="@string/text_money_pwd" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            style="@style/edittext_normal"
+            android:layout_weight="1"
+            android:hint="@string/text_money_pwd"
+            android:inputType="textPassword"
+            android:textColorHint="@color/font_hint" />
+
+    </LinearLayout>
+
+    <View style="@style/line_bg_grey" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tvExtract"
+        style="@style/btn_option_normal"
+        android:height="50dp"
+        android:text="@string/submit" />
+
+</LinearLayout>

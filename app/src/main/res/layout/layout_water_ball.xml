@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/id_waterball"
+    android:layout_width="wrap_content"
+    android:layout_height="60dp"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:background="@mipmap/trea_blue_back"
+            android:id="@+id/id_tv_waterball"
+            android:textSize="10dp"
+            android:gravity="center_horizontal"
+            android:paddingTop="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="666"
+            android:textColor="#ffffff" />
+
+        <ImageView
+            android:id="@+id/id_iv_waterball"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:src="@mipmap/power" />
+    </LinearLayout>
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/image_head"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="-5dp"
+        android:layout_gravity="center"
+        android:src="@mipmap/trea_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

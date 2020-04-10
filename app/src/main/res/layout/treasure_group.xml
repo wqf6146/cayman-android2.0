@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/fen_line"
+        style="@style/line_bg_fens"></View>
+
+
+    <LinearLayout
+        android:id="@+id/line_time"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/is_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:minWidth="40dp"
+            android:src="@mipmap/openkai" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:visibility="gone"
+                android:layout_marginTop="5dp"
+                android:id="@+id/tv_new_title"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#4948ca"
+                android:textSize="@dimen/font_small" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/time_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@mipmap/titile_left"
+                    android:drawablePadding="10dp"
+                    android:gravity="right"
+                    android:textSize="@dimen/font_normal" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:id="@+id/lltime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_miaosha_shi"
+                            android:layout_width="21dp"
+                            android:layout_height="21dp"
+                            android:background="@drawable/shape_miaosha_blue"
+                            android:gravity="center"
+                            android:text="00"
+                            android:textColor="#fff"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="3dp"
+                            android:text=":" />
+
+                        <TextView
+                            android:id="@+id/tv_miaosha_minter"
+                            android:layout_width="21dp"
+                            android:layout_height="21dp"
+                            android:background="@drawable/shape_miaosha_blue"
+                            android:gravity="center"
+                            android:text="00"
+                            android:textColor="#fff"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="3dp"
+                            android:text=":" />
+
+                        <TextView
+                            android:id="@+id/tv_miaosha_second"
+                            android:layout_width="21dp"
+                            android:layout_height="21dp"
+                            android:background="@drawable/shape_miaosha_blue"
+                            android:gravity="center"
+                            android:text="00"
+                            android:textColor="#fff"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="#4948ca"
+                        android:textSize="@dimen/font_normal" />
+
+                    <TextView
+                        android:id="@+id/start_end"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:drawablePadding="10dp"
+                        android:text="后开始挖宝"
+                        android:textColor="#4948ca"
+                        android:textSize="@dimen/font_normal" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tv_right"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@mipmap/title_right"
+                    android:gravity="right"
+                    android:textSize="@dimen/font_normal" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/rule"
+            android:visibility="invisible"
+            android:minWidth="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/rule" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

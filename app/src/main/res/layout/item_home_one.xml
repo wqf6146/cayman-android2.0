@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/main_bg_dark_2"
+    android:orientation="vertical"
+    tools:ignore="UnusedAttribute">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/tvCurrencyName1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/tvCurrencyName2"
+            android:text="BTC"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_normal" />
+
+        <TextView
+            android:id="@+id/tvCurrencyName2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/USDT"
+            android:layout_toRightOf="@+id/tvCurrencyName1"
+            android:textColor="@color/font_hint"
+            android:textSize="@dimen/font_mini" />
+    </LinearLayout>
+
+    <TextView
+
+        android:id="@+id/tvClose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="12536.2"
+        android:textStyle="bold"
+        android:textColor="@color/main_font_red"
+        android:textSize="@dimen/font_lager" />
+
+    <TextView
+        android:id="@+id/tvAddPercent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="1.2%"
+        android:textColor="@color/main_font_red"
+        android:textSize="@dimen/font_normal" />
+
+    <TextView
+        android:id="@+id/tvVol"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="2dp"
+        android:singleLine="true"
+        android:text="256321"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_mini"
+        android:visibility="visible" />
+</LinearLayout>

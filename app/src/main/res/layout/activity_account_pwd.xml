@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg"
+    android:orientation="vertical">
+
+    <!--标题-->
+    <include layout="@layout/view_head" />
+
+    <TextView
+        android:id="@+id/tvTag"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="16dp"
+        android:text="@string/set_money_pwd_tag"
+        android:textColor="@color/sec_font_grey" />
+
+    <LinearLayout
+        android:id="@+id/llOldPwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout style="@style/layout_my_info">
+
+            <TextView
+                style="@style/textview_tag"
+                android:minWidth="100dp"
+                android:text="@string/old_money_pwd" />
+
+            <EditText
+                android:id="@+id/etOldPwd"
+                style="@style/edittext_normal"
+                android:hint="@string/old_money_pwd"
+                android:inputType="textPassword" />
+        </LinearLayout>
+
+        <View style="@style/line_bg_grey" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/layout_my_info">
+
+        <TextView
+            android:id="@+id/tvPwdTag"
+            style="@style/textview_tag"
+            android:minWidth="100dp"
+            android:text="@string/text_money_pwd" />
+
+        <EditText
+            android:id="@+id/etAccountPwd"
+            style="@style/edittext_normal"
+            android:hint="@string/text_money_pwd"
+            android:inputType="textPassword" />
+    </LinearLayout>
+
+    <View style="@style/line_bg_grey" />
+
+    <LinearLayout style="@style/layout_my_info">
+
+        <TextView
+            android:id="@+id/tvRePwdTag"
+            style="@style/textview_tag"
+            android:minWidth="100dp"
+            android:text="@string/repeat_password" />
+
+        <EditText
+            android:id="@+id/etRepeatPwd"
+            style="@style/edittext_normal"
+            android:hint="@string/repeat_password"
+            android:inputType="textPassword" />
+
+    </LinearLayout>
+
+    <View style="@style/line_bg_grey" />
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/llForgot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:paddingRight="16dp">
+
+        <TextView
+            android:id="@+id/tvForgot"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/forgot_password"
+            android:textColor="#3895FD"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/llPrompt"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:background="#f6f8ff"
+            android:layout_height="100dp">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:src="@mipmap/prompt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textColor="#42546a"
+                android:textSize="14dp"
+                android:lineSpacingExtra="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="15dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:text="@string/zjmm_phone_code_tag"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvSet"
+        style="@style/btn_option_normal"
+        android:layout_height="50dp"
+        android:text="@string/setting" />
+
+</LinearLayout>

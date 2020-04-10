@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg"
+    android:orientation="vertical"
+    tools:context="com.spark.szhb_master.activity.setting.SettingActivity">
+
+    <!--标题-->
+    <include layout="@layout/view_head" />
+
+    <LinearLayout
+        android:id="@+id/llUnionPayAccount"
+        style="@style/layout_my_info"
+        android:background="@drawable/ripple_white">
+
+        <TextView
+            android:drawablePadding="10dp"
+            android:drawableLeft="@mipmap/icon_yhk"
+            style="@style/textview_tag_my_info"
+            android:text="@string/unionpay_account" />
+
+        <TextView
+            android:id="@+id/tvUnionPay"
+            style="@style/textview_state_my_info"
+            android:enabled="false" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/bank_img"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/open_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView style="@style/icon_more" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/line_bank"
+        android:orientation="vertical"
+        style="@style/layout_my_info"
+        android:layout_height="70dp">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:textColor="#17304d"
+            android:textSize="17dp"
+            android:layout_marginBottom="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/bank_name"
+            android:textColor="#17304d"
+            android:textSize="17dp"
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View style="@style/line_bg_grey" />
+
+    <LinearLayout
+        android:id="@+id/llAliAccount"
+        style="@style/layout_my_info"
+        android:background="@drawable/ripple_white">
+
+        <TextView
+            android:drawablePadding="10dp"
+            android:drawableLeft="@mipmap/icon_zfb"
+            style="@style/textview_tag_my_info"
+            android:text="@string/ali_account" />
+
+        <TextView
+            android:id="@+id/tvAli"
+            style="@style/textview_state_my_info"
+            android:enabled="false" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/zfb_img"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/open_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView style="@style/icon_more" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/line_zfb"
+        android:orientation="vertical"
+        style="@style/layout_my_info"
+        android:layout_height="70dp">
+
+        <TextView
+            android:id="@+id/tv_zfb"
+            android:textColor="#17304d"
+            android:textSize="17dp"
+            android:layout_marginBottom="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/num_zfb"
+            android:textColor="#17304d"
+            android:textSize="17dp"
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <View style="@style/line_bg_grey" />
+
+    <LinearLayout
+        android:id="@+id/llWeiChatAccount"
+        style="@style/layout_my_info"
+        android:background="@drawable/ripple_white">
+
+        <TextView
+            android:drawablePadding="10dp"
+            android:drawableLeft="@mipmap/icon_wx"
+            style="@style/textview_tag_my_info"
+            android:text="@string/weichat_account" />
+
+        <TextView
+            android:id="@+id/tvWeiChat"
+            style="@style/textview_state_my_info"
+            android:enabled="false" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/wx_img"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/open_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView style="@style/icon_more" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/line_wx"
+        android:orientation="vertical"
+        style="@style/layout_my_info"
+        android:layout_height="70dp">
+
+        <TextView
+            android:id="@+id/wx_name"
+            android:textColor="#17304d"
+            android:textSize="17dp"
+            android:layout_marginBottom="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/num_wx"
+            android:textColor="#17304d"
+            android:textSize="17dp"
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <View style="@style/line_bg_grey" />
+
+</LinearLayout>

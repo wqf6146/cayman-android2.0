@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/main_head_bg">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="25dp">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/ripple_black"
+                android:scaleType="center"
+                android:src="@mipmap/icon_back" />
+
+            <TextView
+                android:id="@+id/text_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/phone_retrieve"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/text_other"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:minWidth="48dp"
+                android:text="@string/email_retrieve"
+                android:textColor="#fff"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tvTag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:padding="30dp"
+        android:text="@string/phone_retrieve"
+        android:textColor="@color/main_font_grey"
+        android:textSize="@dimen/sp_30" />
+
+
+    <!--输入部分-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <!--手机号-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="12dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="12dp">
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tvCountry"
+                style="@style/textview_tag"
+                android:drawablePadding="5dp"
+                android:drawableRight="@mipmap/icon_drop"
+                android:text="@string/china" />
+
+            <EditText
+                android:id="@+id/etPhone"
+                style="@style/edittext_normal"
+                android:hint="@string/phone_number"
+                android:inputType="phone" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                style="@style/edittext_normal"
+                android:hint="@string/email"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <ImageView
+            style="@style/line_bg_grey"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+
+        <LinearLayout
+            android:id="@+id/llGetCode"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="12dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="12dp">
+
+            <EditText
+                android:id="@+id/etCode"
+                style="@style/edittext_normal"
+                android:layout_width="282dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:hint="@string/phone_code"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/tvGetCode"
+                style="@style/textveiw_msg_code" />
+
+        </LinearLayout>
+
+        <ImageView
+            style="@style/line_bg_grey"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_height="60dp"
+            android:gravity="center_vertical"
+            style="@style/edittext_normal"
+            android:hint="@string/new_pwd"
+            android:inputType="textPassword"
+            android:paddingBottom="12dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="12dp" />
+
+        <ImageView
+            style="@style/line_bg_grey"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+
+        <EditText
+            android:layout_height="60dp"
+            android:gravity="center_vertical"
+            android:id="@+id/etRenewPassword"
+            style="@style/edittext_normal"
+            android:hint="@string/repeat_password"
+            android:inputType="textPassword"
+            android:paddingBottom="12dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="12dp" />
+
+        <ImageView
+            style="@style/line_bg_grey"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvConfirm"
+        style="@style/btn_option_normal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/shape_bg_normal_corner_grey_enabled"
+        android:enabled="false"
+        android:text="@string/confirm" />
+
+</LinearLayout>

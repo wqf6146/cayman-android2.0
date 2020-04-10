@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@mipmap/treasure_back"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:background="@mipmap/treasure_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@mipmap/treasure_title"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_marginTop="25dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:visibility="gone"
+                        android:layout_marginLeft="8dp"
+                        android:textSize="@dimen/font_small"
+                        android:textColor="@color/chart_white"
+                        android:text="登录/注册"
+                        android:drawableLeft="@mipmap/trea_logn_head"
+                        android:background="@null"
+                        android:drawablePadding="5dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/btn_Login"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp" />
+
+                    <LinearLayout
+                        android:id="@+id/line_rocket"
+                        android:gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:id="@+id/power_img"
+                            android:src="@mipmap/power"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp" />
+
+                        <TextView
+                            android:layout_marginLeft="8dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12dp"
+                            android:textColor="#80ffffff"
+                            android:text="@string/computing_power" />
+
+                        <com.spark.szhb_master.utils.CountNumberView
+                            android:layout_marginLeft="8dp"
+                            android:id="@+id/anminal_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:minWidth="40dp"
+                            android:textColor="@color/white"
+                            android:layout_marginRight="3dp"
+                            android:textSize="16dp" />
+
+                        <ImageView
+                            android:id="@+id/rocket"
+                            android:src="@mipmap/rocket"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <ImageView
+                            android:src="@mipmap/dian_my"
+                            android:layout_marginLeft="2dp"
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+
+                    <ImageView
+                        android:id="@+id/trea_share"
+                        android:paddingLeft="10dp"
+                        android:gravity="center_vertical"
+                        android:background="@mipmap/treasures_share"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/lin_gcx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:src="@mipmap/gcx_img"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp" />
+
+                    <TextView
+                        android:layout_marginLeft="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13dp"
+                        android:layout_gravity="center"
+                        android:textColor="#80ffffff"
+                        android:text="GCX" />
+
+                    <TextView
+                        android:id="@+id/gcx_num"
+                        android:layout_marginLeft="8dp"
+                        android:drawablePadding="10dp"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center"
+                        android:minWidth="30dp"
+                        android:textSize="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_gravity="right"
+                    android:id="@+id/rule"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="-13dp"
+                    android:src="@mipmap/way_power"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="3dp"
+                    android:background="@mipmap/banner_back"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@mipmap/trea_laba" />
+
+                    <com.sunfusheng.marqueeview.MarqueeView
+                        android:visibility="gone"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="match_parent"
+                        android:id="@+id/marqueeView"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginRight="50dp"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_mini"
+                        app:mvAnimDuration="1000"
+                        app:mvDirection="right_to_left"
+                        app:mvInterval="2000"
+                        app:mvSingleLine="true"
+                        app:mvTextColor="@color/white"
+                        app:mvTextSize="@dimen/font_small" />
+
+                    <com.spark.szhb_master.utils.MarqueeTextView
+                        android:id="@+id/marqueeViewText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:ellipsize="marquee"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginRight="50dp"
+                        app:mvTextColor="@color/white"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_mini"
+                        android:marqueeRepeatLimit="marquee_forever"/>
+
+                    <TextView
+                        android:id="@+id/look_tv"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/look_over"
+                        android:background="@drawable/white_kong"
+                        android:layout_marginRight="10dp"
+                        android:layout_gravity="right|center"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </FrameLayout>
+
+
+                <LinearLayout
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp">
+
+                    <android.support.design.widget.TabLayout
+                        android:id="@+id/tab"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        app:tabIndicatorHeight="0dp"
+                        app:tabTextColor="@color/white"
+                        app:tabSelectedTextColor="@color/white"
+                        android:background="@drawable/tablayout_background"
+                        app:tabMaxWidth="0dp"
+                        app:tabBackground="@drawable/tablayout_background" />
+
+                    <LinearLayout
+                        android:clipChildren="false"
+                        android:id="@+id/llTab"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/tablayout_background"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/llHome"
+                            android:background="@drawable/tablayout_background"
+                            style="@style/layout_tab_bottom_main">
+                            <TextView
+                                android:textColor="@color/white"
+                                style="@style/tab_bottom_main"
+                                android:text="@string/digging" />
+                        </LinearLayout>
+
+
+                        <ImageView
+                            android:src="@mipmap/trea_line"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <LinearLayout
+                            android:id="@+id/llMarket"
+                            android:background="@drawable/tablayout_background_mid"
+                            style="@style/layout_tab_bottom_main">
+
+                            <TextView
+                                android:textColor="@color/white"
+                                style="@style/tab_bottom_main"
+                                android:text="@string/preheating" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:src="@mipmap/trea_line"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <LinearLayout
+                            android:id="@+id/llTrade"
+                            android:background="@drawable/tablayout_background_end"
+                            style="@style/layout_tab_bottom_main">
+
+                            <TextView
+                                android:textColor="@color/white"
+                                style="@style/tab_bottom_main"
+                                android:text="@string/my_digging" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <ImageView
+                android:layout_marginRight="3dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginBottom="-25dp"
+                android:src="@mipmap/back_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <FrameLayout
+                android:id="@+id/flContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

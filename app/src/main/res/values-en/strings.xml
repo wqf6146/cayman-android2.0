@@ -1,0 +1,848 @@
+<resources>
+
+    <string name="app_name">Bitrade</string>
+    <string name="cancle">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="login_invalid">Login is invalid. Please log back in!</string>
+    <string name="no_data">No Data</string>
+    <string name="submit">Submit</string>
+    <string name="exit_again">Press again to exit</string>
+    <string name="name">Name</string>
+    <string name="new_pwd">New Password</string>
+    <string name="photograph">Take Photo</string>
+    <string name="album">Album</string>
+    <string name="success">Success</string>
+    <string name="savesuccess">Saved Successfully</string>
+    <string name="download_tag">Downloading...Please wait</string>
+    <string name="more">More</string>
+    <string name="index">Index</string>
+    <string name="hide">Hide</string>
+    <string name="main">Main</string>
+    <string name="child">Sub</string>
+    <string name="delete">Delete</string>
+    <string name="users_login">Users Login</string>
+    <string name="save">Save</string>
+    <string name="setting">Setting</string>
+    <string name="phone">400000000</string>
+    <string name="web">https://www.atcc.pro</string>
+    <string name="no_input_emoji">Do not support the input expression</string>
+    <string name="text_enter_price">Price</string>
+    <string name="text_can_used">Used</string>
+    <string name="text_can_sell">selling</string>
+    <string name="please_enter_the">Please enter the</string>
+    <string name="gains">Gains</string>
+    <string name="quote_change">Quote change</string>
+    <string name="buy_coins">Buy Coins</string>
+    <string name="sell_coins">Sell Coins</string>
+    <string name="bind_account">Please bind the collection account first</string>
+    <string name="str_try_refresh">Let me refresh</string>
+    <string name="str_get_exchange_info">Obtain inventory data</string>
+
+
+    <!--请求出错提示语-->
+    <string name="unknown_error">Unknown Error</string>
+    <string name="no_network">No Network</string>
+    <string name="parse_error">Data Exception</string>
+
+    <!--权限-->
+    <string name="camera_permission">Permission denied. Please allow camera access</string>
+    <string name="storage_permission">Permission denied. Please allow storage access</string>
+    <string name="password_realname">Please set fund password and finish ID verification first</string>
+    <string name="binding_phone_first">Please link to phone number first</string>
+    <string name="realname_first">Please finish ID verification first</string>
+    <string name="realname">ID verification certified</string>
+    <string name="phone_over">Mobile phone certified</string>
+    <string name="email_over">Email certified</string>
+    <string name="realname_no">ID verification not certified</string>
+    <string name="phone_over_no">Mobile phone not certified</string>
+    <string name="email_over_no">Email not certified</string>
+
+    <!--异常-->
+    <string name="library_file_exception">Back-to-library-file Exception</string>
+    <string name="incomplete_information">Incomplete Information</string>
+    <string name="empty_address">Data Error: Blank Address</string>
+    <string name="order_details_failed">Failed to get order details. Re-getting</string>
+    <string name="no_qrcode">No QR Code</string>
+    <string name="no_ads">Failed to get advertisement details. Re-getting!</string>
+    <string name="login_tag">Login is abnormal. Please login again</string>
+    <string name="socket_time">Link timeout, check the network!</string>
+    <string name="request_error">Request error!</string>
+    <!--<strcreditname="pwd_no_standard_tip">6-20 alphanumeric characters with at least 1 letter and 1 number</string>-->
+
+
+    <!--Link Phone Number-->
+    <string name="nationality">Nationality</string>
+    <string name="china">China</string>
+    <string name="start_bind">Start Linking</string>
+
+    <!--Region Selection-->
+    <string name="egional_selection">Region Selection</string>
+
+    <!--修改手机号-->
+    <string name="change_phone_num">Modify Phone Number</string>
+    <string name="new_phone_num">New Phone Num</string>
+    <string name="change_bind_phone_num">Modify Linked Phone Number</string>
+    <string name="change_bind_phone">Save changes number</string>
+    <string name="change_bind_phone_num_tag">You are modifying the phone number linked to Digital Currency account. Please finish ID verification first</string>
+    <string name="receive_phone_code">The original phone can receive verification code</string>
+    <string name="unreceive_phone_code">The original phone cannot receive verification code</string>
+    <string name="unreceive_phone_code_tag">Tip：The original phone number cannot receive verification code. Please contact customer service to modify the link！</string>
+    <string name="zjmm_phone_code_tag">Tip: You are modifying the Cayman transaction password. For your funds security, you are not allowed to
+        withdraw coins within 24 hours after the password is modified!</string>
+    <string name="handset_tail_number">Phone Number Ending with</string>
+    <string name="receive_message_code">SMS Verification Code Received</string>
+
+
+    <!--Change Login Password-->
+    <string name="change_login_pwd">Change Login Password</string>
+    <string name="change_login_pwd_tag">You are modifying Digital Currency login password</string>
+    <string name="change_login_pwd_bind_phone_tag">Phone Number Linked</string>
+    <string name="change_login_pwd_success_tag">Modified successfully. Please login again</string>
+    <string name="old_login_pwd">Old Login Password</string>
+    <string name="new_login_pwd">New Login Password</string>
+    <string name="confirm_pwd">Confirm Password</string>
+
+    <!--Set/Modify Fund Password-->
+    <string name="set_money_pwd">Set Fund Password</string>
+    <string name="set_money_pwd_tag">You are modifying Digital Currency fund password</string>
+    <string name="change_money_pwd">Modify Fund Password</string>
+    <string name="reset_money_pwd_tag">You are resetting Digital Currency fund password</string>
+    <string name="old_money_pwd">Old Fund Password</string>
+    <!--<string name="new_money_pwd">New Fund Password</string>-->
+    <string name="new_money_pwd">Please enter confirmation New Fund Password</string>
+    <string name="confirm_money_pwd">Confirm Fund Password</string>
+
+    <!--ID Verification-->
+    <string name="id_card_num">ID Number</string>
+    <string name="str_image_face_id_card">Photo of the front of the ID card</string>
+    <string name="str_image_back_id_card">Photo of the back of the ID card</string>
+    <string name="str_image_hold_id_card">Photo of the front of the ID card being held in your hands</string>
+    <string name="upload_success">Uploaded Successfully</string>
+    <string name="idcard_diff">The id number format is incorrect</string>
+
+
+    <!--Homepage-->
+    <string name="home">Home</string>
+    <string name="market">Markets</string>
+    <string name="heyue">Contract</string>
+    <string name="exchange">Exchange</string>
+    <string name="account">Account</string>
+    <string name="treasure">Treasure</string>
+    <string name="performer_home">Top Gainers</string>
+    <string name="heyuedasai">Contract Contest</string>
+    <string name="xinshouzhinan">Beginner Guide</string>
+    <string name="xinrenlingjiang">Rookie Award</string>
+    <string name="chongbi">Deposit</string>
+    <string name="wdcc">My position</string>
+    <string name="yqhy">Invite friends</string>
+
+    <string name="get_rebate">Get a rebate:</string>
+    <string name="number_invitees">Number of invitees:</string>
+
+    <string name="ptfwrs">Platform service number</string>
+
+    <!--Account-->
+    <string name="zjzh">Fund account</string>
+    <string name="hyqczh">Full contract account</string>
+    <string name="not_login">Not Logged In</string>
+    <string name="welcome_to">Welcome to Cayman</string>
+    <string name="my_zhuanr">Transfer into</string>
+    <string name="my_zhuanc">Transfer out</string>
+    <string name="my_huaz">Transfer of funds</string>
+    <string name="my_wdzj">My bonus</string>
+    <string name="my_fxjl">Share reward</string>
+    <string name="my_sfrz">Authentication</string>
+    <string name="my_aqzx">Security center</string>
+    <string name="my_bzzx">Help center</string>
+    <string name="my_sz">Setting</string>
+    <string name="my_ads">My Ad</string>
+    <string name="my_message">Platform Message</string>
+    <string name="my_kefu">My customer service</string>
+    <string name="my_entrust">My Entrustment</string>
+    <string name="my_promotion">My Promotion</string>
+    <string name="invite_friends">Invite Friends</string>
+    <string name="my_credit">ID verification</string>
+    <string name="my_safe">Security Center</string>
+    <string name="my_version">Version Update</string>
+    <string name="my_setting">Settings</string>
+    <string name="balance">Total Assets (USDT)</string>
+    <string name="mybalance">My Assets(USDT)</string>
+    <string name="confirm_logout">Confirm log out?</string>
+    <string name="logout_current_account">Exit the current account</string>
+    <!--Platform Message-->
+    <string name="message_details">Message Details</string>
+    <string name="login_after">Login in to view</string>
+    <string name="login_now">Login immediately</string>
+    <string name="update">Update</string>
+    <string name="canclelater">Cancel</string>
+    <!--My Promotion-->
+    <string name="promote_friends">Promotion to Friends</string>
+    <string name="my_commission">My Commission</string>
+    <string name="register_time">Registration Time</string>
+    <string name="recommendation_level">Referral Level</string>
+    <string name="release_time">Payment Time</string>
+    <string name="currency">Currency</string>
+    <string name="remarks">Note</string>
+    <string name="invite">Invite your friends to make money!</string>
+    <string name="reward_invitation">Cayman Reward Invitation</string>
+    <string name="reward_invita">Invite you to join Cayman, long press recognition Scan code download app</string>
+    <string name="invite_tag">Invite friends and earn commission\nMake money with friends\n
+    </string>
+    <string name="promotion_link">Exclusive promotion link:</string>
+    <string name="level_one">level 1</string>
+    <string name="level_two">level 2</string>
+    <string name="level_three">level 3</string>
+    <string name="level_four">level 4</string>
+
+    <!--Order Appeal-->
+    <string name="order_appeal">Order Appeal</string>
+    <string name="appeal_tag">We will deal with your appeal ASAP. Please wait patiently</string>
+    <string name="appeal_type">Appeal type：</string>
+    <string name="appeal_description">Appeal description：</string>
+    <string name="appeal_image">Appeal image：</string>
+
+    <string name="appeal_reason">Please briefly describe the reason for the appeal within 300 words</string>
+    <string name="appeal_rea">Please submit your comments and suggestions here!</string>
+
+    <!--Chat-->
+    <string name="chat">Chatting</string>
+    <string name="send_chat">Send</string>
+    <string name="recently">Recently</string>
+    <string name="chat_list">Chat List</string>
+    <string name="chat_tag">Please enter send content</string>
+
+    <!--Entrustment-->
+    <string name="latest_price">Latest Price:</string>
+    <string name="item_buy">Buy</string>
+    <string name="item_sell">Sell</string>
+    <string name="history">History</string>
+    <string name="current_trust">Open Orders</string>
+    <string name="history_record">History</string>
+    <string name="history_trust">History trust</string>
+    <string name="now_trust">Now trust</string>
+    <string name="undone">Revoked</string>
+    <string name="deal">Traded</string>
+    <string name="trading">In Trading</string>
+    <string name="trust_detail">Trading Details</string>
+    <string name="item_time">Time</string>
+    <string name="item_cost">Trading Price</string>
+    <string name="item_number">Entrustment Volume</string>
+    <string name="item_charge">Fee</string>
+    <string name="all">All</string>
+    <string name="text_buy_in">Buy</string>
+    <string name="text_buy">Buy</string>
+    <string name="text_sale_out">Sell</string>
+    <string name="text_price">Price</string>
+    <string name="text_number">Amount</string>
+    <string name="text_entrust">Entrustment Amount</string>
+    <string name="text_login_first">Please login first</string>
+    <string name="text_dish">Position</string>
+    <string name="text_click_login">No login. Please click Log In</string>
+    <string name="text_entity">No Data&#8230;</string>
+    <string name="order_entity">There are no orders yet.</string>
+    <string name="text_best_price">Buy at optimal price</string>
+    <string name="text_best_sale">Sell at optimal price</string>
+    <string name="text_best_prices">Optimal Price</string>
+    <string name="text_sell">Sell</string>
+    <string name="text_volume">Trading Volume</string>
+    <string name="text_average_price">Average Trading Price</string>
+    <string name="text_entrust_num">Entrustment Volume</string>
+    <string name="text_total_deal">Trading Total</string>
+    <string name="text_total_entrust">Entrustment Total</string>
+    <string name="text_turnover">Trading Amount</string>
+    <string name="text_24_change">24H VOL</string>
+    <string name="text_actual_deal">Executed</string>
+    <string name="market_price">Market Price</string>
+
+
+    <string name="my_match">Match</string>
+    <string name="match_his">Match History</string>
+    <string name="match_num">Match Amount</string>
+    <string name="match_time">Match Time</string>
+    <string name="match_remain">Match Remain Amount</string>
+    <string name="match_proportion">Match Rate</string>
+    <string name="today_match_num">Today Match Amount</string>
+    <string name="match_stop_time">Match starts at 9 am every day, the number is limited, while stocks last！</string>
+    <string name="match_stop">Match starts at 9 am every day</string>
+    <string name="find_new">Find new version！</string>
+
+    <string name="invite_money">Invitation to return</string>
+    <string name="pay_way">Multiple pay methods</string>
+    <string name="people">people</string>
+    <string name="fiat_transaction">fiat_transaction</string>
+    <string name="rule_description">《Rule description》</string>
+
+    <string-array name="text_type">
+        <item>Limit</item>
+        <item>Market</item>
+    </string-array>
+    <!--Revoke-->
+    <string name="text_repeal">Revoke</string>
+    <string name="text_entrust_price">Entrustment Price</string>
+    <string name="text_dialog_entrust_cancel_confirm">Confirm the entrustment revocation</string>
+    <string name="dialog_entrust_confirm">Are you sure you want to revoke?</string>
+    <string name="dialog_entrust_cancel_order">Revoke</string>
+    <string name="dialog_entrust_buy_after_withdrawal">Buy after withdrawal</string>
+    <string name="dialog_one_cancel">Cancel</string>
+    <string name="dialog_entrust_price">Entrustment Price:</string>
+    <string name="dialog_entrust_all_price">Entrustment Total:</string>
+    <string name="dialog_entrust_count">Entrustment Volume:</string>
+    <string name="dialog_entrust_category">Type:</string>
+    <string name="dialog_sure">Confirm</string>
+    <string name="dialog_two_title_buy">Buy Order</string>
+    <string name="dialog_two_title_sell">Sell Order</string>
+    <string name="dialog_two_notice">Do you confirm the above actions?</string>
+    <string name="dialog_three_title">Confirm the order</string>
+    <string name="dialog_three_one">Buy Price</string>
+    <string name="dialog_three_two">Buy Amount</string>
+    <string name="dialog_three_three">Total Purchase</string>
+    <string name="dialog_three_ones">Sell Price</string>
+    <string name="dialog_three_twos">Sell Amount</string>
+    <string name="dialog_three_threes">Total Sale</string>
+    <string name="dialog_three_msg">Reminder: Please confirm the price before ordering, and the transaction fund will be managed and locked after ordering. Please feel free to buy.</string>
+    <!--K line chart Favorite -->
+    <string name="text_add_favorite">Add Favorites</string>
+    <string name="text_add_success">Added successfully</string>
+    <string name="text_collected">Favorited</string>
+    <string name="text_cancel_success">Unfavorited successfully</string>
+    <string name="text_it_gao">H</string>
+    <string name="text_it_di">L</string>
+
+    <!--My Order-->
+    <string name="order_done">Completed</string>
+
+    <!--Order Details-->
+    <string name="orderdetail">Order Details</string>
+    <string name="contact_with_me">To contact with me</string>
+    <string name="order_status">Order Status</string>
+    <string name="payment_countdown">Payment Countdown</string>
+    <string name="order_info">Order Information</string>
+    <string name="transaction_object">Trading Object</string>
+    <string name="order_num">Order No.</string>
+    <string name="transaction_price">Trading Price</string>
+    <string name="transactions_num">Trading Volume</string>
+    <string name="trading_time">Trading Time</string>
+    <string name="transaction_amount">Trading Amount</string>
+    <string name="payment_info">Payment Information</string>
+    <string name="not_add_ali_user_tag">No Alipay Account</string>
+    <string name="not_add_wechat_user_tag">No WeChat Account</string>
+    <string name="not_add_union_user_tag">No Bank Account</string>
+    <string name="order_release">Order Release</string>
+    <string name="payment_done">Payment Completed</string>
+    <string name="payment">Payment</string>
+    <string name="cancel_order">Cancel Order</string>
+    <string name="payment_doubt_tag">Any question about the order?</string>
+    <string name="click_appeal_tag">Click to appeal</string>
+    <string name="download_failed">Failed to download</string>
+    <string name="enter_money_pwd_tag">Please enter transaction password</string>
+    <string name="warm_prompt">Tip</string>
+    <string name="confirm_go_on_canel_order_tag">You are going to cancel the order. Continue?</string>
+    <string name="confirm_pay_tag">Have you confirmed the payment?</string>
+    <string name="confirm_go_on_appeal_tag">You are going to appeal against the order. Continue?</string>
+    <string name="continue_tag">Continue</string>
+    <string name="qr_code">QR code</string>
+    <string name="long_click_save_image_tag">Warm tips: press the picture for 2 seconds to save the qr code directly</string>
+
+    <string name="dialog_order_cancle">If you have already paid the seller, please do not cancel the transaction.</string>
+    <string name="dialog_order_cancle_two">Cancellation rule: The buyer cancels 3 transactions on the same day, the system will automatically freeze the account.</string>
+    <string name="dialog_order_cancle_three">I have not paid the other party yet.</string>
+    <string name="dialog_order_cancle_c">cancel</string>
+    <string name="dialog_order_cancle_w">let me think again</string>
+
+    <string name="dialog_order_finish">After the payment is successful, click the button below to inform the merchant to deposit the currency, and the malicious click will be blocked.</string>
+    <string name="dialog_button_finish">Completed payment</string>
+    <string name="payway_peo">Payee</string>
+    <string name="payway_bank">Bank account</string>
+    <string name="payway_bank_t">Account opening branch</string>
+    <string name="payway_num">Bank card number</string>
+    <string name="payway_order">Order number</string>
+    <string name="payway_time">Inward payment payment method is completed</string>
+    <string name="please">please</string>
+    <string name="payway_money">Payment amount：</string>
+
+    <!--C2C-->
+    <string name="str_no_order">No Order&#8230;</string>
+    <string name="text_deal">Trading</string>
+    <string name="text_much_buy">How much do you want to buy?</string>
+    <string name="text_much_sale">How much do you want to sell?</string>
+    <string name="text_to_login">Login</string>
+    <string name="text_deal_num">Trading Times</string>
+    <string name="text_deal_num_two">Trading Times</string>
+    <string name="text_surplus_num">Remaining Amount</string>
+    <string name="text_quota">Limit</string>
+    <string name="text_app_rate">Positive Reviews</string>
+    <string name="text_deal_his">History Transactions</string>
+    <string name="text_warn">Trading Reminder</string>
+    <string name="text_prompt_one">1. Please carefully review the seller\'s trade information before trading.</string>
+    <string name="text_prompt_two">2. Please communicate and make agreement through the Platform and save relevant chatting records.</string>
+    <string name="text_prompt_three">3. In case of any trading dispute, please go to my page to contact customer service to help solve the problem.</string>
+    <string name="text_prompt_four">4.Do not conduct malicious transactions, such as unpaid payment, etc. Once confirmed, your account will be frozen..</string>
+
+    <string name="ali">Ali</string>
+    <string name="weichat">WeiChat</string>
+    <string name="unionpay">UnionPay</string>
+    <!--Post Purchase Ad-->
+    <string name="text_ad_change">Modify Ad</string>
+    <string name="base_info">Basic Info</string>
+    <string name="price_info">Basic Info</string>
+    <string name="message_info">Message Info</string>
+    <string name="text_change">Modify</string>
+    <string name="text_title">Post Purchase Ad</string>
+    <string name="text_titles">Post Sale Ad</string>
+    <string name="text_select">Please choose</string>
+    <string name="text_coin_type">Choose Coin</string>
+    <string name="text_place">Location</string>
+    <string name="text_currency_type">Coin</string>
+    <string name="text_auto_select">Automatically choose based on country or region</string>
+    <string name="text_price_type">Price Type</string>
+    <string name="text_price_fixed">Fixed Price</string>
+    <string name="text_price_market">Real-time Price</string>
+    <string name="text_price_overflow">Premium</string>
+    <string name="text_price_fixed_tag">Fixed price does not require a premium</string>
+    <string name="text_market_overflow_ratio">Based on the premium percentage of the market price</string>
+    <string name="text_over_price">Please enter premium</string>
+    <string name="text_enter_trade_price">Please enter trading price</string>
+    <string name="text_auto_calculate_price">Automatically calculate based on the market price and premium</string>
+    <string name="text_min">Minimum</string>
+    <string name="text_min_msg">Please enter minimum limit of each transaction</string>
+    <string name="text_max">Maximum</string>
+    <string name="text_max_msg">Maximum limit for each transaction</string>
+    <string name="text_buy_num">Buy Number</string>
+    <string name="text_sell_num">Sell Number</string>
+    <string name="text_trade_num">Trading Volume</string>
+    <string name="text_receive_methods">Payment Method</string>
+    <string name="text_pay_time">Payment Term</string>
+    <string name="text_select_pay_time">Please choose payment term</string>
+    <string name="text_minute">min(s)</string>
+    <string name="text_money_pwd">Fund Password</string>
+    <string name="text_money_new">New Fund Password</string>
+    <string name="text_enter_money_pwd">Please enter fund password</string>
+    <string name="text_auto_reply">Whether to auto reply</string>
+    <string name="text_yes">Yes</string>
+    <string name="text_no">No</string>
+    <string name="text_auto_reply_content">Auto Reply Content</string>
+    <string name="text_enter_auto_reply_content">Please enter auto reply content</string>
+    <string name="text_ad_message">Ad Note</string>
+    <string name="text_enter_ad_message">Please enter ad note</string>
+    <string name="text_pub">Post</string>
+    <string name="create">Create</string>
+    <string name="text_pub_ads">Publish Advertisement</string>
+    <string name="text_ad_entity">Incomplete advertisement information!</string>
+    <string name="min_limit_tag">Minimum cannot be less than </string>
+    <string name="max_limit_tag">Maximum cannot be more than</string>
+    <string name="min_max_tag">Minimum cannot be more than maximum</string>
+    <string name="str_payway_ali">Alipay</string>
+    <string name="str_payway_wechat">WeChat pay</string>
+    <string name="str_payway_union">Unionpay</string>
+    <string name="edit_decimals_tag">The decimal you entered has exceeded the qualified number</string>
+    <string name="pub_ads_confirm">The advertisement is successfully created. It needs to be put on the shelf manually. Is it on the shelf?</string>
+    <string name="pub_ads_up">The advertisement is successfully created. Please click on the shelf to complete the release.</string>
+    <string name="str_prompt_coin_kind">Please choose currency</string>
+    <string name="str_prompt_country">Please select location</string>
+    <string name="str_prompt_trade_count">Please enter transaction amount</string>
+    <string name="str_prompt_min_count">Please enter minimum</string>
+    <string name="str_prompt_max_count">Please enter maximum quantity</string>
+    <string name="str_prompt_recieve_kind">Please select collection method</string>
+    <string name="str_prompt_pay_time">Please enter payment term</string>
+
+    <string name="text_buy_my">Buy</string>
+    <string name="text_sale_my">Sale</string>
+
+    <string name="text_buy_myt">Buy</string>
+    <string name="text_sale_myt">Sale</string>
+
+    <string name="all_buy">Buy all</string>
+    <string name="all_sell">Sale all</string>
+    <!--Security Center-->
+    <string name="gestures_pwd">Gestures Password</string>
+    <string name="google_authentication_tag">Bind Google authenticator</string>
+    <string name="google_authentication_modify">Modify Google Authenticator</string>
+    <string name="google_close">Whether to turn off Google verification</string>
+    <string name="safety_verification">Safety verification</string>
+    <string name="google_authentication_content">Please back up the key properly to prevent loss</string>
+    <string name="next_step">Next Step</string>
+    <string name="google_bottom_tag">Save the qr code to the phone or copy the key to the clipboard may be a security risk, please save it properly</string>
+    <string name="google_code_tag">Google validator</string>
+    <string name="google_code">Please enter Google code</string>
+    <string name="gestures_error_tag">Connect at least four points. Please re-enter</string>
+    <string name="gestures_pwd_confirm">Please draw the password again</string>
+    <string name="set_up_success">Set up success</string>
+    <string name="cancel_success">Abolish success</string>
+    <string name="pwd_error">Password error</string>
+    <string name="copy">Copy</string>
+    <string name="unbind">Unbind the Google validator</string>
+    <string name="google_code_apply">If your Google Authenticator is missing \n  please go to my page and contact customer service for processing.</string>
+
+    <!--Settings-->
+    <string name="switch_account">Switch Account</string>
+    <string name="language">Language</string>
+    <string name="feed_back">Feedback</string>
+    <string name="website">Official website</string>
+    <string name="about_us">About Us</string>
+    <string name="simplified_chinese">简体中文</string>
+    <string name="japanese">日本語</string>
+    <string name="webSite">Website</string>
+    <string name="service_tel">Customer Service Tel</string>
+    <string name="not_need_update_tag">Already updated to the newest version</string>
+    <string name="confirm_update">Whether to update</string>
+    <string name="update_address_error_tag">Download link not found!</string>
+    <string name="downloading_tag">Downloading</string>
+    <string name="downloading_crazy_tag">Trying to download…</string>
+
+    <!--Switch Account-->
+    <string name="add_user">Add a new account to login</string>
+
+    <!--Feedback-->
+    <string name="feed_message">Your opinion is very important to us!</string>
+    <string name="feed_mes">Thank you for your understanding and support of the platform, we will solve it in the first time.Your feedback!</string>
+    <string name="feed_et_number_email">Phone Number/Email (if applicable)</string>
+    <string name="feed_et_number">Please reserve your mobile phone or email address</string>
+    <!--Wallet Management-->
+    <string name="wallet">Wallet Management</string>
+    <string name="detail">Details</string>
+    <string name="search_assets">Search Asset</string>
+    <string name="hide_coin">Hide Coin in 0</string>
+    <string name="not_raise_money_tag">Do not withdraw and deposit</string>
+    <string name="freeze_coin">Frozen</string>
+    <string name="mention_money">Withdrawal</string>
+    <string name="charge_money">Deposit</string>
+    <string name="match_money">Pairing</string>
+    <string name="no_address_tag">No deposit address. Please add to the Platform</string>
+    <string name="no_extract_address_tag">No withdrawal address, please add to the platform</string>
+    <string name="type">Type</string>
+    <string name="amount">Amount</string>
+    <string name="poundage">Fee</string>
+    <string name="no_history_record_tag">No Transaction Records</string>
+    <string name="match_amount">Pairing Number</string>
+    <string name="max_match_amount">Pairing Maximum：</string>
+    <string name="mention_money_address">Withdrawal Address</string>
+    <string name="top_up">Deposit</string>
+    <string name="withdrawal">Withdrawal</string>
+    <string name="transfer">Transfer</string>
+    <string name="coin_currency_trade">Exchange</string>
+    <string name="fiat_money_buy">Buy OTC</string>
+    <string name="fiat_money_sell">Sell OTC</string>
+    <string name="activities_reward">Activity Rewards</string>
+    <string name="promotion_rewards">Activity Rewards</string>
+    <string name="share_out_bonus">Bonus</string>
+    <string name="vote">Vote</string>
+    <string name="artificial_top_up">Manual Deposit</string>
+
+
+    <!--Deposit Withdrawal-->
+    <string name="save_to_album">Save to photo album</string>
+    <string name="save_code">Save QR code</string>
+    <string name="Remarks_address">Remarks or address tags (please fill in and check carefully)</string>
+    <string name="currency_address">Currency address</string>
+    <string name="copy_address">Copy Address</string>
+    <string name="risk_warning">Risk Notice: Do not deposit any non-</string>
+    <string name="assets">asset to the above address</string>
+    <string name="no_address">No Deposit Address</string>
+    <string name="enter_address_tag">Please enter or choose address</string>
+    <string name="mention_account">Mention a currency</string>
+    <string name="fee_limit_tag">Fee should be</string>
+    <string name="min_coin_num_tag">Minimum Withdrawal Amount</string>
+    <string name="select">Select</string>
+    <string name="str_address_prompt">No current currency information</string>
+
+    <!--My Ad-->
+    <string name="grounding">On the shelf</string>
+    <string name="shelved">Off the shelf</string>
+    <string name="limit">Limit</string>
+    <string name="trading_limit">Trading Limit</string>
+    <string name="total">Total</string>
+    <string name="up_shelves">Go shelf</string>
+    <string name="shelves">Pull off the shelf</string>
+    <string name="confirm_time">The order needs to be paid within 15 minutes</string>
+    <string name="min_min">* The amount you entered is less than the minimum transaction amount</string>
+    <string name="max_max">* The amount you entered is greater than the maximum transaction amount</string>
+    <!--My Information-->
+    <string name="account_settings">Account Settings</string>
+    <string name="photo">Profile Picture</string>
+    <string name="nikename">Nickname</string>
+    <string name="modifyname">Modify nickname</string>
+    <string name="binding_phone">Link to Phone Number</string>
+    <string name="binding_email">Link to Email</string>
+    <string name="binding_account">Collection Account</string>
+    <string name="login_password">Login Password</string>
+    <string name="id_credit">ID Verification</string>
+    <string name="bound">Linked</string>
+    <string name="unbound">Unlinked</string>
+    <string name="had_set">Set</string>
+    <string name="not_set">Unset</string>
+    <string name="to_edit">Modify</string>
+    <string name="verification">Verified</string>
+    <string name="unverified">Unverified</string>
+    <string name="creditting">Auditing</string>
+    <string name="creditfail">Audit Failure</string>
+    <string name="unverified_notice">The Platform will finish audit in 1-3 working days. Please wait patiently…</string>
+    <string name="creditfail_notice">Sorry, your ID verification failed. Please re-submit! Cause of failure:</string>
+    <string name="certifySuccessful">Congratulations, you have passed the audit and may trade now</string>
+    <string name="modifm_name_tag">The nickname can only be modified once and cannot be modified again after saving!
+        The length of the nickname cannot exceed 16 digits. Special symbols such as spaces are not allowed!</string>
+    <string name="ali_account">Alipay Account</string>
+    <string name="weichat_account">WeChat Account</string>
+    <string name="unionpay_account">Bank Account</string>
+    <string name="unionpay_accountTip">Please enter bank card number</string>
+    <string name="unionpay_accountTip2">Please re-enter bank card number</string>
+    <string name="qr_code_for_receivables">QR Code for Collection</string>
+    <string name="alipay_binding">Link to Alipay Account</string>
+    <string name="bank_card_binding">Link to Bank Account</string>
+    <string name="bank">Bank</string>
+    <string name="account_opening_branch">Bank Branch</string>
+    <string name="account_opening_branchTip">Please enter bank branch</string>
+    <string name="confirm_cardnumber">Confirm Bank Card Number</string>
+    <string name="diff_cardnumber">Bank card numbers do not match</string>
+    <string name="wechat_binding">Link to WeChat Account</string>
+    <string name="binding">Linked</string>
+
+    <!--<strcreditname="ali_account_hint">Please enter Alipay account</string>
+    <strcreditname="weichat_account_hint">Please enter WeChat account</string>
+    <strcreditname="unionpay_hint">Please enter bank card number</string>-->
+
+
+    <!--Log In-->
+    <string name="login">Log In</string>
+    <string name="regist">Sign Up</string>
+    <string name="regist_now">Sign Up</string>
+    <string name="username">Phone Number/Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forget Password?</string>
+
+    <!--Sign Up-->
+    <string name="sign_up">register</string>
+    <string name="email_sign_up">Email Registration</string>
+    <string name="phone_sign_up">Phone Number Registration</string>
+    <string name="phoneoremail">Phone Or Email</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="send_code">Send Verification Code</string>
+    <string name="re_send">Resend</string>
+    <string name="phone_code">SMS Verification Code</string>
+    <string name="email_code">Email Verification Code</string>
+    <string name="repeat_password">Confirm Password</string>
+    <string name="phone_not_correct">Wrong Phone Number</string>
+    <string name="email_not_correct">Wrong Email</string>
+    <string name="pwd_diff">Passwords do not match!</string>
+    <string name="code">Please Enter Verification Code</string>
+    <string name="promotion_code">Promotion Code(Optional)</string>
+
+    <string name="read_agree">I have read and agreed Cayman</string>
+    <string name="user_agree">User agreement</string>
+    <string name="existing_account">Existing account？</string>
+    <string name="goto_login">Go to login</string>
+
+    <!--Forget Password-->
+    <string name="email">Email</string>
+    <string name="email_retrieve">Email Verification</string>
+    <string name="user_name">Username</string>
+    <string name="phone_retrieve">Phone Number Verification</string>
+    <string name="email_diff">Wrong Email Format</string>
+
+
+    <!--Deposit-->
+    <string name="copy_success">Address copied to clipboard!</string>
+
+    <string name="waiting_currency">Waiting for the currency!</string>
+
+    <string name="digging">Digging</string>
+    <string name="preheating">Preheating</string>
+    <string name="my_digging">Mydigging</string>
+
+    <string-array name="home_two_top_tab">
+        <item>USDT</item>
+        <item>BTC</item>
+        <item>ETH</item>
+        <item>Self</item>
+        <!--<item>Favorite</item>-->
+    </string-array>
+    <string-array name="home_five_top_tab">
+        <item>Digging in treasure</item>
+        <item>Preheating</item>
+        <item>My digging treasure</item>
+    </string-array>
+
+
+
+    <string-array name="k_line_tab">
+        <item>Line</item>
+        <item>1min</item>
+        <item>5min</item>
+        <item>1hour</item>
+        <item>1day</item>
+        <item>30min</item>
+        <item>1week</item>
+        <item>1mon</item>
+    </string-array>
+
+
+    <string-array name="order_status">
+        <item>Unpaid</item>
+        <item>Paid</item>
+        <item>Completed</item>
+        <item>Cancelled</item>
+        <item>Appealing</item>
+    </string-array>
+
+    <string-array name="appeal_status">
+        <item>Paid, not received</item>
+        <item>Paid currency, no payment received</item>
+        <item>Unpaid, no money</item>
+    </string-array>
+
+    <string-array name="bank_name">
+
+        <item>Industrial and Commercial Bank of China</item>
+        <item>Agricultural Bank of China</item>
+        <item>China Construction Bank</item>
+        <item>Postal Savings Bank of China</item>
+        <item>China Merchants Bank</item>
+        <item>Bank of China</item>
+        <item>Bank of Communications</item>
+        <item>China CITIC Bank</item>
+        <item>Huaxia Bank</item>
+        <item>China Minsheng Bank</item>
+        <item>China Guangfa Bank</item>
+        <item>Ping An Bank</item>
+        <item>Industrial Bank</item>
+        <item>Shanghai Pudong Development Bank</item>
+        <item>China Zheshang Bank</item>
+        <item>China Bohai Bank</item>
+        <item>HengFeng Bank</item>
+        <item>Citibank N.A.</item>
+        <item>Standard Chartered Bank</item>
+        <item>HSBC</item>
+        <item>China Everbright Bank</item>
+        <item>Bank of Shanghai</item>
+        <item>Bank of Jiangsu</item>
+        <item>Bank of Chongqing</item>
+        <item>Bank of Tianjin</item>
+        <item>Xiamen Bank</item>
+        <item>Urban Commercial Bank</item>
+        <item>Rural Commercial Bank</item>
+        <item>Huishang Bank</item>
+    </string-array>
+
+    <string-array name="timeLimit">
+        <item>15 min</item>
+        <item>30 min</item>
+        <item>45 min</item>
+        <item>60 min</item>
+    </string-array>
+
+    <string name="bid">Bid</string>
+    <string name="number">Number</string>
+    <string name="price">Price</string>
+    <string name="selling">Selling</string>
+    <string name="time">Time</string>
+    <string name="direction">Direction</string>
+
+    <string-array name="k_line_depth">
+        <item name="depth">Depth</item>
+        <item name="font_kline_volume">Volume</item>
+    </string-array>
+
+
+
+    <!--挖宝模块-->
+    <string name="current_computing_power">Current power</string>
+    <string name="computing_power">Computing Power</string>
+    <string name="power">Power</string>
+    <string name="look_over">Examine</string>
+    <string name="historical_activity">Historical activity</string>
+    <string name="historical_treasure">Historical treasure</string>
+
+
+
+    <string name="increase_power">Increase Power</string>
+    <string name="calculation_of_power">Detail power</string>
+    <string name="rembemer_get_power">Every half an hour will generate computing power, remember to charge!</string>
+    <string name="power_reward">Completion of the corresponding task to obtain the power value reward</string>
+    <string name="call">Call</string>
+    <string name="real_name">Real name registration +5 computing power/person</string>
+    <string name="coin_currency">Coin currency transactions can increase computing power</string>
+    <string name="calling">Calling the product for the product can increase the power</string>
+    <string name="add_power">+5 Computing Power</string>
+    <string name="growing_up">Growing up</string>
+
+    <string name="recommend">Recommend</string>
+    <string name="reward">Reward</string>
+    <string name="collect">Collect</string>
+
+    <string name="completion">Completion</string>
+    <string name="number_participants">Number</string>
+    <string name="heat">Heat</string>
+    <string name="start_digging">Start dig</string>
+    <string name="digging_treasure">Digging</string>
+
+    <string name="all_announcements">All announcements</string>
+    <string name="treasure_end">Treasure end</string>
+    <string name="date">Date</string>
+
+    <string name="end_after">End after</string>
+    <string name="after_starting">After starting</string>
+    <string name="no_digging">No digging for treasures, hurry to play Call for merchandise!</string>
+    <string name="no_mydigging">There are currently no digging treasures in progress!</string>
+    <string name="no_preheat">No warm-up items, hurry to dig treasure!</string>
+    <string name="call_yet">You have already called Call for this item, and you are inviting your friends to play Call for your favorite items!</string>
+    <string name="receive_trea">Congratulations, you have to pick up the treasure prizes, and go to my treasure to see it.</string>
+    <string name="please_fill_out">Please fill out the collection form to collect, if you have any questions, please contact customer service!</string>
+    <string name="must_real">In order to ensure that the winner is consistent with the winning account, please perform real-name certification before proceeding!</string>
+    <string name="before_real">Please complete the real name certification before doing this!</string>
+
+    <string name="details">Details</string>
+    <string name="participating">Participating players</string>
+    <string name="over">Over</string>
+    <string name="selected">Selected</string>
+    <string name="over_one">over</string>
+    <string name="waiting_collection">Waiting for collection</string>
+    <string name="waiting_results">Waiting for results</string>
+    <string name="waiting_announcement">Waiting for announcement</string>
+    <string name="sun_drying">Sun drying</string>
+    <string name="congratulations">Congratulations</string>
+    <string name="success_digging">Successfully digging treasure</string>
+    <string name="completion_one">Completion</string>
+    <string name="call_historu">Call historical</string>
+    <string name="invitation_code">Invitation code</string>
+    <string name="invitation_cod">Invitation code:</string>
+    <string name="share">Share</string>
+    <string name="call_successfully">Hit Call successfully</string>
+    <string name="prompt">Prompt</string>
+    <string name="fill_form">Fill out the form</string>
+    <string name="dug_it">Congratulations, I dug it.</string>
+    <string name="no_realname">You still have no real name</string>
+    <string name="go_to_certification">Go to certification</string>
+    <string name="go_to_set">Go to set</string>
+    <string name="entered_trea">The item has entered the digging treasure,</string>
+    <string name="set_least_one">Please set at least one payment method supported in the ad.</string>
+    <string name="go_digtrea">Go and dig treasure to see it!</string>
+    <string name="got_it">Got it</string>
+    <string name="not_need">This item does not need to call Call.</string>
+    <string name="directly_to">After the end, go directly to the treasure!</string>
+    <string name="event_noyet">The event has not yet begun.</string>
+    <string name="after_call">After playing Call!</string>
+    <string name="start_trea">After starting to dig treasure!</string>
+    <string name="promotion">Promotion</string>
+    <string name="not_enough">Your account is not enough, so increase your computing power!</string>
+    <string name="gcx_notenough">Your account has insufficient GCX, please recharge</string>
+    <string name="increase_pow">Increase the power to increase the chances of digging!</string>
+    <string name="force_value">Force value</string>
+    <string name="call_for">Playing Call for TA</string>
+    <string name="trea_consumption">This treasure consumption</string>
+    <string name="call_return_gcx">Like this product, I will play Call for TA, GCX consumed.Return the account after the event!</string>
+    <string name="not_funding">You have not set a funding password yet.</string>
+    <string name="not_editable">not editable</string>
+    <string name="modification">Confirm modification</string>
+    <string name="only_once">The username can only be modified once, confirming that the username is changed to "</string>
+    <string name="only_once_wen">"?</string>
+    <string name="username_notthree">User name cannot be less than 3 digits in length</string>
+    <string name="username_notsame">Username cannot be the same</string>
+    <string name="username_notlong">User name cannot be longer than 16 digits</string>
+    <string name="username_notempty">Username can not be empty</string>
+    <string name="enter_usename">please enter user name</string>
+    <string name="three_six">User name can only be modified once, length is 3-16 digits</string>
+
+    <string name="string_origin_location" />
+    <string name="string_origin_direction" />
+    <string name="string_origin_spe" />
+
+</resources>

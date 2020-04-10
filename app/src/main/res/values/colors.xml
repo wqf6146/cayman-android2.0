@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2D2F39</color>
+    <color name="colorPrimaryDark">#2D2F39</color>
+    <color name="colorAccent">#2D2F39</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="main_font_color">#598DDE</color><!--应用主题的字体色，如mainactivity中底部字体色，tab字体色-->
+    <color name="main_bg">#1E273D</color><!--应用整体的背景色-->
+    <!--<color name="main_head_bg">#2D2F39</color>&lt;!&ndash;应用头部背景色&ndash;&gt;-->
+    <color name="main_head_bg">#1E273D</color><!--应用头部背景色-->
+
+    <color name="main_bg_dark_2">#293249</color><!--应用整体的背景色-->
+
+    <color name="font_dark">#616A7F</color>
+
+    <color name="main_head_bg_hover">#0c0f21</color><!--应用头部背景点击色-->
+    <color name="main_font_black">#143551</color><!--一号黑色字体-->
+    <color name="sec_font_black">#3B3B3B</color><!--二号黑色字体-->
+    <color name="main_font_grey">#707179</color><!--一号灰色字体-->
+    <color name="sec_font_grey">#8B94A0</color><!--二号灰色字体-->
+    <color name="third_font_grey">#A0B0BC</color><!--三号灰色字体-->
+    <color name="main_font_red">#EE6560</color><!--红色-->
+    <color name="main_font_red_hover">#f91b24</color><!--红色点击色-->
+    <color name="main_font_green">#03C087</color><!--绿色-->
+    <color name="main_font_green_hover">#04cb8f</color><!--绿色点击色-->
+    <color name="line_bg_grey">#DFE3E7</color><!--线条颜色-->
+    <color name="btn_enable">#cdd4e0</color><!--按钮不可用时的颜色-->
+    <color name="btn_normal">#5787d3</color><!--按钮可用时的颜色-->
+    <color name="btn_hover">#6a99e4</color><!--按钮可用时的点击色-->
+    <color name="font_hint">#989898</color><!--editetext的hint color-->
+    <color name="tab_font">#BEC9D4</color>
+    <color name="martket_buy_count">#BFBCBC</color>
+    <color name="bg_tab_credit">#EFF7FC</color>
+    <color name="font_yellow">#FF9345</color>
+    <color name="bg_yellow">#FFF4EA</color>
+    <color name="bg_up_shelf_normal">#C9CED1</color>
+    <color name="bg_stroke">#BDBDBD</color>
+    <color name="font_kline_depth_buy">#1B9C42</color>
+    <color name="font_kline_depth_sell">#C52122</color>
+    <color name="main_bg_kline_hover">#0C0D11</color>
+    <color name="color_font_kline">#535356</color>
+    <color name="gwline">#F5F6F8</color>
+    <color name="colorTextNormal">#98a0b3</color>
+    <color name="grey_a5a5a5">#A5A5A5</color>
+    <color name="baseBlue">#4462A5</color>
+    <color name="bg_kline_bottom">#13151C</color>
+
+    <color name="kred">#e22220</color>
+    <color name="kgreen">#00984D</color>
+
+    <color name="main_back_sel">#17304d</color>
+    <color name="main_back_select">#838f9d</color>
+
+    <color name="uneable">#f5f7ff</color>
+    <color name="uneable_text">#97a1ac</color>
+
+    <color name="textimage">#597ac3</color>
+
+    <color name="zise">#2f068d</color>
+
+    <color name="blue_trea">#01b37d</color>
+    <color name="jin_trea">#fae305</color>
+
+
+</resources>
