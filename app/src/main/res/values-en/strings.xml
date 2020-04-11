@@ -142,6 +142,8 @@
     <string name="ptfwrs">Platform service number</string>
 
     <!--Account-->
+    <string name="hydl">Welcome to login</string>
+    <string name="bjzl">Edit information</string>
     <string name="zjzh">Fund account</string>
     <string name="hyqczh">Full contract account</string>
     <string name="not_login">Not Logged In</string>

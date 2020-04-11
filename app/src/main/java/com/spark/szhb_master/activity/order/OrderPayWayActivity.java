@@ -373,7 +373,7 @@ public class OrderPayWayActivity extends BaseActivity implements OrderDetailCont
             obj.put("uidFrom", MyApplication.getApp().getCurrentUser().getId());
             obj.put("uidTo", orderDetial.getHisId());
             obj.put("nameTo", orderDetial.getOtherSide());
-            obj.put("nameFrom", MyApplication.getApp().getCurrentUser().getUsername());
+            obj.put("nameFrom", MyApplication.getApp().getCurrentUser().getNick_name());
             obj.put("messageType", 1);
             obj.put("content", "");
             obj.put("avatar", MyApplication.getApp().getCurrentUser().getAvatar());

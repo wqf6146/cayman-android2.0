@@ -19,7 +19,7 @@
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white">
+        android:background="@color/main_bg">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,6 +29,9 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:padding="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/fm_rl_userinfo"
                 android:layout_height="wrap_content">
 
                 <com.spark.szhb_master.ui.AvatarImageView
@@ -43,19 +46,22 @@
                     android:layout_width="wrap_content"
                     android:orientation="vertical"
                     android:layout_marginLeft="10dp"
+                    android:layout_centerVertical="true"
                     android:layout_toRightOf="@+id/fm_aiv_headerimg"
                     android:gravity="center_vertical"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content">
                     <TextView
                         android:layout_width="wrap_content"
                         android:text="点击设置昵称"
-                        android:textColor="@color/sec_font_black"
+                        android:id="@+id/fm_tv_username"
+                        android:textColor="@color/white"
                         android:textStyle="bold"
                         android:textSize="@dimen/font_xlager"
                         android:layout_height="wrap_content"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:text="会员等级制度"
+                        android:id="@+id/fm_tv_vipsystem"
                         android:layout_marginTop="5dp"
                         android:textSize="@dimen/font_small"
                         android:textColor="@color/font_hint"
@@ -67,6 +73,7 @@
                     android:textSize="@dimen/font_small"
                     android:textColor="@color/font_hint"
                     android:text="编辑资料"
+                    android:id="@+id/fm_tv_editinfo"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="10dp"
                     android:layout_toLeftOf="@+id/arrow_right"
@@ -82,14 +89,17 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:orientation="vertical"
+                android:layout_marginLeft="5dp"
                 android:padding="10dp"
                 android:layout_height="wrap_content">
+
                 <TextView
                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="总资产合计"
-                    android:textSize="@dimen/font_normal"
+                    android:id="@+id/fm_tv_tadesc"
                     android:textColor="@color/font_hint"
-                    android:layout_height="wrap_content"/>
+                    android:textSize="@dimen/font_normal" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -98,7 +108,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:textSize="@dimen/font_lager"
+                        android:id="@+id/fm_tv_totalassets"
                         android:textStyle="bold"
+                        android:textColor="@color/white"
                         android:text="0.00 BTC"
                         android:layout_height="wrap_content"/>
                 </LinearLayout>
@@ -107,21 +119,90 @@
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:scrollbars="none"
-                android:layout_height="100dp">
+                android:layout_marginLeft="5dp"
+                android:layout_height="130dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:padding="10dp"
+                    android:padding="5dp"
                     android:layout_height="match_parent">
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="250dp"
+                        android:id="@+id/fm_rl_zjzh"
                         android:background="@color/Blue"
-                        android:layout_height="match_parent"/>
-                    <LinearLayout
+                        android:paddingLeft="15dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="10dp"
+                        android:orientation="vertical"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="@string/zjzh"
+                            android:textColor="@color/white"
+                            android:layout_marginTop="10dp"
+                            android:textSize="@dimen/font_small"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:textSize="@dimen/font_lager"
+                            android:textColor="@color/white"
+                            android:layout_centerVertical="true"
+                            android:id="@+id/fm_tv_zjzhbtc"
+                            android:text="0.00 BTC"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:textSize="@dimen/font_small"
+                            android:textColor="@color/white"
+                            android:layout_alignParentBottom="true"
+                            android:id="@+id/fm_tv_zjzhusdt"
+                            android:layout_marginBottom="10dp"
+                            android:text="≈ 0.00 USDT"
+                            android:layout_height="wrap_content"/>
+
+                    </RelativeLayout>
+                    <RelativeLayout
                         android:layout_width="250dp"
-                        android:background="@color/Blue"
+                        android:background="@color/main_bg_gray"
+                        android:id="@+id/fm_rl_hyqczh"
                         android:layout_marginLeft="10dp"
-                        android:layout_height="match_parent"/>
+                        android:paddingLeft="15dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="10dp"
+                        android:orientation="vertical"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="@string/hyqczh"
+                            android:textColor="@color/white"
+                            android:layout_marginTop="10dp"
+                            android:textSize="@dimen/font_small"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:textSize="@dimen/font_lager"
+                            android:textColor="@color/white"
+                            android:layout_centerVertical="true"
+                            android:id="@+id/fm_tv_hyqczhbtc"
+                            android:text="0.00 BTC"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:textSize="@dimen/font_small"
+                            android:textColor="@color/white"
+                            android:layout_alignParentBottom="true"
+                            android:id="@+id/fm_tv_hyqczhusdt"
+                            android:layout_marginBottom="10dp"
+                            android:text="≈ 0.00 USDT"
+                            android:layout_height="wrap_content"/>
+
+                    </RelativeLayout>
                 </LinearLayout>
             </HorizontalScrollView>
 
@@ -150,7 +231,7 @@
                             android:layout_gravity="center"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@mipmap/ic_zhuanr"/>
+                            android:src="@mipmap/ic_b_zr"/>
 
                         <TextView
                             android:layout_marginTop="10dp"
@@ -158,7 +239,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/my_zhuanr"
-                            android:textColor="#334153"
+                            android:textColor="@color/white"
                             android:textSize="14dp"/>
 
                     </LinearLayout>
@@ -175,7 +256,7 @@
                             android:layout_gravity="center"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@mipmap/ic_zhuanc"/>
+                            android:src="@mipmap/ic_b_zc"/>
 
                         <TextView
                             android:layout_marginTop="10dp"
@@ -183,7 +264,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/my_zhuanc"
-                            android:textColor="#334153"
+                            android:textColor="@color/white"
                             android:textSize="14dp"/>
 
                     </LinearLayout>
@@ -200,7 +281,7 @@
                             android:layout_gravity="center"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@mipmap/ic_huaz"/>
+                            android:src="@mipmap/ic_b_hz"/>
 
                         <TextView
                             android:layout_marginTop="10dp"
@@ -208,17 +289,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/my_huaz"
-                            android:textColor="#334153"
+                            android:textColor="@color/white"
                             android:textSize="14dp"/>
 
                     </LinearLayout>
                 </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:background="@color/gwline"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_height="1dp"/>
 
                 <LinearLayout
                     android:id="@+id/llWdzj"
@@ -227,7 +302,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@mipmap/my_wdzj" />
+                        android:src="@mipmap/ic_b_wdzj" />
 
                     <TextView
                         style="@style/textview_my_item"
@@ -244,7 +319,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@mipmap/my_fxjl" />
+                        android:src="@mipmap/ic_b_fxjl" />
 
                     <TextView
                         style="@style/textview_my_item"
@@ -253,22 +328,16 @@
                     <ImageView style="@style/icon_more" />
                 </LinearLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:background="@color/gwline"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_height="1dp"/>
-
                 <LinearLayout
                     android:visibility="visible"
                     android:id="@+id/llSfrz"
+                    android:layout_marginTop="2dp"
                     style="@style/layout_my_item">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@mipmap/my_sfrz" />
+                        android:src="@mipmap/ic_b_sfrz" />
 
                     <TextView
                         style="@style/textview_my_item"
@@ -283,7 +352,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@mipmap/my_aqzx" />
+                        android:src="@mipmap/ic_b_aqzx" />
 
                     <TextView
                         style="@style/textview_my_item"
@@ -292,21 +361,15 @@
                     <ImageView style="@style/icon_more" />
                 </LinearLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:background="@color/gwline"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_height="1dp"/>
-
                 <LinearLayout
                     android:id="@+id/ll_Bzzx"
+                    android:layout_marginTop="2dp"
                     style="@style/layout_my_item">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@mipmap/my_bzzx" />
+                        android:src="@mipmap/ic_my_bzzx" />
 
                     <TextView
                         style="@style/textview_my_item"
@@ -324,7 +387,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@mipmap/my_sz" />
+                        android:src="@mipmap/ic_my_setting" />
 
                     <TextView
                         style="@style/textview_my_item"
@@ -386,20 +449,6 @@
                     <ImageView style="@style/icon_more" />
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/tvLogOut"
-                    android:visibility="gone"
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:layout_marginBottom="25dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/ripple_btn_global_option_selector"
-                    android:gravity="center"
-                    android:text="@string/logout_current_account"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/font_normal" />
             </LinearLayout>
 
         </LinearLayout>

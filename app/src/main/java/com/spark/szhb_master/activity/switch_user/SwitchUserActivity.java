@@ -59,7 +59,7 @@ public class SwitchUserActivity extends BaseActivity implements SwitchUserContra
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 List<User> uses = (List<User>) (adapter.getData());
                 User clickUser = (User) adapter.getData().get(position);
-                if (clickUser.getUsername().equals(user.getUsername())) return;
+                if (clickUser.getNick_name().equals(user.getNick_name())) return;
                 else {
                     for (User us : uses) us.setSelect(false);
                     clickUser.setSelect(true);
@@ -106,7 +106,7 @@ public class SwitchUserActivity extends BaseActivity implements SwitchUserContra
     @Override
     public void userSuccess(List<User> obj) {
         for (User us : obj) {
-            if (user == null || us.getUsername().equals(user.getUsername())) {
+            if (user == null || us.getNick_name().equals(user.getNick_name())) {
                 us.setSelect(true);
                 break;
             }

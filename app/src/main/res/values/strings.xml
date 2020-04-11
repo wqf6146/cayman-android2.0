@@ -139,6 +139,7 @@
     <string name="ptfwrs">平台服务人数</string>
 
     <!--我的-->
+    <string name="hydl">欢迎登陆</string>
     <string name="zjzh">资金账户</string>
     <string name="hyqczh">合约全仓账户</string>
     <string name="not_login">未登录</string>

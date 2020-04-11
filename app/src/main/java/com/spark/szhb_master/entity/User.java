@@ -10,22 +10,104 @@ import java.io.Serializable;
 
 public class User extends DataSupport implements Serializable {
     private String token;
-    private String username;
+    private String email;
+    private int is_pwd;         //是否设置交易密码：0未设置1已设置
     private Location location;
     private int memberLevel;
-    private String realName;
+    private String nick_name;   //用户昵称
+    private String real_name;   //用户真实姓名
+    private String phone;
+    private int shop_type;   //是否是商家：0否 1是
+    private int status;      //账号状态0正常1异常
+    private int type;           //身份认证： 0 未认证 1 待审核 2 已通过 3拒绝
     private boolean isSelect;
     private Country country;
     private String avatar;
     private int id;
-    private int googleState;
+    private int is_start_google;
 
-    public int getGoogleState() {
-        return googleState;
+    public int getIs_pwd() {
+        return is_pwd;
     }
 
-    public void setGoogleState(int googleState) {
-        this.googleState = googleState;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getShop_type() {
+        return shop_type;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getNick_name() {
+        return nick_name;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getReal_name() {
+        return real_name;
+    }
+
+    public void setIs_pwd(int is_pwd) {
+        this.is_pwd = is_pwd;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public void setMemberLevel(int memberLevel) {
+        this.memberLevel = memberLevel;
+    }
+
+    public void setNick_name(String nick_name) {
+        this.nick_name = nick_name;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void setReal_name(String real_name) {
+        this.real_name = real_name;
+    }
+
+    public void setShop_type(int shop_type) {
+        this.shop_type = shop_type;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public int getIs_start_google() {
+        return is_start_google;
+    }
+
+    public void setIs_start_google(int is_start_google) {
+        this.is_start_google = is_start_google;
     }
 
     private String promotionPrefix;
@@ -71,14 +153,6 @@ public class User extends DataSupport implements Serializable {
         isSelect = select;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public String getToken() {
         return token;
     }
@@ -98,10 +172,10 @@ public class User extends DataSupport implements Serializable {
     public String toString() {
         return "User{" +
                 "token='" + token + '\'' +
-                ", username='" + username + '\'' +
+                ", nikename='" + nick_name + '\'' +
                 ", location=" + location +
                 ", memberLevel=" + memberLevel +
-                ", realName='" + realName + '\'' +
+                ", realName='" + real_name + '\'' +
                 ", isSelect=" + isSelect +
                 '}';
     }

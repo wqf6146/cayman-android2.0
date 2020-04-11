@@ -240,7 +240,7 @@ public class ChatActivity extends BaseActivity implements ISocket.TCPCallback, C
             obj.put("uidFrom", MyApplication.getApp().getCurrentUser().getId());
             obj.put("uidTo", orderDetial.getHisId());
             obj.put("nameTo", orderDetial.getOtherSide());
-            obj.put("nameFrom", MyApplication.getApp().getCurrentUser().getUsername());
+            obj.put("nameFrom", MyApplication.getApp().getCurrentUser().getNick_name());
             obj.put("messageType", 1);
             obj.put("avatar", MyApplication.getApp().getCurrentUser().getAvatar());
             if (!StringUtils.isEmpty(content)) obj.put("content", content);

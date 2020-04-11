@@ -20,6 +20,6 @@ public class SwitchUserAdapter extends BaseQuickAdapter<User, BaseViewHolder> {
 
     @Override
     protected void convert(BaseViewHolder helper, User item) {
-        helper.setText(R.id.etAccount, item.getUsername()).setVisible(R.id.ivSellect, item.isSelect());
+        helper.setText(R.id.etAccount, item.getNick_name()).setVisible(R.id.ivSellect, item.isSelect());
     }
 }

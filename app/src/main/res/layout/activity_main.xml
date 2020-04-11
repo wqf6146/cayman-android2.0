@@ -30,7 +30,7 @@
             android:id="@+id/llTab"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:background="@color/white"
+            android:background="@color/main_bg_dark_2"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -91,23 +91,6 @@
 
 
             <LinearLayout
-                android:id="@+id/llTreasure"
-                style="@style/layout_tab_bottom_main">
-
-                <ImageView
-                    android:clipChildren="false"
-                    android:layout_width="52dp"
-                    android:layout_height="52dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@mipmap/trea" />
-
-                <TextView
-                    android:visibility="invisible"
-                    style="@style/tab_bottom_main"
-                    android:text="@string/treasure" />
-            </LinearLayout>
-
-            <LinearLayout
                 android:id="@+id/llC2C"
                 style="@style/layout_tab_bottom_main">
 
@@ -118,7 +101,7 @@
 
                 <TextView
                     style="@style/tab_bottom_main"
-                    android:text="OTC" />
+                    android:text="兑换" />
             </LinearLayout>
 
             <LinearLayout

@@ -10,10 +10,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -73,92 +75,88 @@ public class MyFragment extends BaseTransFragment implements MainContract.MyView
 
     public static final String TAG = MyFragment.class.getSimpleName();
 
-//    @BindView(R.id.llOrder)
-//    LinearLayout llOrder;
-//    @BindView(R.id.llAds)
-//    LinearLayout llAds;
-//    @BindView(R.id.llMessage)
-//    LinearLayout llMessage;
-//    @BindView(R.id.ll_aboutUs)
-//    LinearLayout ll_aboutUs;
-//    @BindView(R.id.llSafe)
-//    LinearLayout llSafe;
     @BindView(R.id.llVersion)
     LinearLayout llVersion;
-//    @BindView(R.id.llMatch)
-//    LinearLayout llMatch;
+
     @BindView(R.id.llSettings)
     LinearLayout llSettings;
 
-
-//    @BindView(R.id.liner_my)
-//    LinearLayout liner_my;
-//    @BindView(R.id.ll_mention_money)
-//    LinearLayout ll_mention_money;
-//    @BindView(R.id.ll_charge_money)
-//    LinearLayout ll_charge_money;
-//    @BindView(R.id.tvNickName)
-//    TextView tvNickName;
-    @BindView(R.id.tvLogOut)
-    TextView tvLogOut;
-//    @BindView(R.id.ivHeaderimg)
-//    AvatarImageView ivHeader;
-//    @BindView(R.id.ivBack_right)
-//    ImageView ivBack_right;
-
-//    @BindView(R.id.tvUid)
-//    TextView tvUid;
-    public static double sumUsd = 0;
-    double sumCny = 0;
     @BindView(R.id.scrollView)
     MyScrollView scrollView;
-//    @BindView(R.id.llEntrust)
-//    LinearLayout llEntrust;
-//    @BindView(R.id.llPromotion)
-//    LinearLayout llPromotion;
-//    @BindView(R.id.llKefu)
-//    LinearLayout llKefu;
 
     @BindView(R.id.tvVersionNum)
     TextView tvVersionNum;
 
+    @BindView(R.id.fm_tv_username)
+    TextView tvUsername;
+
+    @BindView(R.id.fm_aiv_headerimg)
+    ImageView ivHead;
+
+    @BindView(R.id.fm_tv_vipsystem)
+    TextView tvVipSystem;
+
+    @BindView(R.id.fm_tv_editinfo)
+    TextView tvEditInfo;
+
+    @BindView(R.id.fm_tv_totalassets)
+    TextView tvTotalAssets;
+
+    @BindView(R.id.fm_tv_zjzhbtc)
+    TextView tvZjzhBtc;
+
+    @BindView(R.id.fm_tv_zjzhusdt)
+    TextView tvZjzhUsdt;
+
+    @BindView(R.id.fm_tv_hyqczhbtc)
+    TextView tvHyqczhBtc;
+
+    @BindView(R.id.fm_tv_hyqczhusdt)
+    TextView tvHyqczhUsdt;
+
+    @BindView(R.id.llZhuanr)
+    LinearLayout llZhuanr;
+
+    @BindView(R.id.llHuaz)
+    LinearLayout llHuaz;
+
+    @BindView(R.id.llWdzj)
+    LinearLayout llWdzj;
+
+    @BindView(R.id.llFxjl)
+    LinearLayout llFxjl;
+
+    @BindView(R.id.llSfrz)
+    LinearLayout llSfrz;
+
+    @BindView(R.id.llAqzx)
+    LinearLayout llAqzx;
+
+    @BindView(R.id.ll_Bzzx)
+    LinearLayout ll_Bzzx;
+
+    @BindView(R.id.fm_rl_hyqczh)
+    RelativeLayout rlHyqczh;
+
+    @BindView(R.id.fm_rl_zjzh)
+    RelativeLayout rlZjzh;
+
+    @BindView(R.id.fm_rl_userinfo)
+    RelativeLayout rlUserinfo;
 
     private MainContract.MyPresenter presenter;
     private List<Coin> coins = new ArrayList<>();
-    private User user;
+    private User mUser;
     private ProgressDialog progressDialog;
     private boolean isfirst =false;
 
-    @Override
-    protected void initImmersionBar() {
-        super.initImmersionBar();
-        if (!isSetTitle) {
-//            immersionBar.setTitleBar(getActivity(), llTitle);
-            isSetTitle = true;
-        }
-    }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == RESULT_OK) {
-            switch (requestCode) {
-//                case LoginActivity.RETURN_LOGIN:
-//                    if (getUserVisibleHint()) {
-//                        loadData();
-//                    }
-//                    break;
-                case 1:
-                    loadData(); // 修改登录密码后，手动重新显示view
-                    break;
-                case 2:
-                    notLoginViewText();
-                    break;
-                case -1:
-                    loadData();// 登录成功
-                    break;
-            }
-        }
-    }
+//    @Override
+//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        if (resultCode == RESULT_OK) {
+//            loadData(); // 获取用户信息
+//        }
+//    }
 
     @Override
     protected int getLayoutId() {
@@ -168,12 +166,7 @@ public class MyFragment extends BaseTransFragment implements MainContract.MyView
     @Override
     protected void initView() {
         super.initView();
-        //liner_my.setVisibility(View.VISIBLE);
-//        tvTitle.setVisibility(View.GONE);
-//        ivBack.setVisibility(View.GONE);
-//        tvGoto.setVisibility(View.GONE);
-//        ivBack_right.setVisibility(View.VISIBLE);
-//        isfirst = true;
+
     }
 
     @Override
@@ -184,24 +177,24 @@ public class MyFragment extends BaseTransFragment implements MainContract.MyView
 
     @Override
     protected void loadData() {
-//        isNeedLoad = false;
-        user = MyApplication.getApp().getCurrentUser();
-        if (MyApplication.getApp().isLogin() && !StringUtils.isEmpty(user.getUsername())) {
-            loginingViewText();
-        } else {
-            notLoginViewText();
-        }
+
     }
 
-    @OnClick({ R.id.llZhuanc,R.id.llVersion, R.id.tvLogOut})
+    @OnClick({R.id.fm_rl_userinfo,
+            R.id.fm_tv_vipsystem,
+            R.id.fm_rl_zjzh,R.id.fm_rl_hyqczh,
+            R.id.llZhuanr, R.id.llZhuanc,R.id.llHuaz,
+            R.id.llWdzj,R.id.llFxjl,R.id.llSfrz,R.id.llAqzx,R.id.ll_Bzzx,R.id.llSettings,R.id.llVersion})
     @Override
     protected void setOnClickListener(View v) {
         super.setOnClickListener(v);
+
 //        if (v.getId() != R.id.ivSee && v.getId() != R.id.ll_aboutUs && !MyApplication.getApp().isLogin()) {
 //            showActivity(LoginActivity.class, null, LoginActivity.RETURN_LOGIN);
 //            return;
 //        }
-        if (!MyApplication.getApp().isLogin() || StringUtils.isEmpty(user.getUsername())){
+
+        if (!MyApplication.getApp().isLogin()){
             showActivity(LoginActivity.class, null, LoginActivity.RETURN_LOGIN);
             return;
         }
@@ -259,9 +252,9 @@ public class MyFragment extends BaseTransFragment implements MainContract.MyView
                     presenter.getNewVision();
                 }
                 break;
-            case R.id.tvLogOut:
-                showCofirmDialog();
-                break;
+//            case R.id.tvLogOut:
+//                showCofirmDialog();
+//                break;
         }
     }
 
@@ -318,85 +311,75 @@ public class MyFragment extends BaseTransFragment implements MainContract.MyView
 //        sumCny = 0.00;
 //        sumUsd = 0.000000;
 
-//        Glide.with(getActivity().getApplicationContext()).load(R.mipmap.icon_default_header).into(ivHeader);
-//        if (SharedPreferenceInstance.getInstance().getMoneyShowType() == 1) {
-//            tvAmount.setText("0.000000");
-//            tvCnyAmount.setText(" ≈ 0.00 CNY");
-//        } else if (SharedPreferenceInstance.getInstance().getMoneyShowType() == 2) {
-//            tvAmount.setText("********");
-//            tvCnyAmount.setText("*****");
-//            ivSee.setImageResource(R.mipmap.icon_eye_close);
-//        }
-        user = MyApplication.getApp().getCurrentUser();
-        if (StringUtils.isEmpty(user.getUsername())){
-            tvLogOut.setVisibility(View.GONE);
-//            tvNickName.setText(getString(R.string.not_login));
-//            tvUid.setVisibility(View.GONE);
-        }
-//        if (user.getMemberLevel() == 0){
-//            llAds.setVisibility(View.GONE);
-//        }
+        Glide.with(getActivity().getApplicationContext()).load(R.mipmap.icon_default_header).into(ivHead);
+
+        tvUsername.setText(getString(R.string.hydl));
+        tvVipSystem.setVisibility(View.GONE);
+        tvEditInfo.setVisibility(View.GONE);
+
+        tvTotalAssets.setText("--");
+        tvZjzhBtc.setText("━ ━");
+        tvZjzhUsdt.setVisibility(View.GONE);
+
+        tvHyqczhBtc.setText("━ ━");
+        tvHyqczhUsdt.setVisibility(View.GONE);
     }
 
     /**
      * 登录显示
      */
     private void loginingViewText() {
-     //   ivSee.setVisibility(View.VISIBLE);
-        user = MyApplication.getApp().getCurrentUser();
-        if (user != null) {
-//            tvUid.setVisibility(View.VISIBLE);
-            if (!StringUtils.isEmpty(user.getId() +"") && user.getId() != 0){
-//                tvUid.setText("UID：" + user.getId());
-            }
-//            tvNickName.setText(user.getUsername());
-            if (!StringUtils.isEmpty(user.getUsername())) {
-                String str = user.getUsername().substring(0, 1).toUpperCase();
-//                ivHeader.setTextColor(getResources().getColor(R.color.header));
-//                ivHeader.setTextAndColor(str, getResources().getColor(R.color.white));
-                tvLogOut.setVisibility(View.VISIBLE);
-            }
-//            Glide.with(getActivity().getApplicationContext()).load("").into(ivHeader);
-//            if (user.getMemberLevel() == 2){
-//                llAds.setVisibility(View.VISIBLE);
-//            }else {
-//                llAds.setVisibility(View.GONE);
+//        user = MyApplication.getApp().getCurrentUser();
+//        if (user != null) {
+//            if (!StringUtils.isEmpty(user.getUsername())) {
+//                String str = user.getUsername().substring(0, 1).toUpperCase();
+//                tvLogOut.setVisibility(View.VISIBLE);
 //            }
-        }
-        presenter.getUserInfo();
-        getivSee();
-    }
-    //10.19更改
-//    @Override
-//    public void onHiddenChanged(boolean hidden) {
-//        super.onHiddenChanged(hidden);
-//        if (isfirst) {
-//            getivSee();
-//            loadData();
 //        }
-//    }
+        presenter.getUserInfo();
+
+    }
 
     @Override
     public void onResume() {
         super.onResume();
-        getivSee();
-        loadData();
+        loadUserInfo();
+    }
+
+    public void loadUserInfo(){
+        mUser = MyApplication.getApp().getCurrentUser();
+        if (MyApplication.getApp().isLogin()) {
+            loginingViewText();
+        } else {
+            notLoginViewText();
+        }
     }
 
     @Override
     public void getUserInfoSuccess(User user) {
+        if (user != null){
+            user.setToken(mUser.getToken());
+            this.mUser = user;
+            MyApplication.getApp().setCurrentUser(user);
+            getivSee();
+        }
 
     }
 
     private void getivSee() {
-//        if (SharedPreferenceInstance.getInstance().getMoneyShowType() == 1) {
-//            tvAmount.setText(MathUtils.getRundNumber(sumUsd, 6, null));
-//            tvCnyAmount.setText(" ≈ " + MathUtils.getRundNumber(sumCny, 2, null) +" "+GlobalConstant.CNY);
-//            ivSee.setImageResource(R.mipmap.icon_eye_open);
-//        } else if (SharedPreferenceInstance.getInstance().getMoneyShowType() == 2) {
-//            tvCnyAmount.setText("*****");
-//            ivSee.setImageResource(R.mipmap.icon_eye_close);
-//        }
+        if (!TextUtils.isEmpty(mUser.getAvatar()))
+            Glide.with(getActivity().getApplicationContext()).load(mUser.getAvatar()).error(R.mipmap.icon_default_header).into(ivHead);
+
+        tvUsername.setText(mUser.getNick_name());
+        tvVipSystem.setVisibility(View.VISIBLE);
+        tvEditInfo.setVisibility(View.VISIBLE);
+
+        tvTotalAssets.setText("--");
+        tvZjzhBtc.setText("━ ━");
+        tvZjzhUsdt.setVisibility(View.GONE);
+
+        tvHyqczhBtc.setText("━ ━");
+        tvHyqczhUsdt.setVisibility(View.GONE);
     }
 
     @Override

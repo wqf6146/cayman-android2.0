@@ -243,7 +243,7 @@ public class PromotionActivity extends BaseActivity implements PromotionRewardCo
                 ivPromotion.setImageBitmap(saveBitmap);
             }
         });
-        tvTitle.setText(user.getUsername() + getString(R.string.reward_invita));
+        tvTitle.setText(user.getNick_name() + getString(R.string.reward_invita));
         tvLink.setText(user.getPromotionPrefix() + user.getPromotionCode());
         View rootview = LayoutInflater.from(PromotionActivity.this).inflate(R.layout.activity_promotion, null);
 

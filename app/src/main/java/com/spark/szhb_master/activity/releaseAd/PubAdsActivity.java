@@ -402,7 +402,7 @@ public class PubAdsActivity extends BaseActivity implements ReleaseAdContract.Vi
                     @Override
                     public void onBtnClick() {
                         User user = MyApplication.getApp().getCurrentUser();
-                        String tvNickName = user.getUsername();
+                        String tvNickName = user.getNick_name();
                         String avatar = user.getAvatar();
                         Bundle bundle = new Bundle();
                         bundle.putString("avatar", avatar == null ? "" : avatar);
@@ -770,7 +770,7 @@ public class PubAdsActivity extends BaseActivity implements ReleaseAdContract.Vi
 //        showCofirmDialog();
 
         User user = MyApplication.getApp().getCurrentUser();
-        String tvNickName = user.getUsername();
+        String tvNickName = user.getNick_name();
         String avatar = user.getAvatar();
         Bundle bundle = new Bundle();
         bundle.putString("avatar", avatar == null ? "" : avatar);

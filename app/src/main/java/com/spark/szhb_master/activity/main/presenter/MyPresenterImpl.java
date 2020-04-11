@@ -33,14 +33,14 @@ public class MyPresenterImpl implements MainContract.MyPresenter {
 
     @Override
     public void getUserInfo() {
-        dataRepository.doStringPostJson(UrlFactory.getUserInfoUrl(), new DataSource.DataCallback() {
+        dataRepository.doStringGet(UrlFactory.getUserInfoUrl(), new DataSource.DataCallback() {
             @Override
             public void onDataLoaded(Object obj) {
                 String response = (String) obj;
                 try {
                     JSONObject object = new JSONObject(response);
                     if (object.optInt("code") == 1) {
-                        User user = new Gson().fromJson(object.getJSONArray("data").toString(), User.class);
+                        User user = new Gson().fromJson(object.getJSONObject("data").toString(), User.class);
                         view.getUserInfoSuccess(user);
                     } else {
                         view.doPostFail(object.getInt("code"), object.optString("msg"));

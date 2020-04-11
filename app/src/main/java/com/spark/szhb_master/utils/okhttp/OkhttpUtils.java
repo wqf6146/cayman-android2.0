@@ -92,11 +92,11 @@ public class OkhttpUtils {
                     return;
                 }
                 try {
-                    String token = response.header("x-auth-token");
-                    if (!StringUtils.isEmpty(token)) {
-                        MyApplication.getApp().getCurrentUser().setToken(token);
-                        MyApplication.getApp().saveCurrentUser();
-                    }
+//                    String token = response.header("x-auth-token");
+//                    if (!StringUtils.isEmpty(token)) {
+//                        MyApplication.getApp().getCurrentUser().setToken(token);
+//                        MyApplication.getApp().saveCurrentUser();
+//                    }
                     Object o = finalCallback.parseNetworkResponse(response);
                     sendSuccessResultCallback(o, finalCallback);
                 } catch (IOException e) {

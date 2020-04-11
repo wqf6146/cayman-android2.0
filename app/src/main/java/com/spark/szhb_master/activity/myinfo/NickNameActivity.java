@@ -156,7 +156,7 @@ public class NickNameActivity extends BaseActivity implements NickNameContract.V
     public void getNikeNameSuccess() {
 
         User user = MyApplication.getApp().getCurrentUser();
-        user.setUsername(etCode.getText().toString());
+        user.setNick_name(etCode.getText().toString());
         MyApplication.getApp().setCurrentUser(user);
 
         setResult(RESULT_OK);

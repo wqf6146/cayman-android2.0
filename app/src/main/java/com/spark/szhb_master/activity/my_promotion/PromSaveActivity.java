@@ -80,10 +80,10 @@ public class PromSaveActivity extends BaseActivity{
                 img_erwm.setImageBitmap(saveBitmap);
             }
         });
-        if (!StringUtils.isEmpty(user.getUsername())) {
-            String str = user.getUsername().substring(0, 1).toUpperCase();
+        if (!StringUtils.isEmpty(user.getNick_name())) {
+            String str = user.getNick_name().substring(0, 1).toUpperCase();
             text_head.setText(str);
-            text_name.setText(user.getUsername()+"邀请您一起来Cayman");
+            text_name.setText(user.getNick_name()+"邀请您一起来Cayman");
         }
 
     }

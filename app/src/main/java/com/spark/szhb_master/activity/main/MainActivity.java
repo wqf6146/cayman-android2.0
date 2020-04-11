@@ -84,8 +84,7 @@ public class MainActivity extends BaseTransFragmentActivity implements MainContr
     LinearLayout llMarket;
     @BindView(R.id.llTrade)
     LinearLayout llTrade;
-    @BindView(R.id.llTreasure)
-    LinearLayout llTreasure;
+
     @BindView(R.id.llC2C)
     LinearLayout llC2C;
     @BindView(R.id.llMy)
@@ -274,7 +273,7 @@ public class MainActivity extends BaseTransFragmentActivity implements MainContr
         new MainPresenter(Injection.provideTasksRepository(getApplicationContext()), this);
         startService(new Intent(activity, MyTextService.class)); // 开启服务
         //startService(new Intent(activity, GroupService.class));
-        lls = new LinearLayout[]{llHome, llMarket, llTrade, llTreasure, llC2C, llMy};
+        lls = new LinearLayout[]{llHome, llMarket, llTrade, llC2C, llMy};
         reCoveryView();
         initPresenter();
         fragment = new VersionDialogFragment(this);
@@ -367,7 +366,7 @@ public class MainActivity extends BaseTransFragmentActivity implements MainContr
         new MyPresenterImpl(Injection.provideTasksRepository(getApplicationContext()), myFragment);
     }
 
-    @OnClick({R.id.llHome, R.id.llMarket, R.id.llTrade, R.id.llTreasure, R.id.llC2C, R.id.llMy, R.id.ivClose})
+    @OnClick({R.id.llHome, R.id.llMarket, R.id.llTrade, R.id.llC2C, R.id.llMy, R.id.ivClose})
     @Override
     protected void setOnClickListener(View v) {
         super.setOnClickListener(v);
@@ -390,9 +389,6 @@ public class MainActivity extends BaseTransFragmentActivity implements MainContr
                 break;
             case R.id.ivClose:
                 dlRoot.closeDrawers();
-                break;
-            case R.id.llTreasure:
-                selecte(v, 5);
                 break;
         }
 
@@ -584,7 +580,6 @@ public class MainActivity extends BaseTransFragmentActivity implements MainContr
         currentPage = page;
         llHome.setSelected(false);
         llMarket.setSelected(false);
-        llTreasure.setSelected(false);
         llC2C.setSelected(false);
         llMy.setSelected(false);
         llTrade.setSelected(false);
@@ -863,7 +858,6 @@ public class MainActivity extends BaseTransFragmentActivity implements MainContr
         currentPage = 3;
         llHome.setSelected(false);
         llMarket.setSelected(false);
-        llTreasure.setSelected(false);
         llC2C.setSelected(true);
         llMy.setSelected(false);
         llTrade.setSelected(false);
@@ -888,7 +882,6 @@ public class MainActivity extends BaseTransFragmentActivity implements MainContr
         currentPage = 0;
         llHome.setSelected(false);
         llMarket.setSelected(true);
-        llTreasure.setSelected(false);
         llC2C.setSelected(false);
         llMy.setSelected(false);
         llTrade.setSelected(false);

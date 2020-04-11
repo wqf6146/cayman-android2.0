@@ -139,7 +139,7 @@ public class LockActivity extends BaseActivity {
         }
         User user = MyApplication.getApp().getCurrentUser();
         String url = user.getAvatar();
-        String username = user.getUsername();
+        String username = user.getNick_name();
         if (StringUtils.isEmpty(url))
             Glide.with(getApplicationContext()).load(R.mipmap.icon_default_header_grey).into(ivHeader);
         else Glide.with(getApplicationContext()).load(url).into(ivHeader);

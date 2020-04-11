@@ -13,6 +13,7 @@ import com.spark.szhb_master.base.BaseActivity;
 import com.spark.szhb_master.entity.User;
 import com.spark.szhb_master.utils.FileUtils;
 import com.spark.szhb_master.utils.GlobalConstant;
+import com.spark.szhb_master.utils.LogUtils;
 import com.spark.szhb_master.utils.StringUtils;
 import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
@@ -135,6 +136,7 @@ public class MyApplication extends Application {
             }
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file));
             oos.writeObject(currentUser);
+            LogUtils.i("save token==" + currentUser.getToken());
             oos.flush();
             oos.close();
         } catch (IOException e) {
@@ -188,6 +190,12 @@ public class MyApplication extends Application {
     public synchronized void setCurrentUser(User currentUser) {
         this.currentUser = currentUser;
         saveCurrentUser();
+    }
+
+    public synchronized void updateCurrentUser(User currentUser){
+        User localUser = getCurrentUser();
+
+        
     }
 
     public boolean isLoginStatusChange() {

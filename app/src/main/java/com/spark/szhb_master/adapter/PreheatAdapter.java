@@ -248,7 +248,7 @@ public class PreheatAdapter extends BaseExpandableListAdapter {
             @Override
             public void onClick(View view) {
                 User user = MyApplication.getApp().getCurrentUser();
-                if (!MyApplication.getApp().isLogin() || StringUtils.isEmpty(user.getUsername())) {
+                if (!MyApplication.getApp().isLogin() || StringUtils.isEmpty(user.getNick_name())) {
                     LoginDialog loginDialog = new LoginDialog(context);
                     loginDialog.show();
                 } else {

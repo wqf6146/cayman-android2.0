@@ -10,7 +10,7 @@ public class GlobalConstant {
     public static final boolean isUpLoadFile = false; // 上传图片是否为文件上传
 
     //TOKEN失效错误码
-    public static final int TOKEN_DISABLE1 = 4000;
+    public static final int TOKEN_DISABLE1 = 401;
     public static final int TOKEN_DISABLE2 = -1;
 
     //自定义错误码

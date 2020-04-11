@@ -131,7 +131,7 @@ public class MydiggingFragment extends BaseTransFragment implements TreasureCont
     protected void loadData() {
         super.loadData();
         User user = MyApplication.getApp().getCurrentUser();
-        if (!MyApplication.getApp().isLogin() || StringUtils.isEmpty(user.getUsername())){
+        if (!MyApplication.getApp().isLogin() || StringUtils.isEmpty(user.getNick_name())){
             refreshLayout.setVisibility(View.GONE);
             tvLogin.setVisibility(View.GONE);
         }else {

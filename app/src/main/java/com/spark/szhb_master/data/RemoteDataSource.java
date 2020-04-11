@@ -100,7 +100,7 @@ public class RemoteDataSource implements DataSource {
             token = MyApplication.getApp().getCurrentUser().getToken() == null ? "" : MyApplication.getApp().getCurrentUser().getToken();
 
         OkhttpUtils.postJson().url(url).addHeader("Authorization",token)
-                .addHeader("Content-Type","application/json").build().execute(new StringCallback() {
+                .addHeader("Content-Type","application/json").body("").build().execute(new StringCallback() {
             @Override
             public void onError(Request request, Exception e) { // 请求异常，服务器异常，解析异常
                 e.printStackTrace();
@@ -202,8 +202,8 @@ public class RemoteDataSource implements DataSource {
         String token = "";
         if (MyApplication.getApp().getCurrentUser() != null)
             token = MyApplication.getApp().getCurrentUser().getToken() == null ? "" : MyApplication.getApp().getCurrentUser().getToken();
-        LogUtils.i("传参==" + params);
-        OkhttpUtils.get().url(params).addHeader("x-auth-token", token).build().execute(new StringCallback() {
+        LogUtils.i("token==" + token);
+        OkhttpUtils.get().url(params).addHeader("Authorization", token).build().execute(new StringCallback() {
             @Override
             public void onError(Request request, Exception e) {
                 dataCallback.onDataNotAvailable(OKHTTP_ERROR, null);

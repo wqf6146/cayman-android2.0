@@ -85,7 +85,7 @@
                         android:layout_gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@mipmap/ic_heyue"/>
+                        android:src="@mipmap/ic_hy"/>
 
                     <TextView
                         android:layout_marginTop="10dp"
@@ -110,7 +110,7 @@
                         android:layout_gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@mipmap/ic_xinshou"/>
+                        android:src="@mipmap/ic_xszn"/>
 
                     <TextView
                         android:layout_marginTop="10dp"
@@ -135,7 +135,7 @@
                         android:layout_gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@mipmap/ic_lingj"/>
+                        android:src="@mipmap/ic_xrlj"/>
 
                     <TextView
                         android:layout_marginTop="10dp"
@@ -160,7 +160,7 @@
                         android:layout_gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@mipmap/ic_chongbi"/>
+                        android:src="@mipmap/ic_cb"/>
 
                     <TextView
                         android:layout_marginTop="10dp"
@@ -178,6 +178,7 @@
                 android:id="@+id/llHomeContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:orientation="vertical">
 
                 <android.support.v7.widget.RecyclerView
@@ -193,15 +194,41 @@
                 android:layout_width="match_parent"
                 android:orientation="horizontal"
                 android:padding="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_height="140dp">
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_weight="1.5"
                     android:layout_margin="5dp"
                     android:background="@color/main_bg_dark_2"
                     android:layout_height="match_parent">
 
-                </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_normal"
+                        android:id="@+id/tv_hy"
+                        android:layout_margin="10dp"
+                        android:text="合约"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="买涨买跌都能赚"
+                        android:layout_below ="@+id/tv_hy"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/font_hint"
+                        android:textSize="@dimen/font_small"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:src="@mipmap/ic_heyuequxian"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_margin="10dp"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"

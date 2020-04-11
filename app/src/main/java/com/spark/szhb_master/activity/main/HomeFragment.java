@@ -133,7 +133,7 @@ public class HomeFragment extends BaseTransFragment implements MainContract.Home
         User user = MyApplication.getApp().getCurrentUser();
         if (!MyApplication.getApp().isLogin()) {
 
-        } else if (!StringUtils.isEmpty(user.getUsername())){
+        } else if (!StringUtils.isEmpty(user.getNick_name())){
             getMoney(getmActivity().getToken());
         }
     }

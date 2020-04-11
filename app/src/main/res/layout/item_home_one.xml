@@ -4,6 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/main_bg_dark_2"
+    android:layout_marginRight="5dp"
+    android:layout_marginLeft="5dp"
     android:orientation="vertical"
     tools:ignore="UnusedAttribute">
 
@@ -61,6 +63,7 @@
         android:padding="2dp"
         android:singleLine="true"
         android:text="256321"
+        android:layout_marginBottom="5dp"
         android:textColor="@color/white"
         android:textSize="@dimen/font_mini"
         android:visibility="visible" />

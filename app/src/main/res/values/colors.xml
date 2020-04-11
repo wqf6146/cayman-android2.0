@@ -8,6 +8,7 @@
     <color name="transparent">#00000000</color>
     <color name="main_font_color">#598DDE</color><!--应用主题的字体色，如mainactivity中底部字体色，tab字体色-->
     <color name="main_bg">#1E273D</color><!--应用整体的背景色-->
+    <color name="main_bg_gray">#544F66</color><!--应用整体的背景色-->
     <!--<color name="main_head_bg">#2D2F39</color>&lt;!&ndash;应用头部背景色&ndash;&gt;-->
     <color name="main_head_bg">#1E273D</color><!--应用头部背景色-->
 

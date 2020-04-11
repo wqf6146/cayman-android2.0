@@ -252,7 +252,7 @@ public class TreasureAdapter extends BaseExpandableListAdapter {
                     e.printStackTrace();
                 }
                 User user = MyApplication.getApp().getCurrentUser();
-                if (!MyApplication.getApp().isLogin() || StringUtils.isEmpty(user.getUsername())){
+                if (!MyApplication.getApp().isLogin() || StringUtils.isEmpty(user.getNick_name())){
                     LoginDialog loginDialog = new LoginDialog(context);
                     loginDialog.show();
                 } else {
