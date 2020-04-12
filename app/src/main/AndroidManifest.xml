@@ -126,6 +126,8 @@
         <activity android:name="com.spark.szhb_master.activity.Treasure.GetTreaActivity" />
         <activity android:name="com.spark.szhb_master.activity.Treasure.PowerUpActivity" />
         <activity android:name="com.spark.szhb_master.activity.Treasure.SuanActivity" />
+        <activity android:name=".activity.login.LoginStepTwoActivity"/>
+        <activity android:name=".activity.login.LoginStepOneActivity"/>
         <activity android:name="com.spark.szhb_master.activity.Trade.TradeActivity"
             android:windowSoftInputMode="stateHidden|stateUnchanged"  />
 

@@ -177,12 +177,11 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     }
 
     @Override
-
     public void setPresenter(LoginContract.Presenter presenter) {
         this.presenter = presenter;
     }
 
-    @Override
+
     public void captchSuccess(JSONObject obj) {
         gt3GeetestUtils.gtSetApi1Json(obj);
         gt3GeetestUtils.getGeetest(this, null, null, null, new GT3GeetestBindListener() {
@@ -217,7 +216,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
         super.onDestroy();
     }
 
-    @Override
+
     public void captchFail(Integer code, String toastMessage) {
 
     }
@@ -256,7 +255,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
         NetCodeUtils.checkedErrorCode(this, code, toastMessage);
     }
 
-    @Override
+
     public void googleLoginSuccess(User obj) {
         ToastUtils.showToast("success");
         gt3GeetestUtils.gt3TestFinish();
@@ -278,7 +277,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
         }, 100);
     }
 
-    @Override
+
     public void googleLoginFail(Integer code, String toastMessage) {
         NetCodeUtils.checkedErrorCode(this, code, toastMessage);
         MyApplication.getApp().deleteCurrentUser();

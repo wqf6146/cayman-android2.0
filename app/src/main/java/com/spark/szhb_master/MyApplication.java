@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.spark.szhb_master.activity.login.LoginActivity;
+import com.spark.szhb_master.activity.login.LoginStepOneActivity;
 import com.spark.szhb_master.activity.main.MainActivity;
 import com.spark.szhb_master.base.BaseActivity;
 import com.spark.szhb_master.entity.User;
@@ -96,7 +97,7 @@ public class MyApplication extends Application {
      */
     public void loginAgain(BaseActivity activity) {
         deleteCurrentUser();
-        activity.startActivityForResult(new Intent(activity, LoginActivity.class), LoginActivity.RETURN_LOGIN);
+        activity.startActivityForResult(new Intent(activity, LoginStepOneActivity.class), LoginActivity.RETURN_LOGIN);
         //10.19改动
         if (StringUtils.isNotEmpty(activity.getClass().toString()) && activity.getClass().toString().equals(MainActivity.class.toString())) {
             return;

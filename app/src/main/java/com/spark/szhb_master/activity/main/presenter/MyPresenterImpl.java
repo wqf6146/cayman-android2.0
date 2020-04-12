@@ -60,18 +60,18 @@ public class MyPresenterImpl implements MainContract.MyPresenter {
 
     @Override
     public void myWallet() {
-        dataRepository.doStringPost(UrlFactory.getWalletUrl(), new DataSource.DataCallback() {
+        dataRepository.doStringGet(UrlFactory.getWalletUrl(), new DataSource.DataCallback() {
             @Override
             public void onDataLoaded(Object obj) {
                 String response = (String) obj;
                 try {
                     JSONObject object = new JSONObject(response);
-                    if (object.optInt("code") == 0) {
+                    if (object.optInt("code") == 1) {
                         List<Coin> coins = new Gson().fromJson(object.getJSONArray("data").toString(), new TypeToken<List<Coin>>() {
                         }.getType());
                         view.myWalletSuccess(coins);
                     } else {
-                        view.doPostFail(object.getInt("code"), object.optString("message"));
+                        view.doPostFail(object.getInt("code"), object.optString("msg"));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

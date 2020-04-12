@@ -93,6 +93,10 @@
     <string name="receive_message_code">接收到的短信验证码</string>
 
     <!--修改登录密码-->
+
+    <string name="captcha">验证码</string>
+    <string name="reset_pwd_desc1">验证码已发送至\n尾号%s的手机</string>
+    <string name="reset_pwd_desc2">请重新设置登录密码\n密码至少八位，包含数字和字母</string>
     <string name="change_login_pwd">更改登录密码</string>
     <string name="change_login_pwd_tag">您正在修改登录密码</string>
     <string name="change_login_pwd_bind_phone_tag">您已经绑定手机号</string>
@@ -140,6 +144,7 @@
 
     <!--我的-->
     <string name="hydl">欢迎登陆</string>
+    <string name="bjzl">编辑资料</string>
     <string name="zjzh">资金账户</string>
     <string name="hyqczh">合约全仓账户</string>
     <string name="not_login">未登录</string>
@@ -171,6 +176,8 @@
     <string name="confirm_logout">您确定要退出登录？</string>
     <string name="logout_current_account">退出账号</string>
     <string name="login_after">登录后可查看</string>
+
+
 
     <!-- 我的推广-->
     <string name="promote_friends">推广好友</string>
@@ -607,15 +614,20 @@
     <string name="canclelater">暂不更新</string>
     <string name="regist">注册</string>
     <string name="regist_now">立即注册</string>
+    <string name="regist_go">暂无账号，去注册</string>
+    <string name="login_welcome">你好，\n欢迎来到XXX</string>
+    <string name="login_welcome2">请输入\n8位登录密码</string>
     <string name="username">手机号/邮箱</string>
     <string name="password">密码</string>
-    <string name="forgot_password">忘记密码？</string>
+    <string name="forgot_password">忘记密码</string>
 
     <!--注册-->
     <string name="sign_up">注册</string>
     <string name="email_sign_up">邮箱注册</string>
     <string name="phone_sign_up">手机号注册</string>
     <string name="phoneoremail">手机号码或者邮箱</string>
+    <string name="register_desc1">请设置登录密码\n密码至少八位，包含数字和字母</string>
+    <string name="register_desc2">请输入邀请码\n此项必填</string>
     <string name="phone_number">手机号码</string>
     <string name="send_code">获取验证码</string>
     <string name="re_send">重新获取</string>
@@ -627,11 +639,11 @@
     <string name="email_not_correct">邮箱不正确</string>
     <string name="pwd_diff">两次密码不一致！</string>
     <string name="code">请输入短信验证码</string>
-    <string name="promotion_code">邀请码（选填）</string>
+    <string name="promotion_code">邀请码</string>
 
     <string name="read_agree">我已阅读并同意 Cayman</string>
     <string name="user_agree">《用户使用协议》</string>
-    <string name="existing_account">已有账号？</string>
+    <string name="existing_account">已有账号，去登录</string>
     <string name="goto_login">去登录</string>
 
 

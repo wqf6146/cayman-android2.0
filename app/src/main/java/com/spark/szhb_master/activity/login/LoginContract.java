@@ -15,17 +15,17 @@ import java.util.HashMap;
 public interface LoginContract {
     interface View extends Contract.BaseView<Presenter> {
 
-        void captchSuccess(JSONObject obj);
+        //void captchSuccess(JSONObject obj);
 
-        void captchFail(Integer code, String toastMessage);
+        //void captchFail(Integer code, String toastMessage);
 
         void loginSuccess(User obj);
 
         void loginFail(Integer code, String toastMessage);
 
-        void googleLoginSuccess(User obj);
+        //void googleLoginSuccess(User obj);
 
-        void googleLoginFail(Integer code, String toastMessage);
+        //void googleLoginFail(Integer code, String toastMessage);
     }
 
     interface Presenter extends Contract.BasePresenter {

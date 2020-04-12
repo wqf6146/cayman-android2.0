@@ -130,6 +130,7 @@
     <orderEntry type="library" name="Gradle: pl.droidsonroids.gif:android-gif-drawable:1.2.6@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:design:26.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.mcxtzhang:NestFullListView:V1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.zhy:percent-support-extends:1.1.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.yanzhenjie:permission:1.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.arcadefire:nice-spinner:1.3.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.yanzhenjie.alertdialog:alertdialog:1.0.1@aar" level="project" />
@@ -164,45 +165,6 @@
     <orderEntry type="library" name="Gradle: com.github.warkiz.widget:indicatorseekbar:1.1.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.amulyakhare:com.amulyakhare.textdrawable:1.0.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: :geetest_testbutton_android_v3.5.3:@aar" level="project" />
-    <orderEntry type="module" module-name="kchartlib" />
-    <orderEntry type="module" module-name="MPChart" />
-    <orderEntry type="module" module-name="lib-zxing" />
-    <orderEntry type="module" module-name="kchartlib" />
-    <orderEntry type="module" module-name="MPChart" />
-    <orderEntry type="module" module-name="lib-zxing" />
-    <orderEntry type="module" module-name="kchartlib" />
-    <orderEntry type="module" module-name="MPChart" />
-    <orderEntry type="module" module-name="lib-zxing" />
-    <orderEntry type="module" module-name="kchartlib" />
-    <orderEntry type="module" module-name="MPChart" />
-    <orderEntry type="module" module-name="lib-zxing" />
-    <orderEntry type="module" module-name="kchartlib" />
-    <orderEntry type="module" module-name="MPChart" />
-    <orderEntry type="module" module-name="lib-zxing" />
-    <orderEntry type="module" module-name="kchartlib" />
-    <orderEntry type="module" module-name="MPChart" />
-    <orderEntry type="module" module-name="lib-zxing" />
-    <orderEntry type="module" module-name="kchartlib" />
-    <orderEntry type="module" module-name="MPChart" />
-    <orderEntry type="module" module-name="lib-zxing" />
-    <orderEntry type="module" module-name="kchartlib" />
-    <orderEntry type="module" module-name="MPChart" />
-    <orderEntry type="module" module-name="lib-zxing" />
-    <orderEntry type="module" module-name="kchartlib" />
-    <orderEntry type="module" module-name="MPChart" />
-    <orderEntry type="module" module-name="lib-zxing" />
-    <orderEntry type="module" module-name="kchartlib" />
-    <orderEntry type="module" module-name="MPChart" />
-    <orderEntry type="module" module-name="lib-zxing" />
-    <orderEntry type="module" module-name="kchartlib" />
-    <orderEntry type="module" module-name="MPChart" />
-    <orderEntry type="module" module-name="lib-zxing" />
-    <orderEntry type="module" module-name="kchartlib" />
-    <orderEntry type="module" module-name="MPChart" />
-    <orderEntry type="module" module-name="lib-zxing" />
-    <orderEntry type="module" module-name="kchartlib" />
-    <orderEntry type="module" module-name="MPChart" />
-    <orderEntry type="module" module-name="lib-zxing" />
     <orderEntry type="module" module-name="kchartlib" />
     <orderEntry type="module" module-name="MPChart" />
     <orderEntry type="module" module-name="lib-zxing" />

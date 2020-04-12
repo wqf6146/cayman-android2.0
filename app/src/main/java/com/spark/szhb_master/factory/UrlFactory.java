@@ -32,7 +32,7 @@ public class UrlFactory {
     }
 
     public static String getWalletUrl() {
-        return host + "/uc/asset/wallet/";
+        return newhost+ "/user/wallet";
     }
 
     //获取配对历史

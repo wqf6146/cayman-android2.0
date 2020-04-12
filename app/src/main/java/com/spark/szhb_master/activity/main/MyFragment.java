@@ -25,6 +25,7 @@ import com.spark.szhb_master.R;
 import com.spark.szhb_master.activity.aboutus.AboutUsActivity;
 import com.spark.szhb_master.activity.entrust.NowTrustActivity;
 import com.spark.szhb_master.activity.login.LoginActivity;
+import com.spark.szhb_master.activity.login.LoginStepOneActivity;
 import com.spark.szhb_master.activity.message.MessageActivity;
 import com.spark.szhb_master.activity.ads.AdsActivity;
 import com.spark.szhb_master.activity.my_match.MatchActivity;
@@ -32,6 +33,7 @@ import com.spark.szhb_master.activity.order.MyOrderActivity;
 import com.spark.szhb_master.activity.my_promotion.PromotionActivity;
 import com.spark.szhb_master.activity.myinfo.MyInfoActivity;
 import com.spark.szhb_master.activity.safe.SafeActivity;
+import com.spark.szhb_master.activity.setting.SettingActivity;
 import com.spark.szhb_master.activity.wallet.WalletActivity;
 import com.spark.szhb_master.dialog.ShiMingDialog;
 import com.spark.szhb_master.entity.SafeSetting;
@@ -195,7 +197,7 @@ public class MyFragment extends BaseTransFragment implements MainContract.MyView
 //        }
 
         if (!MyApplication.getApp().isLogin()){
-            showActivity(LoginActivity.class, null, LoginActivity.RETURN_LOGIN);
+            showActivity(LoginStepOneActivity.class, null, LoginActivity.RETURN_LOGIN);
             return;
         }
         Bundle bundle = new Bundle();
@@ -222,8 +224,8 @@ public class MyFragment extends BaseTransFragment implements MainContract.MyView
 //                showActivity(SafeActivity.class, null);
 //                break;
             case R.id.llSettings:
-                showActivity(SafeActivity.class, null, 2);
-//                showActivity(SettingActivity.class, null, 2);
+                //showActivity(SafeActivity.class, null, 2);
+                showActivity(SettingActivity.class, null, 2);
                 break;
 //            case R.id.llEntrust:
 //                bundle.putBoolean("isMy", true);
@@ -337,6 +339,7 @@ public class MyFragment extends BaseTransFragment implements MainContract.MyView
 //            }
 //        }
         presenter.getUserInfo();
+        presenter.myWallet();
 
     }
 

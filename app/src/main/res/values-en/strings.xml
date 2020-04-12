@@ -103,6 +103,9 @@
     <string name="confirm_pwd">Confirm Password</string>
 
     <!--Set/Modify Fund Password-->
+    <string name="captcha">captcha</string>
+    <string name="reset_pwd_desc1">The verification code has been sent to \nthe mobile phone with the last number% s</string>
+    <string name="reset_pwd_desc2">Please reset the login password \nPassword must be at least eight digits, including numbers and letters</string>
     <string name="set_money_pwd">Set Fund Password</string>
     <string name="set_money_pwd_tag">You are modifying Digital Currency fund password</string>
     <string name="change_money_pwd">Modify Fund Password</string>
@@ -142,6 +145,9 @@
     <string name="ptfwrs">Platform service number</string>
 
     <!--Account-->
+
+
+
     <string name="hydl">Welcome to login</string>
     <string name="bjzl">Edit information</string>
     <string name="zjzh">Fund account</string>
@@ -607,9 +613,10 @@
     <string name="login">Log In</string>
     <string name="regist">Sign Up</string>
     <string name="regist_now">Sign Up</string>
+    <string name="regist_go">No account yet, go to register</string>
     <string name="username">Phone Number/Email</string>
     <string name="password">Password</string>
-    <string name="forgot_password">Forget Password?</string>
+    <string name="forgot_password">Forget Password</string>
 
     <!--Sign Up-->
     <string name="sign_up">register</string>
@@ -619,6 +626,8 @@
     <string name="phone_number">Phone Number</string>
     <string name="send_code">Send Verification Code</string>
     <string name="re_send">Resend</string>
+    <string name="login_welcome">Hello，\nWelcome to XXX</string>
+    <string name="login_welcome2">Please enter \ n8-digit login password </string>
     <string name="phone_code">SMS Verification Code</string>
     <string name="email_code">Email Verification Code</string>
     <string name="repeat_password">Confirm Password</string>
@@ -626,11 +635,14 @@
     <string name="email_not_correct">Wrong Email</string>
     <string name="pwd_diff">Passwords do not match!</string>
     <string name="code">Please Enter Verification Code</string>
-    <string name="promotion_code">Promotion Code(Optional)</string>
+    <string name="promotion_code">Invitation code</string>
+
+    <string name="register_desc1">Please set a login password \ nPassword must be at least eight digits, including numbers and letters</string>
+    <string name="register_desc2">Please enter the invitation code \ nThis field is required</string>
 
     <string name="read_agree">I have read and agreed Cayman</string>
     <string name="user_agree">User agreement</string>
-    <string name="existing_account">Existing account？</string>
+    <string name="existing_account">Existing account，go to login</string>
     <string name="goto_login">Go to login</string>
 
     <!--Forget Password-->

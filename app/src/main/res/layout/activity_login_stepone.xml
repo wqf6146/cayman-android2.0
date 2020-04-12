@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:id="@+id/as_rl_top"
+        android:background="@mipmap/ic_lrbg"
+        app:layout_heightPercent="30%h"
+        app:layout_widthPercent="100%w"
+        android:layout_height="0dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@mipmap/ic_lrclose"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:id="@+id/as_iv_close"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_normal"
+            android:text="@string/login_welcome"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40dp"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        app:layout_heightPercent="75%h"
+        app:layout_widthPercent="100%w"
+        android:background="@drawable/bg_lr_corner"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="50dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:background="@color/main_bg_dark_2"
+            android:id="@+id/as_ed_input"
+            android:textColor="@color/white"
+            android:textCursorDrawable="@drawable/line_dark_cursor"
+            android:maxLines="1"
+            android:hint="@string/phoneoremail"
+            android:textColorHint="@color/font_hint"
+            android:paddingLeft="15dp"
+            android:layout_height="50dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="30dp"
+            android:background="@color/Blue"
+            android:id="@+id/as_rl_nextstep"
+            android:layout_below="@+id/as_ed_input"
+            android:layout_height="50dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="@string/next_step"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_normal"
+                android:layout_centerInParent="true"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="@string/regist_go"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/as_tv_goregister"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/bg_lr_shape"
+            android:padding="10dp"
+            android:textColor="@color/font_hint"
+            android:textSize="@dimen/font_normal"
+            android:layout_height="wrap_content"/>
+
+
+    </RelativeLayout>
+
+</com.zhy.android.percent.support.PercentRelativeLayout>

@@ -61,55 +61,55 @@ public class LoginPresenter implements LoginContract.Presenter {
     @Override
     public void captch() {
         view.displayLoadingPopup();
-        dataRepository.doStringPost(UrlFactory.getCaptchaUrl(), new DataSource.DataCallback() {
-            @Override
-            public void onDataLoaded(Object obj) {
-                view.hideLoadingPopup();
-                String response = (String) obj;
-                try {
-                    JSONObject object = new JSONObject(response);
-                    view.captchSuccess(object);
-                } catch (Exception e) {
-                    view.captchFail(JSON_ERROR, null);
-                }
-            }
-
-            @Override
-            public void onDataNotAvailable(Integer code, String toastMessage) {
-                view.hideLoadingPopup();
-                view.captchFail(code, toastMessage);
-            }
-        });
+//        dataRepository.doStringPost(UrlFactory.getCaptchaUrl(), new DataSource.DataCallback() {
+//            @Override
+//            public void onDataLoaded(Object obj) {
+//                view.hideLoadingPopup();
+//                String response = (String) obj;
+//                try {
+//                    JSONObject object = new JSONObject(response);
+//                    view.captchSuccess(object);
+//                } catch (Exception e) {
+//                    view.captchFail(JSON_ERROR, null);
+//                }
+//            }
+//
+//            @Override
+//            public void onDataNotAvailable(Integer code, String toastMessage) {
+//                view.hideLoadingPopup();
+//                view.captchFail(code, toastMessage);
+//            }
+//        });
     }
 
     @Override
     public void googleLogin(HashMap<String, String> params) {
         view.displayLoadingPopup();
-        dataRepository.doStringPost(UrlFactory.googleLoginUrl(), params, new DataSource.DataCallback() {
-            @Override
-            public void onDataLoaded(Object obj) {
-                view.hideLoadingPopup();
-                String response = (String) obj;
-                JSONObject object = null;
-                try {
-                    object = new JSONObject(response);
-                    int code = object.optInt("code");
-                    if (code == 0) {
-                        User user = new Gson().fromJson(object.getJSONObject("data").toString(), User.class);
-                        view.googleLoginSuccess(user);
-                    } else {
-                        view.googleLoginFail(object.optInt("code"), object.optString("message"));
-                    }
-                } catch (Exception e) {
-                    view.googleLoginFail(JSON_ERROR, null);
-                }
-            }
-
-            @Override
-            public void onDataNotAvailable(Integer code, String toastMessage) {
-                view.hideLoadingPopup();
-                view.googleLoginFail(code, toastMessage);
-            }
-        });
+//        dataRepository.doStringPost(UrlFactory.googleLoginUrl(), params, new DataSource.DataCallback() {
+//            @Override
+//            public void onDataLoaded(Object obj) {
+//                view.hideLoadingPopup();
+//                String response = (String) obj;
+//                JSONObject object = null;
+//                try {
+//                    object = new JSONObject(response);
+//                    int code = object.optInt("code");
+//                    if (code == 0) {
+//                        User user = new Gson().fromJson(object.getJSONObject("data").toString(), User.class);
+//                        view.googleLoginSuccess(user);
+//                    } else {
+//                        view.googleLoginFail(object.optInt("code"), object.optString("message"));
+//                    }
+//                } catch (Exception e) {
+//                    view.googleLoginFail(JSON_ERROR, null);
+//                }
+//            }
+//
+//            @Override
+//            public void onDataNotAvailable(Integer code, String toastMessage) {
+//                view.hideLoadingPopup();
+//                view.googleLoginFail(code, toastMessage);
+//            }
+//        });
     }
 }

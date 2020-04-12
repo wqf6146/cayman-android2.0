@@ -54,7 +54,7 @@ dependencies {
     implementation  "org.java-websocket:Java-WebSocket:1.4.1"
 
     implementation 'com.github.mcxtzhang:NestFullListView:V1.0.0'
-
+    implementation 'com.zhy:percent-support-extends:1.1.1'
     implementation 'org.litepal.android:core:1.6.1'
     implementation 'com.yanzhenjie:permission:1.1.0'
     implementation 'com.google.code.gson:gson:2.8.2'

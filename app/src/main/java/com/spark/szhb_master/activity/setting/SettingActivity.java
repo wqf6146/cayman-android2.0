@@ -96,10 +96,10 @@ public class SettingActivity extends BaseActivity {
                     public void onBtnClick() {
                         MyApplication.getApp().deleteCurrentUser();
                         MyApplication.getApp().loginAgain(SettingActivity.this);
-                        SharedPreferenceInstance.getInstance().saveIsNeedShowLock(false);
-                        SharedPreferenceInstance.getInstance().saveLockPwd("");
-                        SharedPreferenceInstance.getInstance().saveToken("");
-                        SharedPreferenceInstance.getInstance().saveGoogle("close");
+//                        SharedPreferenceInstance.getInstance().saveIsNeedShowLock(false);
+//                        SharedPreferenceInstance.getInstance().saveLockPwd("");
+//                        SharedPreferenceInstance.getInstance().saveToken("");
+//                        SharedPreferenceInstance.getInstance().saveGoogle("close");
                         dialog.superDismiss();
                         setResult(RESULT_OK);
                         activity.finish();
