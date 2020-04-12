@@ -27,16 +27,16 @@ public class PhoneForgotPresenter implements ForgotPwdContract.Presenter {
 
     @Override
     public void forgotCode(String url, HashMap<String, String> params) {
-        dataRepository.doStringPost(url, params, new DataSource.DataCallback() {
+        dataRepository.doStringPostJson(url, params, new DataSource.DataCallback() {
             @Override
             public void onDataLoaded(Object obj) {
                 String response = (String) obj;
                 try {
                     JSONObject object = new JSONObject(response);
-                    if (object.optInt("code") == 0) {
-                        view.forgotCodeSuccess(object.optString("message"));
+                    if (object.optInt("code") == 1) {
+                        view.forgotCodeSuccess(object.optString("msg"));
                     } else {
-                        view.forgotCodeFail(object.getInt("code"), object.optString("message"));
+                        view.forgotCodeFail(object.getInt("code"), object.optString("msg"));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -77,16 +77,16 @@ public class PhoneForgotPresenter implements ForgotPwdContract.Presenter {
 
     @Override
     public void doForget(HashMap<String, String> params) {
-        dataRepository.doStringPost(UrlFactory.getForgotPwdUrl(), params, new DataSource.DataCallback() {
+        dataRepository.doStringPut(UrlFactory.getForgotPwdUrl(), params, new DataSource.DataCallback() {
             @Override
             public void onDataLoaded(Object obj) {
                 String response = (String) obj;
                 try {
                     JSONObject object = new JSONObject(response);
-                    if (object.optInt("code") == 0) {
-                        view.doForgetSuccess(object.optString("message"));
+                    if (object.optInt("code") == 1) {
+                        view.doForgetSuccess(object.optString("msg"));
                     } else {
-                        view.doForgetFail(object.getInt("code"), object.optString("message"));
+                        view.doForgetFail(object.getInt("code"), object.optString("msg"));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

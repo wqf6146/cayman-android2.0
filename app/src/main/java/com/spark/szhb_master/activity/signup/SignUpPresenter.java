@@ -34,19 +34,19 @@ public class SignUpPresenter implements SignUpContract.Presenter {
                 try {
                     JSONObject object = new JSONObject(response);
                     if (object.optInt("code") == 0) {
-                        view.codeSuccess(object.optString("message"));
+                        //view.codeSuccess(object.optString("message"));
                     } else {
-                        view.codeFail(object.getInt("code"), object.optString("message"));
+                        //view.codeFail(object.getInt("code"), object.optString("message"));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    view.codeFail(JSON_ERROR, null);
+                    //view.codeFail(JSON_ERROR, null);
                 }
             }
 
             @Override
             public void onDataNotAvailable(Integer code, String toastMessage) {
-                view.codeFail(code, toastMessage);
+                //view.codeFail(code, toastMessage);
             }
         });
     }
@@ -90,16 +90,16 @@ public class SignUpPresenter implements SignUpContract.Presenter {
                 String response = (String) obj;
                 try {
                     JSONObject object = new JSONObject(response);
-                    view.captchSuccess((JSONObject) object);
+                    //view.captchSuccess((JSONObject) object);
                 } catch (Exception e) {
-                    view.captchFail(JSON_ERROR, null);
+                    //view.captchFail(JSON_ERROR, null);
                 }
             }
 
             @Override
             public void onDataNotAvailable(Integer code, String toastMessage) {
                 view.hideLoadingPopup();
-                view.captchFail(code, toastMessage);
+                //view.captchFail(code, toastMessage);
             }
         });
     }

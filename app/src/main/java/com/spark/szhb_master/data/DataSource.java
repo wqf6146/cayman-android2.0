@@ -17,7 +17,10 @@ public interface DataSource {
 
     void doStringPostJson(final String url, DataCallback dataCallback);
 
-    void doStringGet(String params, DataCallback dataCallback);
+    void doStringGet(String url, DataCallback dataCallback);
+    void doStringGet(String url,HashMap<String, String> params, DataCallback dataCallback);
+
+    void doStringPut(String url,HashMap<String, String> params, DataCallback dataCallback);
 
     void doDownload(String Url, DataCallback dataCallback);
 

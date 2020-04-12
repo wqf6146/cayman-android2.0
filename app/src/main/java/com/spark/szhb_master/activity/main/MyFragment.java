@@ -36,6 +36,7 @@ import com.spark.szhb_master.activity.safe.SafeActivity;
 import com.spark.szhb_master.activity.setting.SettingActivity;
 import com.spark.szhb_master.activity.wallet.WalletActivity;
 import com.spark.szhb_master.dialog.ShiMingDialog;
+import com.spark.szhb_master.entity.AssetsInfo;
 import com.spark.szhb_master.entity.SafeSetting;
 import com.spark.szhb_master.ui.AvatarImageView;
 import com.spark.szhb_master.utils.GlobalConstant;
@@ -145,6 +146,9 @@ public class MyFragment extends BaseTransFragment implements MainContract.MyView
 
     @BindView(R.id.fm_rl_userinfo)
     RelativeLayout rlUserinfo;
+
+    @BindView(R.id.fm_tv_totalassetsconverts)
+    TextView tvTotalAssetsConverts;
 
     private MainContract.MyPresenter presenter;
     private List<Coin> coins = new ArrayList<>();
@@ -319,6 +323,8 @@ public class MyFragment extends BaseTransFragment implements MainContract.MyView
         tvVipSystem.setVisibility(View.GONE);
         tvEditInfo.setVisibility(View.GONE);
 
+        tvTotalAssetsConverts.setVisibility(View.GONE);
+
         tvTotalAssets.setText("--");
         tvZjzhBtc.setText("━ ━");
         tvZjzhUsdt.setVisibility(View.GONE);
@@ -376,13 +382,6 @@ public class MyFragment extends BaseTransFragment implements MainContract.MyView
         tvUsername.setText(mUser.getNick_name());
         tvVipSystem.setVisibility(View.VISIBLE);
         tvEditInfo.setVisibility(View.VISIBLE);
-
-        tvTotalAssets.setText("--");
-        tvZjzhBtc.setText("━ ━");
-        tvZjzhUsdt.setVisibility(View.GONE);
-
-        tvHyqczhBtc.setText("━ ━");
-        tvHyqczhUsdt.setVisibility(View.GONE);
     }
 
     @Override
@@ -391,11 +390,20 @@ public class MyFragment extends BaseTransFragment implements MainContract.MyView
     }
 
     @Override
-    public void myWalletSuccess(List<Coin> obj) {
-        if (obj == null) return;
-        coins.clear();
-        coins.addAll(obj);
-        calcuTotal(coins);
+    public void myWalletSuccess(AssetsInfo assetsInfo) {
+        if (assetsInfo == null) return;
+
+
+        tvTotalAssets.setText(String.format(getString(R.string.mytotalassets),assetsInfo.getSum()));
+        tvTotalAssetsConverts.setVisibility(View.VISIBLE);
+        tvTotalAssetsConverts.setText(String.format(getString(R.string.mytotalassetsconverts),assetsInfo.getSum_convert()));
+        tvZjzhBtc.setText(String.format(getString(R.string.mytotalassets),assetsInfo.getUsable()));
+        tvZjzhUsdt.setVisibility(View.VISIBLE);
+        tvZjzhUsdt.setText(String.format(getString(R.string.mytotalassetsconverts),assetsInfo.getUsable_convert()));
+        tvHyqczhBtc.setText(String.format(getString(R.string.mytotalassets),assetsInfo.getFrost()));
+        tvHyqczhUsdt.setVisibility(View.VISIBLE);
+        tvHyqczhUsdt.setText(String.format(getString(R.string.mytotalassetsconverts),assetsInfo.getFrost_convert()));
+
     }
 //    7073
 

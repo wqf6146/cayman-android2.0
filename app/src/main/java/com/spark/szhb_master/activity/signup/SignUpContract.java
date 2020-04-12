@@ -14,13 +14,13 @@ import java.util.HashMap;
 public interface SignUpContract {
     interface View extends Contract.BaseView<Presenter> {
 
-        void codeSuccess(String obj);
-
-        void codeFail(Integer code, String toastMessage);
-
-        void captchSuccess(JSONObject obj);
-
-        void captchFail(Integer code, String toastMessage);
+//        void codeSuccess(String obj);
+//
+//        void codeFail(Integer code, String toastMessage);
+//
+//        void captchSuccess(JSONObject obj);
+//
+//        void captchFail(Integer code, String toastMessage);
 
         void sighUpSuccess(String obj);
 

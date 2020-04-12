@@ -66,7 +66,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:textSize="@dimen/font_normal"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="20dp"
+                android:padding="10dp"
                 android:id="@+id/ar_tv_sendcode"
                 android:text="@string/send_code"
                 android:textColor="@color/Blue"
@@ -95,7 +96,7 @@
             android:layout_width="wrap_content"
             android:text="@string/existing_account"
             android:layout_alignParentBottom="true"
-            android:id="@+id/ar_tv_goregister"
+            android:id="@+id/ar_tv_gologin"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="50dp"
             android:background="@drawable/bg_lr_shape"

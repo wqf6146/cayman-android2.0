@@ -126,8 +126,15 @@
         <activity android:name="com.spark.szhb_master.activity.Treasure.GetTreaActivity" />
         <activity android:name="com.spark.szhb_master.activity.Treasure.PowerUpActivity" />
         <activity android:name="com.spark.szhb_master.activity.Treasure.SuanActivity" />
-        <activity android:name=".activity.login.LoginStepTwoActivity"/>
-        <activity android:name=".activity.login.LoginStepOneActivity"/>
+        <activity android:name=".activity.login.LoginStepTwoActivity" android:launchMode="singleTask"/>
+        <activity android:name=".activity.login.LoginStepOneActivity" android:launchMode="singleTask"/>
+        <activity android:name=".activity.signup.RegisterStepOneActivity" android:launchMode="singleTask"/>
+        <activity android:name=".activity.signup.RegisterStepTwoActivity" android:launchMode="singleTask"/>
+        <activity android:name=".activity.signup.RegisterStepThreeActivity" android:launchMode="singleTask"/>
+        <activity android:name=".activity.forgot_pwd.ForgotPwdStepOneActivity" android:launchMode="singleTask"/>
+        <activity android:name=".activity.forgot_pwd.ForgotPwdStepTwoActivity" android:launchMode="singleTask"/>
+        <activity android:name=".activity.forgot_pwd.ForgotPwdStepThreeActivity" android:launchMode="singleTask"/>
+
         <activity android:name="com.spark.szhb_master.activity.Trade.TradeActivity"
             android:windowSoftInputMode="stateHidden|stateUnchanged"  />
 

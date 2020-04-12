@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.spark.szhb_master.activity.main.MainContract;
 import com.spark.szhb_master.data.DataSource;
+import com.spark.szhb_master.entity.AssetsInfo;
 import com.spark.szhb_master.entity.Coin;
 import com.spark.szhb_master.entity.SafeSetting;
 import com.spark.szhb_master.entity.User;
@@ -67,9 +68,8 @@ public class MyPresenterImpl implements MainContract.MyPresenter {
                 try {
                     JSONObject object = new JSONObject(response);
                     if (object.optInt("code") == 1) {
-                        List<Coin> coins = new Gson().fromJson(object.getJSONArray("data").toString(), new TypeToken<List<Coin>>() {
-                        }.getType());
-                        view.myWalletSuccess(coins);
+                        AssetsInfo assetsInfo = new Gson().fromJson(object.getJSONObject("data").toString(), AssetsInfo.class);
+                        view.myWalletSuccess(assetsInfo);
                     } else {
                         view.doPostFail(object.getInt("code"), object.optString("msg"));
                     }

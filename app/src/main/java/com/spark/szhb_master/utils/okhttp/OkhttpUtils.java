@@ -8,6 +8,7 @@ import com.spark.szhb_master.utils.StringUtils;
 import com.spark.szhb_master.utils.okhttp.get.GetBuilder;
 import com.spark.szhb_master.utils.okhttp.post.PostFormBuilder;
 import com.spark.szhb_master.utils.okhttp.post.PostJsonBuilder;
+import com.spark.szhb_master.utils.okhttp.put.PutBuilder;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 
-public class OkhttpUtils {
+public class  OkhttpUtils {
     private static OkhttpUtils mInstance;
     private OkHttpClient mOkHttpClient;
     private Handler handler;
@@ -42,6 +43,7 @@ public class OkhttpUtils {
                 return cookies != null ? cookies : new ArrayList<Cookie>();
             }
         }).build();
+
         handler = new Handler(Looper.getMainLooper());
     }
 
@@ -62,6 +64,10 @@ public class OkhttpUtils {
 
     public static GetBuilder get() {
         return new GetBuilder();
+    }
+
+    public static PutBuilder put() {
+        return new PutBuilder();
     }
 
     public static PostJsonBuilder postJson() {

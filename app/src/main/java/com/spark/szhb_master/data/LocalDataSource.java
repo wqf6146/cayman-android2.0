@@ -67,6 +67,16 @@ public class LocalDataSource implements DataSource {
     }
 
     @Override
+    public void doStringGet(String url, HashMap<String, String> params, DataCallback dataCallback) {
+
+    }
+
+    @Override
+    public void doStringPut(String url, HashMap<String, String> params, DataCallback dataCallback) {
+
+    }
+
+    @Override
     public void myMatchHis(String token, String dataRange, int pageNo, int pageSize, int type, DataCallback dataCallback) {
 
     }

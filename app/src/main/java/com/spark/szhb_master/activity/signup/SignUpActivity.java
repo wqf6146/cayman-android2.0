@@ -261,7 +261,7 @@ public class SignUpActivity extends BaseActivity implements SignUpContract.View 
         this.presenter = presenter;
     }
 
-    @Override
+   // @Override
     public void codeSuccess(String obj) {
         try {
             ToastUtils.showToast(obj);
@@ -273,13 +273,13 @@ public class SignUpActivity extends BaseActivity implements SignUpContract.View 
         }
     }
 
-    @Override
+    //@Override
     public void codeFail(Integer code, String toastMessage) {
         gt3GeetestUtils.gt3TestClose();
         NetCodeUtils.checkedErrorCode((BaseActivity) activity, code, toastMessage);
     }
 
-    @Override
+    //@Override
     public void captchSuccess(JSONObject obj) {
         gt3GeetestUtils.gtSetApi1Json(obj);
         gt3GeetestUtils.getGeetest(activity, UrlFactory.getCaptchaUrl(), null, null, new GT3GeetestBindListener() {
@@ -321,7 +321,7 @@ public class SignUpActivity extends BaseActivity implements SignUpContract.View 
         gt3GeetestUtils.setDialogTouch(true);
     }
 
-    @Override
+   // @Override
     public void captchFail(Integer code, String toastMessage) {
 
     }

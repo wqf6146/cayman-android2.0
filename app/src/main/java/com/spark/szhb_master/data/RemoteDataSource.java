@@ -194,16 +194,16 @@ public class RemoteDataSource implements DataSource {
     /**
      * get请求
      *
-     * @param params
+     * @param url
      * @param dataCallback
      */
     @Override
-    public void doStringGet(String params, final DataCallback dataCallback) {
+    public void doStringGet(String url, final DataCallback dataCallback) {
         String token = "";
         if (MyApplication.getApp().getCurrentUser() != null)
             token = MyApplication.getApp().getCurrentUser().getToken() == null ? "" : MyApplication.getApp().getCurrentUser().getToken();
         LogUtils.i("token==" + token);
-        OkhttpUtils.get().url(params).addHeader("Authorization", token).build().execute(new StringCallback() {
+        OkhttpUtils.get().url(url).addHeader("Authorization", token).build().execute(new StringCallback() {
             @Override
             public void onError(Request request, Exception e) {
                 dataCallback.onDataNotAvailable(OKHTTP_ERROR, null);
@@ -218,6 +218,65 @@ public class RemoteDataSource implements DataSource {
 
         });
     }
+
+    /**
+     * get请求
+     *
+     * @param url
+     * @param dataCallback
+     */
+    @Override
+    public void doStringGet(String url, HashMap<String, String> params,final DataCallback dataCallback) {
+        String token = "";
+        if (MyApplication.getApp().getCurrentUser() != null)
+            token = MyApplication.getApp().getCurrentUser().getToken() == null ? "" : MyApplication.getApp().getCurrentUser().getToken();
+        LogUtils.i("token==" + token);
+        OkhttpUtils.get().url(url).addHeader("Authorization", token).addParams(params).build().execute(new StringCallback() {
+            @Override
+            public void onError(Request request, Exception e) {
+                dataCallback.onDataNotAvailable(OKHTTP_ERROR, null);
+            }
+
+            @Override
+            public boolean onResponse(String response) {
+                LogUtils.i("onResponse：" + response.toString());
+                dataCallback.onDataLoaded(response);
+                return false;
+            }
+
+        });
+    }
+
+    /**
+     * put请求
+     *
+     * @param url
+     * @param dataCallback
+     */
+    @Override
+    public void doStringPut(String url, HashMap<String, String> params,final DataCallback dataCallback) {
+        String token = "";
+        if (MyApplication.getApp().getCurrentUser() != null)
+            token = MyApplication.getApp().getCurrentUser().getToken() == null ? "" : MyApplication.getApp().getCurrentUser().getToken();
+        LogUtils.i("token==" + token);
+
+        OkhttpUtils.put().url(url).addHeader("Content-Type","application/json")
+                .addHeader("Authorization", token).addParams(params).build().execute(new StringCallback() {
+            @Override
+            public void onError(Request request, Exception e) {
+                dataCallback.onDataNotAvailable(OKHTTP_ERROR, null);
+            }
+
+            @Override
+            public boolean onResponse(String response) {
+                LogUtils.i("onResponse：" + response.toString());
+                dataCallback.onDataLoaded(response);
+                return false;
+            }
+
+        });
+    }
+
 
     /**
      * 下载

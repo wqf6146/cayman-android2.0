@@ -147,7 +147,8 @@
     <!--Account-->
 
 
-
+    <string name="mytotalassets">%.8f BTC</string>
+    <string name="mytotalassetsconverts"> ≈ %.2f USDT</string>
     <string name="hydl">Welcome to login</string>
     <string name="bjzl">Edit information</string>
     <string name="zjzh">Fund account</string>

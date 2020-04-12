@@ -88,5 +88,14 @@ public class DataRepository implements DataSource {
         else mRemoteDataSource.getStartMatch(token,amount,symbol,dataCallback);
     }
 
+    @Override
+    public void doStringPut(String url, HashMap<String, String> params, DataCallback dataCallback) {
+        mRemoteDataSource.doStringPut(url,params, dataCallback);
+    }
+
+    @Override
+    public void doStringGet(String url, HashMap<String, String> params, DataCallback dataCallback) {
+        mRemoteDataSource.doStringGet(url,params, dataCallback);
+    }
 }
 

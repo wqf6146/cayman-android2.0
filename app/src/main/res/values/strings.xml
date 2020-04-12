@@ -180,6 +180,8 @@
 
 
     <!-- 我的推广-->
+    <string name="mytotalassets">%.8f BTC</string>
+    <string name="mytotalassetsconverts"> ≈ %.2f USDT</string>
     <string name="promote_friends">推广好友</string>
     <string name="my_commission">我的佣金</string>
     <string name="get_rebate">获得返佣：</string>

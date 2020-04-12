@@ -9,7 +9,9 @@ import android.widget.Toast;
 
 import com.spark.szhb_master.MyApplication;
 import com.spark.szhb_master.R;
+import com.spark.szhb_master.activity.forgot_pwd.ForgotPwdStepOneActivity;
 import com.spark.szhb_master.activity.main.MainActivity;
+import com.spark.szhb_master.activity.signup.RegisterStepOneActivity;
 import com.spark.szhb_master.activity.signup.SignUpActivity;
 import com.spark.szhb_master.base.ActivityManage;
 import com.spark.szhb_master.base.BaseActivity;
@@ -73,7 +75,7 @@ public class LoginStepTwoActivity extends BaseActivity implements LoginContract.
                 finish();
                 break;
             case R.id.as_tv_forgotpwd:
-                showActivity(SignUpActivity.class, null);
+                showActivity(ForgotPwdStepOneActivity.class, null);
                 break;
             case R.id.as_rl_login:
                 String password = edInput.getText().toString().trim();
@@ -90,6 +92,7 @@ public class LoginStepTwoActivity extends BaseActivity implements LoginContract.
                 }
                 break;
             case R.id.as_tv_goregister:
+                showActivity(RegisterStepOneActivity.class,null);
                 break;
         }
     }

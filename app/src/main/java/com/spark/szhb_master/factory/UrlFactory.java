@@ -173,11 +173,11 @@ public class UrlFactory {
     }
 
     public static String getEmailForgotPwdCodeUrl() {
-        return host + "/uc/reset/email/code";
+        return newhost + "/user/sms";
     }
 
     public static String getForgotPwdUrl() {
-        return host + "/uc/reset/login/password";
+        return newhost + "/user/password";
     }
 
     public static String getCaptchaUrl() {

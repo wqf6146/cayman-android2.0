@@ -1,6 +1,7 @@
 package com.spark.szhb_master.activity.main;
 
 import com.spark.szhb_master.base.Contract;
+import com.spark.szhb_master.entity.AssetsInfo;
 import com.spark.szhb_master.entity.BannerEntity;
 import com.spark.szhb_master.entity.C2C;
 import com.spark.szhb_master.entity.Coin;
@@ -135,7 +136,7 @@ public interface MainContract {
 
     interface MyView extends Contract.BaseView<MyPresenter> {
 
-        void myWalletSuccess(List<Coin> obj);
+        void myWalletSuccess(AssetsInfo assetsInfo);
         void getUserInfoSuccess(User user);
         void doPostFail(Integer code, String toastMessage);
         void getNewVisionSuccess(Vision obj);
