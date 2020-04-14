@@ -133,8 +133,8 @@ public class TradeActivity extends BaseActivity implements TradeContract.View {
     TextView tvMoney;
     @BindView(R.id.tvBuyCanUse)
     TextView tvBuyCanUse;
-    @BindView(R.id.tvCanSell)
-    TextView tvCanSell;
+//    @BindView(R.id.tvCanSell)
+//    TextView tvCanSell;
     @BindView(R.id.tvBuyRMB)
     TextView tvBuyRMB;
     @BindView(R.id.etCount)
@@ -175,8 +175,8 @@ public class TradeActivity extends BaseActivity implements TradeContract.View {
     TextView tvPriceTag;
     @BindView(R.id.tvCountTag)
     TextView tvCountTag;
-    @BindView(R.id.tvLatest)
-    TextView tvLatest;
+//    @BindView(R.id.tvLatest)
+//    TextView tvLatest;
     private NewCurrency currency;
     private List<Exchange> sellExchangeList;
     private List<Exchange> buyExchangeList;
@@ -215,8 +215,8 @@ public class TradeActivity extends BaseActivity implements TradeContract.View {
             tvPrice.setText(String.valueOf(currency.getClose()));
             tvPrice.setTextColor( Float.parseFloat(currency.getScale()) >= 0 ? ContextCompat.getColor(MyApplication.getApp(), R.color.main_font_green) :
                     ContextCompat.getColor(MyApplication.getApp(), R.color.main_font_red));
-            tvLatest.setTextColor(Float.parseFloat(currency.getScale()) >= 0 ? ContextCompat.getColor(MyApplication.getApp(), R.color.main_font_green) :
-                    ContextCompat.getColor(MyApplication.getApp(), R.color.main_font_red));
+//            tvLatest.setTextColor(Float.parseFloat(currency.getScale()) >= 0 ? ContextCompat.getColor(MyApplication.getApp(), R.color.main_font_green) :
+//                    ContextCompat.getColor(MyApplication.getApp(), R.color.main_font_red));
             if (GlobalConstant.CNY.equals(CommonUtils.getUnitBySymbol(currency.getSymbol()))) {
                 tvMoney.setText(String.valueOf("≈" + MathUtils.getRundNumber(Float.parseFloat(currency.getClose()) * 1 * currency.getBaseUsdRate(),
                         2, null) + GlobalConstant.CNY));
@@ -346,8 +346,8 @@ public class TradeActivity extends BaseActivity implements TradeContract.View {
                     LogUtils.i("handler");
                     initSellAndBuyView();
                     initTrustView();
-                    tvBuyTradeCount.setText(getString(R.string.text_entrust) + " --");
-                    tvSellTradeCount.setText(getString(R.string.text_entrust) + " --");
+                    //tvBuyTradeCount.setText(getString(R.string.text_entrust) + " --");
+                    //tvSellTradeCount.setText(getString(R.string.text_entrust) + " --");
                     setViewListener();
                     if (currency != null) {
                         getExchangeAndSymbolInfo();
@@ -410,8 +410,8 @@ public class TradeActivity extends BaseActivity implements TradeContract.View {
             tvPrice.setText(strClose);
             tvPrice.setTextColor(Float.parseFloat(currency.getScale()) >= 0 ? ContextCompat.getColor(MyApplication.getApp(), R.color.main_font_green) :
                     ContextCompat.getColor(MyApplication.getApp(), R.color.main_font_red));
-            tvLatest.setTextColor(Float.parseFloat(currency.getScale()) >= 0 ? ContextCompat.getColor(MyApplication.getApp(), R.color.main_font_green) :
-                    ContextCompat.getColor(MyApplication.getApp(), R.color.main_font_red));
+//            tvLatest.setTextColor(Float.parseFloat(currency.getScale()) >= 0 ? ContextCompat.getColor(MyApplication.getApp(), R.color.main_font_green) :
+//                    ContextCompat.getColor(MyApplication.getApp(), R.color.main_font_red));
             strSymbol = symbol;
             tvBuySymbol.setText(strSymbol);
             tvSellSymbol.setText(strSymbol);
@@ -1075,11 +1075,11 @@ public class TradeActivity extends BaseActivity implements TradeContract.View {
                 if (obj.getCode() == 0 && obj.getData() != null) {
                     sellCountBalance = obj.getData().getBalance();
                     sellCountBalance_two = obj.getData().getBalance();
-                    tvCanSell.setText(getString(R.string.text_can_sell) + String.valueOf(MathUtils.getRundNumber(sellCountBalance, 2, null) + symbol));
+                    //tvCanSell.setText(getString(R.string.text_can_sell) + String.valueOf(MathUtils.getRundNumber(sellCountBalance, 2, null) + symbol));
                 } else {
                     sellCountBalance = 0.0;
-                    tvCanSell.setText(getString(R.string.text_can_sell) + String.valueOf(sellCountBalance +
-                            symbol));
+                    //tvCanSell.setText(getString(R.string.text_can_sell) + String.valueOf(sellCountBalance +
+                    //        symbol));
                 }
                 break;
             case 2: // 可用
@@ -1099,8 +1099,8 @@ public class TradeActivity extends BaseActivity implements TradeContract.View {
             case 3:
                 buyCountBalance = 0.0;
                 sellCountBalance = 0.0;
-                tvCanSell.setText(getString(R.string.text_can_sell) + String.valueOf("0.0" +
-                        symbol));
+                //tvCanSell.setText(getString(R.string.text_can_sell) + String.valueOf("0.0" +
+                //        symbol));
                 tvBuyCanUse.setText(getString(R.string.text_can_used) + String.valueOf("0.0" + CommonUtils.getUnitBySymbol(symbol)));
                 break;
         }
@@ -1335,6 +1335,7 @@ public class TradeActivity extends BaseActivity implements TradeContract.View {
             return;
         }
 
+        Double max = 0.0d;
         this.sellExchangeList.clear();
         for (int i = 0; i < 5; i++) {
             sellExchangeList.add(new Exchange(5 - i, "--", "--"));
@@ -1342,14 +1343,23 @@ public class TradeActivity extends BaseActivity implements TradeContract.View {
         List<List<Double>> sells = items.getAsks();
         if (sells.size() >= 5) {
             for (int i = 0; i < 5; i++) {
-                sellExchangeList.set(4 - i, new Exchange(i + 1, sells.get(i).get(0), sells.get(i).get(1)));
+                Double amount = sells.get(i).get(1);
+                if (amount > max){
+                    max = amount;
+                }
+                sellExchangeList.set(4 - i, new Exchange(i + 1, sells.get(i).get(0), amount));
             }
         } else {
             for (int i = 0; i < sells.size(); i++) {
-                sellExchangeList.set(4 - i, new Exchange(i + 1, sells.get(i).get(0), sells.get(i).get(1)));
+                Double amount = sells.get(i).get(1);
+                if (amount > max){
+                    max = amount;
+                }
+                sellExchangeList.set(4 - i, new Exchange(i + 1, sells.get(i).get(0), amount));
             }
         }
-        sellAdapter.notifyDataSetChanged();
+
+
 
         this.buyExchangeList.clear();
         for (int i = 0; i < 5; i++) {
@@ -1358,13 +1368,27 @@ public class TradeActivity extends BaseActivity implements TradeContract.View {
         List<List<Double>> buys = items.getBids();
         if (buys.size() >= 5) {
             for (int i = 0; i < 5; i++) {
-                buyExchangeList.set(i, new Exchange(i, buys.get(i).get(0), buys.get(i).get(1)));
+                Double amount = buys.get(i).get(1);
+                if (amount > max){
+                    max = amount;
+                }
+                buyExchangeList.set(i, new Exchange(i, buys.get(i).get(0), amount));
             }
         } else {
             for (int i = 0; i < buys.size(); i++) {
-                buyExchangeList.set(i, new Exchange(i, buys.get(i).get(0), buys.get(i).get(1)));
+                Double amount = buys.get(i).get(1);
+                if (amount > max){
+                    max = amount;
+                }
+                buyExchangeList.set(i, new Exchange(i, buys.get(i).get(0), amount));
             }
         }
+
+
+        sellAdapter.setTag(1/max);
+        sellAdapter.notifyDataSetChanged();
+
+        buyAdapter.setTag(1/max);
         buyAdapter.notifyDataSetChanged();
 
 //        if (GlobalConstant.SELL.equals(items.getSells())) { // 卖

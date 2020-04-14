@@ -41,6 +41,9 @@ public class ForgotPwdStepTwoActivity extends BaseActivity implements ForgotPwdC
     @BindView(R.id.ar_tv_sendcode)
     TextView tvSendcode;
 
+    @BindView(R.id.ar_tv_desc)
+    TextView tvDesc;
+
     private TimeCount timeCount;
     private String mAccount;
     private boolean isEmail = false;
@@ -58,6 +61,10 @@ public class ForgotPwdStepTwoActivity extends BaseActivity implements ForgotPwdC
         new PhoneForgotPresenter(Injection.provideTasksRepository(activity), this);
         timeCount = new TimeCount(90000, 1000, tvSendcode);
         mAccount = getIntent().getStringExtra("account");
+
+        tvDesc.setText(String.format(getString(R.string.reset_pwd_desc1),mAccount.substring(mAccount.length() - 4,mAccount.length())));
+
+        getCode();
     }
 
     @OnClick({R.id.ar_iv_close,R.id.ar_tv_sendcode, R.id.ar_rl_nextstep, R.id.ar_tv_gologin})
@@ -75,7 +82,7 @@ public class ForgotPwdStepTwoActivity extends BaseActivity implements ForgotPwdC
                 if (StringUtils.isNotEmpty(mAccount) || StringUtils.isNotEmpty(code)){
                     Bundle bundle = new Bundle();
                     bundle.putString("account",mAccount);
-                    bundle.putString("code",code);
+                    bundle.putInt("code",Integer.parseInt(code));
                     showActivity(ForgotPwdStepThreeActivity.class, bundle);
                 }else{
                     ToastUtils.showToast(getString(R.string.incomplete_information));
@@ -137,7 +144,7 @@ public class ForgotPwdStepTwoActivity extends BaseActivity implements ForgotPwdC
 //                presenter.captch();
 //            }
         } else {
-            HashMap<String, String> map = new HashMap<>();
+            HashMap map = new HashMap<>();
             map.put("account", mAccount);
             presenter.forgotCode(UrlFactory.getEmailForgotPwdCodeUrl(), map);
 

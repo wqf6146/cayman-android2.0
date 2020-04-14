@@ -254,14 +254,16 @@ public class RemoteDataSource implements DataSource {
      * @param dataCallback
      */
     @Override
-    public void doStringPut(String url, HashMap<String, String> params,final DataCallback dataCallback) {
+    public void doStringPut(String url, HashMap params,final DataCallback dataCallback) {
         String token = "";
         if (MyApplication.getApp().getCurrentUser() != null)
             token = MyApplication.getApp().getCurrentUser().getToken() == null ? "" : MyApplication.getApp().getCurrentUser().getToken();
         LogUtils.i("token==" + token);
 
+        JSONObject jsonBody = new JSONObject(params);
+
         OkhttpUtils.put().url(url).addHeader("Content-Type","application/json")
-                .addHeader("Authorization", token).addParams(params).build().execute(new StringCallback() {
+                .addHeader("Authorization", token).body(jsonBody.toString()).build().execute(new StringCallback() {
             @Override
             public void onError(Request request, Exception e) {
                 dataCallback.onDataNotAvailable(OKHTTP_ERROR, null);

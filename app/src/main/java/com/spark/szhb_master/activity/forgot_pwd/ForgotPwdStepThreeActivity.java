@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.spark.szhb_master.R;
 import com.spark.szhb_master.activity.login.LoginStepOneActivity;
+import com.spark.szhb_master.activity.login.LoginStepTwoActivity;
 import com.spark.szhb_master.activity.signup.RegisterStepOneActivity;
 import com.spark.szhb_master.activity.signup.RegisterStepTwoActivity;
 import com.spark.szhb_master.activity.signup.SignUpContract;
@@ -43,7 +44,7 @@ public class ForgotPwdStepThreeActivity extends BaseActivity implements ForgotPw
     TextView tvGoLogin;
 
     private String mAccount;
-    private String mCode;
+    private int mCode;
 
     private ForgotPwdContract.Presenter presenter;
 
@@ -57,7 +58,7 @@ public class ForgotPwdStepThreeActivity extends BaseActivity implements ForgotPw
         super.initData();
         new PhoneForgotPresenter(Injection.provideTasksRepository(activity), this);
         mAccount = getIntent().getStringExtra("account");
-        mCode = getIntent().getStringExtra("code");
+        mCode = getIntent().getIntExtra("code",0);
     }
 
     @Override
@@ -88,7 +89,11 @@ public class ForgotPwdStepThreeActivity extends BaseActivity implements ForgotPw
 
     @Override
     public void doForgetSuccess(String obj) {
-
+        ToastUtils.showToast(getString(R.string.change_login_pwd_success_tag));
+        ActivityManage.closeActivity(ForgotPwdStepOneActivity.class);
+        ActivityManage.closeActivity(ForgotPwdStepTwoActivity.class);
+        ActivityManage.closeActivity(LoginStepTwoActivity.class);
+        finish();
     }
 
     @Override
@@ -111,7 +116,7 @@ public class ForgotPwdStepThreeActivity extends BaseActivity implements ForgotPw
                         ToastUtils.showToast("密码不能少于8位");
                         return;
                     }
-                    HashMap<String, String> map = new HashMap<>();
+                    HashMap map = new HashMap<>();
                     map.put("code", mCode);
                     map.put("new_password", pwd);
                     map.put("account",mAccount);

@@ -5,41 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:visibility="gone">
+    android:background="@color/main_bg"
+    android:visibility="visible">
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:orientation="horizontal"
         android:layout_height="40dp">
 
         <LinearLayout
             android:id="@+id/llSellPrice"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_market_editext">
-
-            <EditText
-                android:id="@+id/etSellPrice"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@null"
-                android:digits="1234567890."
-                android:ellipsize="end"
-                android:gravity="center_vertical"
-                android:hint="@string/text_price"
-                android:inputType="number"
-                android:maxLines="1"
-                android:padding="10dp"
-                android:textColor="@color/main_font_black"
-                android:textColorHint="@color/tab_font"
-                android:textSize="@dimen/font_mini"
-                android:textStyle="bold" />
-
-
-            <View
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:background="@color/line_bg_grey" />
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/tvSellReduce"
@@ -47,23 +24,38 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="－"
-                android:textColor="@color/tab_font"
+                android:background="@drawable/bg_market_lesstv"
+                android:textColor="#52A3FF"
                 android:textSize="@dimen/font_lager" />
 
-            <View
-                android:layout_width="1dp"
+            <EditText
+                android:id="@+id/etSellPrice"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/line_bg_grey" />
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_market_editext"
+                android:digits="1234567890."
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:hint="@string/text_price"
+                android:inputType="number"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:textColor="@color/tab_font"
+                android:textColorHint="@color/font_hint"
+                android:textSize="@dimen/font_mini"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvSellAdd"
                 android:layout_width="45dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:background="@drawable/bg_market_addtv"
+                android:layout_marginLeft="1dp"
                 android:text="＋"
-                android:textColor="@color/tab_font"
+                android:textColor="#52A3FF"
                 android:textSize="@dimen/font_lager"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -106,8 +98,8 @@
             android:inputType="number"
             android:maxLines="1"
             android:padding="10dp"
-            android:textColor="@color/main_font_black"
-            android:textColorHint="@color/tab_font"
+            android:textColor="@color/tab_font"
+            android:textColorHint="@color/font_hint"
             android:textSize="@dimen/font_mini"
             android:textStyle="bold" />
 
@@ -116,19 +108,13 @@
             android:layout_width="56dp"
             android:layout_height="match_parent"
             android:gravity="center"
+            android:text="手"
             android:textColor="#838f9d"
             android:textSize="@dimen/font_small" />
     </LinearLayout>
 
 
-    <TextView
-        android:id="@+id/tvCanSell"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:text="0.0"
-        android:textColor="@color/tab_font"
-        android:textSize="@dimen/font_mini" />
+
 
     <LinearLayout
         android:id="@+id/llSellSeekBarLin"
@@ -153,6 +139,31 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/llBalanceCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="@string/text_can_used"
+            android:textColor="#838f9d"
+            android:textSize="@dimen/font_mini" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/font_mini"
+            android:textColor="@color/tab_font"
+            android:id="@+id/tvBalance"
+            android:layout_marginLeft="5dp"
+            android:text="-- USDT"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/llSellTradeCount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -165,16 +176,16 @@
             android:gravity="center_vertical"
             android:text="@string/text_turnover"
             android:textColor="@color/sec_font_grey"
-            android:textSize="@dimen/font_small"
-            android:visibility="gone" />
+            android:textSize="@dimen/font_small" />
 
         <TextView
             android:id="@+id/tvSellTradeCount"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
-            android:text="@string/text_entrust"
-            android:textColor="#838f9d"
+            android:layout_marginLeft="5dp"
+            android:text="--"
+            android:textColor="@color/tab_font"
             android:textSize="@dimen/font_mini" />
     </LinearLayout>
 
@@ -184,7 +195,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/ripple_red"
-        android:text="@string/text_sale_out"
+        android:text="@string/text_doless"
         android:textColor="@color/white"
         android:textSize="@dimen/font_normal" />
 </LinearLayout>

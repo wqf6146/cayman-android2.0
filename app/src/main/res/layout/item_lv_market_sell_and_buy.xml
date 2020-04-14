@@ -1,38 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="22.4dp"
-    android:gravity="center_vertical"
-    android:background="@color/white">
+    android:id="@+id/rlParent"
+    android:background="@color/main_bg">
 
-    <TextView
-        android:id="@+id/tvTag"
-        android:layout_width="28dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="0"
-        android:textColor="@color/third_font_grey"
-        android:textSize="@dimen/sp_10" />
+    <View
+        android:layout_width="-11110dp"
+        android:background="@color/trade_red"
+        android:id="@+id/v_bg"
+        android:layout_alignParentRight="true"
+        android:layout_height="match_parent"/>
 
-    <TextView
-        android:id="@+id/tvPrice"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.4"
-        android:ellipsize="end"
-        android:gravity="center"
-        android:maxLines="1"
-        android:textColor="@color/main_font_red"
-        android:textSize="@dimen/sp_10" />
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tvCount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.6"
-        android:ellipsize="end"
-        android:gravity="center"
-        android:maxLines="1"
-        android:textColor="@color/third_font_grey"
-        android:textSize="@dimen/sp_10" />
-</LinearLayout>
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:maxLines="1"
+            android:textColor="@color/main_font_red"
+            android:textSize="@dimen/sp_10" />
+
+        <TextView
+            android:id="@+id/tvCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/third_font_grey"
+            android:textSize="@dimen/sp_10" />
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

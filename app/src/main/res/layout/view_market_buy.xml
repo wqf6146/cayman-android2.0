@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/llMarketBuy"
+    android:background="@color/main_bg"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -15,55 +16,49 @@
         <LinearLayout
             android:id="@+id/llBuyPrice"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_market_editext">
-
-            <EditText
-                android:id="@+id/etBuyPrice"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/transparent"
-                android:digits="1234567890."
-                android:gravity="center_vertical"
-                android:hint="@string/text_price"
-                android:inputType="number"
-                android:maxLines="1"
-                android:padding="10dp"
-                android:textColor="@color/main_font_black"
-                android:textColorHint="@color/tab_font"
-                android:textSize="@dimen/font_mini"
-                android:textStyle="bold" />
-
-            <View
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:background="@color/line_bg_grey" />
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/tvBuyReduce"
                 android:layout_width="45dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:background="@drawable/bg_market_lesstv"
                 android:text="－"
-                android:textColor="@color/tab_font"
+                android:textColor="#52A3FF"
                 android:textSize="@dimen/font_lager"
                 android:textStyle="bold" />
 
-            <View
-                android:layout_width="1dp"
+
+
+            <EditText
+                android:id="@+id/etBuyPrice"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/line_bg_grey" />
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@color/main_bg_dark_2"
+                android:digits="1234567890."
+                android:gravity="center_vertical"
+                android:hint="@string/text_price"
+                android:inputType="number"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:textColor="@color/tab_font"
+                android:textColorHint="@color/font_hint"
+                android:textSize="@dimen/font_mini"
+                android:textStyle="bold" />
+
 
             <TextView
                 android:id="@+id/tvBuyAdd"
                 android:layout_width="45dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:layout_marginLeft="1dp"
                 android:text="＋"
-                android:textColor="@color/tab_font"
+                android:background="@drawable/bg_market_addtv"
+                android:textColor="#52A3FF"
                 android:textSize="@dimen/font_lager"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -107,8 +102,8 @@
             android:inputType="number"
             android:maxLines="1"
             android:padding="10dp"
-            android:textColor="@color/main_font_black"
-            android:textColorHint="@color/tab_font"
+            android:textColor="@color/tab_font"
+            android:textColorHint="@color/font_hint"
             android:textSize="@dimen/font_mini"
             android:textStyle="bold" />
 
@@ -117,7 +112,7 @@
             android:layout_width="56dp"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="BTC"
+            android:text="手"
             android:textColor="#838f9d"
             android:textSize="@dimen/font_normal" />
     </LinearLayout>
@@ -128,6 +123,7 @@
         android:layout_height="wrap_content"
         android:padding="8dp"
         android:text="0.0"
+        android:visibility="invisible"
         android:textColor="@color/tab_font"
         android:textSize="@dimen/font_mini" />
 
@@ -155,6 +151,31 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/llBalanceCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="@string/text_can_used"
+            android:textColor="#838f9d"
+            android:textSize="@dimen/font_mini" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/font_small"
+            android:textColor="@color/tab_font"
+            android:id="@+id/tvBalance"
+            android:layout_marginLeft="5dp"
+            android:text="-- USDT"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/llBuyTradeCount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -167,17 +188,17 @@
             android:gravity="center_vertical"
             android:text="@string/text_turnover"
             android:textColor="@color/sec_font_grey"
-            android:textSize="@dimen/font_small"
-            android:visibility="gone" />
+            android:textSize="@dimen/font_small" />
 
         <TextView
             android:id="@+id/tvBuyTradeCount"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
-            android:text="@string/text_entrust"
-            android:textColor="#838f9d"
-            android:textSize="@dimen/font_mini" />
+            android:text="--"
+            android:textColor="@color/tab_font"
+            android:layout_marginLeft="5dp"
+            android:textSize="@dimen/font_small" />
     </LinearLayout>
 
     <Button
@@ -186,7 +207,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/ripple_green"
-        android:text="@string/text_buy_in"
+        android:text="@string/text_domore"
         android:textColor="@color/white"
         android:textSize="@dimen/font_normal" />
 </LinearLayout>

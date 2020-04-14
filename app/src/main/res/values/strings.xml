@@ -242,6 +242,9 @@
     <string name="all_sell">全部卖出</string>
     <string name="text_buy_in">买入</string>
     <string name="text_buy">购买</string>
+    <string name="text_domore">做多</string>
+    <string name="text_doless">做空</string>
+
     <string name="text_sale_out">卖出</string>
     <string name="text_price">价格</string>
     <string name="text_number">数量</string>

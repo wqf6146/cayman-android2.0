@@ -171,5 +171,11 @@
     <orderEntry type="module" module-name="kchartlib" />
     <orderEntry type="module" module-name="MPChart" />
     <orderEntry type="module" module-name="lib-zxing" />
+    <orderEntry type="module" module-name="kchartlib" />
+    <orderEntry type="module" module-name="MPChart" />
+    <orderEntry type="module" module-name="lib-zxing" />
+    <orderEntry type="module" module-name="kchartlib" />
+    <orderEntry type="module" module-name="MPChart" />
+    <orderEntry type="module" module-name="lib-zxing" />
   </component>
 </module>

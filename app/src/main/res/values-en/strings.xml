@@ -240,6 +240,8 @@
     <string name="all">All</string>
     <string name="text_buy_in">Buy</string>
     <string name="text_buy">Buy</string>
+    <string name="text_domore">do more</string>
+    <string name="text_doless">do less</string>
     <string name="text_sale_out">Sell</string>
     <string name="text_price">Price</string>
     <string name="text_number">Amount</string>

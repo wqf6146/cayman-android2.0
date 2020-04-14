@@ -19,79 +19,77 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/main_bg"
             android:orientation="vertical">
 
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:paddingLeft="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp">
 
-                    <RadioGroup
-                        android:id="@+id/mRadioGroup"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
                         android:gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
                         android:orientation="horizontal">
+
+                        <RadioGroup
+                            android:id="@+id/mRadioGroup"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/rbBuy"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent"
                                 android:button="@null"
                                 android:checked="true"
-                                android:drawableBottom="@drawable/martket_tab_green_selector"
-                                android:drawablePadding="5dp"
-                                android:text="@string/text_buy_in"
-                                android:textColor="@color/main_font_green"
+                                android:gravity="center"
+                                android:text="@string/text_domore"
+                                android:textColor="@color/white"
+                                android:background="@color/main_font_green"
                                 android:textSize="@dimen/font_small" />
 
 
 
-                        <RadioButton
-                            android:id="@+id/rbSell"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="18dp"
-                            android:button="@null"
-                            android:gravity="center"
-                            android:drawableBottom="@drawable/tab_market_red"
-                            android:drawablePadding="5dp"
-                            android:text="@string/text_sale_out"
-                            android:textColor="@color/main_font_red"
-                            android:textSize="@dimen/font_small" />
-                    </RadioGroup>
+                            <RadioButton
+                                android:id="@+id/rbSell"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="10dp"
+                                android:button="@null"
+                                android:gravity="center"
+                                android:text="@string/text_doless"
+                                android:textColor="@color/white"
+                                android:background="@color/main_font_red"
+                                android:textSize="@dimen/font_small" />
+                        </RadioGroup>
+                    </LinearLayout>
 
+<!--                    app:arrowDrawable=""-->
                     <org.angmarch.views.NiceSpinner
                         android:id="@+id/limitSpinner"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:textColor="@color/sec_font_grey"
+                        app:backgroundSelector="@color/main_bg"
+                        android:textColor="@color/font_hint"
                         android:textSize="@dimen/font_small"
                         app:textTint="@color/sec_font_grey" />
-                </LinearLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#f5f7ff" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingBottom="10dp">
                     <LinearLayout
                         android:layout_marginTop="5dp"
                         android:layout_width="match_parent"
@@ -113,103 +111,96 @@
                         </FrameLayout>
                     </LinearLayout>
 
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/tvPriceTag"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:gravity="left"
+                            android:lines="1"
+                            android:text="@string/text_price"
+                            android:textColor="@color/third_font_grey"
+                            android:textSize="@dimen/font_mini" />
+
+                        <TextView
+                            android:id="@+id/tvCountTag"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:gravity="center"
+                            android:lines="1"
+                            android:text="@string/text_number"
+                            android:textColor="@color/third_font_grey"
+                            android:textSize="@dimen/font_mini" />
+                    </LinearLayout>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerSell"
+                        android:layout_width="match_parent"
+                        android:layout_height="112dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="8dp"
-                        android:layout_weight="1"
+                        android:gravity="center_vertical"
                         android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:gravity="center_vertical">
-
-                            <TextView
-                                android:layout_width="28dp"
-                                android:layout_height="wrap_content"
-                                android:text="@string/text_dish"
-                                android:textColor="@color/third_font_grey"
-                                android:textSize="@dimen/font_mini" />
-
-                            <TextView
-                                android:id="@+id/tvPriceTag"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="0.4"
-                                android:ellipsize="end"
-                                android:gravity="center"
-                                android:lines="1"
-                                android:text="@string/text_price"
-                                android:textColor="@color/third_font_grey"
-                                android:textSize="@dimen/font_mini" />
-
-                            <TextView
-                                android:id="@+id/tvCountTag"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="0.6"
-                                android:ellipsize="end"
-                                android:gravity="center"
-                                android:lines="1"
-                                android:text="@string/text_number"
-                                android:textColor="@color/third_font_grey"
-                                android:textSize="@dimen/font_mini" />
-                        </LinearLayout>
-
-                        <android.support.v7.widget.RecyclerView
-                            android:id="@+id/recyclerSell"
-                            android:layout_width="match_parent"
-                            android:layout_height="112dp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center_vertical"
-                            android:orientation="vertical">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_vertical"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:id="@+id/tvLatest"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/latest_price"
-                                    android:textColor="@color/main_font_green"
-                                    android:textSize="@dimen/font_small" />
-
-                                <TextView
-                                    android:id="@+id/tvPrice"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="--"
-                                    android:textColor="@color/main_font_green"
-                                    android:textSize="@dimen/font_normal"
-                                    android:textStyle="bold" />
-                            </LinearLayout>
+                            android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/tvMoney"
+                                android:id="@+id/tvLatest"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:ellipsize="end"
-                                android:maxLines="1"
+                                android:text="@string/latest_price"
+                                android:textColor="@color/main_font_green"
+                                android:visibility="gone"
+                                android:textSize="@dimen/font_small" />
+
+                            <TextView
+                                android:id="@+id/tvPrice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:text="--"
-                                android:textColor="@color/sec_font_grey"
-                                android:textSize="@dimen/font_mini" />
+                                android:textColor="@color/main_font_green"
+                                android:textSize="@dimen/font_normal"
+                                android:textStyle="bold" />
                         </LinearLayout>
 
-                        <android.support.v7.widget.RecyclerView
-                            android:id="@+id/recyclerBuy"
-                            android:layout_width="match_parent"
-                            android:layout_height="112dp" />
+                        <TextView
+                            android:id="@+id/tvMoney"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="--"
+                            android:textColor="@color/sec_font_grey"
+                            android:textSize="@dimen/font_mini" />
                     </LinearLayout>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerBuy"
+                        android:layout_width="match_parent"
+                        android:layout_height="112dp" />
                 </LinearLayout>
             </LinearLayout>
             <View

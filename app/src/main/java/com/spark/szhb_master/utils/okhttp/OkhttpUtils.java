@@ -3,12 +3,10 @@ package com.spark.szhb_master.utils.okhttp;
 import android.os.Handler;
 import android.os.Looper;
 
-import com.spark.szhb_master.MyApplication;
-import com.spark.szhb_master.utils.StringUtils;
 import com.spark.szhb_master.utils.okhttp.get.GetBuilder;
 import com.spark.szhb_master.utils.okhttp.post.PostFormBuilder;
 import com.spark.szhb_master.utils.okhttp.post.PostJsonBuilder;
-import com.spark.szhb_master.utils.okhttp.put.PutBuilder;
+import com.spark.szhb_master.utils.okhttp.put.PutJsonBuilder;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -66,8 +64,8 @@ public class  OkhttpUtils {
         return new GetBuilder();
     }
 
-    public static PutBuilder put() {
-        return new PutBuilder();
+    public static PutJsonBuilder put() {
+        return new PutJsonBuilder();
     }
 
     public static PostJsonBuilder postJson() {

@@ -134,8 +134,8 @@ public class TradeFragment extends BaseTransFragment implements TradeContract.Vi
     TextView tvMoney;
     @BindView(R.id.tvBuyCanUse)
     TextView tvBuyCanUse;
-    @BindView(R.id.tvCanSell)
-    TextView tvCanSell;
+//    @BindView(R.id.tvCanSell)
+//    TextView tvCanSell;
     @BindView(R.id.tvBuyRMB)
     TextView tvBuyRMB;
     @BindView(R.id.etCount)
@@ -1079,12 +1079,12 @@ public class TradeFragment extends BaseTransFragment implements TradeContract.Vi
         switch (type) {
             case 1: // 可卖
                 if (obj.getCode() == 0 && obj.getData() != null) {
-                    sellCountBalance = obj.getData().getBalance();
-                    tvCanSell.setText(getString(R.string.text_can_sell) + String.valueOf(MathUtils.getRundNumber(sellCountBalance, 2, null) + symbol.substring(0, symbol.indexOf("/"))));
+                    //sellCountBalance = obj.getData().getBalance();
+                    //tvCanSell.setText(getString(R.string.text_can_sell) + String.valueOf(MathUtils.getRundNumber(sellCountBalance, 2, null) + symbol.substring(0, symbol.indexOf("/"))));
                 } else {
-                    sellCountBalance = 0.0;
-                    tvCanSell.setText(getString(R.string.text_can_sell) + String.valueOf(sellCountBalance +
-                            symbol.substring(0, currency.getSymbol().indexOf("/"))));
+                    //sellCountBalance = 0.0;
+                    //tvCanSell.setText(getString(R.string.text_can_sell) + String.valueOf(sellCountBalance +
+                    //        symbol.substring(0, currency.getSymbol().indexOf("/"))));
                 }
                 break;
             case 2: // 可用
@@ -1103,8 +1103,8 @@ public class TradeFragment extends BaseTransFragment implements TradeContract.Vi
             case 3:
                 buyCountBalance = 0.0;
                 sellCountBalance = 0.0;
-                tvCanSell.setText(getString(R.string.text_can_sell) + String.valueOf("0.0" +
-                        symbol.substring(0, symbol.indexOf("/"))));
+                //tvCanSell.setText(getString(R.string.text_can_sell) + String.valueOf("0.0" +
+                //        symbol.substring(0, symbol.indexOf("/"))));
                 tvBuyCanUse.setText(getString(R.string.text_can_used) + String.valueOf("0.0" + CommonUtils.getUnitBySymbol(symbol)));
                 break;
         }

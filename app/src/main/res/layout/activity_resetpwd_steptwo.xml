@@ -25,6 +25,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:textColor="@color/white"
+            android:id="@+id/ar_tv_desc"
             android:textSize="@dimen/font_normal"
             android:text="@string/reset_pwd_desc1"
             android:layout_centerVertical="true"
@@ -59,6 +60,7 @@
                 android:textCursorDrawable="@drawable/line_dark_cursor"
                 android:textColor="@color/white"
                 android:hint="@string/captcha"
+                android:inputType="number"
                 android:background="@color/main_bg_dark_2"
                 android:id="@+id/ar_ed_input"
                 android:layout_height="50dp"/>

@@ -16,6 +16,9 @@
 
     <color name="font_dark">#616A7F</color>
 
+    <color name="trade_green">#3f01b37d</color>
+    <color name="trade_red">#3fEE6560</color>
+
     <color name="main_head_bg_hover">#0c0f21</color><!--应用头部背景点击色-->
     <color name="main_font_black">#143551</color><!--一号黑色字体-->
     <color name="sec_font_black">#3B3B3B</color><!--二号黑色字体-->
