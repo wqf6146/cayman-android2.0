@@ -20,11 +20,13 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.github.mikephil.chartingtwo.charts.LineChart;
 import com.github.tifezh.kchartlib.chart.BaseKChartView;
 import com.github.tifezh.kchartlib.chart.KChartView;
 import com.github.tifezh.kchartlib.chart.MinuteChartView;
 import com.github.tifezh.kchartlib.utils.ViewUtil;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.spark.szhb_master.R;
 import com.spark.szhb_master.activity.Trade.TradeActivity;
 import com.spark.szhb_master.activity.main.MainActivity;
@@ -34,6 +36,9 @@ import com.spark.szhb_master.activity.mychart.MinutesBean;
 import com.spark.szhb_master.adapter.MyPagerAdapter;
 import com.spark.szhb_master.adapter.PagerAdapter;
 import com.spark.szhb_master.base.BaseFragment;
+import com.spark.szhb_master.entity.ChartBean;
+import com.spark.szhb_master.entity.NewCurrency;
+import com.spark.szhb_master.factory.socket.NEWCMD;
 import com.spark.szhb_master.ui.CustomViewPager;
 import com.spark.szhb_master.utils.GlobalConstant;
 import com.spark.szhb_master.MyApplication;
@@ -56,6 +61,7 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -128,10 +134,10 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
     @BindView(R.id.llDepthTab)
     TabLayout depthTab;
 
-//    @BindView(R.id.lineChart)
-//    LineChart mLineChart;
-//    @BindView(R.id.lineChartbuy)
-//    LineChart lineChartbuy;
+    @BindView(R.id.lineChart)
+    LineChart mLineChart;
+    @BindView(R.id.lineChartbuy)
+    LineChart lineChartbuy;
     private KChartView kChartView;
     private MinuteChartView minuteChartView;
     private ArrayList<TextView> textViews;
@@ -143,7 +149,7 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
     private String resolution;
     private KlineContract.Presenter presenter;
     private ArrayList<KLineBean> kLineDatas;     // K线图数据
-    private Currency mCurrency;
+    private NewCurrency mCurrency;
     private List<Currency> currencies = new ArrayList<>();
     private boolean isStart = false;
     private Date startDate;
@@ -167,9 +173,12 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
     private int currentCount;
     private String[] titleArray;
     private boolean isInit = true;
-    private Currency currency;
+    private NewCurrency currency;
+    private String symbolType;
 
 
+    private String typeLists[] = {"1min", "5min", "15min", "30min", "60min","4hour","1day", "1mon"};
+    private int listType = 0;
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -280,7 +289,8 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             symbol = bundle.getString("symbol");
-            currency = (Currency) bundle.getSerializable("currency");
+            currency = (NewCurrency) bundle.getSerializable("currency");
+            symbolType = currency.getType();
             tvCurrencyName.setText(symbol);
             isFace = addFace(symbol);
             if (symbol != null) {
@@ -296,16 +306,17 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
             mTvCollect.setText(getString(R.string.text_add_favorite));
             mTvCollect.setCompoundDrawablesWithIntrinsicBounds(null, getResources().getDrawable(R.mipmap.icon_collect_normal), null, null);
         }
-//        initchart();
+        initchart();
+        startTCP();
     }
 
-//    private LineChartManager lineChartManager2;
-//    private LineChartManager lineChartManager;
-//
-//    private void initchart() {
-//        lineChartManager2 = new LineChartManager(mLineChart);
-//        lineChartManager = new LineChartManager(lineChartbuy);
-//    }
+    private LineChartManager lineChartManager2;
+    private LineChartManager lineChartManager;
+
+    private void initchart() {
+        lineChartManager2 = new LineChartManager(mLineChart);
+        lineChartManager = new LineChartManager(lineChartbuy);
+    }
 
     @Override
     protected void onResume() {
@@ -322,7 +333,7 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
             selectedTextView = textViews.get(1);
             type = (int) selectedTextView.getTag();
             viewPager.setCurrentItem(1);
-            initDepthData();
+//            initDepthData();
         }
     }
 
@@ -526,21 +537,21 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
      */
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onSocketMessage(SocketResponse response) {
-//        if (response.getCmd() == ISocket.CMD.PUSH_SYMBOL_THUMB) {    // 如果是盘口返回的信息
-//            try {
-//                Currency temp = new Gson().fromJson(response.getResponse(), Currency.class);
+        if (response.getCmd() == NEWCMD.SUBSCRIBE_SYMBOL_KLIST) {    // 如果是盘口返回的信息
+            try {
+                List<NewCurrency> currencyList = new Gson().fromJson(response.getResponse(), new TypeToken<List<NewCurrency>>() {}.getType());
 //                for (Currency currency : currencies) {
 //                    if (temp.getSymbol().equals(currency.getSymbol())) {
 //                        Currency.shallowClone(currency, temp);
 //                        break;
 //                    }
 //                }
-//                setCurrentcy(currencies);
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//                ToastUtils.showToast("解析出错");
-//            }
-//        }
+                setCurrentcy(currencyList);
+            } catch (Exception e) {
+                e.printStackTrace();
+                ToastUtils.showToast("解析出错");
+            }
+        }
     }
 
     /**
@@ -620,43 +631,44 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
      *
      * @param objs
      */
-    private void setCurrentcy(List<Currency> objs) {
+    private void setCurrentcy(List<NewCurrency> objs) {
         try {
-            for (Currency currency : objs) {
-                if (symbol.equals(currency.getSymbol())) {
-                    mCurrency = currency;
-                    break;
-                }
-            }
+            mCurrency = objs.get(objs.size()-1);
+//            for (NewCurrency currency : objs) {
+//                if (symbol.equals(currency.getSymbol())) {
+//                    mCurrency = currency;
+//                    break;
+//                }
+//            }
             if (mCurrency != null) {
                 String strUp = String.valueOf(mCurrency.getHigh());
                 String strLow = String.valueOf(mCurrency.getLow());
-                String strCount = String.valueOf(mCurrency.getVolume());
-                Double douChg = mCurrency.getChg();
-                String strRang = MathUtils.getRundNumber(mCurrency.getChg() * 100, 2, "########0.") + "%";
-                String strDataText = "≈" + MathUtils.getRundNumber(mCurrency.getClose() * MainActivity.rate * mCurrency.getBaseUsdRate(),
-                        2, null) + GlobalConstant.CNY;
+                String strCount = String.valueOf(mCurrency.getVol());
+//                Double douChg = mCurrency.getS();
+//                String strRang = MathUtils.getRundNumber(mCurrency.getChg() * 100, 2, "########0.") + "%";
+//                String strDataText = "≈" + MathUtils.getRundNumber(mCurrency.getClose() * MainActivity.rate * mCurrency.getBaseUsdRate(),
+//                        2, null) + GlobalConstant.CNY;
                 String strDataOne = String.valueOf(mCurrency.getClose());
                 kUp.setText(strUp);
                 kLow.setText(strLow);
                 kCount.setText(strCount);
-                kRange.setText(getString(R.string.gains) + strRang);
+//                kRange.setText(getString(R.string.gains) + strRang);
                 mDataOne.setText(strDataOne);
-                mDataText.setText(strDataText);
-                mDataOne.setTextColor(douChg < 0 ? getResources().getColor(R.color.main_font_red) : getResources().getColor(R.color.main_font_green));
-                kRange.setTextColor(douChg < 0 ? getResources().getColor(R.color.main_font_red) : getResources().getColor(R.color.main_font_green));
-                kLandRange.setTextColor(douChg < 0 ? getResources().getColor(R.color.main_font_red) : getResources().getColor(R.color.main_font_green));
-                kLandDataOne.setTextColor(douChg < 0 ? getResources().getColor(R.color.main_font_red) : getResources().getColor(R.color.main_font_green));
+//                mDataText.setText(strDataText);
+//                mDataOne.setTextColor(douChg < 0 ? getResources().getColor(R.color.main_font_red) : getResources().getColor(R.color.main_font_green));
+//                kRange.setTextColor(douChg < 0 ? getResources().getColor(R.color.main_font_red) : getResources().getColor(R.color.main_font_green));
+//                kLandRange.setTextColor(douChg < 0 ? getResources().getColor(R.color.main_font_red) : getResources().getColor(R.color.main_font_green));
+//                kLandDataOne.setTextColor(douChg < 0 ? getResources().getColor(R.color.main_font_red) : getResources().getColor(R.color.main_font_green));
                 kLandUp.setText(strUp);
                 kLandLow.setText(strLow);
                 kLandCount.setText(strCount);
-                kLandRange.setText(getString(R.string.gains) + strRang);
+//                kLandRange.setText(getString(R.string.gains) + strRang);
                 kLandDataOne.setText(strDataOne);
-                kLandDataText.setText(strDataText);
+//                kLandDataText.setText(strDataText);
             }
             if (!isStart) {
                 isStart = true;
-                startTCP();
+                //startTCP();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -671,7 +683,20 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
     }
 
     private void startTCP() {
-        //EventBus.getDefault().post(new SocketMessage(0, ISocket.CMD.SUBSCRIBE_SYMBOL_THUMB, null)); // 开始订阅
+        String st = "market." + symbol + "_" + symbolType + ".klist." + typeLists[listType];
+        EventBus.getDefault().post(new SocketMessage(0, NEWCMD.SUBSCRIBE_SYMBOL_DEPTH,
+                buildGetBodyJson(st, "1").toString())); //
+    }
+
+    private JSONObject buildGetBodyJson(String value, String type) {
+        JSONObject obj = new JSONObject();
+        try {
+            obj.put("value", value);
+            obj.put("type", type);
+            return obj;
+        } catch (Exception ex) {
+            return null;
+        }
     }
 
     /**
@@ -947,24 +972,24 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
         }
     }
 
-    /**
-     * 初始化深度图数据
-     */
-    private void initDepthData() {
-        fragments.add(DepthFragment.getInstance(symbol));
-        fragments.add(VolumeFragment.getInstance(symbol));
-        String[] tabArray = getResources().getStringArray(R.array.k_line_depth);
-        tabs = new ArrayList<>();
-        for (int i = 0; i < tabArray.length; i++) {
-            tabs.add(tabArray[i]);
-        }
-        depthPager.setAdapter(adapter = new PagerAdapter(getSupportFragmentManager(), fragments, tabs));
-        depthTab.setTabMode(TabLayout.MODE_FIXED);
-        depthTab.setupWithViewPager(depthPager);
-//        depthPager.setOffscreenPageLimit(fragments.size() - 1);
-        depthPager.setCurrentItem(0);
-//        getDepth();
-    }
+//    /**
+//     * 初始化深度图数据
+//     */
+//    private void initDepthData() {
+//        fragments.add(DepthFragment.getInstance(symbol));
+//        fragments.add(VolumeFragment.getInstance(symbol));
+//        String[] tabArray = getResources().getStringArray(R.array.k_line_depth);
+//        tabs = new ArrayList<>();
+//        for (int i = 0; i < tabArray.length; i++) {
+//            tabs.add(tabArray[i]);
+//        }
+//        depthPager.setAdapter(adapter = new PagerAdapter(getSupportFragmentManager(), fragments, tabs));
+//        depthTab.setTabMode(TabLayout.MODE_FIXED);
+//        depthTab.setupWithViewPager(depthPager);
+////        depthPager.setOffscreenPageLimit(fragments.size() - 1);
+//        depthPager.setCurrentItem(0);
+////        getDepth();
+//    }
 
 
     /**
@@ -986,11 +1011,11 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
 
 //    }
 
-    /**
-     * 解析数据
-     *
-     * @param response
-    */
+//    /**
+//     * 解析数据
+//     *
+//     * @param response
+//    */
 //    private void doLogicData(String response) {
 //        ArrayList<DepthChart.AskBean.ItemsBean> askItems = null;
 //        ArrayList<DepthChart.BidBean.ItemsBeanX> bidItems = null;
