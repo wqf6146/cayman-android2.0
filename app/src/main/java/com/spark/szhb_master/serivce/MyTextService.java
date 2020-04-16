@@ -79,6 +79,13 @@ public class MyTextService extends Service {
                                 }catch (Exception e){
                                     e.printStackTrace();
                                 }
+                            }else if (ch.indexOf("klist") != -1){
+                                cmd = NEWCMD.SUBSCRIBE_SYMBOL_KLIST;
+                                try {
+                                    symbol = ch.split("_")[0].split("\\.")[1];
+                                }catch (Exception e){
+                                    e.printStackTrace();
+                                }
                             }
                         }
 

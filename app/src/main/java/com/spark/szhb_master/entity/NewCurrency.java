@@ -28,6 +28,15 @@ public class NewCurrency  implements Serializable {
     private String Type;
     private String Scale;
     private String Convert;
+    private int id; //时间戳
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
 
     private Double baseUsdRate = 1.0;
 
