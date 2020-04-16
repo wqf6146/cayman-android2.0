@@ -34,13 +34,14 @@ public class GlobalConstant {
     /**
      * k线图对应tag值
      */
-    public static final int TAG_DIVIDE_TIME = 0; // 分时图
-    public static final int TAG_ONE_MINUTE = 1; // 1分钟
-    public static final int TAG_FIVE_MINUTE = 2; // 5分钟
-    public static final int TAG_AN_HOUR = 3; // 1小时
-    public static final int TAG_DAY = 4; // 1天
-    public static final int TAG_THIRTY_MINUTE = 5; // 30分钟
-    public static final int TAG_WEEK = 6; // 1周
+//    public static final int TAG_DIVIDE_TIME = 0; // 分时图
+    public static final int TAG_ONE_MINUTE = 0; // 1分钟
+    public static final int TAG_FIVE_MINUTE = 1; // 5分钟
+    public static final int TAG_15_MINUTE = 2; // 15分钟
+    public static final int TAG_30_MINUTE = 3; // 30分钟
+    public static final int TAG_1_HOUR = 4; // 1小时
+    public static final int TAG_4_HOUR = 5; // 4小时
+    public static final int TAG_DAY = 6; // 1天
     public static final int TAG_MONTH = 7; // 1月
 
     /**
