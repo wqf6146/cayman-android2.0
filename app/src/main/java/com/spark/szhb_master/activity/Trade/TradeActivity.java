@@ -271,7 +271,7 @@ public class TradeActivity extends BaseActivity implements TradeContract.View {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        stop(currency.getSymbol(),currency.getType());
+        stopTcp();
         EventBus.getDefault().unregister(this);
     }
 
@@ -490,6 +490,7 @@ public class TradeActivity extends BaseActivity implements TradeContract.View {
                 Bundle bundle = new Bundle();
                 bundle.putString("symbol", currency.getSymbol());
                 bundle.putSerializable("currency", currency);
+                stopTcp();
                 showActivity(KlineActivity.class, bundle, 1);
                 finish();
                 break;
@@ -552,6 +553,14 @@ public class TradeActivity extends BaseActivity implements TradeContract.View {
                 }
 
                 break;
+        }
+    }
+
+    private boolean tcpStatus = false;
+    private void stopTcp() {
+        if (tcpStatus) {
+            tcpStatus = false;
+            stop(currency.getSymbol(), currency.getType());
         }
     }
 
@@ -1195,6 +1204,7 @@ public class TradeActivity extends BaseActivity implements TradeContract.View {
      * 这里我开始订阅某个币盘口的信息
      */
     private void startTCP(String symbol, String type) {
+        tcpStatus = true;
         String st = "market." + symbol + "_" + type + ".depth.step10";
         EventBus.getDefault().post(new SocketMessage(0, NEWCMD.SUBSCRIBE_SYMBOL_DEPTH,
                 buildGetBodyJson(st, "1").toString())); // 需要id
@@ -1340,6 +1350,7 @@ public class TradeActivity extends BaseActivity implements TradeContract.View {
         for (int i = 0; i < 5; i++) {
             sellExchangeList.add(new Exchange(5 - i, "--", "--"));
         }
+
         List<List<Double>> sells = items.getAsks();
         if (sells.size() >= 5) {
             for (int i = 0; i < 5; i++) {

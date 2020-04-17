@@ -46,10 +46,10 @@ import okhttp3.Request;
 import static com.spark.szhb_master.utils.okhttp.OkhttpUtils.post;
 
 public class SafeActivity extends BaseActivity implements GoogleContract.UnBindView {
-    @BindView(R.id.llLockSet)
-    LinearLayout llLockSet;
-    @BindView(R.id.switchButton)
-    SwitchButton switchButton;
+//    @BindView(R.id.llLockSet)
+//    LinearLayout llLockSet;
+//    @BindView(R.id.switchButton)
+//    SwitchButton switchButton;
     @BindView(R.id.llGoogleView)
     LinearLayout llGoogleView;
     private int googleStatus;
@@ -58,8 +58,8 @@ public class SafeActivity extends BaseActivity implements GoogleContract.UnBindV
     TextView tvGoogle;
     @BindView(R.id.google_img)
     ImageView google_img;
-    @BindView(R.id.button_img)
-    ImageView button_img;
+//    @BindView(R.id.button_img)
+//    ImageView button_img;
     private User user;
     private CancleGoogleDialog cancleGoogleDialog;
     private GoogleContract.UnBindPresenter presenter;
@@ -77,17 +77,17 @@ public class SafeActivity extends BaseActivity implements GoogleContract.UnBindV
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
             case SetLockActivity.RETURN_SET_LOCK:
-                switchButton.setOnCheckedChangeListener(null);
+//                switchButton.setOnCheckedChangeListener(null);
 
-                String password = SharedPreferenceInstance.getInstance().getLockPwd();
-                if (StringUtils.isEmpty(password)) {
-                    button_img.setImageResource(R.mipmap.close_image);
-                } else {
-                    button_img.setImageResource(R.mipmap.open_img);
-                }
-
-                switchButton.setChecked(!StringUtils.isEmpty(password));
-                switchButton.setOnCheckedChangeListener(listener);
+//                String password = SharedPreferenceInstance.getInstance().getLockPwd();
+//                if (StringUtils.isEmpty(password)) {
+//                    button_img.setImageResource(R.mipmap.close_image);
+//                } else {
+//                    button_img.setImageResource(R.mipmap.open_img);
+//                }
+//
+//                switchButton.setChecked(!StringUtils.isEmpty(password));
+//                switchButton.setOnCheckedChangeListener(listener);
                 break;
             case 1:
                 if (resultCode == RESULT_OK) {
@@ -137,13 +137,13 @@ public class SafeActivity extends BaseActivity implements GoogleContract.UnBindV
 
         tvGoogle.setText(googleStatus == 0 ? R.string.unbound : R.string.bound);
         tvGoogle.setEnabled(googleStatus == 0);
-        switchButton.setChecked(!StringUtils.isEmpty(SharedPreferenceInstance.getInstance().getLockPwd()));
+//        switchButton.setChecked(!StringUtils.isEmpty(SharedPreferenceInstance.getInstance().getLockPwd()));
 
         String password = SharedPreferenceInstance.getInstance().getLockPwd();
         if (StringUtils.isEmpty(password)) {
-            button_img.setImageResource(R.mipmap.close_image);
+//            button_img.setImageResource(R.mipmap.close_image);
         } else {
-            button_img.setImageResource(R.mipmap.open_img);
+//            button_img.setImageResource(R.mipmap.open_img);
         }
 
 
@@ -174,29 +174,29 @@ public class SafeActivity extends BaseActivity implements GoogleContract.UnBindV
     @Override
     protected void onResume() {
         super.onResume();
-        button_img.setEnabled(true);
+//        button_img.setEnabled(true);
     }
 
     @Override
     protected void setListener() {
         super.setListener();
-        switchButton.setOnCheckedChangeListener(listener);
+//        switchButton.setOnCheckedChangeListener(listener);
 
-        button_img.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                button_img.setEnabled(false);
-                String password = SharedPreferenceInstance.getInstance().getLockPwd();
-                if (StringUtils.isEmpty(password)) {
-                    type = 0;
-                } else {
-                    type = 1;
-                }
-                Bundle bundle = new Bundle();
-                bundle.putInt("type", type);
-                showActivity(SetLockActivity.class, bundle, 0);
-            }
-        });
+//        button_img.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                button_img.setEnabled(false);
+//                String password = SharedPreferenceInstance.getInstance().getLockPwd();
+//                if (StringUtils.isEmpty(password)) {
+//                    type = 0;
+//                } else {
+//                    type = 1;
+//                }
+//                Bundle bundle = new Bundle();
+//                bundle.putInt("type", type);
+//                showActivity(SetLockActivity.class, bundle, 0);
+//            }
+//        });
 
         cancleGoogleDialog.getTvConfirm().setOnClickListener(new View.OnClickListener() {
             @Override

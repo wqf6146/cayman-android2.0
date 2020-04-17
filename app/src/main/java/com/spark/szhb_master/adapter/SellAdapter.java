@@ -52,7 +52,9 @@ public class SellAdapter extends BaseQuickAdapter<Exchange, BaseViewHolder> {
             price = text.one();
             amount = text.two();
         }
+        boolean real = true;
         if ("--".equals(item.getPrice()) || "--".equals(item.getAmount())) {
+            real = false;
             helper.setText(R.id.tvPrice, String.valueOf(item.getPrice()));
             helper.setText(R.id.tvCount, String.valueOf(item.getAmount()));
         } else {
@@ -70,9 +72,10 @@ public class SellAdapter extends BaseQuickAdapter<Exchange, BaseViewHolder> {
                 }
             });
         }else{
-            int w = (int)(Double.valueOf(item.getAmount()) * tag * pwidth);
-            viewBg.getLayoutParams().width = w >= pwidth ? pwidth - 10 : w < 10 ? 10 : w;
-            Log.e("wwwwwwww","" + w);
+            if (real){
+                int w = (int)(Double.valueOf(item.getAmount()) * tag * pwidth);
+                viewBg.getLayoutParams().width = w >= pwidth ? pwidth - 10 : w < 10 ? 10 : w;
+            }
         }
 
         if (type == 1) {

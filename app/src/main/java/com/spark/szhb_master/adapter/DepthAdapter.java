@@ -10,6 +10,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.spark.szhb_master.R;
+import com.spark.szhb_master.entity.DepthListInfo;
 import com.spark.szhb_master.entity.DepthResult;
 import com.spark.szhb_master.utils.LogUtils;
 
@@ -21,8 +22,8 @@ import java.util.ArrayList;
 
 public class DepthAdapter extends RecyclerView.Adapter<DepthAdapter.MyViewHolder> {
     private Context context;
-    private ArrayList<DepthResult.DepthListInfo> objBuyList;
-    private ArrayList<DepthResult.DepthListInfo> objSellList;
+    private ArrayList<DepthListInfo> objBuyList;
+    private ArrayList<DepthListInfo> objSellList;
     private double buyAccount;
     private double sellAccount;
     private int countWidth;
@@ -33,7 +34,7 @@ public class DepthAdapter extends RecyclerView.Adapter<DepthAdapter.MyViewHolder
         this.context = context;
     }
 
-    public void setObjBuyList(ArrayList<DepthResult.DepthListInfo> objBuyList) {
+    public void setObjBuyList(ArrayList<DepthListInfo> objBuyList) {
         this.objBuyList = objBuyList;
         if (objBuyList != null) {
             alBuyAccount = 0;
@@ -45,7 +46,7 @@ public class DepthAdapter extends RecyclerView.Adapter<DepthAdapter.MyViewHolder
         }
     }
 
-    public void setObjSellList(ArrayList<DepthResult.DepthListInfo> objSellList) {
+    public void setObjSellList(ArrayList<DepthListInfo> objSellList) {
         this.objSellList = objSellList;
         if (objSellList != null) {
             alSellccount = 0;
@@ -71,8 +72,8 @@ public class DepthAdapter extends RecyclerView.Adapter<DepthAdapter.MyViewHolder
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        DepthResult.DepthListInfo buyInfo = objBuyList.get(position);
-        DepthResult.DepthListInfo sellInfo = objSellList.get(position);
+        DepthListInfo buyInfo = objBuyList.get(position);
+        DepthListInfo sellInfo = objSellList.get(position);
         holder.tvBuy.setText((position + 1) + "");
         holder.tvBuyNumber.setText(buyInfo.getAmount() == -1 ? "-- --" : buyInfo.getAmount() + "");
         holder.tvBuyPrice.setText(buyInfo.getPrice() == -1 ? "-- --" : buyInfo.getPrice() + "");

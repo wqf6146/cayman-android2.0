@@ -17,21 +17,28 @@ import com.spark.szhb_master.R;
 import com.spark.szhb_master.adapter.DepthAdapter;
 import com.spark.szhb_master.base.BaseActivity;
 import com.spark.szhb_master.base.BaseFragment;
+import com.spark.szhb_master.entity.DepthListInfo;
 import com.spark.szhb_master.entity.DepthResult;
+import com.spark.szhb_master.entity.Exchange;
+import com.spark.szhb_master.entity.SymbolStep;
 import com.spark.szhb_master.factory.socket.ISocket;
+import com.spark.szhb_master.factory.socket.NEWCMD;
 import com.spark.szhb_master.serivce.SocketMessage;
 import com.spark.szhb_master.serivce.SocketResponse;
 import com.spark.szhb_master.utils.GlobalConstant;
 import com.spark.szhb_master.utils.LogUtils;
 import com.spark.szhb_master.utils.NetCodeUtils;
+import com.spark.szhb_master.utils.StringUtils;
 import com.spark.szhb_master.utils.ToastUtils;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import butterknife.BindView;
 import config.Injection;
@@ -53,17 +60,18 @@ public class DepthFragment extends BaseFragment implements KlineContract.DepthVi
     @BindView(R.id.depthBar)
     ProgressBar depthBar;
     private String symbol;
+    private String symbolType;
     private DepthAdapter adapter;
-    private ArrayList<DepthResult.DepthListInfo> objBuyList;
-    private ArrayList<DepthResult.DepthListInfo> objSellList;
+    private ArrayList<DepthListInfo> objBuyList;
+    private ArrayList<DepthListInfo> objSellList;
     private Activity activity;
-    private Gson gson;
     private KlineContract.DepthPresenter presenter;
 
-    public static DepthFragment getInstance(String symbol) {
+    public static DepthFragment getInstance(String symbol,String symbolType) {
         DepthFragment depthFragment = new DepthFragment();
         Bundle bundle = new Bundle();
         bundle.putSerializable("symbol", symbol);
+        bundle.putSerializable("symbolType", symbolType);
         depthFragment.setArguments(bundle);
         return depthFragment;
     }
@@ -79,48 +87,70 @@ public class DepthFragment extends BaseFragment implements KlineContract.DepthVi
         super.onStop();
         // 取消订阅
         //EventBus.getDefault().post(new SocketMessage(0, ISocket.CMD.UNSUBSCRIBE_EXCHANGE_TRADE, symbol));
+        //深度
+        String depth = "market." + symbol + "_" + symbolType + ".depth.step10";
+        EventBus.getDefault().post(new SocketMessage(0, NEWCMD.SUBSCRIBE_SYMBOL_DEPTH,
+                buildGetBodyJson(depth, "0").toString())); // 需要id
         EventBus.getDefault().unregister(this);
     }
 
     private void startTCP() {
         // 开始订阅
         //EventBus.getDefault().post(new SocketMessage(0, ISocket.CMD.SUBSCRIBE_EXCHANGE_TRADE, symbol));
+
+        //深度
+        String depth = "market." + symbol + "_" + symbolType + ".depth.step10";
+        EventBus.getDefault().post(new SocketMessage(0, NEWCMD.SUBSCRIBE_SYMBOL_DEPTH,
+                buildGetBodyJson(depth, "1").toString())); // 需要id
     }
 
+    private JSONObject buildGetBodyJson(String value, String type) {
+        JSONObject obj = new JSONObject();
+        try {
+            obj.put("value", value);
+            obj.put("type", type);
+            return obj;
+        } catch (Exception ex) {
+            return null;
+        }
+    }
 
     /**
      * socket 推送过来的信息
      */
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onSocketMessage(SocketResponse response) {
-//        if (response.getCmd() == ISocket.CMD.PUSH_EXCHANGE_DEPTH) {
-//            try {
-//                LogUtils.i("深度图 推送过来的信息==" + response.getResponse());
-//                if (gson == null)
-//                    gson = new Gson();
-//                DepthResult.DepthList result = gson.fromJson(response.getResponse(), new TypeToken<DepthResult.DepthList>() {
-//                }.getType());
-//                String strSymbol = result.getSymbol();
-//                if (strSymbol != null && strSymbol.equals(symbol)) {
-//                    ArrayList<DepthResult.DepthListInfo> depthListInfos = result.getItems();
-//                    String direct = result.getDirection();
-//                    if (direct.equals(GlobalConstant.SELL)) {
-//                        objSellList.removeAll(objSellList);
-//                        objSellList = initData(depthListInfos);
-//                        adapter.setObjSellList(objSellList);
-//                        adapter.notifyDataSetChanged();
-//                    } else {
-//                        objBuyList.removeAll(objBuyList);
-//                        objBuyList = initData(depthListInfos);
-//                        adapter.setObjBuyList(objBuyList);
-//                        adapter.notifyDataSetChanged();
-//                    }
-//                }
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//        }
+        if (response.getCmd() == NEWCMD.SUBSCRIBE_SYMBOL_DEPTH) {
+            try {
+                setResponse(response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
+
+    private void setResponse(SocketResponse response) {
+        String res = response.getResponse();
+        if (StringUtils.isEmpty(res)) return; // 如果返回为空不处理
+        SymbolStep items = new Gson().fromJson(res, SymbolStep.class);
+        if (items == null) return;
+        if (!response.getRemark().equals(symbol)) { // 这里加了层判断，如果推送来的币不是当前选择的币则不处理
+            return;
+        }
+
+        objSellList.removeAll(objSellList);
+        objSellList = initDepthData(items.getAsks());
+        adapter.setObjSellList(objSellList);
+        adapter.notifyDataSetChanged();
+
+
+        objBuyList.removeAll(objBuyList);
+        objBuyList = initDepthData(items.getBids());
+        adapter.setObjBuyList(objBuyList);
+        adapter.notifyDataSetChanged();
+
+    }
+
 
     @Override
     protected int getLayoutId() {
@@ -152,12 +182,23 @@ public class DepthFragment extends BaseFragment implements KlineContract.DepthVi
         Bundle bundle = getArguments();
         if (bundle != null) {
             symbol = bundle.getString("symbol");
-            String[] strings = symbol.split("/");
-            tvNumber.setText(getResources().getString(R.string.number) + "(" + strings[0] + ")");
-            tvNumberR.setText(getResources().getString(R.string.number) + "(" + strings[0] + ")");
-            tvPrice.setText(getResources().getString(R.string.price) + "(" + strings[1] + ")");
+            symbolType = bundle.getString("symbolType");
+//            String[] strings = symbol.split("/");
+            tvNumber.setText(getResources().getString(R.string.number) + symbol);
+            tvNumberR.setText(getResources().getString(R.string.number) + symbol);
+            tvPrice.setText(getResources().getString(R.string.price) + "(USDT)");
+
+            DisplayMetrics dm = getResources().getDisplayMetrics();
+            int width = dm.widthPixels;
+            adapter = new DepthAdapter(activity);
+            adapter.setObjSellList(initDepthData(null));
+            adapter.setObjBuyList(initDepthData(null));
+            adapter.setWidth(width / 2);
+            LogUtils.i("屏幕宽度==" + (width / 2));
+            recyclerView.setAdapter(adapter);
+
             startTCP();
-            getDepth();
+//            getDepth();
         }
     }
 
@@ -180,14 +221,14 @@ public class DepthFragment extends BaseFragment implements KlineContract.DepthVi
     /**
      * 填充数据
      */
-    private ArrayList<DepthResult.DepthListInfo> initData(ArrayList<DepthResult.DepthListInfo> objList) {
-        ArrayList<DepthResult.DepthListInfo> depthListInfos = new ArrayList<>();
+    private ArrayList<DepthListInfo> initDepthData(List<List<Double>> objList) {
+        ArrayList<DepthListInfo> depthListInfos = new ArrayList<>();
         if (objList != null) {
             for (int i = 0; i < 20; i++) {
                 if (objList.size() > i) { // list里有数据
-                    depthListInfos.add(objList.get(i));
+                    depthListInfos.add(new DepthListInfo(objList.get(i).get(0),objList.get(i).get(1)));
                 } else {
-                    DepthResult.DepthListInfo depthListInfo = new DepthResult().new DepthListInfo();
+                    DepthListInfo depthListInfo = new DepthListInfo();
                     depthListInfo.setAmount(-1);
                     depthListInfo.setPrice(-1);
                     depthListInfos.add(depthListInfo);
@@ -195,7 +236,7 @@ public class DepthFragment extends BaseFragment implements KlineContract.DepthVi
             }
         } else {
             for (int i = 0; i < 20; i++) {
-                DepthResult.DepthListInfo depthListInfo = new DepthResult().new DepthListInfo();
+                DepthListInfo depthListInfo = new DepthListInfo();
                 depthListInfo.setAmount(-1);
                 depthListInfo.setPrice(-1);
                 depthListInfos.add(depthListInfo);
@@ -211,34 +252,34 @@ public class DepthFragment extends BaseFragment implements KlineContract.DepthVi
 
     @Override
     public void getDepthtSuccess(DepthResult result) {
-        ArrayList<DepthResult.DepthListInfo> askItems = null;
-        ArrayList<DepthResult.DepthListInfo> bidItems = null;
-        if (depthBar != null)
-            depthBar.setVisibility(View.GONE);
-        try {
-            if (result != null) {
-                DepthResult.DepthList ask = result.getAsk();
-                askItems = ask.getItems();
-                DepthResult.DepthList bid = result.getBid();
-                bidItems = bid.getItems();
-            }
-            objSellList = initData(askItems);
-            objBuyList = initData(bidItems);
-            if (adapter == null) {
-                DisplayMetrics dm = getResources().getDisplayMetrics();
-                int width = dm.widthPixels;
-                adapter = new DepthAdapter(activity);
-                adapter.setObjSellList(objSellList);
-                adapter.setObjBuyList(objBuyList);
-                adapter.setWidth(width / 2);
-                LogUtils.i("屏幕宽度==" + (width / 2));
-                recyclerView.setAdapter(adapter);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            if (isAdded())
-                LogUtils.i(getResources().getString(R.string.parse_error));
-        }
+//        ArrayList<DepthResult.DepthListInfo> askItems = null;
+//        ArrayList<DepthResult.DepthListInfo> bidItems = null;
+//        if (depthBar != null)
+//            depthBar.setVisibility(View.GONE);
+//        try {
+//            if (result != null) {
+//                DepthResult.DepthList ask = result.getAsk();
+//                askItems = ask.getItems();
+//                DepthResult.DepthList bid = result.getBid();
+//                bidItems = bid.getItems();
+//            }
+//            objSellList = initDepthData(askItems);
+//            objBuyList = initData(bidItems);
+//            if (adapter == null) {
+//                DisplayMetrics dm = getResources().getDisplayMetrics();
+//                int width = dm.widthPixels;
+//                adapter = new DepthAdapter(activity);
+//                adapter.setObjSellList(objSellList);
+//                adapter.setObjBuyList(objBuyList);
+//                adapter.setWidth(width / 2);
+//                LogUtils.i("屏幕宽度==" + (width / 2));
+//                recyclerView.setAdapter(adapter);
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            if (isAdded())
+//                LogUtils.i(getResources().getString(R.string.parse_error));
+//        }
     }
 
     @Override

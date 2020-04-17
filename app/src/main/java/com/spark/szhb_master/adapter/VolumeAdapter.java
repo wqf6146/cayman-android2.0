@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.spark.szhb_master.R;
 import com.spark.szhb_master.MyApplication;
+import com.spark.szhb_master.entity.VolumeBean;
 import com.spark.szhb_master.entity.VolumeInfo;
 import com.spark.szhb_master.utils.DateUtils;
 import com.spark.szhb_master.utils.GlobalConstant;
@@ -17,6 +18,7 @@ import com.spark.szhb_master.utils.MathUtils;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 成交adapter
@@ -25,14 +27,14 @@ import java.util.Date;
 
 public class VolumeAdapter extends RecyclerView.Adapter<VolumeAdapter.MyViewHolder> {
     private Context context;
-    private ArrayList<VolumeInfo> objList;
+    private List<VolumeBean> objList;
 
-    public VolumeAdapter(Context context, ArrayList<VolumeInfo> objList) {
+    public VolumeAdapter(Context context, List<VolumeBean> objList) {
         this.context = context;
         this.objList = objList;
     }
 
-    public void setObjList(ArrayList<VolumeInfo> objList) {
+    public void setObjList(List<VolumeBean> objList) {
         this.objList = objList;
     }
 
@@ -46,11 +48,14 @@ public class VolumeAdapter extends RecyclerView.Adapter<VolumeAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        VolumeInfo volumeInfo = objList.get(position);
-        if (volumeInfo.getTime() == -1) {
+        if (objList.size() <= position){
+            return;
+        }
+        VolumeBean volumeInfo = objList.get(position);
+        if (volumeInfo.getTs() == -1) {
             holder.tvTime.setText("-- --");
         } else {
-            holder.tvTime.setText(DateUtils.getFormatTime("HH:mm:ss", new Date(volumeInfo.getTime())));
+            holder.tvTime.setText(DateUtils.getFormatTime("HH:mm:ss", new Date(volumeInfo.getTs())));
         }
         String direct = volumeInfo.getDirection();
         if (direct == null) {

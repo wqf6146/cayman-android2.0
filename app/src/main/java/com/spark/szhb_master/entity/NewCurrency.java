@@ -17,17 +17,17 @@ public class NewCurrency  implements Serializable {
      * Convert : 7051.02
      */
 
-    private String Open;
-    private String Close;
-    private String Low;
-    private String High;
-    private String Amount;
-    private String Count;
-    private String Vol;
-    private String Symbol;
-    private String Type;
-    private String Scale;
-    private String Convert;
+    private String open;
+    private String close;
+    private String low;
+    private String high;
+    private String amount;
+    private String count;
+    private String vol;
+    private String symbol;
+    private String type;
+    private String scale;
+    private String convert;
     private int id; //时间戳
 
     public void setId(int id) {
@@ -46,107 +46,107 @@ public class NewCurrency  implements Serializable {
     }
 
     public String getOpen() {
-        return Open;
+        return open;
     }
 
     public void setOpen(String Open) {
-        this.Open = Open;
+        this.open = Open;
     }
 
     public String getClose() {
-        return Close;
+        return close;
     }
 
     public void setClose(String Close) {
-        this.Close = Close;
+        this.close = Close;
     }
 
     public String getLow() {
-        return Low;
+        return low;
     }
 
     public void setLow(String Low) {
-        this.Low = Low;
+        this.low = Low;
     }
 
     public String getHigh() {
-        return High;
+        return high;
     }
 
     public void setHigh(String High) {
-        this.High = High;
+        this.high = High;
     }
 
     public String getAmount() {
-        return Amount;
+        return amount;
     }
 
     public void setAmount(String Amount) {
-        this.Amount = Amount;
+        this.amount = Amount;
     }
 
     public String getCount() {
-        return Count;
+        return count;
     }
 
     public void setCount(String Count) {
-        this.Count = Count;
+        this.count = Count;
     }
 
     public String getVol() {
-        return Vol;
+        return vol;
     }
 
     public void setVol(String Vol) {
-        this.Vol = Vol;
+        this.vol = Vol;
     }
 
     public String getSymbol() {
-        return Symbol;
+        return symbol;
     }
 
     public void setSymbol(String Symbol) {
-        this.Symbol = Symbol;
+        this.symbol = Symbol;
     }
 
     public String getType() {
-        return Type;
+        return type;
     }
 
     public void setType(String Type) {
-        this.Type = Type;
+        this.type = Type;
     }
 
 
 
     public String getScale() {
-        return Scale;
+        return scale;
     }
 
     public void setScale(String Scale) {
-        this.Scale = Scale;
+        this.scale = Scale;
     }
 
     public String getConvert() {
-        return Convert;
+        return convert;
     }
 
     public void setConvert(String Convert) {
-        this.Convert = Convert;
+        this.convert = Convert;
     }
 
     public static NewCurrency shallowClone(NewCurrency origin, NewCurrency target) {
-        origin.Symbol = target.Symbol;
-        origin.Open = target.Open;
-        origin.Close = target.Close;
-        origin.Low = target.Low;
-        origin.High = target.High;
-        origin.Amount = target.Amount;
-        origin.Count = target.Count;
-        origin.Vol = target.Vol;
-        origin.Type = target.Type;
-        origin.Scale = target.Scale;
-        origin.Convert = target.Convert;
+        origin.symbol = target.symbol;
+        origin.open = target.open;
+        origin.close = target.close;
+        origin.low = target.low;
+        origin.high = target.high;
+        origin.amount = target.amount;
+        origin.count = target.count;
+        origin.vol = target.vol;
+        origin.type = target.type;
+        origin.scale = target.scale;
+        origin.convert = target.convert;
         return origin;
     }
 

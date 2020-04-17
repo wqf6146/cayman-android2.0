@@ -22,65 +22,65 @@
         android:orientation="vertical">
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/llSwitchLanguage"
-        style="@style/layout_my_info"
-        android:background="@drawable/ripple_white">
+<!--    <LinearLayout-->
+<!--        android:id="@+id/llSwitchLanguage"-->
+<!--        style="@style/layout_my_info"-->
+<!--        android:background="@drawable/ripple_white">-->
 
-        <TextView
-            style="@style/edittext_normal"
-            android:layout_weight="1"
-            android:text="@string/language" />
+<!--        <TextView-->
+<!--            style="@style/edittext_normal"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="@string/language" />-->
 
-        <ImageView style="@style/icon_more" />
+<!--        <ImageView style="@style/icon_more" />-->
 
-    </LinearLayout>
-    <View style="@style/line_bg_fens" />
-    <LinearLayout
-        android:id="@+id/llLockSet"
-        style="@style/layout_my_info">
+<!--    </LinearLayout>-->
+<!--    <View style="@style/line_bg_fens" />-->
+<!--    <LinearLayout-->
+<!--        android:id="@+id/llLockSet"-->
+<!--        style="@style/layout_my_info">-->
 
-        <TextView
-            style="@style/textview_tag"
-            android:text="@string/gestures_pwd" />
+<!--        <TextView-->
+<!--            style="@style/textview_tag"-->
+<!--            android:text="@string/gestures_pwd" />-->
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+<!--        <View-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1" />-->
 
-        <ImageView
+<!--        <ImageView-->
 
-            android:id="@+id/button_img"
-            android:src="@mipmap/close_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+<!--            android:id="@+id/button_img"-->
+<!--            android:src="@mipmap/close_image"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content" />-->
 
-        <com.kyleduo.switchbutton.SwitchButton
-            android:visibility="gone"
-            android:id="@+id/switchButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-            app:kswAnimationDuration="300"
-            app:kswBackDrawable="@drawable/ios_back_drawable"
-            app:kswThumbDrawable="@drawable/switch_selector"
-            app:kswThumbHeight="16dp"
-            app:kswThumbMarginBottom="4dp"
-            app:kswThumbMarginLeft="6dp"
-            app:kswThumbMarginRight="6dp"
-            app:kswThumbMarginTop="4dp"
-            app:kswThumbRangeRatio="3"
-            app:kswThumbWidth="16dp" />
+<!--        <com.kyleduo.switchbutton.SwitchButton-->
+<!--            android:visibility="gone"-->
+<!--            android:id="@+id/switchButton"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:checked="false"-->
+<!--            app:kswAnimationDuration="300"-->
+<!--            app:kswBackDrawable="@drawable/ios_back_drawable"-->
+<!--            app:kswThumbDrawable="@drawable/switch_selector"-->
+<!--            app:kswThumbHeight="16dp"-->
+<!--            app:kswThumbMarginBottom="4dp"-->
+<!--            app:kswThumbMarginLeft="6dp"-->
+<!--            app:kswThumbMarginRight="6dp"-->
+<!--            app:kswThumbMarginTop="4dp"-->
+<!--            app:kswThumbRangeRatio="3"-->
+<!--            app:kswThumbWidth="16dp" />-->
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
 
     <LinearLayout
         android:id="@+id/llGoogle"
         style="@style/layout_my_info"
         android:background="@drawable/ripple_white"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <TextView
             style="@style/textview_tag"

@@ -65,7 +65,8 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="5dp"
                     android:text=""
-                    android:textColor="@color/main_font_green"
+
+                    android:textColor="@color/white"
                     android:textSize="@dimen/font_mini" />
 
                 <TextView
@@ -216,8 +217,9 @@
                             android:id="@+id/kRange"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:padding="2dp"
                             android:layout_marginLeft="5dp"
-                            android:textColor="@color/main_font_green"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/font_small" />
                     </LinearLayout>
                 </LinearLayout>
@@ -237,7 +239,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="高"
-                            android:textColor="@color/color_font_kline"
+                            android:textColor="@color/tab_font"
                             android:textSize="@dimen/font_mini" />
 
                         <TextView
@@ -262,7 +264,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="低"
-                            android:textColor="@color/color_font_kline"
+                            android:textColor="@color/tab_font"
                             android:textSize="@dimen/font_mini" />
 
                         <TextView
@@ -286,8 +288,8 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="24H量"
-                            android:textColor="@color/color_font_kline"
+                            android:text="24H"
+                            android:textColor="@color/tab_font"
                             android:textSize="@dimen/font_mini" />
 
                         <TextView

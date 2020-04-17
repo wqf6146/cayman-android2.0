@@ -3,7 +3,8 @@ package com.spark.szhb_master.factory.socket;
 public enum NEWCMD {
 
 
-    SUBSCRIBE_SYMBOL_DETAIL("trade.detail"), //此接口为获取实时成交订单推送
+    SUBSCRIBE_SYMBOL_DETAIL("detail"), //此接口为获取实时成交订单推送
+    SUBSCRIBE_SYMBOL_TRADEDETAIL("trade.detail"), //此接口为获取实时成交订单推送
     SUBSCRIBE_SYMBOL_DEPTH("depth.step"), //此接口为获取交易对推送
     SUBSCRIBE_SYMBOL_KLIST("klist"),//此接口为获取k线数据
 

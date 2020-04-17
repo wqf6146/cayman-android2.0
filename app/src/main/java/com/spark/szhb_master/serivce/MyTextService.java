@@ -60,7 +60,7 @@ public class MyTextService extends Service {
         mWebSocketClient = new JWebSocketClient(uri) {
             @Override
             public void onMessage(String message) {
-                Log.e("JWebSocketClientService", "收到的消息：" + message);
+
 
                 try{
                     if (!TextUtils.isEmpty(message) && !message.equals("pong")){
@@ -71,8 +71,23 @@ public class MyTextService extends Service {
                         String symbol = null;
                         if (cmd == null){
                             if (ch.indexOf("trade.detail") != -1){
+                                Log.e("JWebSocketClientService", "收到的消息：" + message);
+                                cmd = NEWCMD.SUBSCRIBE_SYMBOL_TRADEDETAIL;
+                                try {
+                                    symbol = ch.split("_")[0].split("\\.")[1];
+                                }catch (Exception e){
+                                    e.printStackTrace();
+                                }
+                            }else if(ch.indexOf("detail") != -1){
+                                Log.e("JWebSocketClientService", "收到的消息：" + message);
                                 cmd = NEWCMD.SUBSCRIBE_SYMBOL_DETAIL;
+                                try {
+                                    symbol = ch.split("_")[0].split("\\.")[1];
+                                }catch (Exception e){
+                                    e.printStackTrace();
+                                }
                             }else if (ch.indexOf("depth.step") != -1){
+                                Log.e("JWebSocketClientService", "收到的消息：" + message);
                                 cmd = NEWCMD.SUBSCRIBE_SYMBOL_DEPTH;
                                 try {
                                     symbol = ch.split("_")[0].split("\\.")[1];
@@ -80,6 +95,7 @@ public class MyTextService extends Service {
                                     e.printStackTrace();
                                 }
                             }else if (ch.indexOf("klist") != -1){
+                                Log.e("JWebSocketClientService", "收到的消息：" + message);
                                 cmd = NEWCMD.SUBSCRIBE_SYMBOL_KLIST;
                                 try {
                                     symbol = ch.split("_")[0].split("\\.")[1];

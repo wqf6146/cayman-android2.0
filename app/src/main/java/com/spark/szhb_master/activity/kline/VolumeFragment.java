@@ -15,8 +15,10 @@ import com.spark.szhb_master.R;
 import com.spark.szhb_master.adapter.VolumeAdapter;
 import com.spark.szhb_master.base.BaseActivity;
 import com.spark.szhb_master.base.BaseFragment;
+import com.spark.szhb_master.entity.VolumeBean;
 import com.spark.szhb_master.entity.VolumeInfo;
 import com.spark.szhb_master.factory.socket.ISocket;
+import com.spark.szhb_master.factory.socket.NEWCMD;
 import com.spark.szhb_master.serivce.SocketMessage;
 import com.spark.szhb_master.serivce.SocketResponse;
 import com.spark.szhb_master.utils.LogUtils;
@@ -26,9 +28,11 @@ import com.spark.szhb_master.utils.ToastUtils;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import butterknife.BindView;
 import config.Injection;
@@ -48,17 +52,19 @@ public class VolumeFragment extends BaseFragment implements KlineContract.Volume
     @BindView(R.id.volumeBar)
     ProgressBar volumeBar;
     private String symbol;
-    private ArrayList<VolumeInfo> objList;
+    private String symbolType;
+    private List<VolumeBean> objList;
     private VolumeAdapter adapter;
     private Activity activity;
-    private Gson gson;
+
     private KlineContract.VolumePresenter presenter;
 
 
-    public static VolumeFragment getInstance(String symbol) {
+    public static VolumeFragment getInstance(String symbol,String symbolType) {
         VolumeFragment volumeFragment = new VolumeFragment();
         Bundle bundle = new Bundle();
         bundle.putSerializable("symbol", symbol);
+        bundle.putSerializable("symbolType", symbolType);
         volumeFragment.setArguments(bundle);
         return volumeFragment;
     }
@@ -74,38 +80,51 @@ public class VolumeFragment extends BaseFragment implements KlineContract.Volume
         super.onStop();
         // 取消订阅
         //EventBus.getDefault().post(new SocketMessage(0, ISocket.CMD.UNSUBSCRIBE_EXCHANGE_TRADE, symbol));
+        String tradedetail = "market." + symbol + "_" + symbolType + ".trade.detail";
+        EventBus.getDefault().post(new SocketMessage(0, NEWCMD.SUBSCRIBE_SYMBOL_TRADEDETAIL,
+                buildGetBodyJson(tradedetail, "0").toString()));
         EventBus.getDefault().unregister(this);
     }
 
     private void startTCP() {
         // 开始订阅
-        //EventBus.getDefault().post(new SocketMessage(0, ISocket.CMD.SUBSCRIBE_EXCHANGE_TRADE, symbol));
+        String tradedetail = "market." + symbol + "_" + symbolType + ".trade.detail";
+        EventBus.getDefault().post(new SocketMessage(0, NEWCMD.SUBSCRIBE_SYMBOL_TRADEDETAIL,
+                buildGetBodyJson(tradedetail, "1").toString()));
     }
 
+    private JSONObject buildGetBodyJson(String value, String type) {
+        JSONObject obj = new JSONObject();
+        try {
+            obj.put("value", value);
+            obj.put("type", type);
+            return obj;
+        } catch (Exception ex) {
+            return null;
+        }
+    }
 
     /**
      * socket 推送过来的信息
      */
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onSocketMessage(SocketResponse response) {
-//        if (response.getCmd() == ISocket.CMD.PUSH_EXCHANGE_TRADE) {
-//            try {
+        if (response.getCmd() == NEWCMD.SUBSCRIBE_SYMBOL_TRADEDETAIL) {
+            try {
 //                LogUtils.i("成交 推送过来的信息==" + response.getResponse());
 //                if (gson == null)
 //                    gson = new Gson();
-//                VolumeInfo volumeInfo = gson.fromJson(response.getResponse(), new TypeToken<VolumeInfo>() {
-//                }.getType());
-//                String strSymbol = volumeInfo.getSymbol();
-//                if (strSymbol != null && strSymbol.equals(symbol)) {
-//                    objList.add(0, volumeInfo);
-//                    objList = initData(objList);
-//                    adapter.setObjList(objList);
-//                    adapter.notifyDataSetChanged();
-//                }
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//        }
+                List<VolumeBean> volumeBeanList = new Gson().fromJson(response.getResponse(), new TypeToken<List<VolumeBean>>() {}.getType());
+                String strSymbol = response.getRemark();
+                if (strSymbol != null && strSymbol.equals(symbol)) {
+                    objList = initVolumeData(volumeBeanList);
+                    adapter.setObjList(objList);
+                    adapter.notifyDataSetChanged();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 
@@ -129,6 +148,8 @@ public class VolumeFragment extends BaseFragment implements KlineContract.Volume
         LinearLayoutManager manager = new LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false);
         manager.setStackFromEnd(false);
         recyclerView.setLayoutManager(manager);
+        adapter = new VolumeAdapter(activity, objList);
+        recyclerView.setAdapter(adapter);
     }
 
     @Override
@@ -138,11 +159,12 @@ public class VolumeFragment extends BaseFragment implements KlineContract.Volume
         Bundle bundle = getArguments();
         if (bundle != null) {
             symbol = bundle.getString("symbol");
-            String[] strings = symbol.split("/");
-            tvNumberV.setText(getResources().getString(R.string.number) + "(" + strings[0] + ")");
-            tvPriceV.setText(getResources().getString(R.string.price) + "(" + strings[1] + ")");
+            symbolType = bundle.getString("symbolType");
+//            String[] strings = symbol.split("/");
+            tvNumberV.setText(getResources().getString(R.string.number) + "(" + symbol + ")");
+            tvPriceV.setText(getResources().getString(R.string.price) + "(USDT)");
             startTCP();
-            getVolume();
+//            getVolume();
         }
     }
 
@@ -161,32 +183,32 @@ public class VolumeFragment extends BaseFragment implements KlineContract.Volume
     /**
      * 填充数据
      */
-    private ArrayList<VolumeInfo> initData(ArrayList<VolumeInfo> objList) {
-        ArrayList<VolumeInfo> volumeInfos = new ArrayList<>();
+    private List<VolumeBean> initVolumeData(List<VolumeBean> objList) {
+        ArrayList<VolumeBean> volumeBeans = new ArrayList<>();
         if (objList != null) {
             for (int i = 0; i < 20; i++) {
                 if (objList.size() > i) { // list里有数据
-                    volumeInfos.add(objList.get(i));
+                    volumeBeans.add(objList.get(i));
                 } else {
-                    VolumeInfo volumeInfo = new VolumeInfo();
-                    volumeInfo.setTime(-1);
-                    volumeInfo.setDirection(null);
-                    volumeInfo.setPrice(-1);
-                    volumeInfo.setAmount(-1);
-                    volumeInfos.add(volumeInfo);
+                    VolumeBean volumeBean = new VolumeBean();
+                    volumeBean.setTs(-1);
+                    volumeBean.setDirection(null);
+                    volumeBean.setPrice(-1);
+                    volumeBean.setAmount(-1);
+                    volumeBeans.add(volumeBean);
                 }
             }
         } else {
             for (int i = 0; i < 20; i++) {
-                VolumeInfo volumeInfo = new VolumeInfo();
-                volumeInfo.setTime(-1);
-                volumeInfo.setDirection(null);
-                volumeInfo.setPrice(-1);
-                volumeInfo.setAmount(-1);
-                volumeInfos.add(volumeInfo);
+                VolumeBean volumeBean = new VolumeBean();
+                volumeBean.setTs(-1);
+                volumeBean.setDirection(null);
+                volumeBean.setPrice(-1);
+                volumeBean.setAmount(-1);
+                volumeBeans.add(volumeBean);
             }
         }
-        return volumeInfos;
+        return volumeBeans;
     }
 
     @Override
@@ -196,13 +218,13 @@ public class VolumeFragment extends BaseFragment implements KlineContract.Volume
 
     @Override
     public void getVolumeSuccess(ArrayList<VolumeInfo> list) {
-        if (volumeBar != null)
-            volumeBar.setVisibility(View.GONE);
-        objList = initData(list);
-        if (adapter == null) {
-            adapter = new VolumeAdapter(activity, objList);
-            recyclerView.setAdapter(adapter);
-        }
+//        if (volumeBar != null)
+//            volumeBar.setVisibility(View.GONE);
+//        objList = initData(list);
+//        if (adapter == null) {
+//            adapter = new VolumeAdapter(activity, objList);
+//            recyclerView.setAdapter(adapter);
+//        }
     }
 
     @Override

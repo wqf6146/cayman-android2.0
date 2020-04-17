@@ -67,7 +67,6 @@
                         android:textSize="12sp" />
 
                     <TextView
-                        android:layout_toRightOf="@+id/tvnums"
                         android:layout_below="@+id/tvLimit"
                         android:id="@+id/tvNum"
                         android:drawablePadding="5dp"
