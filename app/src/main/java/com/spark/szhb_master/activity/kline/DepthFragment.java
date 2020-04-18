@@ -2,6 +2,9 @@ package com.spark.szhb_master.activity.kline;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
@@ -67,6 +70,12 @@ public class DepthFragment extends BaseFragment implements KlineContract.DepthVi
     private Activity activity;
     private KlineContract.DepthPresenter presenter;
 
+    private boolean tcpStatus = false;
+
+    private Handler mHandler;
+    private boolean mRunning = true;
+
+
     public static DepthFragment getInstance(String symbol,String symbolType) {
         DepthFragment depthFragment = new DepthFragment();
         Bundle bundle = new Bundle();
@@ -80,25 +89,42 @@ public class DepthFragment extends BaseFragment implements KlineContract.DepthVi
     public void onStart() {
         super.onStart();
         EventBus.getDefault().register(this);
+        mRunning = true;
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        // 取消订阅
-        //EventBus.getDefault().post(new SocketMessage(0, ISocket.CMD.UNSUBSCRIBE_EXCHANGE_TRADE, symbol));
-        //深度
+        stopTcp();
+        EventBus.getDefault().unregister(this);
+        mRunning = false;
+    }
+
+    @Override
+    protected void onFragmentVisibleChange(boolean isVisible) {
+        super.onFragmentVisibleChange(isVisible);
+        if (isVisible){
+            if (!tcpStatus)
+                startTCP();
+        }else{
+            stopTcp();
+        }
+    }
+
+    @Override
+    protected void onFragmentFirstVisible() {
+        super.onFragmentFirstVisible();
+    }
+
+    private void stopTcp(){
+        tcpStatus = false;
         String depth = "market." + symbol + "_" + symbolType + ".depth.step10";
         EventBus.getDefault().post(new SocketMessage(0, NEWCMD.SUBSCRIBE_SYMBOL_DEPTH,
                 buildGetBodyJson(depth, "0").toString())); // 需要id
-        EventBus.getDefault().unregister(this);
     }
 
     private void startTCP() {
-        // 开始订阅
-        //EventBus.getDefault().post(new SocketMessage(0, ISocket.CMD.SUBSCRIBE_EXCHANGE_TRADE, symbol));
-
-        //深度
+        tcpStatus = true;
         String depth = "market." + symbol + "_" + symbolType + ".depth.step10";
         EventBus.getDefault().post(new SocketMessage(0, NEWCMD.SUBSCRIBE_SYMBOL_DEPTH,
                 buildGetBodyJson(depth, "1").toString())); // 需要id
@@ -122,12 +148,17 @@ public class DepthFragment extends BaseFragment implements KlineContract.DepthVi
     public void onSocketMessage(SocketResponse response) {
         if (response.getCmd() == NEWCMD.SUBSCRIBE_SYMBOL_DEPTH) {
             try {
-                setResponse(response);
+                if (rcvEnable) {
+                    rcvEnable = false;
+                    setResponse(response);
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
     }
+
+    private boolean rcvEnable = false;
 
     private void setResponse(SocketResponse response) {
         String res = response.getResponse();
@@ -175,6 +206,7 @@ public class DepthFragment extends BaseFragment implements KlineContract.DepthVi
         recyclerView.setLayoutManager(manager);
     }
 
+
     @Override
     protected void initData() {
         super.initData();
@@ -196,11 +228,38 @@ public class DepthFragment extends BaseFragment implements KlineContract.DepthVi
             adapter.setWidth(width / 2);
             LogUtils.i("屏幕宽度==" + (width / 2));
             recyclerView.setAdapter(adapter);
-
-            startTCP();
-//            getDepth();
         }
+
+        HandlerThread thread = new HandlerThread("MyHandlerThread");
+        thread.start();//创建一个HandlerThread并启动它
+        mHandler = new Handler(thread.getLooper());//使用HandlerThread的looper对象创建Handler，如果使用默认的构造方法，很有可能阻塞UI线程
+        mHandler.post(mBackgroundRunnable);//将线程post到Handler中
+
+        startTCP();
     }
+
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mHandler.removeCallbacks(mBackgroundRunnable);
+    }
+
+    Runnable mBackgroundRunnable = new Runnable() {
+
+        @Override
+        public void run() {
+            while(mRunning){
+                try {
+                    rcvEnable = true;
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
+    };
 
     @Override
     protected void loadData() {

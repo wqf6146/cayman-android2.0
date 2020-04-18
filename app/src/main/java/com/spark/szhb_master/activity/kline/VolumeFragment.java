@@ -2,6 +2,8 @@ package com.spark.szhb_master.activity.kline;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.HandlerThread;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -59,6 +61,10 @@ public class VolumeFragment extends BaseFragment implements KlineContract.Volume
 
     private KlineContract.VolumePresenter presenter;
 
+    private boolean tcpStatus = false;
+
+    private Handler mHandler;
+    private boolean mRunning = true;
 
     public static VolumeFragment getInstance(String symbol,String symbolType) {
         VolumeFragment volumeFragment = new VolumeFragment();
@@ -73,21 +79,40 @@ public class VolumeFragment extends BaseFragment implements KlineContract.Volume
     public void onStart() {
         super.onStart();
         EventBus.getDefault().register(this);
+        mRunning = true;
     }
+
+//    @Override
+//    protected void onFragmentVisibleChange(boolean isVisible) {
+//        super.onFragmentVisibleChange(isVisible);
+//        if (isVisible){
+//            if (!tcpStatus)
+//                startTCP();
+//        }else{
+//            stopTcp();
+//        }
+//    }
 
     @Override
     public void onStop() {
         super.onStop();
         // 取消订阅
         //EventBus.getDefault().post(new SocketMessage(0, ISocket.CMD.UNSUBSCRIBE_EXCHANGE_TRADE, symbol));
+        stopTcp();
+        EventBus.getDefault().unregister(this);
+        mRunning = false;
+    }
+
+    private void stopTcp(){
+        tcpStatus = false;
         String tradedetail = "market." + symbol + "_" + symbolType + ".trade.detail";
         EventBus.getDefault().post(new SocketMessage(0, NEWCMD.SUBSCRIBE_SYMBOL_TRADEDETAIL,
                 buildGetBodyJson(tradedetail, "0").toString()));
-        EventBus.getDefault().unregister(this);
     }
 
     private void startTCP() {
         // 开始订阅
+        tcpStatus = true;
         String tradedetail = "market." + symbol + "_" + symbolType + ".trade.detail";
         EventBus.getDefault().post(new SocketMessage(0, NEWCMD.SUBSCRIBE_SYMBOL_TRADEDETAIL,
                 buildGetBodyJson(tradedetail, "1").toString()));
@@ -104,6 +129,8 @@ public class VolumeFragment extends BaseFragment implements KlineContract.Volume
         }
     }
 
+    private boolean rcvEnable = false;
+
     /**
      * socket 推送过来的信息
      */
@@ -111,15 +138,16 @@ public class VolumeFragment extends BaseFragment implements KlineContract.Volume
     public void onSocketMessage(SocketResponse response) {
         if (response.getCmd() == NEWCMD.SUBSCRIBE_SYMBOL_TRADEDETAIL) {
             try {
-//                LogUtils.i("成交 推送过来的信息==" + response.getResponse());
-//                if (gson == null)
-//                    gson = new Gson();
-                List<VolumeBean> volumeBeanList = new Gson().fromJson(response.getResponse(), new TypeToken<List<VolumeBean>>() {}.getType());
-                String strSymbol = response.getRemark();
-                if (strSymbol != null && strSymbol.equals(symbol)) {
-                    objList = initVolumeData(volumeBeanList);
-                    adapter.setObjList(objList);
-                    adapter.notifyDataSetChanged();
+                if (rcvEnable) {
+                    rcvEnable = false;
+                    List<VolumeBean> volumeBeanList = new Gson().fromJson(response.getResponse(), new TypeToken<List<VolumeBean>>() {}.getType());
+                    String strSymbol = response.getRemark();
+                    if (strSymbol != null && strSymbol.equals(symbol)) {
+                        objList.addAll(0,volumeBeanList);
+                        objList = initVolumeData(objList);
+                        adapter.setObjList(objList);
+                        adapter.notifyDataSetChanged();
+                    }
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -163,10 +191,41 @@ public class VolumeFragment extends BaseFragment implements KlineContract.Volume
 //            String[] strings = symbol.split("/");
             tvNumberV.setText(getResources().getString(R.string.number) + "(" + symbol + ")");
             tvPriceV.setText(getResources().getString(R.string.price) + "(USDT)");
-            startTCP();
+//            startTCP();
 //            getVolume();
         }
+
+        HandlerThread thread = new HandlerThread("MyHandlerThread");
+        thread.start();//创建一个HandlerThread并启动它
+        mHandler = new Handler(thread.getLooper());//使用HandlerThread的looper对象创建Handler，如果使用默认的构造方法，很有可能阻塞UI线程
+        mHandler.post(mBackgroundRunnable);//将线程post到Handler中
+
+        startTCP();
     }
+
+    Runnable mBackgroundRunnable = new Runnable() {
+
+        @Override
+        public void run() {
+            while(mRunning){
+                try {
+                    rcvEnable = true;
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
+    };
+
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mHandler.removeCallbacks(mBackgroundRunnable);
+    }
+
 
     /**
      * 获取成交数据

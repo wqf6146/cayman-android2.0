@@ -1024,9 +1024,8 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
         depthPager.setAdapter(adapter = new PagerAdapter(getSupportFragmentManager(), fragments, tabs));
         depthTab.setTabMode(TabLayout.MODE_FIXED);
         depthTab.setupWithViewPager(depthPager);
-//        depthPager.setOffscreenPageLimit(fragments.size() - 1);
+        depthPager.setOffscreenPageLimit(fragments.size() - 1);
         depthPager.setCurrentItem(0);
-//        getDepth();
     }
 
 
