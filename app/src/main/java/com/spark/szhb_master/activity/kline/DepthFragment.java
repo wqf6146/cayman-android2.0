@@ -7,6 +7,7 @@ import android.os.HandlerThread;
 import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -90,6 +91,7 @@ public class DepthFragment extends BaseFragment implements KlineContract.DepthVi
         super.onStart();
         EventBus.getDefault().register(this);
         mRunning = true;
+        startTCP();
     }
 
     @Override
@@ -124,10 +126,12 @@ public class DepthFragment extends BaseFragment implements KlineContract.DepthVi
     }
 
     private void startTCP() {
-        tcpStatus = true;
-        String depth = "market." + symbol + "_" + symbolType + ".depth.step10";
-        EventBus.getDefault().post(new SocketMessage(0, NEWCMD.SUBSCRIBE_SYMBOL_DEPTH,
-                buildGetBodyJson(depth, "1").toString())); // 需要id
+        if (!TextUtils.isEmpty(symbol) && !TextUtils.isEmpty(symbolType)){
+            tcpStatus = true;
+            String depth = "market." + symbol + "_" + symbolType + ".depth.step10";
+            EventBus.getDefault().post(new SocketMessage(0, NEWCMD.SUBSCRIBE_SYMBOL_DEPTH,
+                    buildGetBodyJson(depth, "1").toString())); // 需要id
+        }
     }
 
     private JSONObject buildGetBodyJson(String value, String type) {
@@ -235,7 +239,7 @@ public class DepthFragment extends BaseFragment implements KlineContract.DepthVi
         mHandler = new Handler(thread.getLooper());//使用HandlerThread的looper对象创建Handler，如果使用默认的构造方法，很有可能阻塞UI线程
         mHandler.post(mBackgroundRunnable);//将线程post到Handler中
 
-        startTCP();
+
     }
 
 

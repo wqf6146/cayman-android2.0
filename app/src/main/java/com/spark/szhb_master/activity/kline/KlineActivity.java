@@ -83,8 +83,8 @@ import static android.widget.RelativeLayout.CENTER_IN_PARENT;
 public class KlineActivity extends BaseActivity implements KlineContract.View, View.OnClickListener {
     @BindView(R.id.tvCurrencyName)
     TextView tvCurrencyName;
-    @BindView(R.id.llLandText)
-    LinearLayout llLandText;
+//    @BindView(R.id.llLandText)
+//    LinearLayout llLandText;
     @BindView(R.id.kDataText)
     TextView mDataText;
     @BindView(R.id.kDataOne)
@@ -95,28 +95,30 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
     TextView kUp;
     @BindView(R.id.kLow)
     TextView kLow;
-    @BindView(R.id.kLandDataText)
-    TextView kLandDataText;
-    @BindView(R.id.kLandDataOne)
-    TextView kLandDataOne;
-    @BindView(R.id.kLandCount)
-    TextView kLandCount;
-    @BindView(R.id.kLandUp)
-    TextView kLandUp;
-    @BindView(R.id.kLandLow)
-    TextView kLandLow;
+//    @BindView(R.id.kLandDataText)
+//    TextView kLandDataText;
+//    @BindView(R.id.kLandDataOne)
+//    TextView kLandDataOne;
+//    @BindView(R.id.kLandCount)
+//    TextView kLandCount;
+//    @BindView(R.id.kLandUp)
+//    TextView kLandUp;
+//    @BindView(R.id.kLandLow)
+//    TextView kLandLow;
     @BindView(R.id.tab)
     LinearLayout tab;
-    @BindView(R.id.llTitle)
-    LinearLayout llTitle;
-    @BindView(R.id.kLandRange)
-    TextView kLandRange;
+
+    @BindView(R.id.rlTitle)
+    RelativeLayout rlTitle;
+
+//    @BindView(R.id.kLandRange)
+//    TextView kLandRange;
     @BindView(R.id.kRange)
     TextView kRange;
     @BindView(R.id.viewPager)
     MyViewPager viewPager;
-    @BindView(R.id.tv_collect)
-    TextView mTvCollect; // 收藏的意思
+//    @BindView(R.id.tv_collect)
+//    TextView mTvCollect; // 收藏的意思
     @BindView(R.id.ivBack)
     ImageButton ivBack;
     @BindView(R.id.tvMore)
@@ -211,7 +213,7 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
         if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) { // 横屏
             isVertical = false;
             llState.setVisibility(View.GONE);
-            llLandText.setVisibility(View.VISIBLE);
+//            llLandText.setVisibility(View.VISIBLE);
             llVertical.setVisibility(View.GONE);
             ivBack.setVisibility(View.GONE);
             depthTab.setVisibility(View.GONE);
@@ -227,7 +229,7 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
         } else if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             isVertical = true;
             llState.setVisibility(View.VISIBLE);
-            llLandText.setVisibility(View.INVISIBLE);
+//            llLandText.setVisibility(View.INVISIBLE);
             llVertical.setVisibility(View.VISIBLE);
             ivBack.setVisibility(View.VISIBLE);
             depthTab.setVisibility(View.VISIBLE);
@@ -267,7 +269,9 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
     @Override
     public void onStop() {
         super.onStop();
-        String st = "market." + symbol + "_" + symbolType + ".klist." + typeLists[listType];
+
+
+        String st = "market." + symbol + "_" + symbolType + ".klist." + typeLists[type];
         EventBus.getDefault().post(new SocketMessage(0, NEWCMD.SUBSCRIBE_SYMBOL_KLIST,
                 buildGetBodyJson(st, "0").toString())); //
 
@@ -285,7 +289,8 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
     @Override
     protected void initView() {
         super.initView();
-        setSetTitleAndBack(false, true);
+//        setSetTitleAndBack(false, true);
+        setImmersionBar(rlTitle);
     }
 
     @Override
@@ -310,13 +315,12 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
             }
         }
         if (isFace) { // 已经收藏
-            mTvCollect.setText(getString(R.string.text_collected));
-            mTvCollect.setCompoundDrawablesWithIntrinsicBounds(null, getResources().getDrawable(R.mipmap.icon_collect_hover), null, null);
+            //mTvCollect.setText(getString(R.string.text_collected));
+            //mTvCollect.setCompoundDrawablesWithIntrinsicBounds(null, getResources().getDrawable(R.mipmap.icon_collect_hover), null, null);
         } else {
-            mTvCollect.setText(getString(R.string.text_add_favorite));
-            mTvCollect.setCompoundDrawablesWithIntrinsicBounds(null, getResources().getDrawable(R.mipmap.icon_collect_normal), null, null);
+            //mTvCollect.setText(getString(R.string.text_add_favorite));
+            //mTvCollect.setCompoundDrawablesWithIntrinsicBounds(null, getResources().getDrawable(R.mipmap.icon_collect_normal), null, null);
         }
-        startTCP();
     }
 
 //    private LineChartManager lineChartManager2;
@@ -342,8 +346,9 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
             }
             selectedTextView = textViews.get(1);
             type = (int) selectedTextView.getTag();
-            viewPager.setCurrentItem(1);
-//            initDepthData();
+
+            startDetailTCP();
+            startKlistTcp(type);
         }
     }
 
@@ -354,7 +359,7 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
     }
 
 
-    @OnClick({R.id.ivBack, R.id.ivFullScreen, R.id.tvSell, R.id.tvBuy, R.id.tv_collect, R.id.tvMore, R.id.tvIndex})
+    @OnClick({R.id.ivBack, R.id.ivFullScreen, R.id.tvSell, R.id.tvBuy, R.id.tvMore, R.id.tvIndex})
     @Override
     protected void setOnClickListener(View view) {
         switch (view.getId()) {
@@ -385,10 +390,10 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
                 showActivity(TradeActivity.class,bundle,0);
                 finish();
                 return;
-            case R.id.tv_collect:
-                MainActivity.isAgain = true;
-                deleteOrCollect();
-                return;
+//            case R.id.tv_collect:
+//                MainActivity.isAgain = true;
+//                deleteOrCollect();
+//                return;
             case R.id.tvMore:
                 tvMore.setBackground(getDrawable(R.drawable.shape_bg_kline_tab_hover));
                 tvIndex.setBackground(getDrawable(R.drawable.shape_bg_kline_tab_normal));
@@ -503,7 +508,9 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
                         isPopClick = false;
                         selectedTextView = (TextView) view;
                         int selectedTag = (int) selectedTextView.getTag();
+                        stopKlistTcp(type);
                         type = selectedTag;
+                        startKlistTcp(type);
                         viewPager.setCurrentItem(selectedTag);
                     }
                 });
@@ -691,17 +698,13 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
 //                kRange.setTextColor(mCurrency.getScale()  < 0 ? getResources().getColor(R.color.main_font_red) : getResources().getColor(R.color.main_font_green));
 //                kRange.setTextColor(mCurrency.getScale()  < 0 ? getResources().getColor(R.color.main_font_red) : getResources().getColor(R.color.main_font_green));
                 kRange.setBackground(mCurrency.getScale() < 0 ? getResources().getDrawable(R.drawable.bg_kl_corner_red) : getResources().getDrawable(R.drawable.bg_kl_corner_green));
-                kLandDataOne.setTextColor(mCurrency.getScale()  < 0 ? getResources().getColor(R.color.main_font_red) : getResources().getColor(R.color.main_font_green));
-                kLandUp.setText(strUp);
-                kLandLow.setText(strLow);
-                kLandCount.setText(strCount);
+//                kLandDataOne.setTextColor(mCurrency.getScale()  < 0 ? getResources().getColor(R.color.main_font_red) : getResources().getColor(R.color.main_font_green));
+//                kLandUp.setText(strUp);
+//                kLandLow.setText(strLow);
+//                kLandCount.setText(strCount);
                 kRange.setText((mCurrency.getScale()  < 0 ? "-" : "+") + mCurrency.getScale() +"%");
-                kLandDataOne.setText(strDataOne);
-                kLandDataText.setText("≈" + mCurrency.getConvert() + "USDT");
-            }
-            if (!isStart) {
-                isStart = true;
-                //startTCP();
+//                kLandDataOne.setText(strDataOne);
+//                kLandDataText.setText("≈" + mCurrency.getConvert() + "USDT");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -715,16 +718,22 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
         return false;
     }
 
-    private void startTCP() {
-        String klist = "market." + symbol + "_" + symbolType + ".klist." + typeLists[listType];
-        EventBus.getDefault().post(new SocketMessage(0, NEWCMD.SUBSCRIBE_SYMBOL_KLIST,
-                buildGetBodyJson(klist, "1").toString())); //
-
-
+    private void startDetailTCP() {
         String detail = "market." + symbol + "_" + symbolType + ".detail";
         EventBus.getDefault().post(new SocketMessage(0, NEWCMD.SUBSCRIBE_SYMBOL_DETAIL,
                 buildGetBodyJson(detail, "1").toString()));
+    }
 
+    private void startKlistTcp(int type){
+        String klist = "market." + symbol + "_" + symbolType + ".klist." + typeLists[type];
+        EventBus.getDefault().post(new SocketMessage(0, NEWCMD.SUBSCRIBE_SYMBOL_KLIST,
+                buildGetBodyJson(klist, "1").toString())); //
+    }
+
+    private void stopKlistTcp(int type){
+        String klist = "market." + symbol + "_" + symbolType + ".klist." + typeLists[type];
+        EventBus.getDefault().post(new SocketMessage(0, NEWCMD.SUBSCRIBE_SYMBOL_KLIST,
+                buildGetBodyJson(klist, "0").toString())); //
     }
 
     private JSONObject buildGetBodyJson(String value, String type) {
@@ -780,6 +789,8 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
 
             }
         });
+        viewPager.setCurrentItem(0);
+        setPagerView();
     }
 
     /**
@@ -923,17 +934,17 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
 
     @Override
     public void doDeleteOrCollectSuccess(String msg) {
-        if (isFace) {
-            ToastUtils.showToast(getString(R.string.text_cancel_success));
-            mTvCollect.setText(getString(R.string.text_add_favorite));
-            isFace = false;
-            mTvCollect.setCompoundDrawablesWithIntrinsicBounds(null, getResources().getDrawable(R.mipmap.icon_collect_normal), null, null);
-        } else {
-            ToastUtils.showToast(getString(R.string.text_add_success));
-            isFace = true;
-            mTvCollect.setText(getString(R.string.text_collected));
-            mTvCollect.setCompoundDrawablesWithIntrinsicBounds(null, getResources().getDrawable(R.mipmap.icon_collect_hover), null, null);
-        }
+//        if (isFace) {
+//            ToastUtils.showToast(getString(R.string.text_cancel_success));
+//            //mTvCollect.setText(getString(R.string.text_add_favorite));
+//            isFace = false;
+//            mTvCollect.setCompoundDrawablesWithIntrinsicBounds(null, getResources().getDrawable(R.mipmap.icon_collect_normal), null, null);
+//        } else {
+//            ToastUtils.showToast(getString(R.string.text_add_success));
+//            isFace = true;
+//            mTvCollect.setText(getString(R.string.text_collected));
+//            mTvCollect.setCompoundDrawablesWithIntrinsicBounds(null, getResources().getDrawable(R.mipmap.icon_collect_hover), null, null);
+//        }
 
     }
 

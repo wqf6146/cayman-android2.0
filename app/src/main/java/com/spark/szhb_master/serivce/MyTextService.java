@@ -35,7 +35,7 @@ import java.net.URI;
 
 public class MyTextService extends Service {
 
-    private static final String ip_port = "ws://39.98.150.252:8080/ws";//行情 真实
+    private static final String ip_port = "ws://47.57.101.198:8080/ws";//行情 真实
     private JWebSocketClient mWebSocketClient;
 
     @Nullable

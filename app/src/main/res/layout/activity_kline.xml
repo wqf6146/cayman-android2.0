@@ -6,8 +6,8 @@
     android:background="@color/main_head_bg"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/llTitle"
+    <RelativeLayout
+        android:id="@+id/rlTitle"
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_bar_height"
         android:gravity="center_vertical"
@@ -26,127 +26,21 @@
             android:id="@+id/tvCurrencyName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_centerInParent="true"
             android:gravity="center"
             android:text="BTC/USDT"
             android:textColor="@color/white"
             android:textSize="@dimen/fab_margin" />
 
-        <LinearLayout
-            android:id="@+id/llLandText"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:visibility="invisible">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="5dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/kLandDataOne"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:scaleX="0.9"
-                    android:scaleY="1.1"
-                    android:text=""
-                    android:textColor="@color/main_font_green"
-                    android:textSize="@dimen/font_normal"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/kLandRange"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginRight="5dp"
-                    android:text=""
-
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/font_mini" />
-
-                <TextView
-                    android:id="@+id/kLandDataText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/font_mini" />
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|right"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="高"
-                        android:textColor="@color/color_font_kline"
-                        android:textSize="@dimen/sp_10" />
-
-                    <TextView
-                        android:id="@+id/kLandUp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="8dp"
-                        android:text=""
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/font_mini" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="低"
-                        android:textColor="@color/color_font_kline"
-                        android:textSize="@dimen/sp_10" />
-
-                    <TextView
-                        android:id="@+id/kLandLow"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="8dp"
-                        android:text=""
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/sp_10" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="24H量"
-                        android:textColor="@color/color_font_kline"
-                        android:textSize="@dimen/sp_10" />
-
-                    <TextView
-                        android:id="@+id/kLandCount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:text=""
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/sp_10" />
-                </LinearLayout>
-            </LinearLayout>
-
-        </LinearLayout>
-
         <ImageView
             android:id="@+id/ivFullScreen"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:src="@mipmap/icon_full_screen" />
-    </LinearLayout>
+    </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
@@ -238,7 +132,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="高"
+                            android:text="最高"
                             android:textColor="@color/tab_font"
                             android:textSize="@dimen/font_mini" />
 
@@ -263,7 +157,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="低"
+                            android:text="最低"
                             android:textColor="@color/tab_font"
                             android:textSize="@dimen/font_mini" />
 
@@ -463,13 +357,14 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="5dp"
-            android:drawablePadding="2dp"
             android:drawableTop="@mipmap/icon_collect_normal"
+            android:drawablePadding="2dp"
             android:gravity="center_vertical"
             android:paddingLeft="3dp"
             android:paddingRight="3dp"
             android:text="添加自选"
             android:textColor="@color/white"
-            android:textSize="@dimen/font_mini" />
+            android:textSize="@dimen/font_mini"
+            android:visibility="gone" />
     </LinearLayout>
 </LinearLayout>

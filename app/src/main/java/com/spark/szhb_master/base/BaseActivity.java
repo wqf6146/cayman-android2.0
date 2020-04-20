@@ -229,6 +229,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
+    public void setImmersionBar(View view){
+        immersionBar.setTitleBar(this, view);
+    }
+
     /**
      * 子类重写实现扩展设置
      */

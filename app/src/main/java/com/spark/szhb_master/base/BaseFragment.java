@@ -91,9 +91,10 @@ public abstract class BaseFragment extends Fragment {
             if (isFirstVisible) {
                 onFragmentFirstVisible();
                 isFirstVisible = false;
+            }else{
+                onFragmentVisibleChange(true);
+                isFragmentVisible = true;
             }
-            onFragmentVisibleChange(true);
-            isFragmentVisible = true;
         }
 
         super.onViewCreated(view, savedInstanceState);
