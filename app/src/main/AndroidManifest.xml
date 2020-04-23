@@ -76,6 +76,7 @@
         <activity android:name="com.spark.szhb_master.activity.ads.AdsActivity" />
         <activity android:name="com.spark.szhb_master.activity.message.MessageActivity" />
         <activity android:name="com.spark.szhb_master.activity.credit.CreditActivity" />
+        <activity android:name="com.spark.szhb_master.activity.credit.CreditOneActivity" />
         <activity android:name="com.spark.szhb_master.activity.safe.SafeActivity" />
         <activity android:name="com.spark.szhb_master.activity.setting.SettingActivity" />
         <activity android:name="com.spark.szhb_master.activity.switch_user.SwitchUserActivity" />

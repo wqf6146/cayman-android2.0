@@ -3,6 +3,7 @@ package com.spark.szhb_master.activity.Trade;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.HandlerThread;
 import android.os.Message;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
@@ -45,6 +46,7 @@ import com.spark.szhb_master.entity.Favorite;
 import com.spark.szhb_master.entity.Money;
 import com.spark.szhb_master.entity.NewCurrency;
 import com.spark.szhb_master.entity.SafeSetting;
+import com.spark.szhb_master.entity.SymbolBean;
 import com.spark.szhb_master.entity.SymbolStep;
 import com.spark.szhb_master.entity.TextItems;
 import com.spark.szhb_master.factory.UrlFactory;
@@ -175,8 +177,10 @@ public class TradeActivity extends BaseActivity implements TradeContract.View {
     TextView tvPriceTag;
     @BindView(R.id.tvCountTag)
     TextView tvCountTag;
-//    @BindView(R.id.tvLatest)
-//    TextView tvLatest;
+
+    @BindView(R.id.tvLiquidation)
+    TextView tvLiquidation;
+
     private NewCurrency currency;
     private List<Exchange> sellExchangeList;
     private List<Exchange> buyExchangeList;
@@ -207,25 +211,7 @@ public class TradeActivity extends BaseActivity implements TradeContract.View {
     private boolean isFirst = true;
     private boolean isLoginStateOld;
 
-    /**
-     * 主界面调用
-     */
-    public void tcpNotify() {
-        if (currency != null) {
-            tvPrice.setText(String.valueOf(currency.getClose()));
-            tvPrice.setTextColor( Float.parseFloat(currency.getScale()) >= 0 ? ContextCompat.getColor(MyApplication.getApp(), R.color.main_font_green) :
-                    ContextCompat.getColor(MyApplication.getApp(), R.color.main_font_red));
-//            tvLatest.setTextColor(Float.parseFloat(currency.getScale()) >= 0 ? ContextCompat.getColor(MyApplication.getApp(), R.color.main_font_green) :
-//                    ContextCompat.getColor(MyApplication.getApp(), R.color.main_font_red));
-            if (GlobalConstant.CNY.equals(CommonUtils.getUnitBySymbol(currency.getSymbol()))) {
-                tvMoney.setText(String.valueOf("≈" + MathUtils.getRundNumber(Float.parseFloat(currency.getClose()) * 1 * currency.getBaseUsdRate(),
-                        2, null) + GlobalConstant.CNY));
-            } else {
-                tvMoney.setText(String.valueOf("≈" + MathUtils.getRundNumber(Float.parseFloat(currency.getClose()) * MainActivity.rate * currency.getBaseUsdRate(),
-                        2, null) + GlobalConstant.CNY));
-            }
-        }
-    }
+    private boolean rcvEnable = false;
 
     /**
      * 这个是从主界面来的，表示选择了某个币种
@@ -273,6 +259,7 @@ public class TradeActivity extends BaseActivity implements TradeContract.View {
         super.onDestroy();
         stopTcp();
         EventBus.getDefault().unregister(this);
+        mHandler.removeCallbacks(mBackgroundRunnable);
     }
 
     public static String getTAG() {
@@ -334,6 +321,11 @@ public class TradeActivity extends BaseActivity implements TradeContract.View {
                 }
             }
         }).start();
+
+        HandlerThread thread = new HandlerThread("MyHandlerThread");
+        thread.start();//创建一个HandlerThread并启动它
+        mHandler = new Handler(thread.getLooper());//使用HandlerThread的looper对象创建Handler，如果使用默认的构造方法，很有可能阻塞UI线程
+        mHandler.post(mBackgroundRunnable);//将线程post到Handler中
     }
 
     Handler handler = new Handler() {
@@ -1208,6 +1200,10 @@ public class TradeActivity extends BaseActivity implements TradeContract.View {
         String st = "market." + symbol + "_" + type + ".depth.step10";
         EventBus.getDefault().post(new SocketMessage(0, NEWCMD.SUBSCRIBE_SYMBOL_DEPTH,
                 buildGetBodyJson(st, "1").toString())); // 需要id
+
+        String sthead = "market." + symbol + "_" + type + ".detail";
+        EventBus.getDefault().post(new SocketMessage(0, NEWCMD.SUBSCRIBE_SYMBOL_DETAIL,
+                buildGetBodyJson(sthead, "1").toString()));
         oldSymbol = symbol;
     }
 
@@ -1220,6 +1216,10 @@ public class TradeActivity extends BaseActivity implements TradeContract.View {
         String st = "market." + symbol + "_" + type + ".depth.step10";
         EventBus.getDefault().post(new SocketMessage(0, NEWCMD.SUBSCRIBE_SYMBOL_DEPTH,
                 buildGetBodyJson(st, "0").toString())); // 需要id
+
+        String sthead = "market." + symbol + "_" + type + ".detail";
+        EventBus.getDefault().post(new SocketMessage(0, NEWCMD.SUBSCRIBE_SYMBOL_DETAIL,
+                buildGetBodyJson(sthead, "0").toString()));
 
     }
 
@@ -1299,6 +1299,26 @@ public class TradeActivity extends BaseActivity implements TradeContract.View {
             tradeBuyOrSellConfirmDialog.show();
         }
     }
+    private Handler mHandler;
+    private boolean mRunning = true;
+
+    Runnable mBackgroundRunnable = new Runnable() {
+
+        @Override
+        public void run() {
+            while(mRunning){
+                try {
+                    rcvEnable = true;
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
+    };
+
+
 
     /**
      * 盘口信息的返回 和 当前委托的返回
@@ -1310,9 +1330,12 @@ public class TradeActivity extends BaseActivity implements TradeContract.View {
         NEWCMD cmd = response.getCmd();
         if (cmd == null) return;
 
-        if (cmd == NEWCMD.SUBSCRIBE_SYMBOL_DEPTH){
-            LogUtils.i("盘口返回数据===" + response.getResponse());
+        if (cmd == NEWCMD.SUBSCRIBE_SYMBOL_DEPTH && rcvEnable){
+            rcvEnable = false;
             setResponse(response);
+        }else if (cmd == NEWCMD.SUBSCRIBE_SYMBOL_DETAIL){
+            SymbolBean symbolBean = new Gson().fromJson(response.getResponse(), SymbolBean.class);
+            setCurrentcy(symbolBean);
         }
 
         switch (response.getCmd()) {
@@ -1334,6 +1357,14 @@ public class TradeActivity extends BaseActivity implements TradeContract.View {
 //            default:
 //                break;
         }
+    }
+
+    private void setCurrentcy(SymbolBean symbolBean) {
+        tvPrice.setText(String.valueOf(symbolBean.getClose()));
+        tvPrice.setTextColor( symbolBean.getScale() >= 0 ? ContextCompat.getColor(MyApplication.getApp(), R.color.main_font_green) :
+                ContextCompat.getColor(MyApplication.getApp(), R.color.main_font_red));
+        tvMoney.setText(GlobalConstant.CNY + symbolBean.getConvert());
+
     }
 
     private void setResponse(SocketResponse response) {

@@ -226,6 +226,7 @@
     <string name="item_sell">Sell</string>
     <string name="history">History</string>
     <string name="current_trust">Open Orders</string>
+    <string name="oneclick_liquidation">One_click liquidation</string>
     <string name="history_record">History</string>
     <string name="history_trust">History trust</string>
     <string name="now_trust">Now trust</string>

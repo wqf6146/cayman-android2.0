@@ -74,26 +74,10 @@ public class CreditActivity extends BaseActivity implements CreditContract.View 
     ImageView ivIconHold;
     @BindView(R.id.tvCredit)
     TextView tvCredit;
-    @BindView(R.id.etCountry)
-    TextView etCountry;
-    @BindView(R.id.etName)
-    EditText etName;
-    @BindView(R.id.etIdNumber)
-    EditText etIdNumber;
+
     @BindView(R.id.llContainer)
     LinearLayout llContainer;
-    @BindView(R.id.tvNotice)
-    TextView tvNotice;
-    @BindView(R.id.ivNoticeIcon)
-    ImageView ivNoticeIcon;
-    @BindView(R.id.llNotice)
-    LinearLayout llNotice;
-    @BindView(R.id.llFace)
-    LinearLayout llFace;
-    @BindView(R.id.llBack)
-    LinearLayout llBack;
-    @BindView(R.id.llHold)
-    LinearLayout llHold;
+
     @BindView(R.id.svContainer)
     ScrollView svContainer;
     private int type;
@@ -190,21 +174,23 @@ public class CreditActivity extends BaseActivity implements CreditContract.View 
         tvGoto.setVisibility(View.INVISIBLE);
         new CreditPresenter(Injection.provideTasksRepository(CreditActivity.this), this);
         imageFile = FileUtils.getCacheSaveFile(this, filename);
+
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            noticeType = bundle.getInt("NoticeType", 0);
-            notice = bundle.getString("Notice");
-            if (noticeType == UNAUDITING) {
-                llNotice.setVisibility(View.GONE);
-            }
+//            noticeType = bundle.getInt("NoticeType", 0);
+//            notice = bundle.getString("Notice");
+//            if (noticeType == UNAUDITING) {
+//                llNotice.setVisibility(View.GONE);
+//            }
         }
+
         Intent intent = getIntent();
         if (intent != null){
-            noticeType = intent.getIntExtra("NoticeType", 0);
-            notice = bundle.getString("Notice");
-            if (noticeType == UNAUDITING) {
-                llNotice.setVisibility(View.GONE);
-            }
+//            noticeType = intent.getIntExtra("NoticeType", 0);
+//            notice = bundle.getString("Notice");
+//            if (noticeType == UNAUDITING) {
+//                llNotice.setVisibility(View.GONE);
+//            }
         }
 
     }
@@ -234,24 +220,24 @@ public class CreditActivity extends BaseActivity implements CreditContract.View 
     }
 
     private void credit() {
-        String idCard = etIdNumber.getText().toString().trim();
-        String realName = etName.getText().toString().trim();
-        if (StringUtils.isEmpty(realName, idCard, idCardFront, idCardBack, handHeldIdCard)) {
-            ToastUtils.showToast(getString(R.string.incomplete_information));
-        } else if (idCard.contains("****")){
-            ToastUtils.showToast("请重新输入身份证号");
-        } else if (!StringUtils.isIDCard(idCard)) {
-            ToastUtils.showToast(getString(R.string.idcard_diff));
-        } else {
-            HashMap<String, String> map = new HashMap<>();
-            map.put("realName", realName);
-            map.put("idCard", idCard);
-            map.put("idCardFront", idCardFront);
-            map.put("idCardBack", idCardBack);
-            map.put("handHeldIdCard", handHeldIdCard);
-            map.put("type", "0");
-            presenter.credit(map);
-        }
+//        String idCard = etIdNumber.getText().toString().trim();
+//        String realName = etName.getText().toString().trim();
+//        if (StringUtils.isEmpty(realName, idCard, idCardFront, idCardBack, handHeldIdCard)) {
+//            ToastUtils.showToast(getString(R.string.incomplete_information));
+//        } else if (idCard.contains("****")){
+//            ToastUtils.showToast("请重新输入身份证号");
+//        } else if (!StringUtils.isIDCard(idCard)) {
+//            ToastUtils.showToast(getString(R.string.idcard_diff));
+//        } else {
+//            HashMap<String, String> map = new HashMap<>();
+//            map.put("realName", realName);
+//            map.put("idCard", idCard);
+//            map.put("idCardFront", idCardFront);
+//            map.put("idCardBack", idCardBack);
+//            map.put("handHeldIdCard", handHeldIdCard);
+//            map.put("type", "0");
+//            presenter.credit(map);
+//        }
     }
 
     @Override
@@ -330,53 +316,53 @@ public class CreditActivity extends BaseActivity implements CreditContract.View 
 
     @Override
     public void getCreditInfoSuccess(Credit.DataBean obj) {
-        svContainer.setVisibility(View.VISIBLE);
-        Credit credit = new Credit();
-        credit.setData(obj);
-        dataBean = credit.getData();
-        if (dataBean != null) {
-            etName.setText(dataBean.getRealName());
-            if (StringUtils.isNotEmpty(dataBean.getIdCard()))
-                etIdNumber.setText(dataBean.getIdCard().substring(0, 4) + "**********" + dataBean.getIdCard().substring(14));
-            idCardFront = dataBean.getIdentityCardImgFront();
-            Glide.with(this).load(idCardFront).into(ivIdFace);
-            idCardBack = dataBean.getIdentityCardImgReverse();
-            Glide.with(this).load(idCardBack).into(ivIdBack);
-            handHeldIdCard = dataBean.getIdentityCardImgInHand();
-            Glide.with(this).load(handHeldIdCard).into(ivHold);
-            ivIconFace.setVisibility(View.GONE);
-            ivIconBack.setVisibility(View.GONE);
-            ivIconHold.setVisibility(View.GONE);
-        }
-
-        if (noticeType == CreditActivity.AUDITING_ING) {
-            tvNotice.setText(R.string.unverified_notice);
-            ivNoticeIcon.setImageResource(R.mipmap.icon_identify_ing);
-            tvCredit.setClickable(false);
-            tvCredit.setBackgroundColor(getResources().getColor(R.color.grey_a5a5a5));
-            etName.setEnabled(false);
-            etIdNumber.setEnabled(false);
-            ivIconFace.setVisibility(View.GONE);
-            ivIconBack.setVisibility(View.GONE);
-            ivIconHold.setVisibility(View.GONE);
-        } else if (noticeType == CreditActivity.AUDITING_FILED) {
-            tvNotice.setText(getString(R.string.creditfail_notice) + notice);
-            ivNoticeIcon.setImageResource(R.mipmap.icon_prompt);
-            ivIconFace.setVisibility(View.VISIBLE);
-            ivIconBack.setVisibility(View.VISIBLE);
-            ivIconHold.setVisibility(View.VISIBLE);
-        } else if (noticeType == CreditActivity.AUDITING_SUCCESS) {
-            tvNotice.setText(R.string.certifySuccessful);
-            llNotice.setBackgroundColor(getResources().getColor(R.color.btn_normal));
-            tvNotice.setTextColor(getResources().getColor(R.color.white));
-            ivNoticeIcon.setVisibility(View.GONE);
-            etName.setEnabled(false);
-            etIdNumber.setEnabled(false);
-            llFace.setVisibility(View.GONE);
-            llBack.setVisibility(View.GONE);
-            llHold.setVisibility(View.GONE);
-            tvCredit.setVisibility(View.GONE);
-        }
+//        svContainer.setVisibility(View.VISIBLE);
+//        Credit credit = new Credit();
+//        credit.setData(obj);
+//        dataBean = credit.getData();
+//        if (dataBean != null) {
+//            //etName.setText(dataBean.getRealName());
+//            if (StringUtils.isNotEmpty(dataBean.getIdCard()))
+//                //etIdNumber.setText(dataBean.getIdCard().substring(0, 4) + "**********" + dataBean.getIdCard().substring(14));
+//            idCardFront = dataBean.getIdentityCardImgFront();
+//            Glide.with(this).load(idCardFront).into(ivIdFace);
+//            idCardBack = dataBean.getIdentityCardImgReverse();
+//            Glide.with(this).load(idCardBack).into(ivIdBack);
+//            handHeldIdCard = dataBean.getIdentityCardImgInHand();
+//            Glide.with(this).load(handHeldIdCard).into(ivHold);
+//            ivIconFace.setVisibility(View.GONE);
+//            ivIconBack.setVisibility(View.GONE);
+//            ivIconHold.setVisibility(View.GONE);
+//        }
+//
+//        if (noticeType == CreditActivity.AUDITING_ING) {
+//            //tvNotice.setText(R.string.unverified_notice);
+//            //ivNoticeIcon.setImageResource(R.mipmap.icon_identify_ing);
+//            tvCredit.setClickable(false);
+//            tvCredit.setBackgroundColor(getResources().getColor(R.color.grey_a5a5a5));
+//            //etName.setEnabled(false);
+//            //etIdNumber.setEnabled(false);
+//            ivIconFace.setVisibility(View.GONE);
+//            ivIconBack.setVisibility(View.GONE);
+//            ivIconHold.setVisibility(View.GONE);
+//        } else if (noticeType == CreditActivity.AUDITING_FILED) {
+//            tvNotice.setText(getString(R.string.creditfail_notice) + notice);
+//            ivNoticeIcon.setImageResource(R.mipmap.icon_prompt);
+//            ivIconFace.setVisibility(View.VISIBLE);
+//            ivIconBack.setVisibility(View.VISIBLE);
+//            ivIconHold.setVisibility(View.VISIBLE);
+//        } else if (noticeType == CreditActivity.AUDITING_SUCCESS) {
+//            tvNotice.setText(R.string.certifySuccessful);
+//            llNotice.setBackgroundColor(getResources().getColor(R.color.btn_normal));
+//            tvNotice.setTextColor(getResources().getColor(R.color.white));
+//            ivNoticeIcon.setVisibility(View.GONE);
+//            etName.setEnabled(false);
+//            etIdNumber.setEnabled(false);
+//            llFace.setVisibility(View.GONE);
+//            llBack.setVisibility(View.GONE);
+//            llHold.setVisibility(View.GONE);
+//            tvCredit.setVisibility(View.GONE);
+//        }
 
     }
 

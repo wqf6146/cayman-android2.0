@@ -7,7 +7,7 @@ public class UrlFactory {
 //    private static final String host = "http://csapi.njpsd.com";
 
     private static final String host = "https://api.caymanex.pro";
-    private static final String newhost = "http://39.98.150.252:8080";
+    private static final String newhost = "http://47.57.101.198:8080";
 //    private static final String host = "http://api.cex.wxmarket.cn";
 
     public static String getHost() {

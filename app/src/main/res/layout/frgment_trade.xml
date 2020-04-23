@@ -220,8 +220,8 @@
                     android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:text="@string/current_trust"
-                    android:textColor="@color/main_font_black"
-                    android:textSize="@dimen/font_xlager"
+                    android:textColor="@color/tab_font"
+                    android:textSize="@dimen/font_normal"
                     android:textStyle="bold" />
 
                 <TextView
@@ -230,14 +230,23 @@
                     android:layout_height="match_parent"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:background="@drawable/ripple_white"
                     android:gravity="center_vertical"
                     android:padding="10dp"
                     android:text="@string/all"
+                    android:textColor="@color/tab_font"
                     android:textSize="@dimen/font_small" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/tab_font"
+                    android:textSize="@dimen/font_small"
+                    android:id="@+id/tvLiquidation"
+                    android:text="@string/oneclick_liquidation"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content"/>
             </LinearLayout>
 
-            <View style="@style/line_bg_grey" />
+            <View style="@style/line_bg_fragment" />
 
             <FrameLayout
                 android:layout_width="match_parent"

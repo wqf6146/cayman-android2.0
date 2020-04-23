@@ -226,6 +226,7 @@
     <string name="item_sell">卖</string>
     <string name="history">历史</string>
     <string name="current_trust">当前委托</string>
+    <string name="oneclick_liquidation">一键平仓</string>
     <string name="history_record">历史记录</string>
     <string name="history_trust">历史委托</string>
     <string name="now_trust">当前委托</string>

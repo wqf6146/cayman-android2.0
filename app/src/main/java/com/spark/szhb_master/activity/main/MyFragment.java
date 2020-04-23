@@ -23,6 +23,7 @@ import com.flyco.dialog.listener.OnBtnClickL;
 import com.flyco.dialog.widget.MaterialDialog;
 import com.spark.szhb_master.R;
 import com.spark.szhb_master.activity.aboutus.AboutUsActivity;
+import com.spark.szhb_master.activity.credit.CreditOneActivity;
 import com.spark.szhb_master.activity.entrust.NowTrustActivity;
 import com.spark.szhb_master.activity.login.LoginActivity;
 import com.spark.szhb_master.activity.login.LoginStepOneActivity;
@@ -206,6 +207,9 @@ public class MyFragment extends BaseTransFragment implements MainContract.MyView
         }
         Bundle bundle = new Bundle();
         switch (v.getId()) {
+            case R.id.llSfrz:
+                showActivity(CreditOneActivity.class,null);
+                break;
 //            case R.id.llTitle:
 //                showActivity(MyInfoActivity.class, null, 1);
 //                break;

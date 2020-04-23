@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_bg">
@@ -9,252 +9,128 @@
     <!--标题-->
     <include layout="@layout/view_head" />
 
-    <ScrollView
-        android:id="@+id/svContainer"
+    <com.zhy.android.percent.support.PercentLinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/llHead"
-        android:background="@color/white"
-        android:visibility="visible">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:id="@+id/llNotice"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:background="@color/bg_tab_credit"
-                android:visibility="visible">
-
-                <TextView
-                    android:id="@+id/tvNotice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/unverified_notice"
-                    android:textColor="@color/sec_font_black"
-                    android:textSize="@dimen/font_normal" />
-
-                <ImageView
-                    android:id="@+id/ivNoticeIcon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:scaleType="center"
-                    android:src="@mipmap/icon_identify_ing" />
-            </LinearLayout>
-
-            <LinearLayout
-                style="@style/layout_my_info"
-                android:visibility="gone">
-
-                <TextView
-                    style="@style/textview_tag"
-                    android:minWidth="100dp"
-                    android:text="@string/nationality" />
-
-                <TextView
-                    android:id="@+id/etCountry"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:drawablePadding="8dp"
-                    android:drawableRight="@mipmap/icon_drop"
-                    android:gravity="center"
-                    android:paddingRight="8dp"
-                    android:text="@string/china"
-                    android:textColor="@color/sec_font_black"
-                    android:textSize="@dimen/font_normal" />
-
-            </LinearLayout>
-
-            <View
-                style="@style/line_bg_grey"
-                android:visibility="gone" />
-
-            <LinearLayout style="@style/layout_my_info">
-
-                <TextView
-                    style="@style/textview_tag"
-                    android:minWidth="120dp"
-                    android:text="@string/name" />
-
-                <EditText
-                    android:id="@+id/etName"
-                    style="@style/edittext_normal"
-                    android:hint="@string/name" />
-
-            </LinearLayout>
-
-            <View style="@style/line_bg_grey" />
-
-            <LinearLayout style="@style/layout_my_info">
-
-                <TextView
-                    style="@style/textview_tag"
-                    android:minWidth="120dp"
-                    android:text="@string/id_card_num" />
-
-                <EditText
-                    android:id="@+id/etIdNumber"
-                    style="@style/edittext_normal"
-                    android:hint="@string/id_card_num" />
-
-            </LinearLayout>
-
-            <View style="@style/line_bg_grey" />
-
-            <LinearLayout
-                android:id="@+id/llFace"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:padding="16dp">
-
-                    <TextView
-                        style="@style/textview_tag"
-                        android:minWidth="120dp"
-                        android:text="@string/str_image_face_id_card" />
-
-                    <RelativeLayout
-                        android:id="@+id/rvFace"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="15dp"
-                        android:paddingRight="15dp"
-                        android:paddingTop="15dp">
-
-                        <ImageView
-                            android:id="@+id/ivIdFace"
-                            android:layout_width="match_parent"
-                            android:layout_height="140dp"
-                            android:scaleType="fitXY"
-                            android:src="@mipmap/icon_id_face" />
-
-                        <ImageView
-                            android:id="@+id/ivIconFace"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:src="@mipmap/icon_camera" />
-                    </RelativeLayout>
-                </LinearLayout>
-
-                <View style="@style/line_bg_grey" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/llBack"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:padding="16dp">
-
-                    <TextView
-                        style="@style/textview_tag"
-                        android:minWidth="120dp"
-                        android:text="@string/str_image_back_id_card" />
-
-                    <RelativeLayout
-                        android:id="@+id/rvBack"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="15dp"
-                        android:paddingRight="15dp"
-                        android:paddingTop="15dp">
-
-                        <ImageView
-                            android:id="@+id/ivIdBack"
-                            android:layout_width="match_parent"
-                            android:layout_height="140dp"
-                            android:scaleType="fitXY"
-                            android:src="@mipmap/icon_id_back" />
-
-                        <ImageView
-                            android:id="@+id/ivIconBack"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:src="@mipmap/icon_camera" />
-
-                    </RelativeLayout>
-
-                </LinearLayout>
-
-                <View style="@style/line_bg_grey" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/llHold"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="16dp">
-
-                <TextView
-                    style="@style/textview_tag"
-                    android:minWidth="120dp"
-                    android:text="@string/str_image_hold_id_card" />
-
-                <RelativeLayout
-                    android:id="@+id/rvHold"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="15dp"
-                    android:paddingRight="15dp"
-                    android:paddingTop="15dp">
-
-                    <ImageView
-                        android:id="@+id/ivHold"
-                        android:layout_width="match_parent"
-                        android:layout_height="140dp"
-                        android:scaleType="fitXY"
-                        android:src="@mipmap/icon_id_face" />
-
-                    <ImageView
-                        android:id="@+id/ivIconHold"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:src="@mipmap/icon_camera" />
-
-                </RelativeLayout>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+        <RelativeLayout
+            android:id="@+id/rvFace"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/main_bg_dark_2"
+            android:layout_margin="15dp"
+            android:paddingBottom="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="15dp">
 
             <TextView
-                android:id="@+id/tvCredit"
-                style="@style/btn_option_normal"
-                android:layout_height="50dp"
-                android:layout_marginTop="0dp"
-                android:text="@string/submit" />
-        </LinearLayout>
+                android:layout_width="wrap_content"
+                android:id="@+id/tvIdFaceTip"
+                android:text="上传证件照正面照片"
+                android:layout_centerInParent="true"
+                android:textColor="@color/tab_font"
+                android:textSize="@dimen/font_normal"
+                android:layout_height="wrap_content"/>
 
-    </ScrollView>
+            <ImageView
+                android:id="@+id/ivIdFace"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:id="@+id/ivIconFace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp"
+                android:src="@mipmap/icon_camera" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rvBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/main_bg_dark_2"
+            android:layout_margin="15dp"
+            android:paddingBottom="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="15dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/tvIdBackTip"
+                android:text="上传证件照反面照片"
+                android:layout_centerInParent="true"
+                android:textColor="@color/tab_font"
+                android:textSize="@dimen/font_normal"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/ivIdBack"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:id="@+id/ivIconBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_camera"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rvHold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/main_bg_dark_2"
+            android:layout_margin="15dp"
+            android:paddingBottom="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="15dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/tvHoldTip"
+                android:text="上传手持证件照片"
+                android:layout_centerInParent="true"
+                android:textColor="@color/tab_font"
+                android:textSize="@dimen/font_normal"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/ivHold"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:id="@+id/ivIconHold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp"
+                android:src="@mipmap/icon_camera" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvCredit"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            app:layout_heightPercent="7%h"
+            app:layout_widthPercent="70%w"
+            android:layout_marginTop="20dp"
+            android:text="@string/submit" />
+
+    </com.zhy.android.percent.support.PercentLinearLayout>
 
     <LinearLayout
         android:id="@+id/llContainer"

@@ -114,7 +114,7 @@
             android:gravity="center"
             android:text="手"
             android:textColor="#838f9d"
-            android:textSize="@dimen/font_normal" />
+            android:textSize="@dimen/font_small" />
     </LinearLayout>
 
     <TextView
@@ -123,13 +123,14 @@
         android:layout_height="wrap_content"
         android:padding="8dp"
         android:text="0.0"
-        android:visibility="invisible"
+        android:visibility="gone"
         android:textColor="@color/tab_font"
         android:textSize="@dimen/font_mini" />
 
     <LinearLayout
         android:id="@+id/llBuySeekBarLin"
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="30dp"
         android:orientation="horizontal">
 
@@ -138,7 +139,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:visibility="visible"
             app:bsb_hide_bubble="true"
             app:bsb_max="1000"
             app:bsb_progress="0"

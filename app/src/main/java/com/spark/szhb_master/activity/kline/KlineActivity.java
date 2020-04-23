@@ -314,13 +314,16 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
                 tvSell.setText(String.valueOf(getString(R.string.text_sale_out) + s[0]));
             }
         }
-        if (isFace) { // 已经收藏
+//        if (isFace) { // 已经收藏
             //mTvCollect.setText(getString(R.string.text_collected));
             //mTvCollect.setCompoundDrawablesWithIntrinsicBounds(null, getResources().getDrawable(R.mipmap.icon_collect_hover), null, null);
-        } else {
+//        } else {
             //mTvCollect.setText(getString(R.string.text_add_favorite));
             //mTvCollect.setCompoundDrawablesWithIntrinsicBounds(null, getResources().getDrawable(R.mipmap.icon_collect_normal), null, null);
-        }
+//        }
+
+        startDetailTCP();
+        startKlistTcp(type);
     }
 
 //    private LineChartManager lineChartManager2;
@@ -338,17 +341,14 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
             isInit = false;
             List<String> titles = Arrays.asList(typeLists);
             if (titles != null) {
-                initViewpager(titles);
                 currentCount = 5;
                 initTextView(currentCount);
                 initPopWindow(currentCount);
+                initViewpager(titles);
                 initDepthData();
             }
             selectedTextView = textViews.get(1);
             type = (int) selectedTextView.getTag();
-
-            startDetailTCP();
-            startKlistTcp(type);
         }
     }
 
@@ -789,7 +789,6 @@ public class KlineActivity extends BaseActivity implements KlineContract.View, V
 
             }
         });
-        viewPager.setCurrentItem(0);
         setPagerView();
     }
 
