@@ -29,50 +29,21 @@ public class CreditPresenter implements CreditContract.Presenter {
         view.setPresenter(this);
     }
 
+
     @Override
-    public void uploadBase64Pic(HashMap<String, String> params, final int type) {
+    public void credit(HashMap params) {
         view.displayLoadingPopup();
-        dataRepository.doStringPost(UrlFactory.getUploadPicUrl(), params, new DataSource.DataCallback() {
+        dataRepository.doStringPostJson(UrlFactory.getCreditUrl(), params, new DataSource.DataCallback() {
             @Override
             public void onDataLoaded(Object obj) {
                 view.hideLoadingPopup();
                 String response = (String) obj;
                 try {
                     JSONObject object = new JSONObject(response);
-                    if (object.optInt("code") == 0) {
-                        view.uploadBase64PicSuccess(object.optString("data"), type);
+                    if (object.optInt("code") == 1) {
+                        view.doCreditSuccess(object.optString("msg"));
                     } else {
-                        view.doPostFail(object.getInt("code"), object.optString("message"));
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    view.doPostFail(JSON_ERROR, null);
-                }
-            }
-
-            @Override
-            public void onDataNotAvailable(Integer code, String toastMessage) {
-                view.hideLoadingPopup();
-                view.doPostFail(code, toastMessage);
-
-            }
-        });
-    }
-
-    @Override
-    public void credit(HashMap<String, String> params) {
-        view.displayLoadingPopup();
-        dataRepository.doStringPost(UrlFactory.getCreditUrl(), params, new DataSource.DataCallback() {
-            @Override
-            public void onDataLoaded(Object obj) {
-                view.hideLoadingPopup();
-                String response = (String) obj;
-                try {
-                    JSONObject object = new JSONObject(response);
-                    if (object.optInt("code") == 0) {
-                        view.doCreditSuccess(object.optString("message"));
-                    } else {
-                        view.doPostFail(object.getInt("code"), object.optString("message"));
+                        view.doPostFail(object.getInt("code"), object.optString("msg"));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -90,59 +61,59 @@ public class CreditPresenter implements CreditContract.Presenter {
 
     @Override
     public void getCreditInfo() {
-        view.displayLoadingPopup();
-        dataRepository.doStringPost(UrlFactory.getCreditInfo(), new DataSource.DataCallback() {
-            @Override
-            public void onDataLoaded(Object obj) {
-                view.hideLoadingPopup();
-                String response = (String) obj;
-                try {
-                    JSONObject object = new JSONObject(response);
-                    Credit.DataBean objs = new Gson().fromJson(object.getJSONObject("data").toString(), new TypeToken<Credit.DataBean>() {
-                    }.getType());
-                    view.getCreditInfoSuccess(objs);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    view.doPostFail(JSON_ERROR, null);
-                }
-            }
-
-            @Override
-            public void onDataNotAvailable(Integer code, String toastMessage) {
-                view.hideLoadingPopup();
-                view.doPostFail(code, toastMessage);
-
-            }
-        });
+//        view.displayLoadingPopup();
+//        dataRepository.doStringPost(UrlFactory.getCreditInfo(), new DataSource.DataCallback() {
+//            @Override
+//            public void onDataLoaded(Object obj) {
+//                view.hideLoadingPopup();
+//                String response = (String) obj;
+//                try {
+//                    JSONObject object = new JSONObject(response);
+//                    Credit.DataBean objs = new Gson().fromJson(object.getJSONObject("data").toString(), new TypeToken<Credit.DataBean>() {
+//                    }.getType());
+//                    view.getCreditInfoSuccess(objs);
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                    view.doPostFail(JSON_ERROR, null);
+//                }
+//            }
+//
+//            @Override
+//            public void onDataNotAvailable(Integer code, String toastMessage) {
+//                view.hideLoadingPopup();
+//                view.doPostFail(code, toastMessage);
+//
+//            }
+//        });
     }
 
     @Override
     public void uploadImageFile(File file, final int type) {
-        view.displayLoadingPopup();
-        dataRepository.doUploadFile(UrlFactory.getUploadPicFileUrl(), file, new DataSource.DataCallback() {
-            @Override
-            public void onDataLoaded(Object obj) {
-                view.hideLoadingPopup();
-                String response = (String) obj;
-                try {
-                    JSONObject object = new JSONObject(response);
-                    if (object.optInt("code") == 0) {
-                        view.uploadBase64PicSuccess(object.optString("data"), type);
-                    } else {
-                        view.doPostFail(object.optInt("code"), object.optString("message"));
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    view.doPostFail(JSON_ERROR, null);
-                }
-            }
-
-            @Override
-            public void onDataNotAvailable(Integer code, String toastMessage) {
-                view.hideLoadingPopup();
-                view.doPostFail(code, toastMessage);
-            }
-        });
+//        view.displayLoadingPopup();
+//        dataRepository.doUploadFile(UrlFactory.getUploadPicFileUrl(), file, new DataSource.DataCallback() {
+//            @Override
+//            public void onDataLoaded(Object obj) {
+//                view.hideLoadingPopup();
+//                String response = (String) obj;
+//                try {
+//                    JSONObject object = new JSONObject(response);
+//                    if (object.optInt("code") == 0) {
+//                        view.uploadBase64PicSuccess(object.optString("data"));
+//                    } else {
+//                        view.doPostFail(object.optInt("code"), object.optString("message"));
+//                    }
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                    view.doPostFail(JSON_ERROR, null);
+//                }
+//            }
+//
+//            @Override
+//            public void onDataNotAvailable(Integer code, String toastMessage) {
+//                view.hideLoadingPopup();
+//                view.doPostFail(code, toastMessage);
+//            }
+//        });
     }
 
 }

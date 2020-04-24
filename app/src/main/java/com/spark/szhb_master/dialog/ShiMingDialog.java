@@ -13,10 +13,7 @@ import android.widget.TextView;
 
 import com.spark.szhb_master.MyApplication;
 import com.spark.szhb_master.R;
-import com.spark.szhb_master.activity.Trade.TradeActivity;
-import com.spark.szhb_master.activity.Treasure.PowerUpActivity;
-import com.spark.szhb_master.activity.credit.CreditActivity;
-import com.spark.szhb_master.activity.wallet.WalletActivity;
+import com.spark.szhb_master.activity.credit.CreditSfzActivity;
 
 /**
  * Created by Administrator on 2018/10/24 0024.
@@ -75,7 +72,7 @@ public class ShiMingDialog extends Dialog {
         go_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                context.startActivity(new Intent(context, CreditActivity.class).putExtra("NoticeType",type).putExtra("Notice",name_type));
+                context.startActivity(new Intent(context, CreditSfzActivity.class).putExtra("NoticeType",type).putExtra("Notice",name_type));
                 dismiss();
             }
         });

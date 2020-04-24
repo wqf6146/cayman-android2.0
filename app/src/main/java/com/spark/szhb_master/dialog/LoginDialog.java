@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 import com.spark.szhb_master.MyApplication;
 import com.spark.szhb_master.R;
-import com.spark.szhb_master.activity.credit.CreditActivity;
 import com.spark.szhb_master.activity.login.LoginActivity;
 
 /**

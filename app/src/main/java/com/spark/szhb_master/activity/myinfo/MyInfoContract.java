@@ -3,6 +3,7 @@ package com.spark.szhb_master.activity.myinfo;
 
 import com.spark.szhb_master.base.Contract;
 import com.spark.szhb_master.entity.SafeSetting;
+import com.spark.szhb_master.entity.User;
 
 import java.io.File;
 import java.util.HashMap;
@@ -17,7 +18,9 @@ public interface MyInfoContract {
 
         void safeSettingSuccess(SafeSetting obj);
 
-        void uploadBase64PicSuccess(String obj);
+        void uploadBase64PicSuccess(User user);
+
+        void getUserInfoSuccess(User user);
 
         void avatarSuccess(String obj);
 
@@ -33,5 +36,7 @@ public interface MyInfoContract {
         void avatar(HashMap<String, String> params);
 
         void uploadImageFile(File file);
+
+        void getUserInfo();
     }
 }

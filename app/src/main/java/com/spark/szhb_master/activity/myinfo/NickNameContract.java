@@ -2,6 +2,7 @@ package com.spark.szhb_master.activity.myinfo;
 
 
 import com.spark.szhb_master.base.Contract;
+import com.spark.szhb_master.entity.User;
 
 import java.util.HashMap;
 

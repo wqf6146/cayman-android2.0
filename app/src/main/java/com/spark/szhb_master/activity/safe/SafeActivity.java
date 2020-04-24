@@ -19,6 +19,8 @@ import android.widget.TextView;
 
 import com.kyleduo.switchbutton.SwitchButton;
 import com.spark.szhb_master.R;
+import com.spark.szhb_master.activity.account_pwd.AccountPwdActivity;
+import com.spark.szhb_master.activity.edit_login_pwd.EditLoginPwdActivity;
 import com.spark.szhb_master.activity.language.LanguageActivity;
 import com.spark.szhb_master.dialog.CancleGoogleDialog;
 import com.spark.szhb_master.entity.SafeSetting;
@@ -46,27 +48,20 @@ import okhttp3.Request;
 import static com.spark.szhb_master.utils.okhttp.OkhttpUtils.post;
 
 public class SafeActivity extends BaseActivity implements GoogleContract.UnBindView {
-//    @BindView(R.id.llLockSet)
-//    LinearLayout llLockSet;
-//    @BindView(R.id.switchButton)
-//    SwitchButton switchButton;
-    @BindView(R.id.llGoogleView)
-    LinearLayout llGoogleView;
-    private int googleStatus;
-    private int googlecode;
-    @BindView(R.id.tvGoogle)
-    TextView tvGoogle;
-    @BindView(R.id.google_img)
-    ImageView google_img;
-//    @BindView(R.id.button_img)
-//    ImageView button_img;
-    private User user;
-    private CancleGoogleDialog cancleGoogleDialog;
+
+//    @BindView(R.id.llGoogleView)
+//    LinearLayout llGoogleView;
+//    private int googleStatus;
+//    private int googlecode;
+//    @BindView(R.id.tvGoogle)
+//    TextView tvGoogle;
+//    @BindView(R.id.google_img)
+//    ImageView google_img;
+//
+//    private CancleGoogleDialog cancleGoogleDialog;
     private GoogleContract.UnBindPresenter presenter;
     private String stauts;
 
-    @BindView(R.id.llSwitchLanguage)
-    LinearLayout llSwitchLanguage;
 
     public static void actionStart(Context context) {
         Intent intent = new Intent(context, SafeActivity.class);
@@ -77,28 +72,18 @@ public class SafeActivity extends BaseActivity implements GoogleContract.UnBindV
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
             case SetLockActivity.RETURN_SET_LOCK:
-//                switchButton.setOnCheckedChangeListener(null);
 
-//                String password = SharedPreferenceInstance.getInstance().getLockPwd();
-//                if (StringUtils.isEmpty(password)) {
-//                    button_img.setImageResource(R.mipmap.close_image);
-//                } else {
-//                    button_img.setImageResource(R.mipmap.open_img);
-//                }
-//
-//                switchButton.setChecked(!StringUtils.isEmpty(password));
-//                switchButton.setOnCheckedChangeListener(listener);
                 break;
             case 1:
                 if (resultCode == RESULT_OK) {
-                    if (googleStatus == 0) {
-                        googleStatus = 1;
-                    } else {
-                        googleStatus = 0;
-                    }
-                    SharedPreferenceInstance.getInstance().saveGoogleSatus(googleStatus);
-                    tvGoogle.setText(googleStatus == 0 ? R.string.unbound : R.string.bound);
-                    tvGoogle.setEnabled(googleStatus == 0);
+//                    if (googleStatus == 0) {
+//                        googleStatus = 1;
+//                    } else {
+//                        googleStatus = 0;
+//                    }
+//                    SharedPreferenceInstance.getInstance().saveGoogleSatus(googleStatus);
+//                    tvGoogle.setText(googleStatus == 0 ? R.string.unbound : R.string.bound);
+//                    tvGoogle.setEnabled(googleStatus == 0);
                 }
                 break;
         }
@@ -112,32 +97,31 @@ public class SafeActivity extends BaseActivity implements GoogleContract.UnBindV
     @Override
     protected void initView() {
         setSetTitleAndBack(false, true);
-        cancleGoogleDialog = new CancleGoogleDialog(this);
+//        cancleGoogleDialog = new CancleGoogleDialog(this);
     }
 
     @Override
     protected void initData() {
         super.initData();
-//        setTitle(getString(R.string.my_safe));
+
         setTitle(getString(R.string.my_setting));
         tvGoto.setVisibility(View.INVISIBLE);
-        if (GlobalConstant.isOPenGoogle)
-            llGoogleView.setVisibility(View.VISIBLE);
-        new GoogleUnbindPresenter(Injection.provideTasksRepository(getApplicationContext()), SafeActivity.this);
-        googleStatus = SharedPreferenceInstance.getInstance().getLanguageCode();
+//        if (GlobalConstant.isOPenGoogle)
+//            llGoogleView.setVisibility(View.VISIBLE);
+//        new GoogleUnbindPresenter(Injection.provideTasksRepository(getApplicationContext()), SafeActivity.this);
+//        googleStatus = SharedPreferenceInstance.getInstance().getLanguageCode();
 
-        stauts = SharedPreferenceInstance.getInstance().getGoogle();
-        if (StringUtils.isEmpty(stauts)) return;
-        if (stauts.equals("close")) {
-            googlecode = 0;
-        } else {
-            googlecode = 1;
-        }
-        google_img.setImageResource(googlecode == 0 ? R.mipmap.close_image : R.mipmap.open_img);
-
-        tvGoogle.setText(googleStatus == 0 ? R.string.unbound : R.string.bound);
-        tvGoogle.setEnabled(googleStatus == 0);
-//        switchButton.setChecked(!StringUtils.isEmpty(SharedPreferenceInstance.getInstance().getLockPwd()));
+//        stauts = SharedPreferenceInstance.getInstance().getGoogle();
+//        if (StringUtils.isEmpty(stauts)) return;
+//        if (stauts.equals("close")) {
+//            googlecode = 0;
+//        } else {
+//            googlecode = 1;
+//        }
+//        google_img.setImageResource(googlecode == 0 ? R.mipmap.close_image : R.mipmap.open_img);
+//
+//        tvGoogle.setText(googleStatus == 0 ? R.string.unbound : R.string.bound);
+//        tvGoogle.setEnabled(googleStatus == 0);
 
         String password = SharedPreferenceInstance.getInstance().getLockPwd();
         if (StringUtils.isEmpty(password)) {
@@ -158,15 +142,15 @@ public class SafeActivity extends BaseActivity implements GoogleContract.UnBindV
     @Override
     protected void onPause() {
         super.onPause();
-        stauts = SharedPreferenceInstance.getInstance().getGoogle();
-        if (!StringUtils.isEmpty(stauts)) {
-            if (stauts.equals("close")) {
-                googlecode = 0;
-            } else {
-                googlecode = 1;
-            }
-            google_img.setImageResource(googlecode == 0 ? R.mipmap.close_image : R.mipmap.open_img);
-        }
+//        stauts = SharedPreferenceInstance.getInstance().getGoogle();
+//        if (!StringUtils.isEmpty(stauts)) {
+//            if (stauts.equals("close")) {
+//                googlecode = 0;
+//            } else {
+//                googlecode = 1;
+//            }
+//            google_img.setImageResource(googlecode == 0 ? R.mipmap.close_image : R.mipmap.open_img);
+//        }
     }
 
     int type = 0;
@@ -198,56 +182,59 @@ public class SafeActivity extends BaseActivity implements GoogleContract.UnBindV
 //            }
 //        });
 
-        cancleGoogleDialog.getTvConfirm().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cancleGoogleDialog.dismiss();
-                showPopWindow();
-            }
-        });
-
-        google_img.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (stauts.equals("close")) {
-                    if (isbund == 0) {
-                        ToastUtils.showToast(getString(R.string.binding_phone_first));
-                    } else {
-                        showActivity(GoogleAuthorActivity.class, null, 1);
-                    }
-                } else {
-                    getPhone();
-                    cancleGoogleDialog.show();
-                }
-
-            }
-        });
+//        cancleGoogleDialog.getTvConfirm().setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                cancleGoogleDialog.dismiss();
+//                showPopWindow();
+//            }
+//        });
+//
+//        google_img.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if (stauts.equals("close")) {
+//                    if (isbund == 0) {
+//                        ToastUtils.showToast(getString(R.string.binding_phone_first));
+//                    } else {
+//                        showActivity(GoogleAuthorActivity.class, null, 1);
+//                    }
+//                } else {
+//                    getPhone();
+//                    cancleGoogleDialog.show();
+//                }
+//
+//            }
+//        });
     }
 
-    @OnClick({R.id.llGoogle,R.id.llSwitchLanguage})
+    @OnClick({R.id.lldlmm,R.id.llzjmm})
     @Override
     protected void setOnClickListener(View v) {
         super.setOnClickListener(v);
         switch (v.getId()) {
-            case R.id.llGoogle:
-                if (StringUtils.isEmpty(stauts)) return;
-                if (isbund == 0) {
-                    ToastUtils.showToast(getString(R.string.binding_phone_first));
-                } else if (isbund == 1) {
-                    if (stauts.equals("close")) {
-                        showActivity(GoogleAuthorActivity.class, null, 1);
-                    } else if (stauts.equals("open")) {
-                        Bundle bundle = new Bundle();
-                        bundle.putInt("isfirst", 1);
-                        showActivity(GoogleAuthorActivity.class, bundle, 1);
-                    }
-                }
+//            case R.id.llGoogle:
+//                if (StringUtils.isEmpty(stauts)) return;
+//                if (isbund == 0) {
+//                    ToastUtils.showToast(getString(R.string.binding_phone_first));
+//                } else if (isbund == 1) {
+//                    if (stauts.equals("close")) {
+//                        showActivity(GoogleAuthorActivity.class, null, 1);
+//                    } else if (stauts.equals("open")) {
+//                        Bundle bundle = new Bundle();
+//                        bundle.putInt("isfirst", 1);
+//                        showActivity(GoogleAuthorActivity.class, bundle, 1);
+//                    }
+//                }
 //                if (googlecode == 0) {
 //                } else {
 //                }
+//                break;
+            case R.id.lldlmm:
+                showActivity(EditLoginPwdActivity.class, null);
                 break;
-            case R.id.llSwitchLanguage:
-                showActivity(LanguageActivity.class, null);
+            case R.id.llzjmm:
+                showActivity(AccountPwdActivity.class, null);
                 break;
         }
     }
@@ -352,7 +339,7 @@ public class SafeActivity extends BaseActivity implements GoogleContract.UnBindV
         popWnd.dismiss();
         CopyToast.showText(this, "解绑成功");
         SharedPreferenceInstance.getInstance().saveGoogle("close");
-        google_img.setImageResource(R.mipmap.close_image);
+//        google_img.setImageResource(R.mipmap.close_image);
     }
 
     @Override

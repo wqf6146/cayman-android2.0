@@ -36,10 +36,6 @@ public class NickNameActivity extends BaseActivity implements NickNameContract.V
 
     @BindView(R.id.etCode)
     EditText etCode;
-    @BindView(R.id.close_img)
-    ImageView close_img;
-    @BindView(R.id.tvEdit)
-    TextView tvEdit;
 
     private NickNameContract.Presenter presenter;
     private String nickname;
@@ -64,10 +60,10 @@ public class NickNameActivity extends BaseActivity implements NickNameContract.V
     @Override
     protected void initData() {
         super.initData();
-        setTitle(getString(R.string.modifyname));
+        setTitle(getString(R.string.bjzl));
         tvGoto.setVisibility(View.VISIBLE);
         setEditTextInputSpeChat(etCode);
-        tvGoto.setVisibility(View.INVISIBLE);
+        tvGoto.setText("完成");
         new NikeNamePresenter(Injection.provideTasksRepository(getApplicationContext()), this);
         Intent intent = getIntent();
         nickname = intent.getStringExtra("name");
@@ -75,15 +71,12 @@ public class NickNameActivity extends BaseActivity implements NickNameContract.V
         etCode.setSelection(etCode.getText().length());
     }
 
-    @OnClick({R.id.close_img, R.id.tvEdit})
+    @OnClick({R.id.tvGoto})
     @Override
     protected void setOnClickListener(View v) {
         super.setOnClickListener(v);
         switch (v.getId()) {
-            case R.id.close_img:
-                etCode.setText("");
-                break;
-            case R.id.tvEdit:
+            case R.id.tvGoto:
                 if (StringUtils.isEmpty(etCode.getText().toString())) {
                     ToastUtils.show(getResources().getString(R.string.username_notempty), Toast.LENGTH_SHORT);
                 }else if (etCode.getText().toString().length() > 16){
@@ -93,40 +86,14 @@ public class NickNameActivity extends BaseActivity implements NickNameContract.V
                 } else if (etCode.getText().toString().equals(nickname)){
                     ToastUtils.show(getResources().getString(R.string.username_notsame), Toast.LENGTH_SHORT);
                 } else {
-                    show_dialog();
+                    HashMap<String, String> map = new HashMap<>();
+                    map.put("nick_name", etCode.getText().toString());
+                    presenter.getNikeName(map);
                 }
                 break;
         }
     }
 
-    private void show_dialog() {
-        final DialogTure dialogTure = new DialogTure(this);
-        dialogTure.show();
-        dialogTure.cometwo().setText(getResources().getString(R.string.only_once) + etCode.getText().toString() + getResources().getString(R.string.only_once_wen));
-
-        dialogTure.go_up().setText(getResources().getString(R.string.modification));
-        dialogTure.cancle().setText(getResources().getString(R.string.cancle));
-
-        dialogTure.cancle().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialogTure.dismiss();
-            }
-        });
-
-        dialogTure.img_close().setVisibility(View.INVISIBLE);
-        dialogTure.go_up().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                HashMap<String, String> map = new HashMap<>();
-                map.put("username", etCode.getText().toString());
-                presenter.getNikeName(map);
-                dialogTure.dismiss();
-            }
-        });
-
-
-    }
 
     /**
      * 禁止EditText输入特殊字符
@@ -154,15 +121,8 @@ public class NickNameActivity extends BaseActivity implements NickNameContract.V
 
     @Override
     public void getNikeNameSuccess() {
-
-        User user = MyApplication.getApp().getCurrentUser();
-        user.setNick_name(etCode.getText().toString());
-        MyApplication.getApp().setCurrentUser(user);
-
-        setResult(RESULT_OK);
         CopyToast.showText(NickNameActivity.this, getResources().getString(R.string.savesuccess));
         finish();
-
     }
 
 

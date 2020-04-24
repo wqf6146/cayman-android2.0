@@ -578,8 +578,8 @@
 
     <!--我的信息-->
     <string name="account_settings">账号设置</string>
-    <string name="photo">个人头像</string>
-    <string name="nikename">用户名</string>
+    <string name="photo">头像</string>
+    <string name="nikename">昵称</string>
     <string name="modifyname">修改用户名</string>
     <string name="binding_phone">绑定手机号</string>
     <string name="binding_email">绑定邮箱</string>

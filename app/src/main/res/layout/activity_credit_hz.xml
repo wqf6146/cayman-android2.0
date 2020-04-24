@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg">
+
+    <!--标题-->
+    <include layout="@layout/view_head" />
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rvHz"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_heightPercent="25%h"
+            app:layout_widthPercent="90%w"
+            android:background="@color/main_bg_dark_2"
+            android:layout_margin="15dp"
+            android:paddingBottom="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/tvHzFaceTip"
+                android:text="上传护照照片"
+                android:layout_centerInParent="true"
+                android:textColor="@color/tab_font"
+                android:textSize="@dimen/font_normal"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:id="@+id/ivHz"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:id="@+id/ivIconHz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:src="@mipmap/icon_camera" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvCredit"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/Blue"
+            app:layout_heightPercent="7%h"
+            app:layout_widthPercent="70%w"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:textSize="@dimen/font_normal"
+            android:textColor="@color/white"
+            android:text="@string/submit" />
+
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+</LinearLayout>

@@ -4,6 +4,7 @@ package com.spark.szhb_master.activity.myinfo;
 import com.google.gson.Gson;
 import com.spark.szhb_master.data.DataSource;
 import com.spark.szhb_master.entity.SafeSetting;
+import com.spark.szhb_master.entity.User;
 import com.spark.szhb_master.factory.UrlFactory;
 
 import org.json.JSONException;
@@ -59,19 +60,47 @@ public class MyInfoPresenter implements MyInfoContract.Presenter {
     }
 
     @Override
+    public void getUserInfo() {
+        dataRepository.doStringGet(UrlFactory.getUserInfoUrl(), new DataSource.DataCallback() {
+            @Override
+            public void onDataLoaded(Object obj) {
+                String response = (String) obj;
+                try {
+                    JSONObject object = new JSONObject(response);
+                    if (object.optInt("code") == 1) {
+                        User user = new Gson().fromJson(object.getJSONObject("data").toString(), User.class);
+                        view.getUserInfoSuccess(user);
+                    } else {
+                        view.doPostFail(object.getInt("code"), object.optString("msg"));
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    view.doPostFail(JSON_ERROR, null);
+                }
+            }
+
+            @Override
+            public void onDataNotAvailable(Integer code, String toastMessage) {
+                view.doPostFail(code, toastMessage);
+            }
+        });
+    }
+
+    @Override
     public void uploadBase64Pic(HashMap<String, String> params) {
         view.displayLoadingPopup();
-        dataRepository.doStringPost(UrlFactory.getUploadPicUrl(), params, new DataSource.DataCallback() {
+        dataRepository.doStringPut(UrlFactory.getUserInfoUrl(), params, new DataSource.DataCallback() {
             @Override
             public void onDataLoaded(Object obj) {
                 view.hideLoadingPopup();
                 String response = (String) obj;
                 try {
                     JSONObject object = new JSONObject(response);
-                    if (object.optInt("code") == 0) {
-                        view.uploadBase64PicSuccess(object.optString("data"));
+                    if (object.optInt("code") == 1) {
+                        User user = new Gson().fromJson(object.optString("data"), User.class);
+                        view.uploadBase64PicSuccess(user);
                     } else {
-                        view.doPostFail(object.getInt("code"), object.optString("message"));
+                        view.doPostFail(object.getInt("code"), object.optString("msg"));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -119,31 +148,31 @@ public class MyInfoPresenter implements MyInfoContract.Presenter {
 
     @Override
     public void uploadImageFile(File file) {
-        view.displayLoadingPopup();
-        dataRepository.doUploadFile(UrlFactory.getUploadPicFileUrl(), file, new DataSource.DataCallback() {
-            @Override
-            public void onDataLoaded(Object obj) {
-                view.hideLoadingPopup();
-                String response = (String) obj;
-                try {
-                    JSONObject object = new JSONObject(response);
-                    if (object.optInt("code") == 0) {
-                        view.uploadBase64PicSuccess(object.optString("data"));
-                    } else {
-                        view.doPostFail(object.optInt("code"), object.optString("message"));
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    view.doPostFail(JSON_ERROR, null);
-                }
-            }
-
-            @Override
-            public void onDataNotAvailable(Integer code, String toastMessage) {
-                view.hideLoadingPopup();
-                view.doPostFail(code, toastMessage);
-            }
-        });
+//        view.displayLoadingPopup();
+//        dataRepository.doUploadFile(UrlFactory.getUploadPicFileUrl(), file, new DataSource.DataCallback() {
+//            @Override
+//            public void onDataLoaded(Object obj) {
+//                view.hideLoadingPopup();
+//                String response = (String) obj;
+//                try {
+//                    JSONObject object = new JSONObject(response);
+//                    if (object.optInt("code") == 0) {
+//                        view.uploadBase64PicSuccess(object.optString("data"));
+//                    } else {
+//                        view.doPostFail(object.optInt("code"), object.optString("message"));
+//                    }
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                    view.doPostFail(JSON_ERROR, null);
+//                }
+//            }
+//
+//            @Override
+//            public void onDataNotAvailable(Integer code, String toastMessage) {
+//                view.hideLoadingPopup();
+//                view.doPostFail(code, toastMessage);
+//            }
+//        });
     }
 
 }

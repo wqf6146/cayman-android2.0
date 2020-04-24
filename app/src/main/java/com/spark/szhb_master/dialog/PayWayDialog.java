@@ -14,7 +14,6 @@ import android.widget.TextView;
 import com.spark.szhb_master.MyApplication;
 import com.spark.szhb_master.R;
 import com.spark.szhb_master.activity.bind_account.BindAccountActivity;
-import com.spark.szhb_master.activity.credit.CreditActivity;
 
 /**
  * Created by Administrator on 2018/11/12 0012.

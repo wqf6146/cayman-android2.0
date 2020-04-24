@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/main_bg"
+    android:padding="10dp"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:background="@color/main_bg_dark_2"
+        android:layout_margin="10dp"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_width="80dp"
+            android:text="姓名"
+            android:layout_gravity="center_vertical"
+            android:textSize="@dimen/font_normal"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/tab_font"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:hint="请输入姓名"
+            android:textColor="@color/white"
+            android:id="@+id/et_name"
+            android:textCursorDrawable="@drawable/line_dark_cursor"
+            android:textColorHint="@color/font_hint"
+            android:textSize="@dimen/font_normal"
+            android:background="@null"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:background="@color/main_bg_dark_2"
+        android:layout_margin="10dp"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_width="80dp"
+            android:text="护照"
+            android:layout_gravity="center_vertical"
+            android:textSize="@dimen/font_normal"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/tab_font"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:hint="请输入护照号码"
+            android:textColor="@color/white"
+            android:id="@+id/et_code"
+            android:textCursorDrawable="@drawable/line_dark_cursor"
+            android:textColorHint="@color/font_hint"
+            android:textSize="@dimen/font_normal"
+            android:background="@null"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="0dp"
+        app:layout_heightPercent="7%h"
+        app:layout_widthPercent="70%w"
+        android:textSize="@dimen/font_normal"
+        android:textColor="@color/white"
+        android:id="@+id/tv_submit"
+        android:gravity="center"
+        android:text="完成"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@color/Blue"
+        android:layout_height="0dp"/>
+
+</com.zhy.android.percent.support.PercentLinearLayout>

@@ -57,7 +57,7 @@
     <style name="textview_tag">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/sec_font_black</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/font_normal</item>
     </style>
 
@@ -75,7 +75,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@color/transparent</item>
         <item name="android:gravity">center_vertical</item>
-        <item name="android:textColor">@color/sec_font_black</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/font_normal</item>
         <item name="android:textColorHint">@color/font_hint</item>
     </style>
@@ -172,7 +172,7 @@
     <style name="textview_tag_my_info">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/sec_font_black</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/font_normal</item>
         <item name="android:gravity">center_vertical</item>
     </style>
@@ -195,7 +195,7 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:paddingLeft">16dp</item>
         <item name="android:paddingRight">16dp</item>
-        <item name="android:background">@color/white</item>
+        <item name="android:background">@color/main_bg_dark_2</item>
     </style>
 
 </resources>

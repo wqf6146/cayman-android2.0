@@ -12,22 +12,15 @@ import java.util.HashMap;
  */
 
 public interface CreditContract {
+
     interface View extends Contract.BaseView<Presenter> {
-
-        void uploadBase64PicSuccess(String obj, int type);
-
         void doCreditSuccess(String obj);
-
-        void getCreditInfoSuccess(Credit.DataBean obj);
-
         void doPostFail(Integer code, String toastMessage);
     }
 
     interface Presenter extends Contract.BasePresenter {
 
-        void uploadBase64Pic(HashMap<String, String> params, int type);
-
-        void credit(HashMap<String, String> params);
+        void credit(HashMap params);
 
         void getCreditInfo();
 

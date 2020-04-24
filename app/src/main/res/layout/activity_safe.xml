@@ -11,18 +11,7 @@
     <!--标题-->
     <include layout="@layout/view_head" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="10dp" />
-
-    <LinearLayout
-        android:id="@+id/llGoogleView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-    </LinearLayout>
-
-<!--    <LinearLayout-->
+    <!--    <LinearLayout-->
 <!--        android:id="@+id/llSwitchLanguage"-->
 <!--        style="@style/layout_my_info"-->
 <!--        android:background="@drawable/ripple_white">-->
@@ -77,58 +66,73 @@
 
 
     <LinearLayout
-        android:id="@+id/llGoogle"
         style="@style/layout_my_info"
-        android:background="@drawable/ripple_white"
-        android:visibility="visible">
-
-        <TextView
-            style="@style/textview_tag"
-            android:text="谷歌验证器" />
-
-
-        <TextView
-            android:visibility="invisible"
-            android:id="@+id/tvGoogle"
-            style="@style/textview_state_my_info"
-            android:layout_marginRight="8dp"
-            android:layout_weight="1"
-            android:enabled="false"
-            android:gravity="right"
-            android:text="@string/unbound" />
-
-        <ImageView
-            android:id="@+id/google_img"
-            android:src="@mipmap/close_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
-    <View
-        style="@style/line_bg_grey"
-        android:visibility="gone" />
-
-    <LinearLayout
-        style="@style/layout_my_info"
-        android:background="@drawable/ripple_white"
         android:visibility="gone">
 
         <TextView
             style="@style/textview_tag"
-            android:text="人脸识别" />
+            android:text="谷歌验证" />
 
 
         <TextView
             style="@style/edittext_normal"
             android:layout_marginRight="8dp"
             android:layout_weight="1"
+            android:textColor="@color/Blue"
+            android:textSize="@dimen/font_small"
             android:gravity="right"
-            android:text="@string/not_set" />
+            android:text="开启" />
 
         <ImageView style="@style/icon_more" />
 
     </LinearLayout>
 
-    <View style="@style/line_bg_grey" />
+    <LinearLayout
+        style="@style/layout_my_info"
+        android:id="@+id/lldlmm"
+        android:visibility="visible">
+
+        <TextView
+            style="@style/textview_tag"
+            android:text="登陆密码" />
+
+
+        <TextView
+            style="@style/edittext_normal"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:textColor="@color/Blue"
+            android:textSize="@dimen/font_small"
+            android:gravity="right"
+            android:text="重置" />
+
+        <ImageView style="@style/icon_more" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/layout_my_info"
+        android:id="@+id/llzjmm"
+        android:visibility="visible">
+
+        <TextView
+            style="@style/textview_tag"
+            android:text="资金密码" />
+
+
+        <TextView
+            style="@style/edittext_normal"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:textColor="@color/Blue"
+            android:textSize="@dimen/font_small"
+            android:gravity="right"
+            android:text="重置" />
+
+        <ImageView style="@style/icon_more" />
+
+    </LinearLayout>
+
+
 
 </LinearLayout>

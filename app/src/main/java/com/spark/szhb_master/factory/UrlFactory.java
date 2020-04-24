@@ -7,7 +7,7 @@ public class UrlFactory {
 //    private static final String host = "http://csapi.njpsd.com";
 
     private static final String host = "https://api.caymanex.pro";
-    private static final String newhost = "http://47.57.101.198:8080";
+    public static final String newhost = "http://47.57.101.198:8080";
 //    private static final String host = "http://api.cex.wxmarket.cn";
 
     public static String getHost() {
@@ -61,7 +61,7 @@ public class UrlFactory {
     }
 
     public static String getCreditUrl() {
-        return host + "/uc/approve/real/name";
+        return newhost + "/user/identity";
     }
 
     public static String getAccountPwdUrl() {

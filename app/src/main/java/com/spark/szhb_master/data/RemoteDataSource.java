@@ -65,7 +65,8 @@ public class RemoteDataSource implements DataSource {
             token = MyApplication.getApp().getCurrentUser().getToken() == null ? "" : MyApplication.getApp().getCurrentUser().getToken();
 
         JSONObject jsonBody = new JSONObject(params);
-        OkhttpUtils.postJson().url(url).addHeader("Content-Type","application/json").body(jsonBody.toString()).build().execute(new StringCallback() {
+        OkhttpUtils.postJson().url(url).addHeader("Authorization",token)
+                .addHeader("Content-Type","application/json").body(jsonBody.toString()).build().execute(new StringCallback() {
             @Override
             public void onError(Request request, Exception e) { // 请求异常，服务器异常，解析异常
                 e.printStackTrace();

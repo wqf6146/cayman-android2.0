@@ -39,6 +39,7 @@ import com.spark.szhb_master.activity.wallet.WalletActivity;
 import com.spark.szhb_master.dialog.ShiMingDialog;
 import com.spark.szhb_master.entity.AssetsInfo;
 import com.spark.szhb_master.entity.SafeSetting;
+import com.spark.szhb_master.factory.UrlFactory;
 import com.spark.szhb_master.ui.AvatarImageView;
 import com.spark.szhb_master.utils.GlobalConstant;
 import com.spark.szhb_master.MyApplication;
@@ -158,12 +159,12 @@ public class MyFragment extends BaseTransFragment implements MainContract.MyView
     private boolean isfirst =false;
 
 
-//    @Override
-//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        if (resultCode == RESULT_OK) {
-//            loadData(); // 获取用户信息
-//        }
-//    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK) {
+            loadData(); // 获取用户信息
+        }
+    }
 
     @Override
     protected int getLayoutId() {
@@ -210,9 +211,9 @@ public class MyFragment extends BaseTransFragment implements MainContract.MyView
             case R.id.llSfrz:
                 showActivity(CreditOneActivity.class,null);
                 break;
-//            case R.id.llTitle:
-//                showActivity(MyInfoActivity.class, null, 1);
-//                break;
+            case R.id.fm_rl_userinfo:
+                showActivity(MyInfoActivity.class, null, 1);
+                break;
 //            case R.id.llOrder:
 //                bundle.putInt("type", 0);
 //                showActivity(MyOrderActivity.class, bundle);
@@ -381,7 +382,7 @@ public class MyFragment extends BaseTransFragment implements MainContract.MyView
 
     private void getivSee() {
         if (!TextUtils.isEmpty(mUser.getAvatar()))
-            Glide.with(getActivity().getApplicationContext()).load(mUser.getAvatar()).error(R.mipmap.icon_default_header).into(ivHead);
+            Glide.with(getActivity().getApplicationContext()).load(UrlFactory.newhost + mUser.getAvatar()).error(R.mipmap.icon_default_header).into(ivHead);
 
         tvUsername.setText(mUser.getNick_name());
         tvVipSystem.setVisibility(View.VISIBLE);
