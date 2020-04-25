@@ -13,8 +13,7 @@
     <LinearLayout
         android:id="@+id/llChinese"
         style="@style/layout_my_info"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/ripple_white">
+        android:layout_marginTop="10dp">
 
         <TextView
             style="@style/edittext_normal"
@@ -32,12 +31,10 @@
 
     </LinearLayout>
 
-    <View style="@style/line_bg_grey" />
-
     <LinearLayout
         android:id="@+id/llEnglish"
-        style="@style/layout_my_info"
-        android:background="@drawable/ripple_white">
+        android:layout_marginTop="2dp"
+        style="@style/layout_my_info">
 
         <TextView
             style="@style/edittext_normal"
@@ -53,8 +50,6 @@
             android:src="@mipmap/icon_select"
             android:visibility="invisible" />
     </LinearLayout>
-
-    <View style="@style/line_bg_grey" />
 
     <LinearLayout
         android:id="@+id/llJapanese"

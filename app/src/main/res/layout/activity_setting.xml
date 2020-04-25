@@ -37,8 +37,7 @@
 
     <LinearLayout
         android:id="@+id/llSwitchLanguage"
-        style="@style/layout_my_info"
-        android:background="@drawable/ripple_white">
+        style="@style/layout_my_info">
 
         <TextView
             style="@style/edittext_normal"
@@ -49,7 +48,6 @@
 
     </LinearLayout>
 
-    <View style="@style/line_bg_grey" />
 
     <LinearLayout
         android:visibility="gone"
@@ -65,8 +63,6 @@
         <ImageView style="@style/icon_more" />
 
     </LinearLayout>
-
-    <View style="@style/line_bg_grey" />
 
     <LinearLayout
         android:visibility="gone"

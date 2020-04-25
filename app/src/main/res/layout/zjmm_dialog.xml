@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:background="@color/main_bg"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:textSize="@dimen/font_xlager"
+                android:textColor="#42546a"
+                android:layout_gravity="center"
+                android:text="@string/safety_verification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:src="@mipmap/close_img" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line_one"
+            android:layout_marginBottom="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/google_phone"
+                android:textColor="#42546a"
+                android:textSize="@dimen/font_normal"
+                android:layout_marginLeft="20dp"
+                android:text="18136235445"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginRight="20dp"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/google_code"
+                    style="@style/edittext_normal"
+                    android:hint="@string/phone_code"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/bg_market_editext"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="40dp" />
+
+                <TextView
+                    android:id="@+id/google_send"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_small"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:background="#4663ae"
+                    android:text="@string/send_chat"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp" />
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/line_two"
+            android:layout_marginBottom="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/google_tishi"
+                android:textColor="#42546a"
+                android:textSize="@dimen/font_normal"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:text="@string/google_code_apply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginRight="20dp"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/google_yzm"
+                    style="@style/edittext_normal"
+                    android:hint="@string/google_code"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/bg_market_editext"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="40dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tvGccConfirm"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_lager"
+            android:gravity="center"
+            android:background="#4663ae"
+            android:text="@string/dialog_sure"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+    </LinearLayout>
+
+
+</RelativeLayout>
